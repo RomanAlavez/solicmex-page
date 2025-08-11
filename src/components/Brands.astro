@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import Ansul from "../assets/images/brands/ansul.webp";
+import Bosch from "../assets/images/brands/bosch.webp";
+import Clarke from "../assets/images/brands/clarke.png";
+import Edwards from "../assets/images/brands/edwards.png";
+import Fike from "../assets/images/brands/fike.webp";
+import FireLite from "../assets/images/brands/fire-lite.webp";
+import Hochiki from "../assets/images/brands/hochiki.avif";
+import Kidde from "../assets/images/brands/kidde.webp";
+import Notifier from "../assets/images/brands/notifier.webp";
+import Safe from "../assets/images/brands/safe.webp";
+import Secutron from "../assets/images/brands/secutron.webp";
+import SystemSensor from "../assets/images/brands/system-sensor.svg";
+import Victaulic from "../assets/images/brands/victaulic.webp";
+
+const {text} = Astro.props;
+const brands = [
+  { image: Ansul, alt: "Ansul" },
+  { image: Bosch, alt: "Bosch" },
+  { image: Clarke, alt: "Clarke" },
+  { image: Edwards, alt: "Edwards" },
+  { image: Fike, alt: "Fike" },
+  { image: FireLite, alt: "FireLite" },
+  { image: Hochiki, alt: "Hochiki" },
+  { image: Kidde, alt: "Kidde" },
+  { image: Notifier, alt: "Notifier" },
+  { image: Safe, alt: "Safe" },
+  { image: Secutron, alt: "Secutron" },
+  { image: SystemSensor, alt: "System Sensor" },
+  { image: Victaulic, alt: "Victaulic" },
+];
+---
+
+<section class="w-full  py-2 overflow-hidden ">
+  <div class="container flex flex-row gap-4 mx-auto px-4">
+    <h4 class="text-2xl md:text-3xl font-bold text-white/60 hover:text-white mb-8 text-center md:text-left">
+      {text.TITLE}
+    </h4>
+    
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 w-16  z-10"></div>
+      <div class="absolute inset-y-0 right-0 w-16  z-10"></div>
+      
+      <div class="flex overflow-x-hidden py-4">
+        <div class="flex items-center gap-3 animate-scroll whitespace-nowrap">
+          {brands.map((brand) => (
+            <div class="mx-4 shrink-0 bg-white p-2 shadow-md rounded-full">
+              <Image 
+                src={brand.image} 
+                alt={brand.alt} 
+                class="w-24 h-24 object-contain drop-shadow-md transition-all duration-300 hover:scale-105 cursor-pointer" 
+                width={96}
+                height={96}
+              />
+            </div>
+          ))}
+          {brands.map((brand) => (
+            <div class="mx-4 shrink-0">
+              <Image 
+                src={brand.image} 
+                alt={brand.alt} 
+                class="w-24 h-24 object-contain  drop-shadow-md transition-all duration-300 hover:scale-105 cursor-pointer" 
+                width={96}
+                height={96}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+</style>

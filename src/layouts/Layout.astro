@@ -1,0 +1,21 @@
+---
+import '../styles/global.css'
+
+
+const {title,description,currentLanguage} = Astro.props;
+---
+<!doctype html>
+<html lang={currentLanguage}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={description} />
+		<title>{title}</title>
+	</head>
+	<body class="w-dvw min-h-dvh bg-gradient-to-tr from-slate-950 via-cyan-900 to-cyan-500">
+		<slot />
+	</body>
+</html>
+
+

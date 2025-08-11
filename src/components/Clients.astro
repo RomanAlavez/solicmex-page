@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import AdvancedComposites from "../assets/images/clients/advanced-composites.webp";
+import Backsack from "../assets/images/clients/backsack.webp";
+import Beibersdorf from "../assets/images/clients/beiersdorf.webp";
+import Compas from "../assets/images/clients/compas.webp";
+import Didi from "../assets/images/clients/didi.webp";
+import EthanAllen from "../assets/images/clients/ethan-allen.webp";
+import Exedy from "../assets/images/clients/exedy.webp";
+import Flex from "../assets/images/clients/flex.webp";
+import GeneralsMotors from "../assets/images/clients/generals-motors.webp";
+import Michelin from "../assets/images/clients/michelin.webp";
+import Pirelli from "../assets/images/clients/pirelli.webp";
+import MabuchiMotor from "../assets/images/clients/mabuchi-motor.webp";
+import MMPM from "../assets/images/clients/mmpm.webp";
+import Modelo from "../assets/images/clients/modelo.webp";
+import Molitec from "../assets/images/clients/molitec.webp";
+import Peasa from "../assets/images/clients/peasa.webp";
+const {text} = Astro.props
+const CLIENTS = [
+  { image: AdvancedComposites, alt: "Logo de Advanced Composites" },
+  { image: Backsack, alt: "Logo de Backsack" },
+  { image: Beibersdorf, alt: "Logo de Beibersdorf" },
+  { image: Compas, alt: "Logo de Compas" },
+  { image: Didi, alt: "Logo de Didi" },
+  { image: EthanAllen, alt: "Logo de Ethan Allen" },
+  { image: Exedy, alt: "Logo de Exedy" },
+  { image: Flex, alt: "Logo de Flex" },
+  { image: GeneralsMotors, alt: "Logo de General Motors" },
+  { image: Michelin, alt: "Logo de Michelin" },
+  { image: Pirelli, alt: "Logo de Pirelli" },
+  { image: MabuchiMotor, alt: "Logo de Mabuchi Motor" },
+  { image: MMPM, alt: "Logo de MMPM" },
+  { image: Modelo, alt: "Logo de Modelo" },
+  { image: Molitec, alt: "Logo de Molitec" },
+  { image: Peasa, alt: "Logo de Peasa" },
+];
+---
+
+<section
+  id="clients"
+  class="flex flex-col pt-8 items-center justify-center w-full min-h-screen"
+>
+  <h3
+    class="text-center text-white font-bold text-7xl text-shadow-sm text-shadow-white"
+  >
+    {text.TITLE}
+  </h3>
+  <p class="text-center text-white text-lg mt-4 mb-8">
+    {text.DESCRIPTION}
+  </p>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 w-full max-w-6xl"
+  >
+    {
+      CLIENTS.map((client) => (
+        <div class="mx-4 shrink-0 bg-white flex justify-center items-center shadow-lg rounded-full">
+          <Image
+            src={client.image}
+            alt={client.alt}
+            title={client.alt}
+            class="w-24 h-24 object-contain drop-shadow-md transition-all duration-300 hover:scale-105 cursor-pointer"
+            width={96}
+            height={96}
+          />
+        </div>
+      ))
+      
+    }
+  </div>
+</section>

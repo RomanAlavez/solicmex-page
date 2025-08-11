@@ -1,0 +1,36 @@
+---
+import Hero from "../components/Hero.astro";
+import Clients from "../components/Clients.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro"
+import AboutUs from "../components/AboutUs.astro";
+import Services from "../components/Services.astro";
+import Projects from "../components/Projects.astro";
+import Brands from "../components/Brands.astro";
+import Contact from "../components/Contact.astro";
+import WhyUs from "../components/WhyUs.astro";
+import Footer from "../components/Footer.astro";
+import { getI18N } from "../i18n";
+
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale});
+---
+
+<Layout currentLanguage={currentLocale} title={i18n.SEO_TILE} description={i18n.SEO_DESCRIPTION}>
+  <header class="w-full flex flex-row p-1 items-center justify-center">
+    <Navbar text={i18n.NAV}/>
+  </header>
+  <main class="w-full flex flex-col px-12">
+    <Hero text={i18n.HERO} />
+    <Services text={i18n.SERVICES} services={i18n.SERVICES.SERVICES_LIST} />
+    <Brands text={i18n.BRANDS} />
+    <Projects text={i18n.PROJECTS} projects={i18n.PROJECTS.PROJECTS_LIST} />
+    <Clients text={i18n.CLIENTS} />
+    <AboutUs text={i18n.ABOUT_US} />
+    <WhyUs text={i18n.WHY_US} />
+    <Contact text={i18n.CONTACT} />
+  </main>
+  <footer>
+    <Footer text={i18n.FOOTER} />
+  </footer>
+</Layout>

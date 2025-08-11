@@ -1,0 +1,105 @@
+---
+import WhyUsCard from "./WhyUsCard.astro";
+import CertificationPill from "./CertificationPill.astro";
+import ClockIcon from "./ClockIcon.astro";
+import GlobeIcon from "./GlobeIcon.astro";
+import ChecksIcon from "./ChecksIcon.astro";
+import LightBulbIcon from "./LightBulbIcon.astro";
+
+const {text} = Astro.props
+---
+
+<section
+  id="why-us"
+  class="min-h-screen w-full flex flex-col justify-center px-8 py-20 max-w-6xl mx-auto"
+>
+  <div class="text-center mb-16">
+    <span
+      class="bg-gradient-to-l from-white to-amber-400 bg-clip-text text-transparent font-semibold tracking-wider uppercase text-sm"
+      >{text.SUBTITLE}</span
+    >
+    <h3 class="text-4xl md:text-5xl font-bold text-white mt-4">
+      {text.TITLE}
+    </h3>
+    <div
+      class="h-1 w-20 bg-gradient-to-r from-white to-amber-400 rounded-full mx-auto mt-6"
+    >
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <WhyUsCard title={text.CARD_1_TITLE} >
+      <ChecksIcon class="size-full text-white" slot="icon" />
+
+      <p class="text-white/90 leading-relaxed">
+       {text.CARD_1_DESCRIPTION}
+      </p>
+      <ul class="mt-4 space-y-2">
+        <li class="flex items-center">
+          <span class="text-cyan-400 mr-2">•</span>
+          <span class="text-white/90">{text.CARD_1_CERTIFICATION_1}</span
+          >
+        </li>
+        <li class="flex items-center">
+          <span class="text-cyan-400 mr-2">•</span>
+          <span class="text-white/90">{text.CARD_1_CERTIFICATION_2}</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-cyan-400 mr-2">•</span>
+          <span class="text-white/90">{text.CARD_1_CERTIFICATION_3}</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-cyan-400 mr-2">•</span>
+          <span class="text-white/90">{text.CARD_1_CERTIFICATION_4}</span>
+        </li>
+      </ul>
+    </WhyUsCard>
+
+    <WhyUsCard title={text.CARD_2_TITLE}>
+      <GlobeIcon class="size-full text-white" slot="icon" />
+
+      <p class="text-white/90 leading-relaxed">
+        {text.CARD_2_DESCRIPTION}
+      </p>
+      <div class="mt-4 grid grid-cols-2 gap-3">
+        <CertificationPill name={text.CARD_2_REGULATION_1} />
+        <CertificationPill name={text.CARD_2_REGULATION_2} />
+        <CertificationPill name={text.CARD_2_REGULATION_3} />
+        <CertificationPill name={text.CARD_2_REGULATION_4} />
+      </div>
+    </WhyUsCard>
+
+    <WhyUsCard title={text.CARD_3_TITLE}>
+      <ClockIcon class="size-full text-white" slot="icon" />
+      <p class="text-white/90 leading-relaxed">
+        {text.CARD_3_DESCRIPTION}<strong class="text-cyan-300"
+          >{text.CARD_3_DESCRIPTION_STRONG}</strong
+        >{text.CARD_3_DESCRIPTION_AFTER_STRONG}
+      </p>
+      <p class="text-white/90 mt-4 leading-relaxed">
+        {text.CARD_3_DESCRIPTION_2}<strong class="text-cyan-300"
+          >{text.CARD_3_DESCRIPTION_2_STRONG}</strong
+        >{text.CARD_3_DESCRIPTION_2_AFTER_STRONG}<strong class="text-cyan-300"
+          >{text.CARD_3_DESCRIPTION_2_STRONG_2}</strong
+        >
+      </p>
+    </WhyUsCard>
+
+    <WhyUsCard title={text.CARD_4_TITLE}>
+      <LightBulbIcon class="size-full text-white" slot="icon" />
+
+      <p class="text-white/90 leading-relaxed">
+        {text.CARD_4_DESCRIPTION}<strong class="text-cyan-300"
+          >{text.CARD_4_DESCRIPTION_STRONG}</strong
+        >{text.CARD_4_DESCRIPTION_AFTER_STRONG}
+      </p>
+      <p class="text-white/90 mt-4 leading-relaxed">
+        {text.CARD_4_DESCRIPTION_2}<strong class="text-cyan-300"
+          >{text.CARD_4_DESCRIPTION_2_STRONG}</strong
+        >{text.CARD_4_DESCRIPTION_2_AFTER_STRONG}<strong class="text-cyan-300"
+          >{text.CARD_4_DESCRIPTION_2_STRONG_2}</strong
+        >{text.CARD_4_DESCRIPTION_2_AFTER_STRONG_2}
+      </p>
+    </WhyUsCard>
+  </div>
+</section>

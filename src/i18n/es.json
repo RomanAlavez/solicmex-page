@@ -1,0 +1,174 @@
+{
+    "SEO_TILE": "Solicmex - Soluciones Integrales para Ingeniería y Comercio",
+    "SEO_DESCRIPTION": "SOLICMEX ofrece servicios de importación y exportación",
+    "NAV": {
+        "HOME": "Inicio",
+        "SERVICES": "Servicios",
+        "PROJECTS": "Proyectos",
+        "CLIENTS": "Clientes",
+        "ABOUT_US": "Nosotros",
+        "WHY_US": "¿Por qué nosotros?",
+        "CONTACT": "Contacto"
+    },
+    "HERO": {
+        "TITLE": "Solicmex",
+        "SUBTITLE": "Soluciones Integrales para Ingeniería y Comercio",
+        "DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
+        "BUTTON": "Cotiza tu proyecto"
+    },
+    "SERVICES": {
+        "TITLE": "Nuestros Servicios",
+        "SERVICES_LIST": [
+            {
+                "NAME": "Sistemas de detección de incendios",
+                "DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "ICON": "AlarmIcon"
+            },
+            {
+                "NAME": "Sistemas de supresión de incendios",
+                "DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "ICON": "FireIcon"
+            },
+            {
+                "NAME": "Instalaciones eléctricas",
+                "DESCRIPTION": "Media y baja tensión, industriales, comerciales y residenciales",
+                "ICON": "LightningIcon"
+            },
+            {
+                "NAME": "Ingeniería",
+                "DESCRIPTION": "Sistemas de detección y prevención de incendios.",
+                "ICON": "EngineeringIcon"
+            }
+        ]
+    },
+    "BRANDS": {
+        "TITLE": "Marcas en las que nos especializamos"
+    },
+    "PROJECTS": {
+        "TITLE": "Nuestros Proyectos",
+        "TITLE_SPAN": "Destacados",
+        "PROJECTS_LIST": [
+            {
+                "NAME": "Teleperformance One Tower",
+                "DESCRIPTION": "Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre.",
+                "UBICATION": "Ciudad de México",
+                "APP": "Detección e hidrantes",
+                "IMAGES": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+                    "imagen2"
+                ]
+            },
+            {
+                "NAME": "Ethan Allen",
+                "DESCRIPTION": "Se instaló un sistema de rociadores, con una bomba de 2,500 gpm en los pisos 1 y 2, así como un sistema de detección térmica por cable SafeFire, conectado a un panel Notifier, cumpliendo con las normas NFPA, con supervisión y aprobación de la compañía de seguros internacional.",
+                "UBICATION": "Silao, Guanajuato",
+                "APP": "Sistema hidráulico",
+                "IMAGES": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+                    "imagen2"
+                ]
+            },
+            {
+                "NAME": "Compuestos avanzados",
+                "DESCRIPTION": "Se sustituyó una bomba diésel residencial con certificación UL/FM, cumpliendo con los requisitos de la NFPA 20, junto con el conjunto del cabezal y la conexión al sistema existente.",
+                "UBICATION": "Aguascalientes, Ags",
+                "APP": "Equipo de bombeo",
+                "IMAGES": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+                    "imagen2"
+                ]
+            },
+            {
+                "NAME": "Bulkmatic de México",
+                "DESCRIPTION": "Este sistema fue desarrollado desde cero con base en los estándares de la NFPA, y su instalación consiste en una unidad de bombeo de 1500 GPM, que alimenta un sistema de rociadores en el área de transferencia y hidrantes de monitoreo.También se instaló un sistema de alarma en el área de transferencia, rociadores en la sala de bombas y detección puntual en el área de oficinas.",
+                "UBICATION": "San Luis Potosí, S.L.P",
+                "APP": "Sistema hidráulico",
+                "IMAGES": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+                    "imagen2"
+                ]
+            }
+        ]
+    },
+    "CLIENTS": {
+        "TITLE": "Nuestros Clientes",
+        "DESCRIPTION": "Conoce a las empresas que confían en nosotros!"
+    },
+    "ABOUT_US": {
+        "TITLE": "Sobre Nosotros",
+        "SUBTITLE":"¿Quiénes somos?",
+        "DESCRIPTION_1": "Somos una empresa ",
+        "DESCRIPTION_2": "especializada y certificada",
+        "DESCRIPTION_3": " en ",
+        "DESCRIPTION_4": "ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
+        "DESCRIPTION_5": "Nos especializamos en sistemas hidráulicos de detección y extinción debido a la alta demanda en este campo, provocada por la gran cantidad de incendios que ocurren diariamente en diversas empresas mexicanas.",
+        "CITE": "Nuestra prioridad es la protección de las personas y los bienes en los sectores comercial e industrial, con el compromiso de ofrecer trabajos garantizados en cada proyecto.",
+        "QUALITY_1":"Instalación Profesional",
+        "QUALITY_2":"Protección Garantizada",
+        "QUALITY_3":"Detección Precisa",
+        "QUALITY_4":"Certificaciones",
+        "STADISTIC_1":"Años de experiencia",
+        "STADISTIC_2":"Proyectos completados",
+        "STADISTIC_3":"Clientes satisfechos",
+        "STADISTIC_4":"Soporte disponible"
+    },
+    "WHY_US": {
+        "TITLE": "¿Por qué elegirnos?",
+        "SUBTITLE": "Ventajas competitvas",
+        "CARD_1_TITLE": "Especialistas certificados",
+        "CARD_1_DESCRIPTION": "Contamos con numerosas certificaciones en sistemas de detección y contra incendios, otorgadas por:",
+        "CARD_1_CERTIFICATION_1": "National Fire Protection Association",
+        "CARD_1_CERTIFICATION_2": "Hochiki",
+        "CARD_1_CERTIFICATION_3": "Segman Detection Technologies",
+        "CARD_1_CERTIFICATION_4": "Certificación DC3",
+        "CARD_2_TITLE": "Norvativas nacionales e internacionales",
+        "CARD_2_DESCRIPTION": "Todos nuestros servicios cumplen con los más altos estándares regulatorios:",
+        "CARD_2_REGULATION_1": "NFPA 20",
+        "CARD_2_REGULATION_2": "NFPA 25",
+        "CARD_2_REGULATION_3": "FM GLOBAL",
+        "CARD_2_REGULATION_4": "NOM-002-STPS",
+        "CARD_3_TITLE": "Amplia experiencia",
+        "CARD_3_DESCRIPTION": "Nuestro equipo cuenta con más de ",
+        "CARD_3_DESCRIPTION_STRONG": "12 años de experiencia",
+        "CARD_3_DESCRIPTION_AFTER_STRONG": " en ingeniería e instalación, basados en los estándares más exigentes.",
+        "CARD_3_DESCRIPTION_2": "Hemos trabajado con ",
+        "CARD_3_DESCRIPTION_2_STRONG": "grupos empresariales internacionales",
+        "CARD_3_DESCRIPTION_2_AFTER_STRONG": " y en protección de plataformas para ",
+        "CARD_3_DESCRIPTION_2_STRONG_2": "PEMEX.",
+        "CARD_4_TITLE": "Soluciones efectivas",
+        "CARD_4_DESCRIPTION": "Ofrecemos ",
+        "CARD_4_DESCRIPTION_STRONG": "soluciones seguras y efectivas",
+        "CARD_4_DESCRIPTION_AFTER_STRONG": ", optimizando el ahorro económico sin comprometer la protección.",
+        "CARD_4_DESCRIPTION_2": "Garantizamos el ",
+        "CARD_4_DESCRIPTION_2_STRONG": "cumplimiento normativo",
+        "CARD_4_DESCRIPTION_2_AFTER_STRONG": " y los ",
+        "CARD_4_DESCRIPTION_2_STRONG_2": "objetivos de proteccón legal",
+        "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " en cada proyecto."
+    },
+    "CONTACT": {
+        "TITLE": "Contáctanos",
+        "FORM_TITLE": "Envíanos un mensaje",
+        "FORM_NAME": "Nombre",
+        "FORM_EMAIL": "Correo electrónico",
+        "FORM_SUBJECT": "Asunto",
+        "FORM_MESSAGE": "Mensaje",
+        "FORM_BUTTON": "Enviar mensaje"
+    },
+    "FOOTER": {
+        "DESCRIPTION": "Especialistas certificados en ingeniería, instalación y mantenimiento de sistemas de protección contra incendios.",
+        "LINKS": "Enlaces",
+        "LINK_ABOUT_US": "Sobre Nosotros",
+        "LINK_WHY_US": "¿Por qué nosotros?",
+        "LINK_SERVICES": "Servicios",
+        "LINK_CONTACT": "Contacto",
+        "CONTACT": "Contacto",
+        "CERTIFICATIONS": "Certificaciones",
+        "CERTIFICATION_1": "NFPA",
+        "CERTIFICATION_2": "FM Global",
+        "CERTIFICATION_3": "Hochiki",
+        "CERTIFICATION_4": "DC3",
+        "COPYRIGHT": "© 2025 Solicmex. Todos los derechos reservados.",
+        "PRIVACY_POLICY": "Política de privacidad",
+        "TERMS_OF_SERVICE": "Términos de servicio"
+    }
+}

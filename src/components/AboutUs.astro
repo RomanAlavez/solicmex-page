@@ -1,0 +1,56 @@
+---
+import QualityCard from "./QualityCard.astro"
+import Stadistic from "./Stadistic.astro"
+import ToolsIcon from "./ToolsIcon.astro"
+import CheckListIcon from "./CheckListIcon.astro"
+import NodeIcon from "./NodeIcon.astro"
+import ShieldIcon from "./ShieldIcon.astro"
+const {text} = Astro.props
+---
+<section
+  id="about-us"
+  class="flex flex-col justify-center w-full min-h-screen gap-8 px-5 py-20 max-w-6xl mx-auto"
+>
+  <div class="flex flex-col md:flex-row gap-12 items-center">
+    <div class="flex-1">
+      <div class="mb-8">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-400/80 cyan-400 font-semibold tracking-wider uppercase">{text.SUBTITLE}</span>
+        <h3 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">{text.TITLE}</h3>
+        <div class="h-1 w-20 bg-cyan-400/80 rounded-full"></div>
+      </div>
+
+      <div class="space-y-6 bg-clip-text bg-gradient-to-r from-white to-cyan-400/80">
+        <p class="text-lg text-white/90 leading-relaxed">
+          {text.DESCRIPTION_1}<span class="text-transparent font-medium">{text.DESCRIPTION_2}</span>{text.DESCRIPTION_3}<strong class="text-transparent">{text.DESCRIPTION_4}</strong>
+        </p>
+        
+        <p class="text-lg text-white/90 leading-relaxed">
+          {text.DESCRIPTION_5}
+        </p>
+        
+        <div class="p-6 bg-cyan-900/30 border-l-4 border-cyan-400 rounded-r-lg">
+          <cite class="text-white/90 italic">
+            {text.CITE}
+          </cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-1 hidden md:block">
+      <div class="grid grid-cols-2 gap-4">
+        <QualityCard text={text.QUALITY_1}><ToolsIcon class="size-1/2 drop-shadow-md"/></QualityCard>
+        <QualityCard text={text.QUALITY_2}><ShieldIcon class="size-1/2 drop-shadow-md"/></QualityCard>
+        <QualityCard text={text.QUALITY_3}><NodeIcon class="size-1/2 drop-shadow-md"/></QualityCard>
+        <QualityCard text={text.QUALITY_4}><CheckListIcon class="size-1/2 drop-shadow-md"/></QualityCard>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <Stadistic title={text.STADISTIC_1} value="+15" />
+    <Stadistic title={text.STADISTIC_2} value="500+" />
+    <Stadistic title={text.STADISTIC_3} value="100%" />
+    <Stadistic title={text.STADISTIC_4} value="24/7" />
+    
+</section>

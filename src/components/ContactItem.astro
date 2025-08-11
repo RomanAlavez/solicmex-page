@@ -1,0 +1,4 @@
+---
+const {text,link} = Astro.props;
+---
+<a href={link} target="_blank" class="text-white inline-flex gap-4 wrap items-center text-pretty"> <slot/> {text} </a>

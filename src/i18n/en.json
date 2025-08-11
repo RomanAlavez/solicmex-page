@@ -1,0 +1,174 @@
+{
+  "SEO_TILE": "Solicmex - Comprehensive Solutions for Engineering and Trade",
+  "SEO_DESCRIPTION": "SOLICMEX offers import and export services",
+  "NAV": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "PROJECTS": "Projects",
+    "CLIENTS": "Clients",
+    "ABOUT_US": "About Us",
+    "WHY_US": "Why Us?",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "TITLE": "Solicmex",
+    "SUBTITLE": "Comprehensive Solutions for Engineering and Trade",
+    "DESCRIPTION": "A specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems.",
+    "BUTTON": "Get a Quote"
+  },
+  "SERVICES": {
+    "TITLE": "Our Services",
+    "SERVICES_LIST": [
+      {
+        "NAME": "Fire Detection Systems",
+        "DESCRIPTION": "Engineering, installation, and maintenance",
+        "ICON": "AlarmIcon"
+      },
+      {
+        "NAME": "Fire Suppression Systems",
+        "DESCRIPTION": "Engineering, installation, and maintenance",
+        "ICON": "FireIcon"
+      },
+      {
+        "NAME": "Electrical Installations",
+        "DESCRIPTION": "Medium and low voltage for industrial, commercial, and residential settings",
+        "ICON": "LightningIcon"
+      },
+      {
+        "NAME": "Engineering",
+        "DESCRIPTION": "Fire detection and prevention systems.",
+        "ICON": "EngineeringIcon"
+      }
+    ]
+  },
+  "BRANDS": {
+    "TITLE": "Brands We Specialize In"
+  },
+  "PROJECTS": {
+    "TITLE": "Our Highlighted",
+    "TITLE_SPAN": "Projects",
+    "PROJECTS_LIST": [
+      {
+        "NAME": "Teleperformance One Tower",
+        "DESCRIPTION": "A fire detection system and a fire suppression system using hydrants were installed across 10 levels of the tower.",
+        "UBICATION": "Mexico City",
+        "APP": "Detection and hydrants",
+        "IMAGES": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+          "imagen2"
+        ]
+      },
+      {
+        "NAME": "Ethan Allen",
+        "DESCRIPTION": "A sprinkler system was installed, with a 2,500 GPM pump on floors 1 and 2, as well as a SafeFire cable thermal detection system connected to a Notifier panel, complying with NFPA standards and under supervision and approval of the international insurance company.",
+        "UBICATION": "Silao, Guanajuato",
+        "APP": "Hydraulic system",
+        "IMAGES": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+          "imagen2"
+        ]
+      },
+      {
+        "NAME": "Advanced Composites",
+        "DESCRIPTION": "A residential diesel pump with UL/FM certification was replaced, complying with NFPA 20 requirements, along with the head assembly and connection to the existing system.",
+        "UBICATION": "Aguascalientes, Ags",
+        "APP": "Pumping equipment",
+        "IMAGES": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+          "imagen2"
+        ]
+      },
+      {
+        "NAME": "Bulkmatic de México",
+        "DESCRIPTION": "This system was developed from scratch based on NFPA standards. The installation includes a 1500 GPM pumping unit that feeds a sprinkler system in the transfer area and monitoring hydrants. An alarm system was also installed in the transfer area, sprinklers in the pump room, and spot detection in the office area.",
+        "UBICATION": "San Luis Potosí, S.L.P",
+        "APP": "Hydraulic system",
+        "IMAGES": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
+          "imagen2"
+        ]
+      }
+    ]
+  },
+  "CLIENTS": {
+    "TITLE": "Our Clients",
+    "DESCRIPTION": "Meet the companies that trust us!"
+  },
+  "ABOUT_US": {
+    "TITLE": "About Us",
+    "SUBTITLE": "Who are we?",
+    "DESCRIPTION_1": "We are a",
+    "DESCRIPTION_2": "specialized and certified company",
+    "DESCRIPTION_3": " in ",
+    "DESCRIPTION_4": "engineering, installation, maintenance, and repair of fire protection systems.",
+    "DESCRIPTION_5": "We specialize in hydraulic detection and extinguishing systems due to the high demand in this field, caused by the large number of fires that occur daily in various Mexican companies.",
+    "CITE": "Our priority is the protection of people and property in the commercial and industrial sectors, with a commitment to deliver guaranteed work on every project.",
+    "QUALITY_1": "Professional Installation",
+    "QUALITY_2": "Guaranteed Protection",
+    "QUALITY_3": "Accurate Detection",
+    "QUALITY_4": "Certifications",
+    "STADISTIC_1": "Years of Experience",
+    "STADISTIC_2": "Completed Projects",
+    "STADISTIC_3": "Satisfied Clients",
+    "STADISTIC_4": "Support Available"
+},
+  "WHY_US": {
+    "TITLE": "Why Choose Us?",
+    "SUBTITLE": "Competitive Advantages",
+    "CARD_1_TITLE": "Certified Specialists",
+    "CARD_1_DESCRIPTION": "We hold numerous certifications in fire detection and protection systems, awarded by:",
+    "CARD_1_CERTIFICATION_1": "National Fire Protection Association",
+    "CARD_1_CERTIFICATION_2": "HOCHIKI",
+    "CARD_1_CERTIFICATION_3": "Segman Detection Technologies",
+    "CARD_1_CERTIFICATION_4": "DC3 Certification",
+    "CARD_2_TITLE": "National and International Standards",
+    "CARD_2_DESCRIPTION": "All our services comply with the highest regulatory standards:",
+    "CARD_2_REGULATION_1": "NFPA 20",
+    "CARD_2_REGULATION_2": "NFPA 25",
+    "CARD_2_REGULATION_3": "FM GLOBAL",
+    "CARD_2_REGULATION_4": "NOM-002-STPS",
+    "CARD_3_TITLE": "Extensive Experience",
+    "CARD_3_DESCRIPTION": "Our team has over ",
+    "CARD_3_DESCRIPTION_STRONG": "12 years of experience",
+    "CARD_3_DESCRIPTION_AFTER_STRONG": " in engineering and installation, based on the most demanding standards.",
+    "CARD_3_DESCRIPTION_2": "We have worked with ",
+    "CARD_3_DESCRIPTION_2_STRONG": "international business groups",
+    "CARD_3_DESCRIPTION_2_AFTER_STRONG": " and on platform protection for ",
+    "CARD_3_DESCRIPTION_2_STRONG_2": "PEMEX.",
+    "CARD_4_TITLE": "Effective Solutions",
+    "CARD_4_DESCRIPTION": "We offer ",
+    "CARD_4_DESCRIPTION_STRONG": "safe and effective solutions",
+    "CARD_4_DESCRIPTION_AFTER_STRONG": ", optimizing cost savings without compromising protection.",
+    "CARD_4_DESCRIPTION_2": "We guarantee ",
+    "CARD_4_DESCRIPTION_2_STRONG": "regulatory compliance",
+    "CARD_4_DESCRIPTION_2_AFTER_STRONG": " and ",
+    "CARD_4_DESCRIPTION_2_STRONG_2": "legal protection goals",
+    "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " in every project."
+  },
+  "CONTACT": {
+    "TITLE": "Contact Us",
+    "FORM_TITLE": "Send Us a Message",
+    "FORM_NAME": "Name",
+    "FORM_EMAIL": "Email",
+    "FORM_SUBJECT": "Subject",
+    "FORM_MESSAGE": "Message",
+    "FORM_BUTTON": "Send Message"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Certified specialists in engineering, installation, and maintenance of fire protection systems.",
+    "LINKS": "Links",
+    "LINK_ABOUT_US": "About Us",
+    "LINK_WHY_US": "Why Us?",
+    "LINK_SERVICES": "Services",
+    "LINK_CONTACT": "Contact",
+    "CONTACT": "Contact",
+    "CERTIFICATIONS": "Certifications",
+    "CERTIFICATION_1": "NFPA",
+    "CERTIFICATION_2": "FM Global",
+    "CERTIFICATION_3": "Hochiki",
+    "CERTIFICATION_4": "DC3",
+    "COPYRIGHT": "© 2025 Solicmex. All rights reserved.",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "TERMS_OF_SERVICE": "Terms of Service"
+  }
+}

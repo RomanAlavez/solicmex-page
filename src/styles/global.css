@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+  font-family: 'Satoshi-Variable', sans-serif;
+  --sb-track-color: #1b2524;
+  --sb-thumb-color: #f57400;
+  --sb-size: 5px;
+}
+
+#dialog-content {
+  --sb-track-color: #1b2524;
+  --sb-thumb-color: #f57400;
+  --sb-size: 5px;
+}
+#dialog-content::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+#dialog-content::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 20px;
+}
+
+#dialog-content::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+}
+
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('../fonts/Satoshi-Variable.ttf') format('truetype');
+
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+::view-transition-old(project-image-*),
+::view-transition-new(project-image-*) {
+  border-radius: 0.5rem;
+}
+
+
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

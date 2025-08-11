@@ -1,0 +1,152 @@
+---
+import TermsOfService from "./TermsOfService.jsx";
+import PrivacyPolicies from "./PrivacyPolicies.jsx";
+import PhoneIcon from "./PhoneIcon.astro";
+import MailIcon from "./MailIcon.astro";
+import GeoIcon from "./GeoIcon.astro";
+
+const { text } = Astro.props;
+---
+
+<footer class="w-full bg-slate-950 border-t border-cyan-900">
+  <div class="max-w-6xl mx-auto px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      {/* Columna 1 - Logo y descripción */}
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold text-white">SOLICMEX</h3>
+        <p class="text-cyan-300/80 text-sm leading-relaxed">
+          {text.DESCRIPTION}
+        </p>
+        <div class="flex space-x-4 pt-2">
+          <a href="#" class="text-cyan-400 hover:text-white transition-colors">
+            <!-- <FacebookIcon class="w-5 h-5"/> -->
+          </a>
+          <a href="#" class="text-cyan-400 hover:text-white transition-colors">
+            <!-- <LinkedInIcon class="w-5 h-5"/> -->
+          </a>
+          <a href="#" class="text-cyan-400 hover:text-white transition-colors">
+            <!-- <InstagramIcon class="w-5 h-5"/> -->
+          </a>
+        </div>
+      </div>
+
+      {/* Columna 2 - Enlaces rápidos */}
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">{text.LINK}</h4>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="#about-us"
+              class="text-cyan-300/80 hover:text-white text-sm transition-colors"
+              >{text.LINK_ABOUT_US}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#why-us"
+              class="text-cyan-300/80 hover:text-white text-sm transition-colors"
+              >{text.LINK_WHY_US}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-cyan-300/80 hover:text-white text-sm transition-colors"
+              >{text.LINK_SERVICES}</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-cyan-300/80 hover:text-white text-sm transition-colors"
+              >{text.LINK_CONTACT}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      {/* Columna 3 - Contacto */}
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">{text.CONTACT}</h4>
+        <ul class="space-y-3 text-cyan-300/80 text-sm">
+          <li class="flex items-start gap-2">
+            <span class="text-cyan-400 mt-0.5"><GeoIcon /></span>
+            <span
+              >Calle Guanajuato 12, Col. Santiago, Coyotepec, Estado de México</span
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><PhoneIcon /></span>
+            <a href="tel:5527723862" class="hover:text-white transition-colors"
+              >(552) 772 3862</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><PhoneIcon /></span>
+            <a href="tel:4497352763" class="hover:text-white transition-colors"
+              >(449) 735 2763</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><MailIcon /></span>
+            <a
+              href="mailto:operaciones@solicmex.com"
+              class="hover:text-white transition-colors"
+              >operaciones@solicmex.com</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><MailIcon /></span>
+            <a
+              href="mailto:contacto.icisi@gmail.com"
+              class="hover:text-white transition-colors"
+              >contacto.icisi@gmail.com</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      {/* Columna 4 - Certificaciones */}
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">
+          {text.CERTIFICATIONS}
+        </h4>
+        <div class="grid grid-cols-2 gap-3">
+          <div
+            class="bg-cyan-900/50 border border-cyan-800 rounded p-2 flex justify-center"
+          >
+            <span class="text-xs text-center text-cyan-300">NFPA</span>
+          </div>
+          <div
+            class="bg-cyan-900/50 border border-cyan-800 rounded p-2 flex justify-center"
+          >
+            <span class="text-xs text-center text-cyan-300">FM Global</span>
+          </div>
+          <div
+            class="bg-cyan-900/50 border border-cyan-800 rounded p-2 flex justify-center"
+          >
+            <span class="text-xs text-center text-cyan-300">Hochiki</span>
+          </div>
+          <div
+            class="bg-cyan-900/50 border border-cyan-800 rounded p-2 flex justify-center"
+          >
+            <span class="text-xs text-center text-cyan-300">DC3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Derechos de autor */}
+    <div
+      class="border-t border-cyan-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-cyan-500/70 text-sm">
+        {text.COPYRIGHT}
+      </p>
+      <div class="flex space-x-6 gap-5 mt-4 md:mt-0">
+        <PrivacyPolicies name={text.PRIVACY_POLICY} client:visible />
+        <TermsOfService name={text.TERMS_OF_SERVICE} client:visible />
+      </div>
+    </div>
+  </div>
+</footer>
