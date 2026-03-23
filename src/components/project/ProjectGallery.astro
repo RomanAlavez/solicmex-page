@@ -2,14 +2,14 @@
 import CardImageIcon from "../CardImageIcon.astro";
 import ProjectImage from "./ProjectImage.astro";
 
-const { project } = Astro.props;
+const { project,currentLanguage } = Astro.props;
 ---
 
 {project.IMAGES && project.IMAGES.length > 0 && (
   <section class="mb-6">
-    <h2 class="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2">
+    <h2 class="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2 uppercase">
       <CardImageIcon />
-      GALERÍA
+    {currentLanguage === 'en' ? 'Gallery' : 'Galería'}
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {project.IMAGES.map((img, index) => (

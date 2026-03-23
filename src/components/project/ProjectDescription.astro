@@ -2,13 +2,14 @@
 import slugify from "../../utils/utils.js";
 import InfoIcon from "../InfoIcon.astro";
 
-const { project } = Astro.props;
+const { project,currentLanguage } = Astro.props;
 ---
 
 <section class="mb-10">
-  <h2 class="text-xl font-semibold mb-4 text-cyan-400 flex items-center gap-2">
+  <h2 class="text-xl font-semibold mb-4 text-cyan-400 flex items-center gap-2 uppercase">
     <InfoIcon />
-    DESCRIPCIÓN
+    {currentLanguage === 'en' ? 'Description' : 'Descripción'}
+    
   </h2>
   <p
     class="text-lg leading-relaxed text-white/90"

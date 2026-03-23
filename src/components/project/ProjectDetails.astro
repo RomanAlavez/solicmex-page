@@ -1,20 +1,21 @@
 ---
 import EngineeringIcon from "../EngineeringIcon.astro";
-const { project } = Astro.props;
+const { project,currentLanguage } = Astro.props;
 ---
 
 <section class="mb-10">
-  <h2 class="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2">
+  <h2 class="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2 uppercase">
     <EngineeringIcon />
-    DETALLES
+    {currentLanguage === 'en' ? 'Details' : 'Detalles'}
+
   </h2>
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
     <li class="bg-slate-800/50 backdrop-blur-sm p-5 rounded-xl border border-slate-700/50 hover:border-cyan-400/50 transition-all hover:-translate-y-1 shadow-lg">
-      <strong class="block text-sm font-medium text-cyan-300 mb-1">UBICACIÓN</strong>
+      <strong class="block text-sm font-medium text-cyan-300 mb-1 uppercase">{currentLanguage === 'en' ? 'Ubication' : 'Ubicación'}</strong>
       <span class="text-lg font-medium text-white">{project.UBICATION}</span>
     </li>
     <li class="bg-slate-800/50 backdrop-blur-sm p-5 rounded-xl border border-slate-700/50 hover:border-cyan-400/50 transition-all hover:-translate-y-1 shadow-lg">
-      <strong class="block text-sm font-medium text-cyan-300 mb-1">APLICACIÓN</strong>
+      <strong class="block text-sm font-medium text-cyan-300 mb-1 uppercase">{currentLanguage === 'en' ? 'Aplication' : 'Aplicación'}</strong>
       <span class="text-lg font-medium text-white">{project.APP}</span>
     </li>
   </ul>

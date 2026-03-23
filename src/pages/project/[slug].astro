@@ -32,9 +32,9 @@ const { project } = Astro.props;
     <article class=" rounded-2xl overflow-hidden">
       <ProjectHeader project={project} />
       <div class="p-8">
-        <ProjectDescription project={project} />
-        <ProjectDetails project={project} />
-        <ProjectGallery project={project} />
+        <ProjectDescription project={project} currentLanguage={currentLocale} />
+        <ProjectDetails project={project} currentLanguage={currentLocale} />
+        <ProjectGallery project={project} currentLanguage={currentLocale} />
       </div>
     </article>
   </main>

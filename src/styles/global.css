@@ -44,7 +44,7 @@ body {
 
 @font-face {
   font-family: "Satoshi-Variable";
-  src: url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  src: url("/../fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
 body::-webkit-scrollbar {
