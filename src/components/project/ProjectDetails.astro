@@ -1,0 +1,21 @@
+---
+import EngineeringIcon from "../EngineeringIcon.astro";
+const { project } = Astro.props;
+---
+
+<section class="mb-10">
+  <h2 class="text-xl font-semibold mb-6 text-cyan-400 flex items-center gap-2">
+    <EngineeringIcon />
+    DETALLES
+  </h2>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <li class="bg-slate-800/50 backdrop-blur-sm p-5 rounded-xl border border-slate-700/50 hover:border-cyan-400/50 transition-all hover:-translate-y-1 shadow-lg">
+      <strong class="block text-sm font-medium text-cyan-300 mb-1">UBICACIÓN</strong>
+      <span class="text-lg font-medium text-white">{project.UBICATION}</span>
+    </li>
+    <li class="bg-slate-800/50 backdrop-blur-sm p-5 rounded-xl border border-slate-700/50 hover:border-cyan-400/50 transition-all hover:-translate-y-1 shadow-lg">
+      <strong class="block text-sm font-medium text-cyan-300 mb-1">APLICACIÓN</strong>
+      <span class="text-lg font-medium text-white">{project.APP}</span>
+    </li>
+  </ul>
+</section>

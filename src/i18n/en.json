@@ -1,6 +1,6 @@
 {
-  "SEO_TILE": "Solicmex - Comprehensive Solutions for Engineering and Trade",
-  "SEO_DESCRIPTION": "SOLICMEX offers import and export services",
+  "SEO_TITLE": "Solicmex - Comprehensive Solutions for Engineering and Construction",
+  "SEO_DESCRIPTION": "A company specialized and certified in the engineering, installation, maintenance, and repair of fire protection systems.",
   "NAV": {
     "HOME": "Home",
     "SERVICES": "Services",
@@ -12,7 +12,7 @@
   },
   "HERO": {
     "TITLE": "Solicmex",
-    "SUBTITLE": "Comprehensive Solutions for Engineering and Trade",
+    "SUBTITLE": "Comprehensive Solutions for Engineering and Construction",
     "DESCRIPTION": "A specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems.",
     "BUTTON": "Get a Quote"
   },
@@ -54,8 +54,7 @@
         "UBICATION": "Mexico City",
         "APP": "Detection and hydrants",
         "IMAGES": [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-          "imagen2"
+          "/images/projects/image-21.jpg"
         ]
       },
       {
@@ -64,8 +63,7 @@
         "UBICATION": "Silao, Guanajuato",
         "APP": "Hydraulic system",
         "IMAGES": [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-          "imagen2"
+          "/images/projects/image-21.jpg"
         ]
       },
       {
@@ -74,8 +72,7 @@
         "UBICATION": "Aguascalientes, Ags",
         "APP": "Pumping equipment",
         "IMAGES": [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-          "imagen2"
+          "/images/projects/image-21.jpg"
         ]
       },
       {
@@ -84,8 +81,27 @@
         "UBICATION": "San Luis Potosí, S.L.P",
         "APP": "Hydraulic system",
         "IMAGES": [
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-          "imagen2"
+          "/images/projects/image-1.jpg",
+          "/images/projects/image-2.jpg",
+          "/images/projects/image-3.jpg",
+          "/images/projects/image-4.webp",
+          "/images/projects/image-6.jpg",
+          "/images/projects/image-7.webp",
+          "/images/projects/image-8.jpg",
+          "/images/projects/image-9.jpg",
+          "/images/projects/image-10.jpg",
+          "/images/projects/image-11.jpg",
+          "/images/projects/image-12.jpg",
+          "/images/projects/image-13.jpg",
+          "/images/projects/image-14.jpg",
+          "/images/projects/image-15.jpg",
+          "/images/projects/image-16.jpg",
+          "/images/projects/image-17.jpg",
+          "/images/projects/image-18.jpg",
+          "/images/projects/image-19.jpg",
+          "/images/projects/image-20.jpg",
+          "/images/projects/image-21.jpg",
+          "/images/projects/image-22.jpg"
         ]
       }
     ]
@@ -111,7 +127,7 @@
     "STADISTIC_2": "Completed Projects",
     "STADISTIC_3": "Satisfied Clients",
     "STADISTIC_4": "Support Available"
-},
+  },
   "WHY_US": {
     "TITLE": "Why Choose Us?",
     "SUBTITLE": "Competitive Advantages",

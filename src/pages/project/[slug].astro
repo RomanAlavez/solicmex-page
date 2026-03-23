@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import esData from "../../i18n/es.json";
+import slugify from "../../utils/utils.js";
+import ProjectHeader from "../../components/project/ProjectHeader.astro";
+import ProjectDescription from "../../components/project/ProjectDescription.astro";
+import ProjectDetails from "../../components/project/ProjectDetails.astro";
+import ProjectGallery from "../../components/project/ProjectGallery.astro";
+
+const i18n = esData;
+const { currentLocale } = Astro;
+
+export async function getStaticPaths() {
+  const projects = esData.PROJECTS.PROJECTS_LIST;
+  return projects.map((project) => ({
+    params: { slug: slugify(project.NAME) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={`${project.NAME} | ${i18n.SEO_TITLE}`}
+  description={project.DESCRIPTION || i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <main class="container mx-auto mt-10 py-8 max-w-6xl">
+    <article class=" rounded-2xl overflow-hidden">
+      <ProjectHeader project={project} />
+      <div class="p-8">
+        <ProjectDescription project={project} />
+        <ProjectDetails project={project} />
+        <ProjectGallery project={project} />
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  figure {
+    perspective: 1000px;
+  }
+  figure img {
+    transform-origin: center;
+    will-change: transform;
+  }
+</style>

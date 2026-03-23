@@ -14,7 +14,7 @@ export default function Dialog({ children, handleDialog }) {
       >
         <motion.div
           id="dialog-content"
-          className="border border-white/60 rounded-2xl shadow-lg max-w-md min-w-1/2 min-h-1/2 max-h-10/12 overflow-y-auto p-6 relative bg-black/10 backdrop-blur-lg"
+          className="border border-white/60 rounded-2xl shadow-lg max-w-md min-w-1/2 min-h-1/2 max-h-10/12 overflow-y-auto p-6 relative bg-black/40 backdrop-blur-3xl"
           initial={{ opacity: 0, scale: 0.9, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 50 }}

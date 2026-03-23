@@ -1,6 +1,6 @@
 {
-    "SEO_TILE": "Solicmex - Soluciones Integrales para Ingeniería y Comercio",
-    "SEO_DESCRIPTION": "SOLICMEX ofrece servicios de importación y exportación",
+    "SEO_TITLE": "Solicmex - Soluciones Integrales para Ingeniería y Construcción",
+    "SEO_DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
     "NAV": {
         "HOME": "Inicio",
         "SERVICES": "Servicios",
@@ -12,7 +12,7 @@
     },
     "HERO": {
         "TITLE": "Solicmex",
-        "SUBTITLE": "Soluciones Integrales para Ingeniería y Comercio",
+        "SUBTITLE": "Soluciones Integrales para Ingeniería y Construcción",
         "DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
         "BUTTON": "Cotiza tu proyecto"
     },
@@ -54,8 +54,7 @@
                 "UBICATION": "Ciudad de México",
                 "APP": "Detección e hidrantes",
                 "IMAGES": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-                    "imagen2"
+                    "/images/projects/image-21.jpg"
                 ]
             },
             {
@@ -64,8 +63,7 @@
                 "UBICATION": "Silao, Guanajuato",
                 "APP": "Sistema hidráulico",
                 "IMAGES": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-                    "imagen2"
+                    "/images/projects/image-21.jpg"
                 ]
             },
             {
@@ -74,18 +72,36 @@
                 "UBICATION": "Aguascalientes, Ags",
                 "APP": "Equipo de bombeo",
                 "IMAGES": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-                    "imagen2"
+                    "/images/projects/image-21.jpg"
                 ]
             },
             {
                 "NAME": "Bulkmatic de México",
-                "DESCRIPTION": "Este sistema fue desarrollado desde cero con base en los estándares de la NFPA, y su instalación consiste en una unidad de bombeo de 1500 GPM, que alimenta un sistema de rociadores en el área de transferencia y hidrantes de monitoreo.También se instaló un sistema de alarma en el área de transferencia, rociadores en la sala de bombas y detección puntual en el área de oficinas.",
+                "DESCRIPTION": "Este sistema fue desarrollado desde cero con base en los estándares de la NFPA, y su instalación consiste en una unidad de bombeo de 1500 GPM, que alimenta un sistema de rociadores en el área de transferencia y hidrantes de monitoreo. También se instaló un sistema de alarma en el área de transferencia, rociadores en la sala de bombas y detección puntual en el área de oficinas.",
                 "UBICATION": "San Luis Potosí, S.L.P",
                 "APP": "Sistema hidráulico",
                 "IMAGES": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjiLFkY6xq5awao4NLFPArQv8uhh2AR2I_tQ&s",
-                    "imagen2"
+                    "/images/projects/image-1.jpg",
+                    "/images/projects/image-2.jpg",
+                    "/images/projects/image-3.jpg",
+                    "/images/projects/image-4.webp",
+                    "/images/projects/image-6.jpg",
+                    "/images/projects/image-7.webp",
+                    "/images/projects/image-8.jpg",
+                    "/images/projects/image-9.jpg",
+                    "/images/projects/image-10.jpg",
+                    "/images/projects/image-11.jpg",
+                    "/images/projects/image-12.jpg",
+                    "/images/projects/image-13.jpg",
+                    "/images/projects/image-14.jpg",
+                    "/images/projects/image-15.jpg",
+                    "/images/projects/image-16.jpg",
+                    "/images/projects/image-17.jpg",
+                    "/images/projects/image-18.jpg",
+                    "/images/projects/image-19.jpg",
+                    "/images/projects/image-20.jpg",
+                    "/images/projects/image-21.jpg",
+                    "/images/projects/image-22.jpg"
                 ]
             }
         ]
@@ -96,21 +112,21 @@
     },
     "ABOUT_US": {
         "TITLE": "Sobre Nosotros",
-        "SUBTITLE":"¿Quiénes somos?",
+        "SUBTITLE": "¿Quiénes somos?",
         "DESCRIPTION_1": "Somos una empresa ",
         "DESCRIPTION_2": "especializada y certificada",
         "DESCRIPTION_3": " en ",
         "DESCRIPTION_4": "ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
         "DESCRIPTION_5": "Nos especializamos en sistemas hidráulicos de detección y extinción debido a la alta demanda en este campo, provocada por la gran cantidad de incendios que ocurren diariamente en diversas empresas mexicanas.",
         "CITE": "Nuestra prioridad es la protección de las personas y los bienes en los sectores comercial e industrial, con el compromiso de ofrecer trabajos garantizados en cada proyecto.",
-        "QUALITY_1":"Instalación Profesional",
-        "QUALITY_2":"Protección Garantizada",
-        "QUALITY_3":"Detección Precisa",
-        "QUALITY_4":"Certificaciones",
-        "STADISTIC_1":"Años de experiencia",
-        "STADISTIC_2":"Proyectos completados",
-        "STADISTIC_3":"Clientes satisfechos",
-        "STADISTIC_4":"Soporte disponible"
+        "QUALITY_1": "Instalación Profesional",
+        "QUALITY_2": "Protección Garantizada",
+        "QUALITY_3": "Detección Precisa",
+        "QUALITY_4": "Certificaciones",
+        "STADISTIC_1": "Años de experiencia",
+        "STADISTIC_2": "Proyectos completados",
+        "STADISTIC_3": "Clientes satisfechos",
+        "STADISTIC_4": "Soporte disponible"
     },
     "WHY_US": {
         "TITLE": "¿Por qué elegirnos?",

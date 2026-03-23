@@ -1,0 +1,65 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import esData from "../../../i18n/en.json";
+import slugify from "../../../utils/utils.js";
+
+
+const i18n = esData;
+const { currentLocale } = Astro;
+
+export async function getStaticPaths() {
+  
+  const projects = esData.PROJECTS.PROJECTS_LIST;
+
+  return projects.map((project) => ({
+    params: { slug: slugify(project.NAME) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={i18n.SEO_TILE}
+  description={i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <main class="container mx-auto py-12">
+    <section class="p-6 rounded-xl bg-slate-900 shadow-lg">
+      <h1
+        class="text-4xl font-bold mb-6"
+        style={`view-transition-name: project-name-${project.NAME}`}
+      >
+        {project.NAME}
+      </h1>
+
+      <p
+        class="text-lg mb-4"
+        style={`view-transition-name: project-description-${project.NAME}`}
+      >
+        {project.DESCRIPTION}
+      </p>
+
+      {project.IMAGES && project.IMAGES.length > 0 && (
+        <div class="mb-6 space-y-4">
+          {project.IMAGES.map(img => (
+            <img
+              src={img}
+              alt={project.NAME}
+              class="rounded-lg shadow-lg w-full max-h-[500px] object-cover"
+              style={`view-transition-name: project-image-${project.NAME}`}
+            />
+          ))}
+        </div>
+      )}
+
+      <ul class="space-y-2">
+        <li><strong>Ubicación:</strong> {project.UBICATION}</li>
+        <li><strong>Aplicación:</strong> {project.APP}</li>
+      </ul>
+    </section>
+  </main>
+</Layout>

@@ -1,21 +1,29 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
-
-const {title,description,currentLanguage} = Astro.props;
+const { title, description, currentLanguage, nav,foot } = Astro.props;
 ---
+
 <!doctype html>
 <html lang={currentLanguage}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={description} />
-		<title>{title}</title>
-	</head>
-	<body class="w-dvw min-h-dvh bg-gradient-to-tr from-slate-950 via-cyan-900 to-cyan-500">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/webp" href="/logo-solicmex.webp" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="w-dvw min-h-dvh bg-gradient-to-tr from-slate-950 via-cyan-900 to-cyan-500"
+  >
+    <header class="w-full flex flex-row p-1 items-center justify-center">
+      <Navbar text={nav} />
+    </header>
+    <slot />
+    <footer>
+      <Footer text={foot} />
+    </footer>
+  </body>
 </html>
-
-

@@ -2,7 +2,7 @@
 import WhyUsCard from "./WhyUsCard.astro";
 import CertificationPill from "./CertificationPill.astro";
 import ClockIcon from "./ClockIcon.astro";
-import GlobeIcon from "./GlobeIcon.astro";
+import GlobeIcon from "./GlobeIcon";
 import ChecksIcon from "./ChecksIcon.astro";
 import LightBulbIcon from "./LightBulbIcon.astro";
 
@@ -56,7 +56,7 @@ const {text} = Astro.props
     </WhyUsCard>
 
     <WhyUsCard title={text.CARD_2_TITLE}>
-      <GlobeIcon class="size-full text-white" slot="icon" />
+      <GlobeIcon className="size-full text-white" slot="icon" />
 
       <p class="text-white/90 leading-relaxed">
         {text.CARD_2_DESCRIPTION}

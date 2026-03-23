@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 import react from '@astrojs/react';
@@ -10,8 +10,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
-  integrations: [react()],
+  site: 'https://solicmex.com',
+  integrations: [react(),sitemap()],
   i18n:{
     defaultLocale: 'es',
     locales: [

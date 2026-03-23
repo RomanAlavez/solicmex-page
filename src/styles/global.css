@@ -14,12 +14,10 @@ html {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
 }
 
-
 body {
-  font-family: 'Satoshi-Variable', sans-serif;
+  font-family: "Satoshi-Variable", sans-serif;
   --sb-track-color: #1b2524;
   --sb-thumb-color: #f57400;
   --sb-size: 5px;
@@ -45,9 +43,8 @@ body {
 }
 
 @font-face {
-  font-family: 'Satoshi-Variable';
-  src: url('../fonts/Satoshi-Variable.ttf') format('truetype');
-
+  font-family: "Satoshi-Variable";
+  src: url("../fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
 body::-webkit-scrollbar {
@@ -70,13 +67,35 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-::view-transition-old(project-image-*),
-::view-transition-new(project-image-*) {
-  border-radius: 0.5rem;
+@view-transition {
+  navigation: auto;
+}
+::view-transition-group(project-name-*,project-image-*) {
+  animation-duration: 0.5s;
+}
+::view-transition-old(project-name-*,project-image-*){
+  animation: slide-out 0.5s ease-in-out;
+}
+::view-transition-new(project-name-*,project-image-*){
+  animation: slide-in 0.5s ease-in-out;
 }
 
-
-
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 @keyframes fade-in-up {
   from {
     opacity: 0;
