@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import esData from "@/i18n/es.json";
+import NotFound from "@/components/important/Not-Found.astro";
+const i18n = esData;
+const { currentLocale } = Astro;
+---
+
+<Layout
+  title="404 | SolicMex"
+  ...
+  currentLanguage={currentLocale}
+  title={`${i18n.SEO_TITLE}`}
+  description={i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <NotFound backLabel="Volver al inicio" backHref="/" />
+</Layout>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import GlobeIcon from "./GlobeIcon";
+import GlobeIcon from "@/components/icons/GlobeIcon";
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);

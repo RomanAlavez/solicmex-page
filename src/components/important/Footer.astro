@@ -1,11 +1,11 @@
 ---
-import TermsOfService from "./TermsOfService.jsx";
+import TermsOfService from "@/components/important/TermsOfService.jsx";
 import { Image } from "astro:assets";
-import PrivacyPolicies from "./PrivacyPolicies.jsx";
-import PhoneIcon from "./PhoneIcon.astro";
-import MailIcon from "./MailIcon.astro";
-import GeoIcon from "./GeoIcon.astro";
-import Logo from "../assets/images/logo-solicmex.webp";
+import PrivacyPolicies from "@/components/PrivacyPolicies.jsx";
+import PhoneIcon from "@/components/icons/PhoneIcon.astro";
+import MailIcon from "@/components/icons/MailIcon.astro";
+import GeoIcon from "@/components/icons/GeoIcon.astro";
+import Logo from "@/assets/images/logo-solicmex.webp";
 
 const { text } = Astro.props;
 ---
@@ -15,7 +15,13 @@ const { text } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
       {/* Columna 1 - Logo y descripción */}
       <div class="space-y-4">
-        <Image src={Logo} width={128} height={128} alt="Logo Solicmex" class="w-32 h-32" />
+        <Image
+          src={Logo}
+          width={128}
+          height={128}
+          alt="Logo Solicmex"
+          class="w-32 h-32"
+        />
         <h3 class="text-2xl font-bold text-white">SOLICMEX</h3>
         <p class="text-cyan-300/80 text-sm leading-relaxed">
           {text.DESCRIPTION}
