@@ -181,21 +181,25 @@
         "NO_ARTICLES": "Sin artículos disponibles",
         "BACK_LABEL": "Volver",
         "ARTICLES_LIST": [
+            
             {
-                "ID": "1",
-                "TITLE": "Cómo SolicMex Revoluciona la Gestión de Proyectos",
-                "DESCRIPTION": "Descubre cómo SolicMex está transformando la forma en que las empresas gestionan sus proyectos, mejorando la eficiencia y la colaboración.",
+                "ID": "2",
+                "TITLE": "Solicmex obtiene certificación NFPA: compromiso con la seguridad contra incendios",
+                "DESCRIPTION": "<p>En Solicmex, reafirmamos nuestro compromiso con la seguridad y la excelencia al anunciar que hemos obtenido la certificación bajo los estándares de la NFPA (National Fire Protection Association), una de las organizaciones más reconocidas a nivel mundial en materia de protección contra incendios.</p><p>Esta certificación respalda la calidad de nuestros procesos en ingeniería, instalación, mantenimiento y reparación de sistemas contra incendios, garantizando que cada proyecto que desarrollamos cumple con normativas internacionales y altos estándares de seguridad.</p><p>La NFPA es una referencia global en la creación de códigos y normas diseñadas para minimizar los riesgos y efectos del fuego. Contar con esta certificación no solo valida nuestra experiencia técnica, sino que también brinda mayor confianza a nuestros clientes en cada servicio que ofrecemos.</p><p>En Solicmex, entendemos que la protección contra incendios no es solo una necesidad, sino una responsabilidad. Por ello, seguimos invirtiendo en capacitación, certificaciones y mejora continua para ofrecer soluciones seguras, confiables y de alta calidad.</p><p>Este logro representa un paso más en nuestro crecimiento como empresa especializada en sistemas contra incendios, consolidándonos como una opción confiable en el sector.</p>",
                 "IMAGES": [
-                    "https://nmfiremexico.com/wp-content/uploads/2024/07/sistema-contra-incendios-nmfire.jpg",
-                    "https://qymsac.com/wp-content/uploads/2024/05/La-Importancia-de-los-Sistemas-contra-Incendio-2024-758x420.jpg"
+                    "https://www.ventasdeseguridad.com/images/stories/VDS/users/dchaverra2019/NFPAlanzanuevacertificacinenespaol.jpg",
+                    "https://www.ventasdeseguridad.com/images/stories/VDS/users/dchaverra2019/NFPAlanzanuevacertificacinenespaol.jpg",
+                    "https://www.ventasdeseguridad.com/images/stories/VDS/users/dchaverra2019/NFPAlanzanuevacertificacinenespaol.jpg"
                 ],
                 "TAGS": [
-                    "Gestión de Proyectos",
-                    "Tecnología",
-                    "Innovación"
+                    "nfpa",
+                    "certificacion",
+                    "proteccion contra incendios",
+                    "seguridad industrial",
+                    "solicmex"
                 ],
-                "DATE": "2024-05-15",
-                "LINK": "como-solicmex-revoluciona-la-gestion-de-proyectos"
+                "DATE": "2026-03-23",
+                "LINK": "certificacion-nfpa-solicmex"
             }
         ]
     },

@@ -181,21 +181,23 @@
     "NO_ARTICLES": "No articles available. Please check back later.",
     "BACK_LABEL": "Back",
     "ARTICLES_LIST": [
+
       {
-        "ID": "1",
-        "TITLE": "How SolicMex is Revolutionizing Project Management",
-        "DESCRIPTION": "Discover how SolicMex is transforming the way companies manage their projects, improving efficiency and collaboration.",
+        "ID": "2",
+        "TITLE": "Solicmex obtains NFPA certification: commitment to fire safety",
+        "DESCRIPTION": "<p>At Solicmex, we reaffirm our commitment to safety and excellence by announcing that we have obtained certification under the standards of the NFPA (National Fire Protection Association), one of the most recognized organizations worldwide in the field of fire protection.</p><p>This certification supports the quality of our processes in engineering, installation, maintenance and repair of fire protection systems, ensuring that every project we develop complies with international regulations and high safety standards.</p><p>The NFPA is a global reference in the creation of codes and standards designed to minimize the risks and effects of fire. Having this certification not only validates our technical experience, but also provides greater confidence to our clients in every service we offer.</p><p>At Solicmex, we understand that fire protection is not just a need, but a responsibility. For this reason, we continue investing in training, certifications and continuous improvement to offer safe, reliable and high-quality solutions.</p><p>This achievement represents a step forward in our growth as a specialized company in fire protection systems, consolidating us as a reliable option in the sector.</p>",
         "IMAGES": [
-          "https://nmfiremexico.com/wp-content/uploads/2024/07/sistema-contra-incendios-nmfire.jpg",
-          "https://qymsac.com/wp-content/uploads/2024/05/La-Importancia-de-los-Sistemas-contra-Incendio-2024-758x420.jpg"
+          "https://www.ventasdeseguridad.com/images/stories/VDS/users/dchaverra2019/NFPAlanzanuevacertificacinenespaol.jpg"
         ],
         "TAGS": [
-          "Project Management",
-          "Technology",
-          "Innovation"
+          "nfpa",
+          "certification",
+          "fire protection",
+          "industrial safety",
+          "solicmex"
         ],
-        "DATE": "2024-05-15",
-        "LINK": "how-solicmex-is-revolutionizing-project-management"
+        "DATE": "2026-03-23",
+        "LINK": "certification-nfpa-solicmex"
       }
     ]
   },

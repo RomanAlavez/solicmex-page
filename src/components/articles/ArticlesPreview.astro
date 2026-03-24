@@ -4,13 +4,13 @@ import type { ArticleBlog } from "@/types/types";
 interface Props {
   articles: ArticleBlog[];
   text: {
-    SECTION_LABEL: string;  // e.g. "Noticias"
-    SECTION_TITLE: string;  // e.g. "Últimas novedades"
-    READ_MORE: string;      // e.g. "Leer más"
-    SEE_ALL: string;        // e.g. "Ver todos los artículos"
+    SECTION_LABEL: string;
+    SECTION_TITLE: string;
+    READ_MORE: string;
+    SEE_ALL: string;
   };
-  max?: number;             // máximo de artículos a mostrar (default: 3)
-  articlesHref?: string;    // ruta a la página completa de artículos
+  max?: number;
+  articlesHref?: string;
 }
 
 const { articles, text, max = 3, articlesHref = "articles" } = Astro.props;
@@ -18,6 +18,30 @@ const preview = (articles ?? []).slice(0, max);
 const isEnglish = Astro.url.pathname.startsWith("/en");
 const currentLocale = isEnglish ? "/en/" : "/";
 
+// ── Strip HTML para snippets de texto plano ──────────────────────────────────
+// DESCRIPTION puede venir como HTML; en la preview solo mostramos texto limpio.
+// No usamos set:html aquí, por lo que basta con eliminar tags y decodificar
+// las entidades HTML más comunes para que el snippet sea legible.
+function stripHtml(raw: string): string {
+  if (!raw) return "";
+  return raw
+    // Eliminar bloques completos de script/style con su contenido
+    .replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi, "")
+    // Eliminar todos los tags restantes
+    .replace(/<[^>]+>/g, "")
+    // Decodificar entidades HTML frecuentes
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&[a-z]+;/gi, "")   // eliminar el resto de entidades nombradas
+    .replace(/&#\d+;/g, "")      // eliminar entidades numéricas
+    // Colapsar espacios/saltos de línea múltiples en uno
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
 ---
 
 <section
@@ -70,117 +94,113 @@ const currentLocale = isEnglish ? "/en/" : "/";
 
     <!-- Carrusel / tarjetas -->
     <div class="relative">
-
-      <!-- Track desplazable en mobile, grid en desktop -->
       <div
         id="ap-track"
         class="flex flex-row gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory pb-4 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible"
         style="scrollbar-width: none; -ms-overflow-style: none;"
       >
-        {preview.map((article, i) => (
-          <article
-            
-            class="ap-card group relative flex flex-col rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/22 transition-all duration-500 shrink-0 w-[78vw] xs:w-[68vw] sm:w-auto snap-center opacity-0"
-            style={`background: rgba(2,18,28,0.48); backdrop-filter:blur(12px); box-shadow:0 4px 28px rgba(0,0,0,0.35); --i:${i};`}
-          >
-            <!-- Imagen -->
-            <div class="relative w-full aspect-[16/9] overflow-hidden">
-              {article.IMAGES?.[0] ? (
-                <img
-                  src={article.IMAGES[0]}
-                  alt={article.TITLE}
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              ) : (
-                <div
-                  class="w-full h-full flex items-center justify-center"
-                  style="background: linear-gradient(135deg, rgba(6,182,212,0.07), rgba(2,18,28,0.7));"
-                >
-                  <svg class="w-8 h-8 text-cyan-400/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
-                </div>
-              )}
-
-              <div class="absolute inset-0 bg-gradient-to-t from-[rgba(2,12,20,0.8)] via-transparent to-transparent"></div>
-
-              <div class="absolute top-3 right-3">
-                <span
-                  class="text-[10px] tabular-nums font-semibold px-2 py-0.5 rounded-full"
-                  style="background:rgba(2,12,20,0.6); border:1px solid rgba(6,182,212,0.2); color:rgba(103,232,249,0.7); backdrop-filter:blur(6px);"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-            </div>
-
-            <!-- Cuerpo -->
-            <div class="flex flex-col gap-3 p-4 sm:p-5 flex-1">
-              <!-- Tags + fecha -->
-              <div class="flex flex-wrap items-center gap-1.5">
-                {article.TAGS.slice(0, 2).map((tag) => (
-                  <span
-                    class="text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full text-cyan-300/70 border border-cyan-400/15"
-                    style="background:rgba(6,182,212,0.07);"
+        {preview.map((article, i) => {
+          const plainDescription = stripHtml(article.DESCRIPTION);
+          return (
+            <article
+              class="ap-card group relative flex flex-col rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/22 transition-all duration-500 shrink-0 w-[78vw] xs:w-[68vw] sm:w-auto snap-center opacity-0"
+              style={`background: rgba(2,18,28,0.48); backdrop-filter:blur(12px); box-shadow:0 4px 28px rgba(0,0,0,0.35); --i:${i};`}
+            >
+              <!-- Imagen -->
+              <div class="relative w-full aspect-[16/9] overflow-hidden">
+                {article.IMAGES?.[0] ? (
+                  <img
+                    src={article.IMAGES[0]}
+                    alt={article.TITLE}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    class="w-full h-full flex items-center justify-center"
+                    style="background: linear-gradient(135deg, rgba(6,182,212,0.07), rgba(2,18,28,0.7));"
                   >
-                    {tag}
-                  </span>
-                ))}
-                <span class="ml-auto text-[10px] text-white/30 tabular-nums">{article.DATE}</span>
-              </div>
-
-
-              <h3 class="text-sm sm:text-base font-semibold leading-snug text-white/90 group-hover:text-cyan-100 transition-colors duration-300 line-clamp-2">
-                {article.TITLE}
-              </h3>
-
-
-              <p class="text-xs text-white/40 group-hover:text-white/60 leading-relaxed line-clamp-3 transition-colors duration-300 flex-1">
-                {article.DESCRIPTION}
-              </p>
-
-
-              <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/5 group-hover:border-cyan-400/12 transition-colors duration-300">
-                <a
-                  href={`${currentLocale}${articlesHref}/${article.LINK ?? article.ID}`}
-                  class="text-[11px] font-medium text-cyan-400/70 hover:text-cyan-200 flex items-center gap-1.5 transition-colors duration-200"
-                >
-                  {text.READ_MORE}
-                  <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </a>
-                {article.IMAGES.length > 1 && (
-                  <span class="text-[10px] text-white/25 flex items-center gap-1">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <svg class="w-8 h-8 text-cyan-400/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
-                    {article.IMAGES.length}
-                  </span>
+                  </div>
                 )}
+                <div class="absolute inset-0 bg-gradient-to-t from-[rgba(2,12,20,0.8)] via-transparent to-transparent"></div>
+                <div class="absolute top-3 right-3">
+                  <span
+                    class="text-[10px] tabular-nums font-semibold px-2 py-0.5 rounded-full"
+                    style="background:rgba(2,12,20,0.6); border:1px solid rgba(6,182,212,0.2); color:rgba(103,232,249,0.7); backdrop-filter:blur(6px);"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <!-- Línea glow inferior al hover -->
-            <div
-              class="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style="background:linear-gradient(to right, transparent, rgba(6,182,212,0.55), transparent);"
-            ></div>
-          </article>
-        ))}
+              <!-- Cuerpo -->
+              <div class="flex flex-col gap-3 p-4 sm:p-5 flex-1">
+                <!-- Tags + fecha -->
+                <div class="flex flex-wrap items-center gap-1.5">
+                  {article.TAGS.slice(0, 2).map((tag) => (
+                    <span
+                      class="text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full text-cyan-300/70 border border-cyan-400/15"
+                      style="background:rgba(6,182,212,0.07);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  <span class="ml-auto text-[10px] text-white/30 tabular-nums">{article.DATE}</span>
+                </div>
+
+                <h3 class="text-sm sm:text-base font-semibold leading-snug text-white/90 group-hover:text-cyan-100 transition-colors duration-300 line-clamp-2">
+                  {article.TITLE}
+                </h3>
+
+                <!-- Snippet de texto plano (sin HTML) -->
+                <p class="text-xs text-white/40 group-hover:text-white/60 leading-relaxed line-clamp-3 transition-colors duration-300 flex-1">
+                  {plainDescription}
+                </p>
+
+                <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/5 group-hover:border-cyan-400/12 transition-colors duration-300">
+                  <a
+                    href={`${currentLocale}${articlesHref}/${article.LINK ?? article.ID}`}
+                    class="text-[11px] font-medium text-cyan-400/70 hover:text-cyan-200 flex items-center gap-1.5 transition-colors duration-200"
+                  >
+                    {text.READ_MORE}
+                    <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                  {article.IMAGES.length > 1 && (
+                    <span class="text-[10px] text-white/25 flex items-center gap-1">
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                      </svg>
+                      {article.IMAGES.length}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <!-- Línea glow inferior al hover -->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style="background:linear-gradient(to right, transparent, rgba(6,182,212,0.55), transparent);"
+              ></div>
+            </article>
+          );
+        })}
       </div>
 
-      <!-- Fade lateral derecho en mobile (indica scroll) -->
+      <!-- Fade lateral derecho en mobile -->
       <div
         class="sm:hidden absolute top-0 right-0 w-16 h-full pointer-events-none"
         style="background: linear-gradient(to right, transparent, rgba(2,18,28,0.85));"
       ></div>
     </div>
 
-    <!-- Dots del carrusel (mobile) + Ver todos (mobile) -->
+    <!-- Dots + Ver todos (mobile) -->
     <div class="flex flex-col items-center gap-4 sm:hidden">
       <div id="ap-dots" class="flex gap-2">
         {preview.map((_, i) => (
@@ -211,9 +231,7 @@ const currentLocale = isEnglish ? "/en/" : "/";
 </section>
 
 <style>
-  /* Ocultar scrollbar del track */
   #ap-track::-webkit-scrollbar { display: none; }
-
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -230,7 +248,6 @@ const currentLocale = isEnglish ? "/en/" : "/";
 
 <script>
   import("motion").then(({ animate, inView }) => {
-    // Header
     inView(
       "#ap-header",
       (el) => {
@@ -243,7 +260,6 @@ const currentLocale = isEnglish ? "/en/" : "/";
       { amount: 0.3 }
     );
 
-    // Cards con stagger
     document.querySelectorAll(".ap-card").forEach((el, i) => {
       inView(
         el,
@@ -259,7 +275,6 @@ const currentLocale = isEnglish ? "/en/" : "/";
     });
   });
 
-  // Sincronizar dots con scroll del carrusel (mobile)
   const track = document.getElementById("ap-track");
   const dots = document.querySelectorAll<HTMLElement>(".ap-dot");
 
@@ -270,7 +285,6 @@ const currentLocale = isEnglish ? "/en/" : "/";
       const cardWidth = cards[0]?.offsetWidth ?? 0;
       const gap = 16;
       const active = Math.round(scrollLeft / (cardWidth + gap));
-
       dots.forEach((dot, i) => {
         if (i === active) {
           dot.style.background = "rgba(6,182,212,0.9)";
@@ -282,7 +296,6 @@ const currentLocale = isEnglish ? "/en/" : "/";
       });
     }, { passive: true });
 
-    // Click en dot → scroll a la card correspondiente
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
         const cards = track.querySelectorAll<HTMLElement>(".ap-card");
