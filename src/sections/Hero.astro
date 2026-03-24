@@ -1,0 +1,209 @@
+---
+import ArrowRightIcon from "@/components/ArrowRightIcon.astro";
+import Image21 from "../assets/images/projects/image-21.jpg";
+import { Image } from "astro:assets";
+import Ad from "@/components/Ad.astro";
+const { text, ad } = Astro.props;
+---
+
+<section
+  class="relative w-full min-h-screen flex flex-col items-center justify-center text-white px-4 sm:px-8 py-16 overflow-hidden mask-b-from-80% mask-b-to-90%"
+  id="home"
+>
+  <!-- Imagen de fondo con máscara -->
+  <div class="-z-10 absolute inset-0 w-full h-full">
+    <div class="w-full h-full relative">
+      <Image
+        src={Image21}
+        alt="Imagen de obra en construcción"
+        class="object-cover w-full h-full sm:translate-x-1/4 mask-l-from-10% mask-l-to-95% opacity-30"
+        sizes="(max-width: 640px) 100vw, 60vw"
+      />
+    </div>
+  </div>
+
+  <!-- Efecto de brillo ambiental detrás del logo -->
+  <div
+    id="hero-glow"
+    class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full opacity-0 pointer-events-none"
+    style="background: radial-gradient(circle, rgba(6,182,212,0.18) 0%, rgba(6,182,212,0.06) 50%, transparent 75%);"
+  >
+  </div>
+
+  <!-- Contenido principal: stack centrado -->
+  <div
+    class="relative z-10 flex flex-col items-center text-center max-w-3xl w-full gap-6 sm:gap-8"
+  >
+    <!-- ESTE ES EL ANUNCIO -->
+
+    <!-- Logo protagonico -->
+    <div id="hero-logo" class="opacity-0 flex flex-col items-center gap-4">
+      <!-- Marco decorativo del logo -->
+      <div class="relative group">
+        <!-- Anillo exterior animado -->
+        <div
+          class="absolute -inset-4 rounded-full border border-cyan-400/20 animate-spin-slow"
+          style="animation: spin-slow 12s linear infinite;"
+        >
+        </div>
+        <!-- Anillo interior pulsante -->
+        <div
+          class="absolute -inset-2 rounded-full border border-cyan-300/30"
+          style="animation: pulse-ring 3s ease-in-out infinite;"
+        >
+        </div>
+        <!-- Logo -->
+        <div
+          class="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-[0_0_48px_rgba(6,182,212,0.35)] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center"
+        >
+          <img
+            src="/logo-solicmex.webp"
+            alt="SolicMex Logo"
+            class="w-full h-full object-contain p-2 sm:p-3"
+            draggable="false"
+          />
+        </div>
+      </div>
+
+      <!-- Nombre de marca -->
+      <h1
+        class="text-5xl xs:text-6xl sm:text-7xl md:text-8xl font-extrabold uppercase"
+        style="background: linear-gradient(135deg, #ffffff 30%, #67e8f9 70%, #0891b2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none; filter: drop-shadow(0 0 32px rgba(6,182,212,0.4));"
+      >
+        SolicMex
+      </h1>
+
+      <!-- Línea separadora decorativa -->
+      <div class="flex items-center gap-3 w-full max-w-xs">
+        <div
+          class="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"
+        >
+        </div>
+        <div
+          class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]"
+        >
+        </div>
+        <div
+          class="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"
+        >
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtítulo -->
+    <h2
+      id="hero-subtitle"
+      class="text-base sm:text-lg md:text-xl lg:text-2xl font-light opacity-0 max-w-2xl text-cyan-100/80 tracking-wide leading-relaxed px-2"
+    >
+      {text.SUBTITLE}
+    </h2>
+
+    <!-- Descripción + CTA -->
+    <div
+      id="hero-content"
+      class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center opacity-0 w-full max-w-2xl"
+    >
+      <!-- Descripción -->
+      <p
+        class="flex-1 text-pretty text-center sm:text-left text-xs sm:text-sm text-white/45 hover:text-white/80 bg-black/10 hover:bg-black/25 backdrop-blur-sm p-4 rounded-2xl border border-white/5 hover:border-cyan-400/20 duration-300 transition-all leading-relaxed"
+      >
+        {text.DESCRIPTION}
+      </p>
+
+      <!-- Botón CTA -->
+      <a
+        class="group flex flex-row gap-2 items-center justify-center rounded-2xl shrink-0 w-full sm:w-auto font-medium text-white bg-gradient-to-tr from-cyan-900/70 to-cyan-400/30 hover:from-cyan-600/80 hover:to-cyan-500/50 backdrop-blur-md border border-cyan-400/30 hover:border-cyan-500/60 shadow-[0_0_24px_rgba(6,182,212,0.2)] hover:shadow-[0_0_32px_rgba(6,182,212,0.45)] py-3 px-6 text-sm sm:text-base cursor-pointer duration-200 transition-all"
+        href="#contact"
+      >
+        {text.BUTTON}
+        <ArrowRightIcon
+          class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200"
+        />
+      </a>
+    </div>
+    <Ad
+      title={ad.TITLE}
+      description={ad.DESCRIPTION}
+    />
+  </div>
+</section>
+
+<style>
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulse-ring {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.04);
+    }
+  }
+  @keyframes scroll-line {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+</style>
+
+<!-- Animación Motion One -->
+<script>
+  import("motion").then(({ animate }) => {
+    const ease = "ease-out";
+
+    // Glow ambiental
+    animate(
+      "#hero-glow",
+      { opacity: [0, 1] },
+      { duration: 1.4, delay: 0.1, easing: ease },
+    );
+
+    // Logo + nombre de marca juntos
+    animate(
+      "#hero-logo",
+      { opacity: [0, 1], y: [-30, 0], filter: ["blur(10px)", "blur(0px)"] },
+      { duration: 0.9, delay: 0.2, easing: ease },
+    );
+
+    // Subtítulo
+    animate(
+      "#hero-subtitle",
+      { opacity: [0, 1], y: [-16, 0], filter: ["blur(6px)", "blur(0px)"] },
+      { duration: 0.8, delay: 0.55, easing: ease },
+    );
+
+    // Descripción + CTA
+    animate(
+      "#hero-content",
+      { opacity: [0, 1], y: [-16, 0], filter: ["blur(4px)", "blur(0px)"] },
+      { duration: 0.8, delay: 0.85, easing: ease },
+    );
+
+    // Scroll indicator
+    animate(
+      "#hero-scroll",
+      { opacity: [0, 1] },
+      { duration: 0.6, delay: 1.4, easing: ease },
+    );
+  });
+</script>

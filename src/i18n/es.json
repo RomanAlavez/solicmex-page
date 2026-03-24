@@ -8,13 +8,20 @@
         "CLIENTS": "Clientes",
         "ABOUT_US": "Nosotros",
         "WHY_US": "¿Por qué nosotros?",
-        "CONTACT": "Contacto"
+        "CONTACT": "Contacto",
+        "ARTICLES": "Artículos"
     },
     "HERO": {
         "TITLE": "Solicmex",
         "SUBTITLE": "Soluciones Integrales para Ingeniería y Construcción",
         "DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
         "BUTTON": "Cotiza tu proyecto"
+    },
+    "AD": {
+        "TITLE": "Nueva Tienda Física Próximamente",
+        "DESCRIPTION": "¡Visítanos pronto en nuestra nueva ubicación para descubrir nuestras soluciones de protección contra incendios en persona!",
+        "BUTTON": "Solicitar Cotización",
+        "HREF": "/contact"
     },
     "SERVICES": {
         "TITLE": "Nuestros Servicios",
@@ -161,6 +168,37 @@
         "CARD_4_DESCRIPTION_2_STRONG_2": "objetivos de proteccón legal",
         "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " en cada proyecto."
     },
+    "ARTICLES_PREVIEW": {
+        "SECTION_LABEL": "Noticias",
+        "SECTION_TITLE": "Últimas novedades",
+        "READ_MORE": "Leer más",
+        "SEE_ALL": "Ver todos los artículos"
+    },
+    "ARTICLES": {
+        "SECTION_LABEL": "Noticias & Artículos",
+        "SECTION_TITLE": "Lo último de Solicmex",
+        "READ_MORE": "Leer más",
+        "NO_ARTICLES": "Sin artículos disponibles",
+        "BACK_LABEL": "Volver",
+        "ARTICLES_LIST": [
+            {
+                "ID": "1",
+                "TITLE": "Cómo SolicMex Revoluciona la Gestión de Proyectos",
+                "DESCRIPTION": "Descubre cómo SolicMex está transformando la forma en que las empresas gestionan sus proyectos, mejorando la eficiencia y la colaboración.",
+                "IMAGES": [
+                    "https://nmfiremexico.com/wp-content/uploads/2024/07/sistema-contra-incendios-nmfire.jpg",
+                    "https://qymsac.com/wp-content/uploads/2024/05/La-Importancia-de-los-Sistemas-contra-Incendio-2024-758x420.jpg"
+                ],
+                "TAGS": [
+                    "Gestión de Proyectos",
+                    "Tecnología",
+                    "Innovación"
+                ],
+                "DATE": "2024-05-15",
+                "LINK": "como-solicmex-revoluciona-la-gestion-de-proyectos"
+            }
+        ]
+    },
     "CONTACT": {
         "TITLE": "Contáctanos",
         "FORM_TITLE": "Envíanos un mensaje",
@@ -183,7 +221,7 @@
         "CERTIFICATION_2": "FM Global",
         "CERTIFICATION_3": "Hochiki",
         "CERTIFICATION_4": "DC3",
-        "COPYRIGHT": "© 2025 Solicmex. Todos los derechos reservados.",
+        "COPYRIGHT": "© 2026 Solicmex. Todos los derechos reservados.",
         "PRIVACY_POLICY": "Política de privacidad",
         "TERMS_OF_SERVICE": "Términos de servicio"
     }

@@ -1,19 +1,19 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import esData from "../../../i18n/en.json";
-import slugify from "../../../utils/utils.js";
-import ProjectHeader from "../../../components/project/ProjectHeader.astro";
-import ProjectDescription from "../../../components/project/ProjectDescription.astro";
-import ProjectDetails from "../../../components/project/ProjectDetails.astro";
-import ProjectGallery from "../../../components/project/ProjectGallery.astro";
+import Layout from "@/layouts/Layout.astro";
+import enData from "@/i18n/en.json";
+import slugify from "@/utils/utils.js";
+import ProjectHeader from "@/components/project/ProjectHeader.astro";
+import ProjectDescription from "@/components/project/ProjectDescription.astro";
+import ProjectDetails from "@/components/project/ProjectDetails.astro";
+import ProjectGallery from "@/components/project/ProjectGallery.astro";
 
 
-const i18n = esData;
+const i18n = enData;
 const { currentLocale } = Astro;
 
 export async function getStaticPaths() {
   
-  const projects = esData.PROJECTS.PROJECTS_LIST;
+  const projects = enData.PROJECTS.PROJECTS_LIST;
 
   return projects.map((project) => ({
     params: { slug: slugify(project.NAME) },

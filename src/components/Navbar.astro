@@ -23,6 +23,10 @@ const currentLocale = isEnglish ? "/en" : "/";
     <NavItem link={`${currentLocale}#clients`} text={text.CLIENTS} />
     <NavItem link={`${currentLocale}#about-us`} text={text.ABOUT_US} />
     <NavItem link={`${currentLocale}#why-us`} text={text.WHY_US} />
+    <NavItem
+      link={`${currentLocale}${isEnglish ? "/articles" : "articles"}`}
+      text={text.ARTICLES}
+    />
     <NavItem link={`${currentLocale}#contact`} text={text.CONTACT} />
   </div>
 
@@ -56,6 +60,7 @@ const currentLocale = isEnglish ? "/en" : "/";
     <NavItem link={`${currentLocale}#clients`} text={text.CLIENTS} />
     <NavItem link={`${currentLocale}#about-us`} text={text.ABOUT_US} />
     <NavItem link={`${currentLocale}#why-us`} text={text.WHY_US} />
+    <NavItem link={`${currentLocale}articles`} text={text.ARTICLES} />
     <NavItem link={`${currentLocale}#contact`} text={text.CONTACT} />
     <SwitchLanguage client:load />
   </div>

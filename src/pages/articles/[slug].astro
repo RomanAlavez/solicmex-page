@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ArticleBlog from "@/components/ArticleBlog.astro";
+import esData from "@/i18n/es.json";
+import slugify from "@/utils/utils.js";
+
+const i18n = esData;
+const { currentLocale } = Astro;
+
+export async function getStaticPaths() {
+  const ARTICLES = await esData.ARTICLES.ARTICLES_LIST;
+  return ARTICLES.map((article) => ({
+    params: { slug: slugify(article.LINK) },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const backHref = `${currentLocale === "en" ? "/en" : "/"}#articles`;
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={`${article.TITLE} | ${i18n.SEO_TITLE}`}
+  description={article.DESCRIPTION || i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <main class="w-full min-h-screen pt-14">
+    <ArticleBlog
+      article={article}
+      backHref={backHref}
+      backLabel={i18n.ARTICLES?.BACK_LABEL}
+    />
+  </main>
+</Layout>

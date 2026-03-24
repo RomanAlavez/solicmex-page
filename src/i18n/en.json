@@ -8,13 +8,20 @@
     "CLIENTS": "Clients",
     "ABOUT_US": "About Us",
     "WHY_US": "Why Us?",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "ARTICLES": "Articles"
   },
   "HERO": {
     "TITLE": "Solicmex",
     "SUBTITLE": "Comprehensive Solutions for Engineering and Construction",
     "DESCRIPTION": "A specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems.",
     "BUTTON": "Get a Quote"
+  },
+  "AD": {
+    "TITLE": "New Physical Store Coming Soon",
+    "DESCRIPTION": "Visit us soon at our new location to discover our fire protection solutions in person!",
+    "BUTTON": "Request Quote",
+    "HREF": "/contact"
   },
   "SERVICES": {
     "TITLE": "Our Services",
@@ -161,6 +168,37 @@
     "CARD_4_DESCRIPTION_2_STRONG_2": "legal protection goals",
     "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " in every project."
   },
+  "ARTICLES_PREVIEW": {
+    "SECTION_LABEL": "News & Articles",
+    "SECTION_TITLE": "Latest Updates",
+    "READ_MORE": "Read More",
+    "SEE_ALL": "See All Articles"
+  },
+  "ARTICLES": {
+    "SECTION_LABEL": "News & Articles",
+    "SECTION_TITLE": "Latest Updates",
+    "READ_MORE": "Read More",
+    "NO_ARTICLES": "No articles available. Please check back later.",
+    "BACK_LABEL": "Back",
+    "ARTICLES_LIST": [
+      {
+        "ID": "1",
+        "TITLE": "How SolicMex is Revolutionizing Project Management",
+        "DESCRIPTION": "Discover how SolicMex is transforming the way companies manage their projects, improving efficiency and collaboration.",
+        "IMAGES": [
+          "https://nmfiremexico.com/wp-content/uploads/2024/07/sistema-contra-incendios-nmfire.jpg",
+          "https://qymsac.com/wp-content/uploads/2024/05/La-Importancia-de-los-Sistemas-contra-Incendio-2024-758x420.jpg"
+        ],
+        "TAGS": [
+          "Project Management",
+          "Technology",
+          "Innovation"
+        ],
+        "DATE": "2024-05-15",
+        "LINK": "how-solicmex-is-revolutionizing-project-management"
+      }
+    ]
+  },
   "CONTACT": {
     "TITLE": "Contact Us",
     "FORM_TITLE": "Send Us a Message",
@@ -183,7 +221,7 @@
     "CERTIFICATION_2": "FM Global",
     "CERTIFICATION_3": "Hochiki",
     "CERTIFICATION_4": "DC3",
-    "COPYRIGHT": "© 2025 Solicmex. All rights reserved.",
+    "COPYRIGHT": "© 2026 Solicmex. All rights reserved.",
     "PRIVACY_POLICY": "Privacy Policy",
     "TERMS_OF_SERVICE": "Terms of Service"
   }

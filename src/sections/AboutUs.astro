@@ -1,13 +1,12 @@
 ---
-import Logo from "../assets/images/logo-solicmex.webp";
-import { Image } from "astro:assets";
 
-import QualityCard from "./QualityCard.astro";
-import Stadistic from "./Stadistic.astro";
-import ToolsIcon from "./ToolsIcon.astro";
-import CheckListIcon from "./CheckListIcon.astro";
-import NodeIcon from "./NodeIcon.astro";
-import ShieldIcon from "./ShieldIcon.astro";
+
+import QualityCard from "@/components/QualityCard.astro";
+import Stadistic from "@/components/Stadistic.astro";
+import ToolsIcon from "@/components/ToolsIcon.astro";
+import CheckListIcon from "@/components/CheckListIcon.astro";
+import NodeIcon from "@/components/NodeIcon.astro";
+import ShieldIcon from "@/components/ShieldIcon.astro";
 const { text } = Astro.props;
 ---
 
@@ -22,8 +21,7 @@ const { text } = Astro.props;
           class="bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-400/80 cyan-400 font-semibold tracking-wider uppercase"
           >{text.SUBTITLE}</span
         >
-        <div class="flex flex-row items-center  gap-4 ">
-          
+        <div class="flex flex-row items-center gap-4">
           <!-- <Image
             src={Logo}
             width={128}
@@ -81,8 +79,8 @@ const { text } = Astro.props;
   </div>
 
   <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-    <Stadistic title={text.STADISTIC_1} value="+15" />
-    <Stadistic title={text.STADISTIC_2} value="500+" />
+    <Stadistic title={text.STADISTIC_1} value="+10" />
+    <Stadistic title={text.STADISTIC_2} value="50+" />
     <Stadistic title={text.STADISTIC_3} value="100%" />
     <Stadistic title={text.STADISTIC_4} value="24/7" />
   </div>

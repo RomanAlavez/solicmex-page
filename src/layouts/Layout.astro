@@ -1,9 +1,9 @@
 ---
-import "../styles/global.css";
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import "@/styles/global.css";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
 
-const { title, description, currentLanguage, nav,foot } = Astro.props;
+const { title, description, currentLanguage, nav, foot } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +21,7 @@ const { title, description, currentLanguage, nav,foot } = Astro.props;
     <header class="w-full flex flex-row p-1 items-center justify-center">
       <Navbar text={nav} />
     </header>
+
     <slot />
     <footer>
       <Footer text={foot} />
