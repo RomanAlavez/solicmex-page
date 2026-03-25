@@ -14,7 +14,6 @@ export default function ProjectLightbox({ images = [], name = "" }) {
 
   return (
     <>
-      {/* ── Grid de miniaturas ── */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
         {images.map((src, i) => (
           <button
@@ -35,7 +34,6 @@ export default function ProjectLightbox({ images = [], name = "" }) {
               loading="lazy"
             />
 
-            {/* Overlay hover */}
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
               style={{ background: "rgba(2,12,20,0.55)" }}
@@ -50,7 +48,6 @@ export default function ProjectLightbox({ images = [], name = "" }) {
               </svg>
             </div>
 
-            {/* Número */}
             <span
               className="absolute bottom-2 right-2 text-[10px] font-mono tabular-nums opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{ color: "rgba(103,232,249,0.6)" }}
@@ -58,7 +55,6 @@ export default function ProjectLightbox({ images = [], name = "" }) {
               {String(i + 1).padStart(2, "0")}
             </span>
 
-            {/* Glow inferior */}
             <div
               className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               style={{ background: "linear-gradient(to right, transparent, rgba(6,182,212,0.55), transparent)" }}
