@@ -1,23 +1,87 @@
 ---
 import slugify from "@/utils/utils.js";
-
 const { project } = Astro.props;
 ---
 
-<header class="p-8 text-white overflow-hidden relative">
-  <div
-    class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-cyan-500/10 to-transparent opacity-30"
-  ></div>
-  <div class="relative z-10">
-    <div class="flex items-center gap-3 mb-3">
-      <div class="h-1 w-8 bg-cyan-300 rounded-full"></div>
-      <span class="text-sm font-medium tracking-wider text-cyan-100">{project.APP}</span>
+<header class="relative w-full overflow-hidden">
+
+  <!-- Imagen hero del proyecto -->
+  {project.IMAGES?.[0] && (
+    <div class="relative w-full h-[42vh] sm:h-[50vh] overflow-hidden rounded-2xl">
+      <img
+        src={project.IMAGES[0]}
+        alt={project.NAME}
+        class="w-full h-full object-cover"
+        style={`view-transition-name: project-image-${slugify(project.NAME)}`}
+        loading="eager"
+      />
+      <!-- Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-transparent to-transparent"></div>
+
+      <!-- Contenido sobre la imagen -->
+      <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col gap-3">
+
+        <!-- Badge de app -->
+        {project.APP && (
+          <div class="flex items-center gap-2">
+            <div class="w-1 h-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(6,182,212,0.9)]"></div>
+            <span
+              class="text-[10px] tracking-[0.22em] uppercase font-medium px-2.5 py-0.5 rounded-full"
+              style="background:rgba(6,182,212,0.12); border:1px solid rgba(6,182,212,0.3); color:rgba(103,232,249,0.8);"
+            >
+              {project.APP}
+            </span>
+          </div>
+        )}
+
+        <!-- Nombre del proyecto -->
+        <h1
+          class="text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-tight leading-tight"
+          style={`background:linear-gradient(135deg,#ffffff 30%,#67e8f9 70%,#0891b2 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; view-transition-name: project-name-${slugify(project.NAME)};`}
+        >
+          {project.NAME}
+        </h1>
+
+        <!-- Ubicación -->
+        {project.UBICATION && (
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" style="color:rgba(103,232,249,0.6);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="text-xs" style="color:rgba(103,232,249,0.6);">{project.UBICATION}</span>
+          </div>
+        )}
+      </div>
     </div>
-    <h1
-      class="text-5xl sm:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-300"
-      style={`view-transition-name: project-name-${slugify(project.NAME)}`}
-    >
-      {project.NAME}
-    </h1>
-  </div>
+  )}
+
+  <!-- Sin imagen: solo tipografía -->
+  {!project.IMAGES?.[0] && (
+    <div class="flex flex-col gap-3 py-8">
+      {project.APP && (
+        <span
+          class="self-start text-[10px] tracking-[0.22em] uppercase font-medium px-2.5 py-0.5 rounded-full"
+          style="background:rgba(6,182,212,0.1); border:1px solid rgba(6,182,212,0.25); color:rgba(103,232,249,0.75);"
+        >
+          {project.APP}
+        </span>
+      )}
+      <h1
+        class="text-4xl sm:text-6xl font-extrabold uppercase tracking-tight"
+        style={`background:linear-gradient(135deg,#ffffff 30%,#67e8f9 70%,#0891b2 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; view-transition-name: project-name-${slugify(project.NAME)};`}
+      >
+        {project.NAME}
+      </h1>
+    </div>
+  )}
+
+  <!-- Línea separadora -->
+  <div
+    class="w-full h-px mt-6"
+    style="background:linear-gradient(to right, rgba(6,182,212,0.4), transparent);"
+  ></div>
 </header>

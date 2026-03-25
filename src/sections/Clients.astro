@@ -16,57 +16,209 @@ import MMPM from "../assets/images/clients/mmpm.webp";
 import Modelo from "../assets/images/clients/modelo.webp";
 import Molitec from "../assets/images/clients/molitec.webp";
 import Peasa from "../assets/images/clients/peasa.webp";
-const {text} = Astro.props
+
+const { text } = Astro.props;
+
 const CLIENTS = [
-  { image: AdvancedComposites, alt: "Logo de Advanced Composites" },
-  { image: Backsack, alt: "Logo de Backsack" },
-  { image: Beibersdorf, alt: "Logo de Beibersdorf" },
-  { image: Compas, alt: "Logo de Compas" },
-  { image: Didi, alt: "Logo de Didi" },
-  { image: EthanAllen, alt: "Logo de Ethan Allen" },
-  { image: Exedy, alt: "Logo de Exedy" },
-  { image: Flex, alt: "Logo de Flex" },
-  { image: GeneralsMotors, alt: "Logo de General Motors" },
-  { image: Michelin, alt: "Logo de Michelin" },
-  { image: Pirelli, alt: "Logo de Pirelli" },
-  { image: MabuchiMotor, alt: "Logo de Mabuchi Motor" },
-  { image: MMPM, alt: "Logo de MMPM" },
-  { image: Modelo, alt: "Logo de Modelo" },
-  { image: Molitec, alt: "Logo de Molitec" },
-  { image: Peasa, alt: "Logo de Peasa" },
+  { image: AdvancedComposites, alt: "Advanced Composites" },
+  { image: Backsack,           alt: "Backsack" },
+  { image: Beibersdorf,        alt: "Beiersdorf" },
+  { image: Compas,             alt: "Compas" },
+  { image: Didi,               alt: "Didi" },
+  { image: EthanAllen,         alt: "Ethan Allen" },
+  { image: Exedy,              alt: "Exedy" },
+  { image: Flex,               alt: "Flex" },
+  { image: GeneralsMotors,     alt: "General Motors" },
+  { image: Michelin,           alt: "Michelin" },
+  { image: Pirelli,            alt: "Pirelli" },
+  { image: MabuchiMotor,       alt: "Mabuchi Motor" },
+  { image: MMPM,               alt: "MMPM" },
+  { image: Modelo,             alt: "Modelo" },
+  { image: Molitec,            alt: "Molitec" },
+  { image: Peasa,              alt: "Peasa" },
 ];
+
+// Duplicar para el loop infinito del marquee
+const DOUBLE = [...CLIENTS, ...CLIENTS];
 ---
 
 <section
   id="clients"
-  class="flex flex-col items-center justify-center w-full min-h-screen py-12 px-4 sm:px-6 md:px-8"
+  class="relative w-full py-24 px-4 sm:px-8 overflow-hidden text-white"
 >
-  <div class="w-full max-w-4xl text-center mb-8 md:mb-12">
-    <h3 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold mb-4">
+
+  <!-- Fondo ambiental -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full opacity-10"
+      style="background: radial-gradient(ellipse, rgba(6,182,212,0.35) 0%, transparent 70%);"
+    ></div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px"
+      style="background: linear-gradient(to right, transparent, rgba(6,182,212,0.3), transparent);"
+    ></div>
+  </div>
+
+  <!-- Encabezado -->
+  <div id="clients-header" class="max-w-3xl mx-auto text-center flex flex-col gap-3 mb-16 opacity-0">
+    <div class="flex items-center justify-center gap-2.5">
+      <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.9)]"></div>
+      <span class="text-xs tracking-[0.25em] uppercase text-cyan-400/80 font-medium">
+        {text.LABEL ?? "Clientes"}
+      </span>
+    </div>
+    <h2
+      class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight"
+      style="background:linear-gradient(135deg,#ffffff 30%,#67e8f9 70%,#0891b2 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;"
+    >
       {text.TITLE}
-    </h3>
-    <p class="text-white text-base sm:text-lg md:text-lg max-w-2xl mx-auto">
+    </h2>
+    <p class="text-sm sm:text-base text-white/45 max-w-xl mx-auto leading-relaxed">
       {text.DESCRIPTION}
     </p>
   </div>
 
-  <div class="w-full max-w-7xl">
-    <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:gap-6">
-      {
-        CLIENTS.map((client) => (
-          <div class="p-2 sm:p-3 bg-white flex justify-center items-center shadow-md hover:shadow-lg rounded-full transition-all duration-300 hover:scale-105">
-            <Image
-              src={client.image}
-              alt={client.alt}
-              title={client.alt}
-              class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
-              width={96}
-              height={96}
-              loading="lazy"
-            />
-          </div>
-        ))
-      }
+  <!-- Marquee — fila 1 (izquierda) -->
+  <div class="clients-fade relative mb-4">
+    <div class="marquee-track">
+      {DOUBLE.map((client) => (
+        <div class="logo-pill">
+          <Image
+            src={client.image}
+            alt={`Logo de ${client.alt}`}
+            title={client.alt}
+            class="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+            width={64}
+            height={64}
+            loading="lazy"
+          />
+        </div>
+      ))}
     </div>
   </div>
+
+  <!-- Marquee — fila 2 (derecha, velocidad distinta) -->
+  <div class="clients-fade relative">
+    <div class="marquee-track marquee-reverse">
+      {DOUBLE.map((client) => (
+        <div class="logo-pill">
+          <Image
+            src={client.image}
+            alt={`Logo de ${client.alt}`}
+            title={client.alt}
+            class="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+            width={64}
+            height={64}
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Contador de clientes -->
+  <div class="mt-12 flex justify-center">
+    <div
+      class="flex items-center gap-3 px-5 py-2.5 rounded-2xl"
+      style="background:rgba(2,14,22,0.5); border:1px solid rgba(6,182,212,0.12); backdrop-filter:blur(10px);"
+    >
+      <div class="w-1 h-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(6,182,212,0.9)]"></div>
+      <span class="text-xs text-white/40 tabular-nums">
+        <span class="text-white/70 font-semibold">{CLIENTS.length}+</span>
+        {" "}{text.COUNTER ?? "empresas que confían en nosotros"}
+      </span>
+    </div>
+  </div>
+
 </section>
+
+<style>
+  /* Fade lateral para el marquee */
+  .clients-fade {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    overflow: hidden;
+  }
+
+  /* Track: fila horizontal infinita */
+  .marquee-track {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: max-content;
+    animation: marquee-left 40s linear infinite;
+  }
+
+  .marquee-reverse {
+    animation: marquee-right 55s linear infinite;
+  }
+
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+
+  /* Pausar al hover */
+  .clients-fade:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Píldora de cada logo */
+  .logo-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  }
+
+  .logo-pill:hover {
+    transform: scale(1.06) translateY(-2px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.3);
+  }
+</style>
+
+<script>
+  import("motion").then(({ animate, inView }) => {
+    inView(
+      "#clients-header",
+      (el) => {
+        animate(
+          el,
+          { opacity: [0, 1], y: [-20, 0], filter: ["blur(8px)", "blur(0px)"] },
+          { duration: 0.7, easing: "ease-out" }
+        );
+      },
+      { amount: 0.3 }
+    );
+  });
+
+  // Pausar marquee si el usuario prefiere movimiento reducido
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll<HTMLElement>(".marquee-track").forEach((el) => {
+      el.style.animationPlayState = "paused";
+    });
+  }
+</script>
