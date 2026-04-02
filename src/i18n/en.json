@@ -45,6 +45,11 @@
         "NAME": "Engineering",
         "DESCRIPTION": "Fire detection and prevention systems.",
         "ICON": "EngineeringIcon"
+      },
+      {
+        "NAME": "Supplies",
+        "DESCRIPTION": "Supply of FPS and FAS materials",
+        "ICON": "BoxesIcon"
       }
     ]
   },
@@ -55,6 +60,17 @@
     "TITLE": "Our Highlighted",
     "TITLE_SPAN": "Projects",
     "PROJECTS_LIST": [
+      {
+        "NAME": "Beiersdorf Manufacturing México",
+        "DESCRIPTION": "Supply, installation, and commissioning of a 5000 gpm pumping system for the PCI system.",
+        "UBICATION": "Silao, Guanajuato",
+        "APP": "Hydraulic System | Detection and Hydrants",
+        "IMAGES": [
+          "/images/projects/image-23.jpg",
+          "/images/projects/image-24.jpg",
+          "/images/projects/image-25.jpg"
+        ]
+      },
       {
         "NAME": "Teleperformance One Tower",
         "DESCRIPTION": "A fire detection system and a fire suppression system using hydrants were installed across 10 levels of the tower.",
@@ -181,7 +197,6 @@
     "NO_ARTICLES": "No articles available. Please check back later.",
     "BACK_LABEL": "Back",
     "ARTICLES_LIST": [
-
       {
         "ID": "2",
         "TITLE": "Solicmex obtains NFPA certification: commitment to fire safety",

@@ -45,6 +45,11 @@
                 "NAME": "Ingeniería",
                 "DESCRIPTION": "Sistemas de detección y prevención de incendios.",
                 "ICON": "EngineeringIcon"
+            },
+            {
+                "NAME": "Suministros",
+                "DESCRIPTION": "Suministro de materiales FPS y FAS",
+                "ICON": "BoxesIcon"
             }
         ]
     },
@@ -55,6 +60,17 @@
         "TITLE": "Nuestros Proyectos",
         "TITLE_SPAN": "Destacados",
         "PROJECTS_LIST": [
+            {
+                "NAME": "Beiersdorf Manufacturing México",
+                "DESCRIPTION": "Suministro, instalación y puesta en marcha de sistema de bombeo 5000 gpm para sistema de PCI.",
+                "UBICATION": "Silao, Guanajuato",
+                "APP": "Sistema hidráulico | Detección e hidrantes",
+                "IMAGES": [
+                    "/images/projects/image-23.jpg",
+                    "/images/projects/image-24.jpg",
+                    "/images/projects/image-25.jpg"
+                ]
+            },
             {
                 "NAME": "Teleperformance One Tower",
                 "DESCRIPTION": "Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre.",
@@ -181,7 +197,6 @@
         "NO_ARTICLES": "Sin artículos disponibles",
         "BACK_LABEL": "Volver",
         "ARTICLES_LIST": [
-            
             {
                 "ID": "2",
                 "TITLE": "Solicmex obtiene certificación NFPA: compromiso con la seguridad contra incendios",

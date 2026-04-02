@@ -6,6 +6,7 @@ export const SERVICES = [
 ]
 
 export const PROJECTS = [
+    {name:'Beiersdorf Manufacturing México', description:'Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre.',ubication:'Ciudad de México', app:'Detección e hidrantes', images:["../assets/projects/image-1.jpg","imagen2"]},
     {name:'Teleperformance One Tower', description:'Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre.',ubication:'Ciudad de México', app:'Detección e hidrantes', images:["../assets/projects/image-1.jpg","imagen2"]},
     {name:'Ethan Allen', description:'Se instaló un sistema de rociadores, con una bomba de 2,500 gpm en los pisos 1 y 2, así como un sistema de detección térmica por cable SafeFire, conectado a un panel Notifier, cumpliendo con las normas NFPA, con supervisión y aprobación de la compañía de seguros internacional.',ubication:'Silao, Guanajuato', app:'Sistema hidráulico', images:["../assets/projects/image-1.jpg","imagen2"]},
     {name:'Compuestos avanzados', description:'Se sustituyó una bomba diésel residencial con certificación UL/FM, cumpliendo con los requisitos de la NFPA 20, junto con el conjunto del cabezal y la conexión al sistema existente.',ubication:'Aguascalientes,Ags', app:'Equipo de bombeo', images:["../assets/projects/image-1.jpg","imagen2"]},

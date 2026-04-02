@@ -1,20 +1,21 @@
 ---
 import { Image } from "astro:assets";
-import Ansul from "../assets/images/brands/ansul.webp";
-import Bosch from "../assets/images/brands/bosch.webp";
-import Clarke from "../assets/images/brands/clarke.png";
-import Edwards from "../assets/images/brands/edwards.png";
-import Fike from "../assets/images/brands/fike.webp";
-import FireLite from "../assets/images/brands/fire-lite.webp";
-import Hochiki from "../assets/images/brands/hochiki.avif";
-import Kidde from "../assets/images/brands/kidde.webp";
-import Notifier from "../assets/images/brands/notifier.webp";
-import Safe from "../assets/images/brands/safe.webp";
-import Secutron from "../assets/images/brands/secutron.webp";
-import SystemSensor from "../assets/images/brands/system-sensor.svg";
-import Victaulic from "../assets/images/brands/victaulic.webp";
+import Ansul from "@/assets/images/brands/ansul.webp";
+import Bosch from "@/assets/images/brands/bosch.webp";
+import Clarke from "@/assets/images/brands/clarke.png";
+import Edwards from "@/assets/images/brands/edwards.png";
+import Fike from "@/assets/images/brands/fike.webp";
+import FireLite from "@/assets/images/brands/fire-lite.webp";
+import Hochiki from "@/assets/images/brands/hochiki.avif";
+import Kidde from "@/assets/images/brands/kidde.webp";
+import Notifier from "@/assets/images/brands/notifier.webp";
+import Safe from "@/assets/images/brands/safe.webp";
+import Secutron from "@/assets/images/brands/secutron.webp";
+import SystemSensor from "@/assets/images/brands/system-sensor.svg";
+import Victaulic from "@/assets/images/brands/victaulic.webp";
 
 const { text } = Astro.props;
+
 const brands = [
   { image: Ansul, alt: "Ansul" },
   { image: Bosch, alt: "Bosch" },
@@ -30,66 +31,185 @@ const brands = [
   { image: SystemSensor, alt: "System Sensor" },
   { image: Victaulic, alt: "Victaulic" },
 ];
+
+// Triple-duplicate for seamless loop with no gap at wrap
+const repeated = [...brands, ...brands, ...brands];
 ---
 
-<section class="w-full py-2 overflow-hidden">
-  <div class="container flex flex-row gap-4 mx-auto px-4">
-    <h4
-      class="text-2xl md:text-3xl font-bold text-white/60 hover:text-white mb-8 text-center md:text-left"
-    >
-      {text.TITLE}
-    </h4>
+<section class="brands-section w-full py-14 overflow-hidden">
 
-    <div class="relative">
-      <div
-        class="absolute inset-y-0 left-0 w-full z-10 mask-r-from-0% mask-r-to-25% backdrop-blur-xs "
-      >
-      </div>
+  <!-- Header row -->
+  <div class="header-row">
+    <div class="header-line"></div>
+    <h4 class="brands-title">{text.TITLE}</h4>
+    <div class="header-line"></div>
+  </div>
 
-      <div class="flex overflow-x-hidden py-4">
-        <div class="flex items-center gap-3 animate-scroll whitespace-nowrap">
-          {
-            brands.map((brand) => (
-              <div class="mx-4 shrink-0 bg-white p-2 shadow-md rounded-full">
-                <Image
-                  src={brand.image}
-                  alt={brand.alt}
-                  class="w-24 h-24 object-contain drop-shadow-md transition-all duration-300 hover:scale-105 cursor-pointer"
-                  width={96}
-                  height={96}
-                />
-              </div>
-            ))
-          }
-          {
-            brands.map((brand) => (
-              <div class="mx-4 shrink-0">
-                <Image
-                  src={brand.image}
-                  alt={brand.alt}
-                  class="w-24 h-24 object-contain  drop-shadow-md transition-all duration-300 hover:scale-105 cursor-pointer"
-                  width={96}
-                  height={96}
-                />
-              </div>
-            ))
-          }
+  <!-- Track wrapper with edge fades -->
+  <div class="track-wrapper">
+    <!-- Left fade -->
+    <div class="edge-fade edge-left" aria-hidden="true"></div>
+    <!-- Right fade -->
+    <div class="edge-fade edge-right" aria-hidden="true"></div>
+
+    <!-- Scrolling track — pauses on hover -->
+    <div class="track" id="brandTrack">
+      {repeated.map((brand) => (
+        <div class="brand-chip">
+          <Image
+            src={brand.image}
+            alt={brand.alt}
+            class="brand-img"
+            width={80}
+            height={80}
+          />
+          <span class="brand-label">{brand.alt}</span>
         </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  /* ─── Section ─── */
+  .brands-section {
+    position: relative;
   }
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
+
+  /* ─── Header ─── */
+  .header-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .header-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  }
+
+  .brands-title {
+    flex-shrink: 0;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    white-space: nowrap;
+    font-family: 'DM Mono', 'Courier New', monospace;
+    transition: color 0.3s ease;
+  }
+
+  .brands-title:hover {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* ─── Track wrapper ─── */
+  .track-wrapper {
+    position: relative;
+    overflow: hidden;
+    /* Pause on hover via CSS custom property */
+    --play-state: running;
+  }
+
+  .track-wrapper:hover {
+    --play-state: paused;
+  }
+
+  /* ─── Edge fades ─── */
+  .edge-fade {
+    position: absolute;
+    inset-y: 0;
+    width: 180px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .edge-left {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-base, #020617) 0%, transparent 100%);
+  }
+
+  .edge-right {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-base, #020617) 0%, transparent 100%);
+  }
+
+  /* ─── Scrolling track ─── */
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+    animation-play-state: var(--play-state);
+    padding: 0.5rem 0;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% / 3)); }
+  }
+
+  /* ─── Brand chip ─── */
+  .brand-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.25rem 1.75rem;
+    margin: 0 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: default;
+    transition:
+      background   0.3s ease,
+      border-color 0.3s ease,
+      transform    0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+  }
+
+  .brand-chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-4px) scale(1.04);
+  }
+
+  /* ─── Brand image ─── */
+  .brand-img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+
+    /* Make any coloured logo render as white silhouette */
+    filter: brightness(0) invert(1);
+    opacity: 0.45;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .brand-chip:hover .brand-img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  /* ─── Brand label ─── */
+  .brand-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.2);
+    font-family: 'DM Mono', monospace, sans-serif;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .brand-chip:hover .brand-label {
+    color: rgba(255, 255, 255, 0.55);
   }
 </style>

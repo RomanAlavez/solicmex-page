@@ -6,6 +6,9 @@ import PhoneIcon from "@/components/icons/PhoneIcon.astro";
 import MailIcon from "@/components/icons/MailIcon.astro";
 import GeoIcon from "@/components/icons/GeoIcon.astro";
 import Logo from "@/assets/images/logo-solicmex.webp";
+import FacebookIcon from "@/components/icons/FacebookIcon.astro";
+import InstagramIcon from "@/components/icons/InstagramIcon.astro";
+import TiktokIcon from "@/components/icons/TiktokIcon.astro";
 
 const { text } = Astro.props;
 ---
@@ -96,6 +99,31 @@ const { text } = Astro.props;
               href="mailto:operaciones@solicmex.com"
               class="hover:text-white transition-colors"
               >operaciones@solicmex.com</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><FacebookIcon /></span>
+            <a
+              href="https://www.facebook.com/profile.php?id=61576780354676"
+              target="_blank"
+              class="hover:text-white transition-colors">Grupo Solicmex</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><InstagramIcon /></span>
+            <a
+              href="https://www.instagram.com/solicmex/"
+              target="_blank"
+              class="hover:text-white transition-colors">instagram.com/solicmex</a
+            >
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400"><TiktokIcon /></span>
+            <a
+              href="https://www.tiktok.com/@solicmex"
+              target="_blank"
+              class="hover:text-white transition-colors"
+              target="_blank">tiktok.com/@solicmex</a
             >
           </li>
         </ul>
