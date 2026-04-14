@@ -61,6 +61,15 @@
         "TITLE_SPAN": "Destacados",
         "PROJECTS_LIST": [
             {
+                "NAME": "Nuevas oficinas ISSEG",
+                "DESCRIPTION": "Nuevas oficinas ISSEG para Grupo Eco del Bajio.",
+                "UBICATION": "Silao de la Victoria, Guanajuato",
+                "APP": "Suministros",
+                "IMAGES": [
+                    "/images/projects/image-26.jpg"
+                ]
+            },
+            {
                 "NAME": "Beiersdorf Manufacturing México",
                 "DESCRIPTION": "Suministro, instalación y puesta en marcha de sistema de bombeo 5000 gpm para sistema de PCI.",
                 "UBICATION": "Silao, Guanajuato",
@@ -215,6 +224,28 @@
                 ],
                 "DATE": "2026-03-23",
                 "LINK": "certificacion-nfpa-solicmex"
+            },
+            {
+                "ID": "3",
+                "TITLE": "Solicmex integra sistema Híbrido de Protección Contra Incendios",
+                "DESCRIPTION": "<article><p> <strong>Grupo Solicmex</strong> integra sistemas de cobertura fija con soluciones dinámicas para lograr mayor alcance, respuesta inmediata y reducción de riesgos operativos.</p><p>Este enfoque híbrido permite atender zonas críticas en tiempo real, optimizando la seguridad sin incrementar la infraestructura.</p><ul><li>Cobertura total</li><li>Respuesta inmediata</li><li>Menor exposición al riesgo</li></ul></article>",
+                "IMAGES": [
+                    "/images/articles/sistemas-hibridos.jpg"
+                ],
+                "TAGS": [
+                    "proteccion contra incendios",
+                    "seguridad industrial",
+                    "sistemas contra incendio",
+                    "prevencion de incendios",
+                    "gestion de riesgos",
+                    "seguridad operativa",
+                    "tecnologia contra incendios",
+                    "innovacion industrial",
+                    "drones industriales",
+                    "solicmex"
+                ],
+                "DATE": "2026-04-01",
+                "LINK": "sistemas-hibridos-solicmex"
             }
         ]
     },

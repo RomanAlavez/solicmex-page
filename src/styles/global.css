@@ -14,6 +14,7 @@ html {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  
 }
 
 body {
@@ -21,6 +22,12 @@ body {
   --sb-track-color: #1b2524;
   --sb-thumb-color: #f57400;
   --sb-size: 5px;
+  background: linear-gradient(
+    to top right,
+    #020617 0%,
+    #164e63 50%,
+    #06b6d4 100%
+  );
 }
 
 #dialog-content {
@@ -70,13 +77,13 @@ body::-webkit-scrollbar-thumb {
 @view-transition {
   navigation: auto;
 }
-::view-transition-group(project-name-*,project-image-*) {
+::view-transition-group(project-name-*, project-image-*) {
   animation-duration: 0.5s;
 }
-::view-transition-old(project-name-*,project-image-*){
+::view-transition-old(project-name-*, project-image-*) {
   animation: slide-out 0.5s ease-in-out;
 }
-::view-transition-new(project-name-*,project-image-*){
+::view-transition-new(project-name-*, project-image-*) {
   animation: slide-in 0.5s ease-in-out;
 }
 
@@ -88,7 +95,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateX(0);
   }
 }
-@keyframes slide-out{
+@keyframes slide-out {
   from {
     transform: translateX(0);
   }

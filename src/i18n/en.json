@@ -61,6 +61,15 @@
     "TITLE_SPAN": "Projects",
     "PROJECTS_LIST": [
       {
+        "NAME": "New Offices ISSEG",
+        "DESCRIPTION": "New ISSEG offices for Grupo Eco del Bajio.",
+        "UBICATION": "Silao de la Victoria, Guanajuato",
+        "APP": "Supplies",
+        "IMAGES": [
+          "/images/projects/image-26.jpg"
+        ]
+      },
+      {
         "NAME": "Beiersdorf Manufacturing México",
         "DESCRIPTION": "Supply, installation, and commissioning of a 5000 gpm pumping system for the PCI system.",
         "UBICATION": "Silao, Guanajuato",
@@ -213,6 +222,28 @@
         ],
         "DATE": "2026-03-23",
         "LINK": "certification-nfpa-solicmex"
+      },
+      {
+        "ID": "3",
+        "TITLE": "Solicmex Implements a Hybrid Fire Protection System",
+        "DESCRIPTION": "<article><p><strong>Grupo Solicmex</strong> integrates fixed coverage systems with dynamic solutions to achieve greater reach, immediate response, and reduced operational risks.</p><p>This hybrid approach enables real-time response in critical areas, optimizing safety without increasing infrastructure.</p><ul><li>Total coverage</li><li>Immediate response</li><li>Reduced risk exposure</li></ul></article>",
+        "IMAGES": [
+          "/images/articles/sistemas-hibridos.jpg"
+        ],
+        "TAGS": [
+          "fire protection",
+          "industrial safety",
+          "fire protection systems",
+          "fire prevention",
+          "risk management",
+          "operational safety",
+          "fire protection technology",
+          "industrial innovation",
+          "industrial drones",
+          "solicmex"
+        ],
+        "DATE": "2026-04-01",
+        "LINK": "hybrid-fire-protection-solicmex"
       }
     ]
   },
