@@ -24,31 +24,136 @@
         "HREF": "/contact"
     },
     "SERVICES": {
-        "TITLE": "Nuestros Servicios",
+        "TITLE": "NUESTRAS SOLUCIONES",
         "SERVICES_LIST": [
             {
                 "NAME": "Sistemas de detección de incendios",
-                "DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "SHORT_DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "DESCRIPTION": "Diseño e implementación de sistemas de detección de incendios bajo normativas nacionales e internacionales (NFPA). Integramos tecnología avanzada para la identificación temprana de humo, calor o flama, permitiendo una respuesta inmediata que reduce riesgos operativos, pérdidas materiales y tiempos de inactividad.",
+                "HIGHLIGHTS": [
+                    "Cumplimiento con normativas NFPA",
+                    "Detección temprana de humo, calor y flama",
+                    "Integración con sistemas de alarma y monitoreo",
+                    "Mantenimiento preventivo y correctivo especializado"
+                ],
+                "STATS": [
+                    {
+                        "value": "90%",
+                        "label": "Reducción de riesgos por detección temprana"
+                    },
+                    {
+                        "value": "<60s",
+                        "label": "Tiempo de respuesta ante eventos"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Cumplimiento normativo garantizado"
+                    }
+                ],
                 "ICON": "AlarmIcon"
             },
             {
                 "NAME": "Sistemas de supresión de incendios",
-                "DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "SHORT_DESCRIPTION": "Ingeniería, instalación y mantenimiento",
+                "DESCRIPTION": "Desarrollo e instalación de sistemas de supresión diseñados para controlar y extinguir incendios de forma eficiente. Trabajamos con sistemas de rociadores, agentes limpios y soluciones especializadas, adaptados al tipo de riesgo y operación de cada cliente.",
+                "HIGHLIGHTS": [
+                    "Sistemas de rociadores automáticos",
+                    "Agentes limpios para áreas críticas",
+                    "Diseño personalizado según nivel de riesgo",
+                    "Integración con sistemas de detección"
+                ],
+                "STATS": [
+                    {
+                        "value": "95%",
+                        "label": "Eficacia en control de incendios iniciales"
+                    },
+                    {
+                        "value": "24/7",
+                        "label": "Protección continua automatizada"
+                    },
+                    {
+                        "value": "70%",
+                        "label": "Reducción de daños materiales"
+                    }
+                ],
                 "ICON": "FireIcon"
             },
             {
                 "NAME": "Instalaciones eléctricas",
-                "DESCRIPTION": "Media y baja tensión, industriales, comerciales y residenciales",
+                "SHORT_DESCRIPTION": "Media y baja tensión, industriales, comerciales y residenciales",
+                "DESCRIPTION": "Ejecución de instalaciones eléctricas seguras y eficientes en media y baja tensión, cumpliendo con estándares técnicos y normativos. Optimizamos la distribución de energía para garantizar continuidad operativa, seguridad y eficiencia energética en cada proyecto.",
+                "HIGHLIGHTS": [
+                    "Diseño e instalación en media y baja tensión",
+                    "Cumplimiento de normas eléctricas vigentes",
+                    "Optimización de consumo energético",
+                    "Soluciones para sector industrial, comercial y residencial"
+                ],
+                "STATS": [
+                    {
+                        "value": "30%",
+                        "label": "Optimización en consumo energético"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Cumplimiento de normas de seguridad"
+                    },
+                    {
+                        "value": "0 fallas",
+                        "label": "Alta confiabilidad operativa"
+                    }
+                ],
                 "ICON": "LightningIcon"
             },
             {
                 "NAME": "Ingeniería",
-                "DESCRIPTION": "Sistemas de detección y prevención de incendios.",
+                "SHORT_DESCRIPTION": "Sistemas de detección y prevención de incendios",
+                "DESCRIPTION": "Desarrollo de ingeniería especializada en sistemas contra incendios, desde la conceptualización hasta la ejecución. Realizamos análisis de riesgos, cálculos hidráulicos y diseño de soluciones integrales que garantizan seguridad, cumplimiento normativo y eficiencia operativa.",
+                "HIGHLIGHTS": [
+                    "Análisis y evaluación de riesgos",
+                    "Cálculos hidráulicos y diseño técnico",
+                    "Ingeniería bajo estándares NFPA",
+                    "Optimización de costos y recursos"
+                ],
+                "STATS": [
+                    {
+                        "value": "100%",
+                        "label": "Proyectos diseñados a medida"
+                    },
+                    {
+                        "value": "25%",
+                        "label": "Reducción de costos por optimización"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Cumplimiento técnico y normativo"
+                    }
+                ],
                 "ICON": "EngineeringIcon"
             },
             {
                 "NAME": "Suministros",
-                "DESCRIPTION": "Suministro de materiales FPS y FAS",
+                "SHORT_DESCRIPTION": "Suministro de materiales FPS y FAS",
+                "DESCRIPTION": "Suministro confiable de materiales y equipos especializados en sistemas de protección contra incendios (FPS) y sistemas de alarma (FAS). Garantizamos productos certificados, disponibilidad inmediata y asesoría técnica para asegurar la correcta selección e instalación.",
+                "HIGHLIGHTS": [
+                    "Materiales certificados y de alta calidad",
+                    "Disponibilidad inmediata de equipos",
+                    "Asesoría técnica especializada",
+                    "Amplio catálogo en FPS y FAS"
+                ],
+                "STATS": [
+                    {
+                        "value": "100%",
+                        "label": "Productos certificados"
+                    },
+                    {
+                        "value": "48h",
+                        "label": "Tiempo promedio de entrega"
+                    },
+                    {
+                        "value": "+500",
+                        "label": "Productos disponibles en catálogo"
+                    }
+                ],
                 "ICON": "BoxesIcon"
             }
         ]
@@ -139,11 +244,11 @@
         ]
     },
     "CLIENTS": {
-        "TITLE": "Nuestros Clientes",
+        "TITLE": "NUESTROS CLIENTES",
         "DESCRIPTION": "Conoce a las empresas que confían en nosotros!"
     },
     "ABOUT_US": {
-        "TITLE": "Sobre Nosotros",
+        "TITLE": "SOBRE NOSOTROS",
         "SUBTITLE": "¿Quiénes somos?",
         "DESCRIPTION_1": "Somos una empresa ",
         "DESCRIPTION_2": "especializada y certificada",
@@ -161,7 +266,7 @@
         "STADISTIC_4": "Soporte disponible"
     },
     "WHY_US": {
-        "TITLE": "¿Por qué elegirnos?",
+        "TITLE": "¿POR QUÉ ELEGIRNOS?",
         "SUBTITLE": "Ventajas competitvas",
         "CARD_1_TITLE": "Especialistas certificados",
         "CARD_1_DESCRIPTION": "Contamos con numerosas certificaciones en sistemas de detección y contra incendios, otorgadas por:",

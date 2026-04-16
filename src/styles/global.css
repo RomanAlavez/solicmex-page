@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "@heroui/styles"; 
 *,
 *:before,
 *:after {
@@ -14,7 +14,6 @@ html {
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  
 }
 
 body {
@@ -109,6 +108,12 @@ body::-webkit-scrollbar-thumb {
     transform: translateY(10px);
   }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);

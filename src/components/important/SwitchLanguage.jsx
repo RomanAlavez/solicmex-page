@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import GlobeIcon from "@/components/icons/GlobeIcon";
-
+import {Languages} from "lucide-react";
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState("/");
@@ -50,19 +50,19 @@ const LanguageSelector = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 backdrop-blur-3xl bg-black/50 rounded-lg shadow-lg min-w-[120px] py-2 z-10"
+            className="absolute right-0 backdrop-blur-3xl bg-black/50 rounded-lg shadow-lg min-w-[120px] py-2 z-10 group"
           >
             <button
               onClick={() => switchLanguage("es")}
-              className="w-full px-4 py-2 block text-left text-white cursor-pointer text-xs hover:font-bold transition-all"
+              className="inline-flex items-center gap-2 w-full px-4 py-2  text-left text-white group-hover:text-white/50 hover:text-white cursor-pointer text-xs font-bold transition-all duration-200"
             >
-              Español
+              <Languages />Español
             </button>
             <button
               onClick={() => switchLanguage("en")}
-              className="w-full px-4 py-2 block text-left text-white cursor-pointer text-xs hover:font-bold transition-all"
+              className="inline-flex items-center gap-2 w-full px-4 py-2  text-left text-white group-hover:text-white/50 hover:text-white cursor-pointer text-xs font-bold transition-all duration-200"
             >
-              English
+              <Languages /> English
             </button>
           </motion.div>
         )}

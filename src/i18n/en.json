@@ -24,31 +24,136 @@
     "HREF": "/contact"
   },
   "SERVICES": {
-    "TITLE": "Our Services",
+    "TITLE": "Our Solutions",
     "SERVICES_LIST": [
       {
         "NAME": "Fire Detection Systems",
-        "DESCRIPTION": "Engineering, installation, and maintenance",
+        "SHORT_DESCRIPTION": "Engineering, installation, and maintenance",
+        "DESCRIPTION": "Design and implementation of fire detection systems in compliance with national and international standards (NFPA). We integrate advanced technologies for early detection of smoke, heat, and flame, enabling rapid response to minimize operational risks, asset loss, and downtime.",
+        "HIGHLIGHTS": [
+          "NFPA-compliant system design",
+          "Early detection of smoke, heat, and flame",
+          "Integration with alarm and monitoring systems",
+          "Specialized preventive and corrective maintenance"
+        ],
+        "STATS": [
+          {
+            "value": "90%",
+            "label": "Risk reduction through early detection"
+          },
+          {
+            "value": "<60s",
+            "label": "Response time to incidents"
+          },
+          {
+            "value": "100%",
+            "label": "Regulatory compliance assurance"
+          }
+        ],
         "ICON": "AlarmIcon"
       },
       {
         "NAME": "Fire Suppression Systems",
-        "DESCRIPTION": "Engineering, installation, and maintenance",
+        "SHORT_DESCRIPTION": "Engineering, installation, and maintenance",
+        "DESCRIPTION": "Development and installation of fire suppression systems designed to effectively control and extinguish fires. We work with sprinkler systems, clean agents, and specialized solutions tailored to the specific risk profile and operational needs of each facility.",
+        "HIGHLIGHTS": [
+          "Automatic sprinkler systems",
+          "Clean agent solutions for critical areas",
+          "Custom design based on risk assessment",
+          "Full integration with detection systems"
+        ],
+        "STATS": [
+          {
+            "value": "95%",
+            "label": "Effectiveness in early fire control"
+          },
+          {
+            "value": "24/7",
+            "label": "Continuous automated protection"
+          },
+          {
+            "value": "70%",
+            "label": "Reduction in material damage"
+          }
+        ],
         "ICON": "FireIcon"
       },
       {
         "NAME": "Electrical Installations",
-        "DESCRIPTION": "Medium and low voltage for industrial, commercial, and residential settings",
+        "SHORT_DESCRIPTION": "Medium and low voltage for industrial, commercial, and residential settings",
+        "DESCRIPTION": "Execution of safe and efficient electrical installations in medium and low voltage, fully compliant with technical and regulatory standards. We optimize power distribution to ensure operational continuity, safety, and energy efficiency across all types of projects.",
+        "HIGHLIGHTS": [
+          "Medium and low voltage system design and installation",
+          "Compliance with electrical safety standards",
+          "Energy efficiency optimization",
+          "Solutions for industrial, commercial, and residential sectors"
+        ],
+        "STATS": [
+          {
+            "value": "30%",
+            "label": "Energy consumption optimization"
+          },
+          {
+            "value": "100%",
+            "label": "Safety standards compliance"
+          },
+          {
+            "value": "0 failures",
+            "label": "High operational reliability"
+          }
+        ],
         "ICON": "LightningIcon"
       },
       {
         "NAME": "Engineering",
-        "DESCRIPTION": "Fire detection and prevention systems.",
+        "SHORT_DESCRIPTION": "Fire detection and prevention systems",
+        "DESCRIPTION": "Specialized engineering development for fire protection systems, from concept to execution. We perform risk analysis, hydraulic calculations, and system design to deliver solutions that ensure safety, regulatory compliance, and operational efficiency.",
+        "HIGHLIGHTS": [
+          "Risk analysis and assessment",
+          "Hydraulic calculations and technical design",
+          "Engineering based on NFPA standards",
+          "Cost and resource optimization"
+        ],
+        "STATS": [
+          {
+            "value": "100%",
+            "label": "Custom-engineered projects"
+          },
+          {
+            "value": "25%",
+            "label": "Cost reduction through optimization"
+          },
+          {
+            "value": "100%",
+            "label": "Technical compliance"
+          }
+        ],
         "ICON": "EngineeringIcon"
       },
       {
         "NAME": "Supplies",
-        "DESCRIPTION": "Supply of FPS and FAS materials",
+        "SHORT_DESCRIPTION": "Supply of FPS and FAS materials",
+        "DESCRIPTION": "Reliable supply of specialized materials and equipment for fire protection systems (FPS) and fire alarm systems (FAS). We ensure certified products, immediate availability, and expert technical guidance for proper selection and implementation.",
+        "HIGHLIGHTS": [
+          "Certified, high-quality materials",
+          "Fast and reliable availability",
+          "Expert technical advisory",
+          "Extensive catalog for FPS and FAS"
+        ],
+        "STATS": [
+          {
+            "value": "100%",
+            "label": "Certified products"
+          },
+          {
+            "value": "48h",
+            "label": "Average delivery time"
+          },
+          {
+            "value": "500+",
+            "label": "Available products in catalog"
+          }
+        ],
         "ICON": "BoxesIcon"
       }
     ]
