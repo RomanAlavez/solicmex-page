@@ -1,4 +1,6 @@
 ---
+import sanitizeHtml from "sanitize-html";
+import { configSafeDescription } from "@/utils/sanitizeHTML";
 import type { ArticleBlog } from "@/types/types";
 
 interface Props {
@@ -9,84 +11,7 @@ interface Props {
 
 const { article, backHref = "/", backLabel = "Volver" } = Astro.props;
 const hasMultipleImages = article.IMAGES?.length > 1;
-
-// ── Sanitización ─────────────────────────────────────────────────────────────
-const ALLOWED_TAGS = new Set([
-  "p","br","b","strong","i","em","u","s","del","mark","small","sub","sup",
-  "h2","h3","h4","h5","h6",
-  "ul","ol","li",
-  "blockquote","pre","code",
-  "a","hr",
-  "table","thead","tbody","tr","th","td",
-  "figure","figcaption",
-]);
-
-const ALLOWED_ATTRS: Record<string, Set<string>> = {
-  a:    new Set(["href", "title", "target", "rel"]),
-  td:   new Set(["colspan", "rowspan"]),
-  th:   new Set(["colspan", "rowspan", "scope"]),
-  code: new Set(["class"]),
-  pre:  new Set(["class"]),
-};
-
-function sanitizeHref(href: string): string {
-  try {
-    const url = new URL(href, "https://example.com");
-    if (!["http:", "https:", "mailto:"].includes(url.protocol)) return "#";
-  } catch { return "#"; }
-  return href;
-}
-
-function sanitize(raw: string): string {
-  if (!raw) return "";
-  return raw
-    .replace(
-      /<(script|style|iframe|object|embed|form|svg|math)[^>]*>[\s\S]*?<\/\1>/gi,
-      "",
-    )
-    .replace(
-      /<(script|style|iframe|object|embed|form|input|button|select|textarea|meta|link|base)[^>]*\/?>/gi,
-      "",
-    )
-    .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]*)/gi, "")
-    .replace(/\b(javascript|vbscript|data)\s*:/gi, "")
-    .replace(/<a([^>]*)>/gi, (_match, attrs: string) => {
-      const hrefMatch = attrs.match(/href\s*=\s*["']([^"']*)["']/i);
-      const href = hrefMatch ? sanitizeHref(hrefMatch[1]) : null;
-      const titleMatch = attrs.match(/title\s*=\s*["']([^"']*)["']/i);
-      const title = titleMatch
-        ? ` title="${titleMatch[1].replace(/"/g, "&quot;")}"`
-        : "";
-      const isExternal = href && !href.startsWith("#") && !href.startsWith("/");
-      return href
-        ? `<a href="${href}"${title}${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ""}>`
-        : "<a>";
-    })
-    .replace(/<\/?([a-zA-Z][a-zA-Z0-9]*)[^>]*>/gi, (match, tag: string) => {
-      if (ALLOWED_TAGS.has(tag.toLowerCase())) return match;
-      return "";
-    })
-    .replace(
-      /<([a-zA-Z][a-zA-Z0-9]*)([^>]*)>/gi,
-      (_match, tag: string, attrs: string) => {
-        const lTag = tag.toLowerCase();
-        if (lTag === "a") return _match;
-        const allowed = ALLOWED_ATTRS[lTag];
-        if (!allowed || allowed.size === 0) return `<${lTag}>`;
-        const safeAttrs = [
-          ...attrs.matchAll(/([a-zA-Z-]+)\s*=\s*["']([^"']*)["']/g),
-        ]
-          .filter(([, name]) => allowed.has(name.toLowerCase()))
-          .map(([, name, val]) => `${name}="${val.replace(/"/g, "&quot;")}"`)
-          .join(" ");
-        return safeAttrs ? `<${lTag} ${safeAttrs}>` : `<${lTag}>`;
-      },
-    );
-}
-
-
-const safeDescription = sanitize(article.DESCRIPTION);
+const safeDescription = sanitizeHtml(article.DESCRIPTION, configSafeDescription);
 ---
 
 <article class="relative w-full text-white">
@@ -238,7 +163,7 @@ const safeDescription = sanitize(article.DESCRIPTION);
   </div>
 </article>
 
-<style>
+<style is:global>
   /* ── Entrada ─────────────────────────────────────────────────── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }

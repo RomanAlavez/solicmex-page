@@ -1,4 +1,6 @@
 ---
+import sanitizeHtml from "sanitize-html";
+import { configSafeDescription } from "@/utils/sanitizeHTML";
 import type { ArticleBlog } from "@/types/types";
 
 interface Props {
@@ -18,78 +20,10 @@ const preview = (articles ?? []).slice(0, max);
 const isEnglish = Astro.url.pathname.startsWith("/en");
 const currentLocale = isEnglish ? "/en/" : "/";
 
-const ALLOWED_TAGS = new Set([
-  "p","br","b","strong","i","em","u","s","del","mark","small","sub","sup",
-  "h2","h3","h4","h5","h6",
-  "ul","ol","li",
-  "blockquote","pre","code",
-  "a","hr",
-  "table","thead","tbody","tr","th","td",
-  "figure","figcaption",
-]);
 
-const ALLOWED_ATTRS: Record<string, Set<string>> = {
-  a:    new Set(["href", "title", "target", "rel"]),
-  td:   new Set(["colspan", "rowspan"]),
-  th:   new Set(["colspan", "rowspan", "scope"]),
-  code: new Set(["class"]),
-  pre:  new Set(["class"]),
-};
 
-function sanitizeHref(href: string): string {
-  try {
-    const url = new URL(href, "https://example.com");
-    if (!["http:", "https:", "mailto:"].includes(url.protocol)) return "#";
-  } catch { return "#"; }
-  return href;
-}
-function stripHtml(raw: string): string {
-  if (!raw) return "";
-  return raw
-    .replace(
-      /<(script|style|iframe|object|embed|form|svg|math)[^>]*>[\s\S]*?<\/\1>/gi,
-      "",
-    )
-    .replace(
-      /<(script|style|iframe|object|embed|form|input|button|select|textarea|meta|link|base)[^>]*\/?>/gi,
-      "",
-    )
-    .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]*)/gi, "")
-    .replace(/\b(javascript|vbscript|data)\s*:/gi, "")
-    .replace(/<a([^>]*)>/gi, (_match, attrs: string) => {
-      const hrefMatch = attrs.match(/href\s*=\s*["']([^"']*)["']/i);
-      const href = hrefMatch ? sanitizeHref(hrefMatch[1]) : null;
-      const titleMatch = attrs.match(/title\s*=\s*["']([^"']*)["']/i);
-      const title = titleMatch
-        ? ` title="${titleMatch[1].replace(/"/g, "&quot;")}"`
-        : "";
-      const isExternal = href && !href.startsWith("#") && !href.startsWith("/");
-      return href
-        ? `<a href="${href}"${title}${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ""}>`
-        : "<a>";
-    })
-    .replace(/<\/?([a-zA-Z][a-zA-Z0-9]*)[^>]*>/gi, (match, tag: string) => {
-      if (ALLOWED_TAGS.has(tag.toLowerCase())) return match;
-      return "";
-    })
-    .replace(
-      /<([a-zA-Z][a-zA-Z0-9]*)([^>]*)>/gi,
-      (_match, tag: string, attrs: string) => {
-        const lTag = tag.toLowerCase();
-        if (lTag === "a") return _match;
-        const allowed = ALLOWED_ATTRS[lTag];
-        if (!allowed || allowed.size === 0) return `<${lTag}>`;
-        const safeAttrs = [
-          ...attrs.matchAll(/([a-zA-Z-]+)\s*=\s*["']([^"']*)["']/g),
-        ]
-          .filter(([, name]) => allowed.has(name.toLowerCase()))
-          .map(([, name, val]) => `${name}="${val.replace(/"/g, "&quot;")}"`)
-          .join(" ");
-        return safeAttrs ? `<${lTag} ${safeAttrs}>` : `<${lTag}>`;
-      },
-    );
-}
+
+
 ---
 
 <section
@@ -148,7 +82,7 @@ function stripHtml(raw: string): string {
         style="scrollbar-width: none; -ms-overflow-style: none;"
       >
         {preview.map((article, i) => {
-          const plainDescription = stripHtml(article.DESCRIPTION);
+          const plainDescription = sanitizeHtml(article.DESCRIPTION, configSafeDescription);
           return (
             <article
               class="ap-card group relative flex flex-col rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/22 transition-all duration-500 shrink-0 w-[78vw] xs:w-[68vw] sm:w-auto snap-center opacity-0"
@@ -205,9 +139,8 @@ function stripHtml(raw: string): string {
                 </h3>
 
                 <!-- Snippet de texto plano (sin HTML) -->
-                <p class="text-xs text-white/40 group-hover:text-white/60 leading-relaxed line-clamp-3 transition-colors duration-300 flex-1">
-                  {plainDescription || "No description available."}
-                </p>
+                <div set:html={plainDescription} class="text-xs text-white/40 group-hover:text-white/60 leading-relaxed line-clamp-3 transition-colors duration-300 flex-1">
+                </div>
 
                 <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/5 group-hover:border-cyan-400/12 transition-colors duration-300">
                   <a
@@ -275,7 +208,7 @@ function stripHtml(raw: string): string {
   </div>
 </section>
 
-<style>
+<style is:global>
   #ap-track::-webkit-scrollbar { display: none; }
   .line-clamp-2 {
     display: -webkit-box;
