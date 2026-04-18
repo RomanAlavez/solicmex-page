@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlarmClock, Flame, Zap, Cog, Boxes } from "lucide-react";
+import { AlarmClock, Flame, Zap, Cog, Boxes, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import ServiceDialog from "./ServiceDialog";
 const iconMap = {
@@ -57,7 +57,7 @@ export default function ServiceCard({ shortDescription, name, description, highl
             {shortDescription}
           </motion.p>
         </motion.div>
-
+        <span className="text-xs text-cyan-400/60">Más sobre este servicio <ArrowUpRight className="inline-block ml-1 w-4 h-4" /></span>
         <span className="absolute top-4 right-4 w-[6px] h-[6px] rounded-full
         bg-cyan-400/20 transition-all duration-300
         group-hover:bg-cyan-400 group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(6,182,212,0.7)]"

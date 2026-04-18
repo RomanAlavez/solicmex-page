@@ -344,7 +344,6 @@
         }
       ]
     }
-    
   },
   "ARTICLES_PREVIEW": {
     "SECTION_LABEL": "News & Articles",
@@ -397,6 +396,28 @@
         ],
         "DATE": "2026-04-01",
         "LINK": "hybrid-fire-protection-solicmex"
+      },
+      {
+        "ID": "4",
+        "TITLE": "The importance of certifications in fire protection systems: Solicmex’s commitment to safety",
+        "DESCRIPTION": "<h1>The importance of certifications in fire protection systems: Solicmex’s commitment to safety</h1><p>In the field of engineering and fire protection, quality, reliability, and regulatory compliance are not optional—they are essential. At Solicmex, we understand that the safety of people, facilities, and assets depends directly on the proper implementation of systems certified and validated by nationally and internationally recognized standards.</p><p>For this reason, we comply with key standards such as <strong>NFPA 20, NFPA 25, FM Global, and NOM-002-STPS</strong>, which support our work in engineering, installation, maintenance, and repair of fire protection systems.</p><h2>Why are certifications in fire protection important?</h2><p>Certifications are not just technical documents: they represent a <strong>guarantee of quality, safety, and legal compliance</strong>. Working under certified standards ensures that fire protection systems:</p><ul><li>Will function properly in critical situations</li><li>Meet legal and regulatory requirements</li><li>Protect human lives and physical assets</li><li>Reduce operational and financial risks</li></ul><p>In short, a certified installation can make the difference between a controlled incident and a catastrophe.</p><h2>Certifications and standards that support Solicmex</h2><h3>NFPA 20 – Fire pump systems</h3><p>The National Fire Protection Association establishes in the <strong>NFPA 20</strong> standard the guidelines for the installation of fire pumps.</p><p>This standard ensures that:</p><ul><li>Pumps have the appropriate capacity for each type of risk</li><li>Systems operate reliably during emergencies</li><li>Installation meets international standards</li></ul><p>At Solicmex, we apply NFPA 20 to ensure that each pumping system operates efficiently when it is needed most.</p><h3>NFPA 25 – Inspection, testing, and maintenance</h3><p>The <strong>NFPA 25</strong> standard regulates the <strong>inspection, testing, and maintenance of fire protection systems</strong>.</p><p>Its importance lies in the fact that it:</p><ul><li>Ensures systems are always operational</li><li>Detects failures before emergencies occur</li><li>Extends the lifespan of equipment</li></ul><p>Solicmex implements maintenance programs based on NFPA 25, ensuring the operational continuity of installed systems.</p><h3>FM Global – High-level industrial certification</h3><p>FM Global is one of the most recognized organizations worldwide in risk assessment and industrial system certification.</p><p>Working under FM Global standards implies:</p><ul><li>Highly reliable and proven designs</li><li>Risk reduction for insurers and companies</li><li>Compliance with international safety requirements</li></ul><p>This certification is especially relevant in industrial projects, where the level of risk is higher.</p><h3>NOM-002-STPS – Fire safety in Mexico</h3><p>The Ministry of Labor and Social Welfare establishes <strong>NOM-002-STPS</strong>, which regulates safety conditions for fire prevention and protection in workplaces in Mexico.</p><p>This standard ensures:</p><ul><li>Legal compliance within the national territory</li><li>Safe conditions for workers</li><li>Clear prevention and response protocols</li></ul><p>At Solicmex, we ensure that every project complies with NOM-002-STPS, aligning safety with current Mexican regulations.</p><h2>The added value of working with Solicmex</h2><p>As stated in the company’s philosophy, Solicmex is a specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems. This translates into:</p><ul><li>Projects designed under international standards</li><li>Guaranteed regulatory compliance</li><li>Comprehensive solutions tailored to each client</li><li>Greater trust and support for companies and industries</li></ul><p> </p>",
+        "IMAGES": [
+          "/images/articles/certificaciones.webp"
+        ],
+        "TAGS": [
+          "standardization",
+          "certification",
+          "fire protection",
+          "industrial safety",
+          "fire protection systems",
+          "fire prevention",
+          "risk management",
+          "operational safety",
+          "fire protection technology",
+          "solicmex"
+        ],
+        "DATE": "2026-04-01",
+        "LINK": "sistemas-hibridos-solicmex"
       }
     ]
   },
