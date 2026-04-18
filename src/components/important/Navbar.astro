@@ -14,7 +14,11 @@ const currentLocale = isEnglish ? "/en" : "/";
 >
   <!-- Logo -->
   <a href={currentLocale}>
-    <Image src={logoSrc} alt="Solicmex Logo" class="w-15 h-auto opacity-50 hover:opacity-100" />
+    <Image
+      src={logoSrc}
+      alt="Solicmex Logo"
+      class="w-15 h-auto opacity-50 hover:opacity-100"
+    />
   </a>
 
   <!-- Menú para desktop -->
@@ -25,6 +29,11 @@ const currentLocale = isEnglish ? "/en" : "/";
     <NavItem link={`${currentLocale}#projects`} text={text.PROJECTS} />
     <NavItem link={`${currentLocale}#clients`} text={text.CLIENTS} />
     <NavItem link={`${currentLocale}#why-us`} text={text.WHY_US} />
+    <NavItem
+      link={`${currentLocale}#our-philosophy`}
+      text={text.OUR_PHILOSOPHY}
+    />
+
     <NavItem
       link={`${currentLocale}${isEnglish ? "/articles" : "articles"}`}
       text={text.ARTICLES}
@@ -62,7 +71,14 @@ const currentLocale = isEnglish ? "/en" : "/";
     <NavItem link={`${currentLocale}#projects`} text={text.PROJECTS} />
     <NavItem link={`${currentLocale}#clients`} text={text.CLIENTS} />
     <NavItem link={`${currentLocale}#why-us`} text={text.WHY_US} />
-    <NavItem link={`${currentLocale}articles`} text={text.ARTICLES} />
+    <NavItem
+      link={`${currentLocale}#our-philosophy`}
+      text={text.OUR_PHILOSOPHY}
+    />
+    <NavItem
+      link={`${currentLocale}${isEnglish ? "/articles" : "articles"}`}
+      text={text.ARTICLES}
+    />
     <NavItem link={`${currentLocale}#contact`} text={text.CONTACT} />
     <SwitchLanguage client:load />
   </div>

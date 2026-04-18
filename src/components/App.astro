@@ -9,6 +9,7 @@ import Brands from "@/sections/Brands.astro";
 import Contact from "@/sections/Contact.astro";
 import WhyUs from "@/sections/WhyUs.astro";
 import ArticlesPreview from "@/components/articles/ArticlesPreview.astro";
+import OurPhilosophy from "@/sections/OurPhilosophy.astro";
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
@@ -41,6 +42,7 @@ const i18n = getI18N({ currentLocale });
     />
     <Clients text={i18n.CLIENTS} />
     <WhyUs text={i18n.WHY_US} />
+    <OurPhilosophy text={i18n.OUR_PHILOSOPHY} />
     <Contact text={i18n.CONTACT} />
   </main>
 </Layout>

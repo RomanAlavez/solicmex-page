@@ -8,6 +8,7 @@
     "CLIENTS": "Clients",
     "ABOUT_US": "About Us",
     "WHY_US": "Why Us?",
+    "OUR_PHILOSOPHY": "Our Philosophy",
     "CONTACT": "Contact",
     "ARTICLES": "Articles"
   },
@@ -297,6 +298,53 @@
     "CARD_4_DESCRIPTION_2_AFTER_STRONG": " and ",
     "CARD_4_DESCRIPTION_2_STRONG_2": "legal protection goals",
     "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " in every project."
+  },
+  "OUR_PHILOSOPHY": {
+    "SECTION_LABEL": "Our Philosophy",
+    "SECTION_TITLE": "Our Commitment to Excellence",
+    "DESCRIPTION": "At Solicmex, we are committed to providing comprehensive solutions in engineering, installation, maintenance, and repair of fire protection systems. Our philosophy is based on three fundamental pillars:",
+    "MISSION": {
+      "TITLE": "Mission",
+      "DESCRIPTION": "We are a Fire Protection Systems company committed to helping businesses and industries install fire protection systems that save lives and provide safety to our clients. Our 12 years of experience and certifications ensure that our services are of the highest quality and effectiveness, earning us confidence and a complete guarantee on our work every day."
+    },
+    "VISION": {
+      "TITLE": "Vision",
+      "DESCRIPTION": "We continually work to establish ourselves as a leading company in the fire protection systems industry.We are distinguished by our quality, attention, and service, through trust, innovation, and adaptation to achieve safe workspaces, guaranteeing the total satisfaction of all our customers"
+    },
+    "CORPORATE_VALUES": {
+      "TITLE": "Corporate Values",
+      "VALUES_LIST": [
+        {
+          "NAME": "Safety First",
+          "DESCRIPTION": "We prioritize the protection of lives, assets, and operations in every project, ensuring all solutions are designed and executed with maximum safety standards."
+        },
+        {
+          "NAME": "Technical Excellence",
+          "DESCRIPTION": "We deliver high-quality engineering solutions backed by certifications, standards, and continuous improvement in our processes and technologies."
+        },
+        {
+          "NAME": "Responsibility",
+          "DESCRIPTION": "We take full ownership of our work, ensuring compliance, reliability, and long-term performance in every system we install and maintain."
+        },
+        {
+          "NAME": "Integrity",
+          "DESCRIPTION": "We operate with honesty, transparency, and strong ethical principles in every relationship with our clients and partners."
+        },
+        {
+          "NAME": "Customer Focus",
+          "DESCRIPTION": "We understand the specific needs of each client and deliver tailored solutions that ensure satisfaction, efficiency, and operational continuity."
+        },
+        {
+          "NAME": "Innovation",
+          "DESCRIPTION": "We continuously adopt new technologies and methodologies to improve system performance, response time, and overall fire protection effectiveness."
+        },
+        {
+          "NAME": "Professionalism",
+          "DESCRIPTION": "We maintain the highest standards of conduct, discipline, and technical expertise in every project and service we provide."
+        }
+      ]
+    }
+    
   },
   "ARTICLES_PREVIEW": {
     "SECTION_LABEL": "News & Articles",

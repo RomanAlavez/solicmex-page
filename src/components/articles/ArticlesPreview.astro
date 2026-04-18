@@ -18,29 +18,77 @@ const preview = (articles ?? []).slice(0, max);
 const isEnglish = Astro.url.pathname.startsWith("/en");
 const currentLocale = isEnglish ? "/en/" : "/";
 
-// ── Strip HTML para snippets de texto plano ──────────────────────────────────
-// DESCRIPTION puede venir como HTML; en la preview solo mostramos texto limpio.
-// No usamos set:html aquí, por lo que basta con eliminar tags y decodificar
-// las entidades HTML más comunes para que el snippet sea legible.
+const ALLOWED_TAGS = new Set([
+  "p","br","b","strong","i","em","u","s","del","mark","small","sub","sup",
+  "h2","h3","h4","h5","h6",
+  "ul","ol","li",
+  "blockquote","pre","code",
+  "a","hr",
+  "table","thead","tbody","tr","th","td",
+  "figure","figcaption",
+]);
+
+const ALLOWED_ATTRS: Record<string, Set<string>> = {
+  a:    new Set(["href", "title", "target", "rel"]),
+  td:   new Set(["colspan", "rowspan"]),
+  th:   new Set(["colspan", "rowspan", "scope"]),
+  code: new Set(["class"]),
+  pre:  new Set(["class"]),
+};
+
+function sanitizeHref(href: string): string {
+  try {
+    const url = new URL(href, "https://example.com");
+    if (!["http:", "https:", "mailto:"].includes(url.protocol)) return "#";
+  } catch { return "#"; }
+  return href;
+}
 function stripHtml(raw: string): string {
   if (!raw) return "";
   return raw
-    // Eliminar bloques completos de script/style con su contenido
-    .replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi, "")
-    // Eliminar todos los tags restantes
-    .replace(/<[^>]+>/g, "")
-    // Decodificar entidades HTML frecuentes
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&[a-z]+;/gi, "")   // eliminar el resto de entidades nombradas
-    .replace(/&#\d+;/g, "")      // eliminar entidades numéricas
-    // Colapsar espacios/saltos de línea múltiples en uno
-    .replace(/\s{2,}/g, " ")
-    .trim();
+    .replace(
+      /<(script|style|iframe|object|embed|form|svg|math)[^>]*>[\s\S]*?<\/\1>/gi,
+      "",
+    )
+    .replace(
+      /<(script|style|iframe|object|embed|form|input|button|select|textarea|meta|link|base)[^>]*\/?>/gi,
+      "",
+    )
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]*)/gi, "")
+    .replace(/\b(javascript|vbscript|data)\s*:/gi, "")
+    .replace(/<a([^>]*)>/gi, (_match, attrs: string) => {
+      const hrefMatch = attrs.match(/href\s*=\s*["']([^"']*)["']/i);
+      const href = hrefMatch ? sanitizeHref(hrefMatch[1]) : null;
+      const titleMatch = attrs.match(/title\s*=\s*["']([^"']*)["']/i);
+      const title = titleMatch
+        ? ` title="${titleMatch[1].replace(/"/g, "&quot;")}"`
+        : "";
+      const isExternal = href && !href.startsWith("#") && !href.startsWith("/");
+      return href
+        ? `<a href="${href}"${title}${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ""}>`
+        : "<a>";
+    })
+    .replace(/<\/?([a-zA-Z][a-zA-Z0-9]*)[^>]*>/gi, (match, tag: string) => {
+      if (ALLOWED_TAGS.has(tag.toLowerCase())) return match;
+      return "";
+    })
+    .replace(
+      /<([a-zA-Z][a-zA-Z0-9]*)([^>]*)>/gi,
+      (_match, tag: string, attrs: string) => {
+        const lTag = tag.toLowerCase();
+        if (lTag === "a") return _match;
+        const allowed = ALLOWED_ATTRS[lTag];
+        if (!allowed || allowed.size === 0) return `<${lTag}>`;
+        const safeAttrs = [
+          ...attrs.matchAll(/([a-zA-Z-]+)\s*=\s*["']([^"']*)["']/g),
+        ]
+          .filter(([, name]) => allowed.has(name.toLowerCase()))
+          .map(([, name, val]) => `${name}="${val.replace(/"/g, "&quot;")}"`)
+          .join(" ");
+        return safeAttrs ? `<${lTag} ${safeAttrs}>` : `<${lTag}>`;
+      },
+    );
 }
 ---
 
@@ -158,7 +206,7 @@ function stripHtml(raw: string): string {
 
                 <!-- Snippet de texto plano (sin HTML) -->
                 <p class="text-xs text-white/40 group-hover:text-white/60 leading-relaxed line-clamp-3 transition-colors duration-300 flex-1">
-                  {plainDescription}
+                  {plainDescription || "No description available."}
                 </p>
 
                 <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/5 group-hover:border-cyan-400/12 transition-colors duration-300">

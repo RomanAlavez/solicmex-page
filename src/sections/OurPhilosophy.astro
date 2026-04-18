@@ -1,0 +1,115 @@
+---
+
+import PhilosophyPillar from "@/components/PhilosophyPillar.astro";
+import ValueCard from "@/components/ValueCard.astro";
+
+interface Value {
+  NAME: string;
+  DESCRIPTION: string;
+}
+
+interface Props {
+  text: {
+    SECTION_LABEL: string;
+    SECTION_TITLE: string;
+    DESCRIPTION: string;
+    MISSION: { TITLE: string; DESCRIPTION: string };
+    VISION: { TITLE: string; DESCRIPTION: string };
+    CORPORATE_VALUES: {
+      TITLE: string;
+      VALUES_LIST: Value[];
+    };
+  };
+}
+
+const { text } = Astro.props;
+---
+
+<section
+  id="our-philosophy"
+  class="relative w-full min-h-screen flex flex-col justify-center px-5 py-24 max-w-6xl mx-auto overflow-hidden"
+>
+  <!-- ── Decorative background elements ─────────────────────── -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+  >
+    <!-- Subtle radial glow top-right -->
+    <div
+      class="absolute -top-32 right-0 w-[480px] h-[480px] rounded-full  blur-3xl"
+    >
+    </div>
+    <!-- Subtle radial glow bottom-left -->
+    <div
+      class="absolute bottom-0 -left-32 w-[360px] h-[360px] rounded-full blur-3xl"
+    >
+    </div>
+    <!-- Thin horizontal rule -->
+    <div
+      class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+    >
+    </div>
+  </div>
+
+  <!-- ── Section header ─────────────────────────────────────── -->
+  <div class="mb-16 flex flex-col items-center text-center gap-4">
+    <span
+      class="bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent font-semibold tracking-widest uppercase text-sm"
+    >
+      {text.SECTION_LABEL}
+    </span>
+
+    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+      {text.SECTION_TITLE}
+    </h2>
+
+    <div
+      class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-white/30 rounded-full"
+    >
+    </div>
+
+    <p class="max-w-2xl text-white/70 text-lg leading-relaxed mt-2">
+      {text.DESCRIPTION}
+    </p>
+  </div>
+
+  <!-- ── Mission & Vision pillars ───────────────────────────── -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+    <PhilosophyPillar
+      title={text.MISSION.TITLE}
+      description={text.MISSION.DESCRIPTION}
+      accent="cyan"
+      index={0}
+    />
+    <PhilosophyPillar
+      title={text.VISION.TITLE}
+      description={text.VISION.DESCRIPTION}
+      accent="cyan"
+      index={1}
+    />
+  </div>
+
+  <!-- ── Corporate values grid ──────────────────────────────── -->
+  <div class="flex flex-col gap-8">
+    <!-- Values heading -->
+    <div class="flex items-center gap-4">
+      <div class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></div>
+      <span
+        class="text-white/50 text-xs font-bold tracking-widest uppercase whitespace-nowrap"
+      >
+        {text.CORPORATE_VALUES.TITLE}
+      </span>
+      <div class="h-px flex-1 bg-gradient-to-l from-white/10 to-transparent"></div>
+    </div>
+
+    <!-- Values grid — 2 cols mobile, 3-4 desktop -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {
+        text.CORPORATE_VALUES.VALUES_LIST.map((value, i) => (
+          <ValueCard name={value.NAME} description={value.DESCRIPTION} index={i} />
+        ))
+      }
+    </div>
+  </div>
+
+</section>

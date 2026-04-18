@@ -8,6 +8,7 @@
         "CLIENTS": "Clientes",
         "ABOUT_US": "Nosotros",
         "WHY_US": "¿Por qué nosotros?",
+        "OUR_PHILOSOPHY": "Nuestra Filosofía",
         "CONTACT": "Contacto",
         "ARTICLES": "Artículos"
     },
@@ -297,6 +298,52 @@
         "CARD_4_DESCRIPTION_2_AFTER_STRONG": " y los ",
         "CARD_4_DESCRIPTION_2_STRONG_2": "objetivos de proteccón legal",
         "CARD_4_DESCRIPTION_2_AFTER_STRONG_2": " en cada proyecto."
+    },
+    "OUR_PHILOSOPHY": {
+        "SECTION_LABEL": "Nuestra Filosofía",
+        "SECTION_TITLE": "Nuestro Compromiso con la Excelencia",
+        "DESCRIPTION": "En Solicmex, estamos comprometidos con brindar soluciones integrales en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios. Nuestra filosofía se basa en principios técnicos sólidos, excelencia operativa y una profunda responsabilidad hacia la seguridad y confiabilidad.",
+        "MISSION": {
+            "TITLE": "Misión",
+            "DESCRIPTION": "Somos una empresa de Sistemas de Protección Contra Incendios comprometida con salvaguardar vidas, infraestructura y operaciones mediante soluciones confiables y certificadas. Con más de 12 años de experiencia, ofrecemos servicios de ingeniería, instalación y mantenimiento con los más altos estándares de calidad."
+        },
+        "VISION": {
+            "TITLE": "Visión",
+            "DESCRIPTION": "Posicionarnos como una empresa líder en sistemas de protección contra incendios, reconocida por su excelencia técnica, innovación y confiabilidad, contribuyendo a entornos de trabajo más seguros y eficientes en todos los sectores."
+        },
+        "CORPORATE_VALUES": {
+            "TITLE": "Valores Corporativos",
+            "VALUES_LIST": [
+                {
+                    "NAME": "Seguridad",
+                    "DESCRIPTION": "Priorizamos la protección de vidas, bienes y operaciones en cada proyecto, asegurando que todas nuestras soluciones cumplan con los más altos estándares de seguridad."
+                },
+                {
+                    "NAME": "Excelencia Técnica",
+                    "DESCRIPTION": "Ofrecemos soluciones de ingeniería de alta calidad respaldadas por certificaciones, normativas y mejora continua en nuestros procesos y tecnologías."
+                },
+                {
+                    "NAME": "Responsabilidad",
+                    "DESCRIPTION": "Asumimos plenamente nuestro trabajo, garantizando cumplimiento, confiabilidad y desempeño a largo plazo en cada sistema instalado y mantenido."
+                },
+                {
+                    "NAME": "Integridad",
+                    "DESCRIPTION": "Actuamos con honestidad, transparencia y principios éticos en todas nuestras relaciones con clientes y socios."
+                },
+                {
+                    "NAME": "Enfoque al Cliente",
+                    "DESCRIPTION": "Comprendemos las necesidades específicas de cada cliente y ofrecemos soluciones a la medida que aseguren su satisfacción y continuidad operativa."
+                },
+                {
+                    "NAME": "Innovación",
+                    "DESCRIPTION": "Adoptamos constantemente nuevas tecnologías y metodologías para mejorar el desempeño, la respuesta y la eficiencia de los sistemas contra incendios."
+                },
+                {
+                    "NAME": "Profesionalismo",
+                    "DESCRIPTION": "Mantenemos los más altos estándares de conducta, disciplina y capacidad técnica en cada proyecto y servicio."
+                }
+            ]
+        }
     },
     "ARTICLES_PREVIEW": {
         "SECTION_LABEL": "Noticias",
