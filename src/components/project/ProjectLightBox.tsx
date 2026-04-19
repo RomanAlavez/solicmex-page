@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 
 export default function ProjectLightbox({ images = [], name = "" }) {
-  const [index, setIndex] = useState(-1); // -1 = cerrado
+  const [index, setIndex] = useState(-1);
 
   const slides = images.map((src) => ({ src, alt: name }));
 

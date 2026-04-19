@@ -42,7 +42,7 @@ export default function ServiceDialog({
             />
 
             {/* ── Centering shell ── */}
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none overflow-y-auto">
                 <motion.div
                     key="dialog"
                     initial={{ opacity: 0, scale: 0.94, y: 16 }}
@@ -115,7 +115,7 @@ export default function ServiceDialog({
             bg-gradient-to-r from-cyan-400/30 via-cyan-400/06 to-transparent" />
 
                     {/* ── Body ── */}
-                    <div className="px-7">
+                    <div className="px-7 overflow-y-auto max-h-[300px]">
                         <p className="text-[0.875rem] text-white/55 leading-[1.78] mb-5">
                             {description}
                         </p>
