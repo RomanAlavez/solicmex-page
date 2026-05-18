@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import enData from "@/i18n/en.json";
+import Gallery from "@/sections/Gallery.astro";
+const i18n = enData;
+const { currentLocale } = Astro;
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={`${i18n.SEO_TITLE}`}
+  description={i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <main class="container mx-auto mt-10 py-8 max-w-6xl">
+    <Gallery text={i18n.GALLERY} projects={i18n.PROJECTS.PROJECTS_LIST} />
+  </main>
+</Layout>

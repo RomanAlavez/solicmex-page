@@ -5,6 +5,7 @@
         "HOME": "Inicio",
         "SERVICES": "Servicios",
         "PROJECTS": "Proyectos",
+        "GALLERY": "Galería",
         "CLIENTS": "Clientes",
         "ABOUT_US": "Nosotros",
         "WHY_US": "¿Por qué nosotros?",
@@ -28,134 +29,238 @@
         "TITLE": "NUESTRAS SOLUCIONES",
         "SERVICES_LIST": [
             {
-                "NAME": "Sistemas de detección de incendios",
-                "SHORT_DESCRIPTION": "Ingeniería, instalación y mantenimiento",
-                "DESCRIPTION": "Diseño e implementación de sistemas de detección de incendios bajo normativas nacionales e internacionales (NFPA). Integramos tecnología avanzada para la identificación temprana de humo, calor o flama, permitiendo una respuesta inmediata que reduce riesgos operativos, pérdidas materiales y tiempos de inactividad.",
+                "NAME": "Sistemas de rociadores automáticos",
+                "SHORT_DESCRIPTION": "Diseño, instalación y mantenimiento bajo normativa NFPA",
+                "DESCRIPTION": "Implementación de sistemas de rociadores automáticos diseñados para la supresión eficiente de incendios en etapas tempranas. Desarrollamos soluciones hidráulicas conforme a NFPA 13, adaptadas a riesgos ligeros, ordinarios y extraordinarios, garantizando protección continua y confiabilidad operativa.",
                 "HIGHLIGHTS": [
-                    "Cumplimiento con normativas NFPA",
-                    "Detección temprana de humo, calor y flama",
-                    "Integración con sistemas de alarma y monitoreo",
-                    "Mantenimiento preventivo y correctivo especializado"
+                    "Diseño hidráulico conforme a NFPA 13",
+                    "Cobertura total automatizada",
+                    "Respuesta inmediata ante aumento de temperatura",
+                    "Mantenimiento y pruebas periódicas"
                 ],
                 "STATS": [
                     {
-                        "value": "90%",
-                        "label": "Reducción de riesgos por detección temprana"
+                        "value": "95%",
+                        "label": "Eficacia en control de incendios"
                     },
                     {
-                        "value": "<60s",
-                        "label": "Tiempo de respuesta ante eventos"
+                        "value": "24/7",
+                        "label": "Protección continua"
                     },
                     {
                         "value": "100%",
-                        "label": "Cumplimiento normativo garantizado"
+                        "label": "Cumplimiento normativo"
+                    }
+                ],
+                "ICON": "SprinklerIcon"
+            },
+            {
+                "NAME": "Sistema de Agua Nebulizada",
+                "SHORT_DESCRIPTION": "Supresión eficiente con bajo consumo de agua",
+                "DESCRIPTION": "Sistemas de agua nebulizada de alta presión que generan microgotas para enfriamiento rápido, desplazamiento de oxígeno y control del fuego con menor consumo de agua. Ideales para espacios confinados, equipos sensibles y áreas donde el daño por agua debe minimizarse.",
+                "HIGHLIGHTS": [
+                    "Uso eficiente del agua",
+                    "Alta capacidad de enfriamiento",
+                    "Protección de equipos sensibles",
+                    "Tecnología de supresión avanzada"
+                ],
+                "STATS": [
+                    {
+                        "value": "80%",
+                        "label": "Ahorro de agua vs sistemas tradicionales"
+                    },
+                    {
+                        "value": "<30s",
+                        "label": "Inicio de control del fuego"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Seguridad para equipos críticos"
+                    }
+                ],
+                "ICON": "WaterMistIcon"
+            },
+            {
+                "NAME": "Redes de Hidrantes y Monitores",
+                "SHORT_DESCRIPTION": "Infraestructura para combate manual de incendios",
+                "DESCRIPTION": "Diseño e instalación de redes de hidrantes y monitores contra incendios para uso manual y brigadas internas. Garantizamos presión, caudal y cobertura adecuada para intervención efectiva en emergencias.",
+                "HIGHLIGHTS": [
+                    "Diseño hidráulico optimizado",
+                    "Cobertura estratégica de áreas",
+                    "Cumplimiento con NFPA 14",
+                    "Equipos robustos para uso industrial"
+                ],
+                "STATS": [
+                    {
+                        "value": "100%",
+                        "label": "Cobertura de áreas críticas"
+                    },
+                    {
+                        "value": "Alta presión",
+                        "label": "Capacidad de respuesta inmediata"
+                    },
+                    {
+                        "value": "24/7",
+                        "label": "Disponibilidad operativa"
+                    }
+                ],
+                "ICON": "HydrantIcon"
+            },
+            {
+                "NAME": "Equipos de Bombeo",
+                "SHORT_DESCRIPTION": "Sistemas de bombeo contra incendio certificados",
+                "DESCRIPTION": "Suministro e instalación de sistemas de bombeo contra incendios certificados bajo NFPA 20, incluyendo bombas eléctricas, diésel y jockey. Garantizamos presión constante y operación confiable en situaciones críticas.",
+                "HIGHLIGHTS": [
+                    "Bombas certificadas NFPA 20",
+                    "Sistemas redundantes (eléctrico/diésel)",
+                    "Arranque automático",
+                    "Mantenimiento especializado"
+                ],
+                "STATS": [
+                    {
+                        "value": "100%",
+                        "label": "Disponibilidad en emergencia"
+                    },
+                    {
+                        "value": "0 fallas",
+                        "label": "Alta confiabilidad"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Cumplimiento normativo"
+                    }
+                ],
+                "ICON": "PumpIcon"
+            },
+            {
+                "NAME": "Tuberías Subterráneas y Aéreas",
+                "SHORT_DESCRIPTION": "Redes hidráulicas certificadas para sistemas contra incendio",
+                "DESCRIPTION": "Instalación de redes de tuberías subterráneas y aéreas diseñadas para transportar agua de manera eficiente en sistemas contra incendio, cumpliendo con estándares de calidad, resistencia y durabilidad.",
+                "HIGHLIGHTS": [
+                    "Materiales certificados",
+                    "Instalación conforme a normas NFPA",
+                    "Alta resistencia a presión y corrosión",
+                    "Integración con sistemas existentes"
+                ],
+                "STATS": [
+                    {
+                        "value": "50+ años",
+                        "label": "Vida útil estimada"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Integridad estructural"
+                    },
+                    {
+                        "value": "0 fugas",
+                        "label": "Alta confiabilidad"
+                    }
+                ],
+                "ICON": "PipeIcon"
+            },
+            {
+                "NAME": "Tanques de Agua",
+                "SHORT_DESCRIPTION": "Almacenamiento estratégico para sistemas contra incendio",
+                "DESCRIPTION": "Diseño e instalación de tanques de almacenamiento de agua para sistemas contra incendio, garantizando autonomía hidráulica y disponibilidad continua en situaciones de emergencia.",
+                "HIGHLIGHTS": [
+                    "Capacidad diseñada según riesgo",
+                    "Cumplimiento con NFPA 22",
+                    "Materiales de alta durabilidad",
+                    "Integración con sistemas de bombeo"
+                ],
+                "STATS": [
+                    {
+                        "value": "100%",
+                        "label": "Abastecimiento garantizado"
+                    },
+                    {
+                        "value": "24/7",
+                        "label": "Disponibilidad de agua"
+                    },
+                    {
+                        "value": "Alta capacidad",
+                        "label": "Cobertura prolongada"
+                    }
+                ],
+                "ICON": "TankIcon"
+            },
+            {
+                "NAME": "Sistemas de Alarma y Detección de Incendio",
+                "SHORT_DESCRIPTION": "Detección temprana y alertamiento",
+                "DESCRIPTION": "Implementación de sistemas inteligentes de detección y alarma que identifican humo, calor o flama en etapas tempranas, activando protocolos de evacuación y respuesta inmediata.",
+                "HIGHLIGHTS": [
+                    "Sensores avanzados",
+                    "Integración con sistemas de supresión",
+                    "Monitoreo centralizado",
+                    "Cumplimiento NFPA 72"
+                ],
+                "STATS": [
+                    {
+                        "value": "<60s",
+                        "label": "Tiempo de detección"
+                    },
+                    {
+                        "value": "90%",
+                        "label": "Reducción de riesgos"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Cumplimiento normativo"
                     }
                 ],
                 "ICON": "AlarmIcon"
             },
             {
-                "NAME": "Sistemas de supresión de incendios",
-                "SHORT_DESCRIPTION": "Ingeniería, instalación y mantenimiento",
-                "DESCRIPTION": "Desarrollo e instalación de sistemas de supresión diseñados para controlar y extinguir incendios de forma eficiente. Trabajamos con sistemas de rociadores, agentes limpios y soluciones especializadas, adaptados al tipo de riesgo y operación de cada cliente.",
+                "NAME": "Sistemas de Riesgos Especiales",
+                "SHORT_DESCRIPTION": "Protección para entornos críticos",
+                "DESCRIPTION": "Soluciones especializadas para entornos de alto riesgo como centros de datos, industrias químicas o instalaciones energéticas, donde los sistemas convencionales no son suficientes.",
                 "HIGHLIGHTS": [
-                    "Sistemas de rociadores automáticos",
-                    "Agentes limpios para áreas críticas",
-                    "Diseño personalizado según nivel de riesgo",
-                    "Integración con sistemas de detección"
+                    "Diseño personalizado",
+                    "Protección de activos críticos",
+                    "Tecnologías avanzadas",
+                    "Análisis de riesgo especializado"
                 ],
                 "STATS": [
                     {
-                        "value": "95%",
-                        "label": "Eficacia en control de incendios iniciales"
+                        "value": "100%",
+                        "label": "Protección de activos críticos"
                     },
                     {
-                        "value": "24/7",
-                        "label": "Protección continua automatizada"
+                        "value": "Alta precisión",
+                        "label": "Activación controlada"
                     },
                     {
-                        "value": "70%",
-                        "label": "Reducción de daños materiales"
+                        "value": "0 daños",
+                        "label": "En equipos sensibles"
                     }
                 ],
-                "ICON": "FireIcon"
+                "ICON": "RiskIcon"
             },
             {
-                "NAME": "Instalaciones eléctricas",
-                "SHORT_DESCRIPTION": "Media y baja tensión, industriales, comerciales y residenciales",
-                "DESCRIPTION": "Ejecución de instalaciones eléctricas seguras y eficientes en media y baja tensión, cumpliendo con estándares técnicos y normativos. Optimizamos la distribución de energía para garantizar continuidad operativa, seguridad y eficiencia energética en cada proyecto.",
+                "NAME": "Extinción a Base de Gases",
+                "SHORT_DESCRIPTION": "Supresión limpia sin daño a equipos",
+                "DESCRIPTION": "Sistemas de supresión mediante agentes limpios (FM-200, Novec 1230, CO2) ideales para áreas donde el agua no es viable, como centros de datos o salas eléctricas.",
                 "HIGHLIGHTS": [
-                    "Diseño e instalación en media y baja tensión",
-                    "Cumplimiento de normas eléctricas vigentes",
-                    "Optimización de consumo energético",
-                    "Soluciones para sector industrial, comercial y residencial"
+                    "Agentes limpios certificados",
+                    "Sin residuos ni daños",
+                    "Activación rápida",
+                    "Protección de equipos electrónicos"
                 ],
                 "STATS": [
                     {
-                        "value": "30%",
-                        "label": "Optimización en consumo energético"
+                        "value": "<10s",
+                        "label": "Tiempo de descarga"
                     },
                     {
                         "value": "100%",
-                        "label": "Cumplimiento de normas de seguridad"
+                        "label": "Protección sin residuos"
                     },
                     {
-                        "value": "0 fallas",
-                        "label": "Alta confiabilidad operativa"
+                        "value": "0 daños",
+                        "label": "En equipos electrónicos"
                     }
                 ],
-                "ICON": "LightningIcon"
-            },
-            {
-                "NAME": "Ingeniería",
-                "SHORT_DESCRIPTION": "Sistemas de detección y prevención de incendios",
-                "DESCRIPTION": "Desarrollo de ingeniería especializada en sistemas contra incendios, desde la conceptualización hasta la ejecución. Realizamos análisis de riesgos, cálculos hidráulicos y diseño de soluciones integrales que garantizan seguridad, cumplimiento normativo y eficiencia operativa.",
-                "HIGHLIGHTS": [
-                    "Análisis y evaluación de riesgos",
-                    "Cálculos hidráulicos y diseño técnico",
-                    "Ingeniería bajo estándares NFPA",
-                    "Optimización de costos y recursos"
-                ],
-                "STATS": [
-                    {
-                        "value": "100%",
-                        "label": "Proyectos diseñados a medida"
-                    },
-                    {
-                        "value": "25%",
-                        "label": "Reducción de costos por optimización"
-                    },
-                    {
-                        "value": "100%",
-                        "label": "Cumplimiento técnico y normativo"
-                    }
-                ],
-                "ICON": "EngineeringIcon"
-            },
-            {
-                "NAME": "Suministros",
-                "SHORT_DESCRIPTION": "Suministro de materiales FPS y FAS",
-                "DESCRIPTION": "Suministro confiable de materiales y equipos especializados en sistemas de protección contra incendios (FPS) y sistemas de alarma (FAS). Garantizamos productos certificados, disponibilidad inmediata y asesoría técnica para asegurar la correcta selección e instalación.",
-                "HIGHLIGHTS": [
-                    "Materiales certificados y de alta calidad",
-                    "Disponibilidad inmediata de equipos",
-                    "Asesoría técnica especializada",
-                    "Amplio catálogo en FPS y FAS"
-                ],
-                "STATS": [
-                    {
-                        "value": "100%",
-                        "label": "Productos certificados"
-                    },
-                    {
-                        "value": "48h",
-                        "label": "Tiempo promedio de entrega"
-                    },
-                    {
-                        "value": "+500",
-                        "label": "Productos disponibles en catálogo"
-                    }
-                ],
-                "ICON": "BoxesIcon"
+                "ICON": "GasIcon"
             }
         ]
     },
@@ -167,6 +272,15 @@
         "TITLE_SPAN": "Destacados",
         "PROJECTS_LIST": [
             {
+                "NAME": "Ampliación Agave",
+                "DESCRIPTION": "Este proyecto de Ampliación Agave ubicado en el Puerto interior en Silao, Guanajuato, incluye la instalación de un loop hidráulicio subterráneo de 14 pulgadas en PVC C900, con una longitud total de 320 metros, diseñado para la alimentación eficiente de sistemas contra incendios  ",
+                "UBICATION": "Puerto Interior, Silao, Guanajuato",
+                "APP": "Infraestructura contra incendios",
+                "IMAGES": [
+                    "/images/projects/image-27.webp"
+                ]
+            },
+            {
                 "NAME": "Nuevas oficinas ISSEG",
                 "DESCRIPTION": "Nuevas oficinas ISSEG para Grupo Eco del Bajio.",
                 "UBICATION": "Silao de la Victoria, Guanajuato",
@@ -177,7 +291,7 @@
             },
             {
                 "NAME": "Beiersdorf Manufacturing México",
-                "DESCRIPTION": "Suministro, instalación y puesta en marcha de sistema de bombeo 5000 gpm para sistema de PCI.",
+                "DESCRIPTION": "Suministro, instalación y puesta en marcha de sistema de bombeo 5000 gpm para sistema de PCI en Silao, Guanajuato.",
                 "UBICATION": "Silao, Guanajuato",
                 "APP": "Sistema hidráulico | Detección e hidrantes",
                 "IMAGES": [
@@ -188,7 +302,7 @@
             },
             {
                 "NAME": "Teleperformance One Tower",
-                "DESCRIPTION": "Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre.",
+                "DESCRIPTION": "Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre Teleperformance One Tower, ubicada en la Ciudad de México, cumpliendo con las normativas NFPA y con la supervisión de la compañía de seguros internacional.",
                 "UBICATION": "Ciudad de México",
                 "APP": "Detección e hidrantes",
                 "IMAGES": [
@@ -206,7 +320,7 @@
             },
             {
                 "NAME": "Compuestos avanzados",
-                "DESCRIPTION": "Se sustituyó una bomba diésel residencial con certificación UL/FM, cumpliendo con los requisitos de la NFPA 20, junto con el conjunto del cabezal y la conexión al sistema existente.",
+                "DESCRIPTION": "Se sustituyó una bomba diésel residencial con certificación UL/FM, cumpliendo con los requisitos de la NFPA 20, junto con el conjunto del cabezal y la conexión al sistema existente. En Aguascalientes, Ags.",
                 "UBICATION": "Aguascalientes, Ags",
                 "APP": "Equipo de bombeo",
                 "IMAGES": [
@@ -243,6 +357,10 @@
                 ]
             }
         ]
+    },
+    "GALLERY": {
+        "TITLE": "Galería",
+        "DESCRIPTION": "Explora nuestra galería de imagenes de nuestros proyectos destacados para ver la calidad y el alcance de nuestras soluciones en sistemas contra incendios."
     },
     "CLIENTS": {
         "TITLE": "NUESTROS CLIENTES",
@@ -420,6 +538,52 @@
                 ],
                 "DATE": "2026-04-16",
                 "LINK": "importancia-certificaciones-solicmex"
+            },
+            {
+                "ID": "5",
+                "TITLE": "¿Qué es la NFPA y por qué es importante en los sistemas contra incendio?",
+                "DESCRIPTION": "<h2>¿Qué es la NFPA y por qué es importante en los sistemas contra incendio?</h2><p>En el ámbito de la protección contra incendios, la seguridad depende de mucho más que equipos y tecnología. Para garantizar instalaciones confiables, eficientes y capaces de responder correctamente ante una emergencia, existen normas y estándares internacionales que regulan el diseño, instalación, mantenimiento e inspección de los sistemas contra incendio.</p><p>Una de las organizaciones más importantes y reconocidas a nivel mundial en esta área es la <strong>NFPA (National Fire Protection Association)</strong>, cuyos estándares son utilizados en miles de proyectos industriales, comerciales e institucionales alrededor del mundo.</p><h2>¿Qué es la NFPA?</h2><p>La NFPA, por sus siglas en inglés <strong>National Fire Protection Association</strong>, es una organización internacional fundada en 1896 en Estados Unidos, especializada en el desarrollo de normas y estándares relacionados con la prevención y protección contra incendios, seguridad eléctrica y gestión de riesgos.</p><p>Actualmente, las normas NFPA son consideradas una referencia técnica global y son utilizadas en más de 100 países para diseñar sistemas seguros y eficientes.</p><p>El principal objetivo de la NFPA es reducir el riesgo de incendios y otros peligros mediante lineamientos técnicos desarrollados por ingenieros, fabricantes, autoridades y especialistas en seguridad.</p><h2>¿Por qué es importante la NFPA en los sistemas contra incendio?</h2><p>Las normas NFPA permiten garantizar que un sistema contra incendio funcione correctamente cuando realmente sea necesario.</p><p>Sin estándares técnicos adecuados, los sistemas podrían presentar fallas críticas durante una emergencia, poniendo en riesgo vidas humanas, infraestructura y operaciones empresariales.</p><p>La importancia de la NFPA radica en que establece criterios claros para:</p><ul><li>Diseñar sistemas seguros y eficientes</li><li>Estandarizar procesos de instalación</li><li>Garantizar mantenimientos adecuados</li><li>Reducir riesgos operativos y financieros</li><li>Proteger vidas humanas y bienes materiales</li><li>Cumplir requisitos legales y de aseguradoras</li></ul><p>Gracias a estas normas, las empresas pueden contar con sistemas confiables y alineados con estándares internacionales de seguridad.</p><h2>¿Qué regulan las normas NFPA?</h2><p>Las normas NFPA abarcan prácticamente todos los componentes relacionados con la protección contra incendios.</p><p>Entre los principales sistemas y procesos regulados se encuentran:</p><ul><li>Sistemas de rociadores automáticos</li><li>Bombas contra incendio</li><li>Sistemas de detección y alarma</li><li>Extintores portátiles</li><li>Redes hidráulicas contra incendio</li><li>Sistemas de supresión con agentes limpios</li><li>Inspección y mantenimiento</li><li>Protección eléctrica</li><li>Señalización y evacuación</li></ul><p>Cada norma está diseñada para abordar necesidades específicas dentro de un sistema integral de protección contra incendios.</p><h2>Principales normas NFPA utilizadas en sistemas contra incendio</h2><h3>NFPA 13 – Sistemas de rociadores automáticos</h3><p>La NFPA 13 regula el diseño e instalación de sistemas de rociadores automáticos.</p><p>Esta norma establece criterios relacionados con:</p><ul><li>Cobertura de rociadores</li><li>Clasificación de riesgos</li><li>Caudales y presiones requeridas</li><li>Separación entre dispositivos</li><li>Tipos de tubería y materiales</li></ul><p>Su correcta aplicación permite controlar o extinguir incendios en etapas tempranas.</p><h3>NFPA 20 – Bombas contra incendio</h3><p>La NFPA 20 regula la instalación de bombas contra incendio, fundamentales para suministrar agua con presión adecuada durante una emergencia.</p><p>Incluye lineamientos sobre:</p><ul><li>Bombas eléctricas y diésel</li><li>Bombas jockey</li><li>Sistemas de alimentación</li><li>Cuartos de bombas</li><li>Pruebas de funcionamiento</li></ul><p>Una instalación correcta bajo NFPA 20 garantiza confiabilidad operativa en situaciones críticas.</p><h3>NFPA 25 – Inspección, pruebas y mantenimiento</h3><p>La NFPA 25 establece los procedimientos para la inspección, pruebas y mantenimiento de sistemas contra incendio.</p><p>Su objetivo es asegurar que los sistemas permanezcan operativos en todo momento.</p><p>La norma contempla:</p><ul><li>Pruebas de bombas</li><li>Inspección de válvulas</li><li>Revisión de tuberías</li><li>Pruebas de flujo</li><li>Detección de corrosión y fugas</li></ul><p>El mantenimiento basado en NFPA 25 es clave para evitar fallas durante emergencias reales.</p><h3>NFPA 72 – Sistemas de detección y alarma</h3><p>La NFPA 72 regula los sistemas de detección y alarma contra incendios.</p><p>Esta norma define criterios relacionados con:</p><ul><li>Detectores de humo y calor</li><li>Paneles de control</li><li>Sirenas y dispositivos visuales</li><li>Estaciones manuales</li><li>Monitoreo remoto</li></ul><p>La detección temprana es fundamental para reducir daños y facilitar la evacuación segura.</p><h3>NFPA 10 – Extintores portátiles</h3><p>La NFPA 10 regula la selección, instalación e inspección de extintores portátiles.</p><p>Incluye criterios sobre:</p><ul><li>Clasificación de fuegos</li><li>Tipos de agentes extintores</li><li>Ubicación estratégica</li><li>Mantenimiento y recarga</li><li>Distancias máximas de recorrido</li></ul><p>Los extintores representan la primera línea de respuesta ante incendios incipientes.</p><h2>La NFPA y la ingeniería de protección contra incendios</h2><p>Actualmente, la ingeniería contra incendios depende directamente del cumplimiento de normas NFPA.</p><p>Estas normas permiten desarrollar proyectos seguros mediante:</p><ul><li>Análisis de riesgo</li><li>Cálculos hidráulicos</li><li>Diseño de redes</li><li>Selección adecuada de equipos</li><li>Memorias técnicas y planos</li><li>Estrategias de evacuación</li></ul><p>Gracias a ello, los sistemas pueden adaptarse correctamente a cada tipo de instalación y nivel de riesgo.</p><h2>Beneficios de implementar sistemas conforme a NFPA</h2><p>Implementar sistemas diseñados bajo estándares NFPA ofrece múltiples beneficios:</p><ul><li>Mayor protección para las personas</li><li>Reducción de pérdidas materiales</li><li>Mayor confiabilidad operativa</li><li>Cumplimiento legal y normativo</li><li>Compatibilidad con requisitos de aseguradoras</li><li>Disminución de riesgos financieros y operativos</li></ul><p>En sectores industriales, comerciales y corporativos, trabajar bajo estándares NFPA es actualmente una práctica esencial.</p><h2>La NFPA en México</h2><p>Aunque la NFPA es una organización estadounidense, sus normas son ampliamente utilizadas en México dentro de industrias, hospitales, hoteles, centros comerciales, edificios corporativos y plantas manufactureras.</p><p>Además, muchas normas oficiales mexicanas toman como referencia criterios técnicos de la NFPA para garantizar instalaciones seguras y alineadas con estándares internacionales.</p><h2>La importancia de trabajar con especialistas certificados</h2><p>Diseñar, instalar y mantener sistemas contra incendio requiere conocimiento técnico, experiencia y cumplimiento normativo.</p><p>Una empresa especializada debe contar con:</p><ul><li>Personal capacitado y certificado</li><li>Conocimiento de normas NFPA</li><li>Experiencia en ingeniería contra incendios</li><li>Capacidad de inspección y mantenimiento</li><li>Equipos y tecnología adecuados</li></ul><p>Trabajar con especialistas garantiza sistemas confiables, seguros y preparados para responder correctamente ante cualquier emergencia.</p><p>La NFPA representa uno de los pilares más importantes de la seguridad contra incendios a nivel mundial.</p><p>Sus normas permiten desarrollar sistemas confiables capaces de proteger vidas humanas, infraestructura y operaciones críticas mediante estándares técnicos reconocidos internacionalmente.</p><p>Más allá del cumplimiento normativo, implementar sistemas conforme a NFPA es una inversión en seguridad, continuidad operativa y reducción de riesgos para cualquier empresa o institución moderna.</p>",
+                "IMAGES": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2WFfstDpOKA6SdWCEB-1YcJwuOMxXkY7Sw&s"
+                ],
+                "TAGS": [
+                    "nfpa",
+                    "proteccion contra incendios",
+                    "sistemas contra incendio",
+                    "seguridad industrial",
+                    "prevencion de incendios",
+                    "ingenieria contra incendios",
+                    "nfpa 13",
+                    "nfpa 20",
+                    "nfpa 25",
+                    "nfpa 72",
+                    "seguridad operativa",
+                    "solicmex"
+                ],
+                "DATE": "2026-05-11",
+                "LINK": "que-es-nfpa-importancia-sistemas-contra-incendio"
+            },
+            {
+                "ID": "6",
+                "TITLE": "¿Qué es un sistema contra incendios? Importancia, funcionamiento y componentes esenciales",
+                "DESCRIPTION": "<h2>¿Qué es un sistema contra incendios?</h2><p>La protección contra incendios es uno de los aspectos más importantes dentro de cualquier instalación industrial, comercial, residencial o institucional. Un incendio puede poner en riesgo vidas humanas, generar pérdidas económicas millonarias y afectar gravemente la continuidad operativa de una empresa. Por ello, los sistemas contra incendios se han convertido en una necesidad fundamental dentro de la ingeniería moderna y la seguridad industrial.</p><p>Un sistema contra incendios es el conjunto de equipos, dispositivos y tecnologías diseñadas para detectar, alertar, controlar y extinguir incendios de manera automática o manual. Su principal objetivo es minimizar daños, proteger a las personas y preservar instalaciones, maquinaria y activos críticos.</p><br/><h2>¿Cómo funciona un sistema contra incendios?</h2><p>El funcionamiento de un sistema contra incendios depende del tipo de protección implementada, pero generalmente opera mediante una secuencia de detección, alarma y supresión. Cuando un detector identifica humo, calor o fuego, el sistema activa alarmas audiovisuales y, dependiendo de la configuración, puede activar automáticamente rociadores, sistemas de bombeo o agentes de supresión.</p><p>Los sistemas automáticos están diseñados para controlar el incendio desde sus primeras etapas, evitando su propagación y permitiendo una evacuación segura mientras llegan los servicios de emergencia.</p><br/><h2>Componentes principales de un sistema contra incendios</h2><p>Los sistemas contra incendios están conformados por diversos elementos especializados que trabajan en conjunto para garantizar una protección eficiente.</p><br/><h3>1. Sistemas de detección y alarma</h3><p>Estos sistemas permiten identificar rápidamente señales de incendio mediante detectores de humo, calor o flama. Una vez detectada la emergencia, se activan alarmas sonoras y visuales para alertar a los ocupantes del inmueble.</p><p>Entre sus componentes principales se encuentran:</p><ul><li>Detectores de humo</li><li>Detectores de calor</li><li>Paneles de control</li><li>Sirenas y estrobos</li><li>Estaciones manuales</li><li>Módulos de monitoreo</li></ul><br/><h3>2. Sistemas de rociadores automáticos (Sprinklers)</h3><p>Los sistemas de rociadores automáticos son uno de los métodos más efectivos para controlar incendios. Funcionan mediante tuberías presurizadas conectadas a rociadores térmicamente sensibles que se activan automáticamente al detectar altas temperaturas.</p><p>Existen distintos tipos de sistemas de sprinklers:</p><ul><li>Sistema húmedo</li><li>Sistema seco</li><li>Sistema preacción</li><li>Sistema diluvio</li></ul><br/><h3>3. Sistemas de bombeo contra incendio</h3><p>El cuarto de bombas es responsable de suministrar la presión y el caudal necesarios para alimentar los sistemas hidráulicos contra incendios. Está conformado por bombas principales, bombas jockey, controladores, válvulas y sistemas de respaldo.</p><br/><h3>4. Redes de hidrantes y gabinetes</h3><p>Las redes de hidrantes permiten el combate manual del fuego mediante mangueras y conexiones especiales utilizadas por brigadas internas o cuerpos de bomberos.</p><br/><h3>5. Sistemas especiales de supresión</h3><p>Existen áreas donde el agua no es la mejor opción para extinguir incendios. En estos casos se utilizan sistemas especiales como:</p><ul><li>Agentes limpios</li><li>Sistemas de CO₂</li><li>Sistemas de espuma</li><li>Sistemas para cocinas industriales</li></ul><br/><h2>Importancia de la ingeniería en protección contra incendios</h2><p>El diseño de un sistema contra incendios requiere conocimientos especializados en hidráulica, normativas internacionales, seguridad industrial y análisis de riesgos. Cada proyecto debe adaptarse a las características específicas del inmueble y cumplir con estándares técnicos como NFPA 13, NFPA 20, NFPA 25 y NFPA 72.</p><p>La ingeniería adecuada garantiza que los sistemas funcionen correctamente durante una emergencia y cumplan con los requerimientos legales y operativos de cada instalación.</p><br/><h2>Mantenimiento de sistemas contra incendios</h2><p>Un sistema contra incendios requiere inspecciones, pruebas y mantenimiento periódico para asegurar su correcto funcionamiento. Las actividades de mantenimiento incluyen revisión de válvulas, pruebas de bombas, inspección de alarmas, limpieza de detectores y pruebas hidráulicas.</p><p>El mantenimiento preventivo es fundamental para garantizar que el sistema opere de manera eficiente en caso de una emergencia real.</p><br/><h2>Beneficios de contar con un sistema contra incendios</h2><ul><li>Protección de vidas humanas</li><li>Reducción de daños materiales</li><li>Continuidad operativa</li><li>Cumplimiento normativo</li><li>Disminución de riesgos financieros</li><li>Mayor seguridad para empleados y visitantes</li></ul><br/><h2>Compromiso de Solicmex con la seguridad</h2><p>En Solicmex, somos especialistas en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios. Nuestro objetivo es ofrecer soluciones integrales, eficientes y confiables que garanticen la seguridad de cada proyecto.</p><p>Trabajamos bajo estándares internacionales y con personal capacitado para desarrollar sistemas adaptados a las necesidades específicas de cada cliente, asegurando calidad, cumplimiento normativo y máxima protección.</p>",
+                "IMAGES": [
+                    "/images/articles/sistemas-incendios-1.webp",
+                    "/images/articles/sistemas-incendios-2.webp"
+                ],
+                "TAGS": [
+                    "sistema contra incendios",
+                    "proteccion contra incendios",
+                    "sprinklers",
+                    "seguridad industrial",
+                    "nfpa",
+                    "deteccion de incendios",
+                    "hidrantes",
+                    "ingenieria",
+                    "solicmex"
+                ],
+                "DATE": "2026-05-17",
+                "LINK": "que-es-un-sistema-contra-incendios"
             }
         ]
     },

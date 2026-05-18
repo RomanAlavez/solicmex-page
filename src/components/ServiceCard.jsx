@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { AlarmClock, Flame, Zap, Cog, Boxes, ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  AlarmClock, Flame, Zap, Cog, Boxes, Sprout, Droplets, Shell,
+  Gauge, Database, ShieldAlert, CloudFog, ChartNetwork, Waypoints,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import ServiceDialog from "./ServiceDialog";
 const iconMap = {
@@ -8,6 +12,15 @@ const iconMap = {
   LightningIcon: Zap,
   EngineeringIcon: Cog,
   BoxesIcon: Boxes,
+  SprinklerIcon: Sprout,        // Representa dispersión / agua
+  WaterMistIcon: Droplets,      // Nebulización
+  HydrantIcon: Shell ,   // Hidrantes
+  PumpIcon: Gauge,              // Presión / bombeo
+  PipeIcon: Waypoints,          // Tuberías
+  TankIcon: Database,           // Almacenamiento (tanque)
+  RiskIcon: ShieldAlert,        // Riesgos especiales
+  GasIcon: CloudFog,            // Gases
+
 };
 
 export default function ServiceCard({ shortDescription, name, description, highlights, stats, icon, index = 0, }) {

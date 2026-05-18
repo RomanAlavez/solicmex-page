@@ -5,6 +5,7 @@
     "HOME": "Home",
     "SERVICES": "Services",
     "PROJECTS": "Projects",
+    "GALLERY": "Gallery",
     "CLIENTS": "Clients",
     "ABOUT_US": "About Us",
     "WHY_US": "Why Us?",
@@ -28,134 +29,238 @@
     "TITLE": "Our Solutions",
     "SERVICES_LIST": [
       {
-        "NAME": "Fire Detection Systems",
-        "SHORT_DESCRIPTION": "Engineering, installation, and maintenance",
-        "DESCRIPTION": "Design and implementation of fire detection systems in compliance with national and international standards (NFPA). We integrate advanced technologies for early detection of smoke, heat, and flame, enabling rapid response to minimize operational risks, asset loss, and downtime.",
+        "NAME": "Automatic Sprinkler Systems",
+        "SHORT_DESCRIPTION": "Design, installation, and maintenance under NFPA standards",
+        "DESCRIPTION": "Implementation of automatic sprinkler systems designed for efficient fire suppression in early stages. We develop hydraulic solutions in compliance with NFPA 13, adapted to light, ordinary, and extra hazard risks, ensuring continuous protection and operational reliability.",
         "HIGHLIGHTS": [
-          "NFPA-compliant system design",
-          "Early detection of smoke, heat, and flame",
-          "Integration with alarm and monitoring systems",
-          "Specialized preventive and corrective maintenance"
+          "Hydraulic design compliant with NFPA 13",
+          "Fully automated coverage",
+          "Immediate response to temperature increase",
+          "Periodic maintenance and testing"
         ],
         "STATS": [
           {
-            "value": "90%",
-            "label": "Risk reduction through early detection"
+            "value": "95%",
+            "label": "Fire control effectiveness"
           },
           {
-            "value": "<60s",
-            "label": "Response time to incidents"
+            "value": "24/7",
+            "label": "Continuous protection"
           },
           {
             "value": "100%",
-            "label": "Regulatory compliance assurance"
+            "label": "Regulatory compliance"
+          }
+        ],
+        "ICON": "SprinklerIcon"
+      },
+      {
+        "NAME": "Water Mist Systems",
+        "SHORT_DESCRIPTION": "Efficient suppression with low water consumption",
+        "DESCRIPTION": "High-pressure water mist systems that generate microdroplets for rapid cooling, oxygen displacement, and fire control with minimal water usage. Ideal for confined spaces, sensitive equipment, and areas where water damage must be minimized.",
+        "HIGHLIGHTS": [
+          "Efficient water usage",
+          "High cooling capacity",
+          "Protection for sensitive equipment",
+          "Advanced suppression technology"
+        ],
+        "STATS": [
+          {
+            "value": "80%",
+            "label": "Water savings vs traditional systems"
+          },
+          {
+            "value": "<30s",
+            "label": "Fire control initiation"
+          },
+          {
+            "value": "100%",
+            "label": "Safety for critical equipment"
+          }
+        ],
+        "ICON": "WaterMistIcon"
+      },
+      {
+        "NAME": "Hydrant and Monitor Networks",
+        "SHORT_DESCRIPTION": "Infrastructure for manual firefighting",
+        "DESCRIPTION": "Design and installation of fire hydrant and monitor networks for manual use and internal brigades. We ensure adequate pressure, flow rate, and coverage for effective emergency response.",
+        "HIGHLIGHTS": [
+          "Optimized hydraulic design",
+          "Strategic area coverage",
+          "NFPA 14 compliance",
+          "Robust industrial-grade equipment"
+        ],
+        "STATS": [
+          {
+            "value": "100%",
+            "label": "Critical area coverage"
+          },
+          {
+            "value": "High pressure",
+            "label": "Immediate response capacity"
+          },
+          {
+            "value": "24/7",
+            "label": "Operational availability"
+          }
+        ],
+        "ICON": "HydrantIcon"
+      },
+      {
+        "NAME": "Fire Pump Systems",
+        "SHORT_DESCRIPTION": "Certified fire pumping systems",
+        "DESCRIPTION": "Supply and installation of fire pump systems certified under NFPA 20, including electric, diesel, and jockey pumps. We ensure constant pressure and reliable operation in critical situations.",
+        "HIGHLIGHTS": [
+          "NFPA 20 certified pumps",
+          "Redundant systems (electric/diesel)",
+          "Automatic start",
+          "Specialized maintenance"
+        ],
+        "STATS": [
+          {
+            "value": "100%",
+            "label": "Emergency availability"
+          },
+          {
+            "value": "0 failures",
+            "label": "High reliability"
+          },
+          {
+            "value": "100%",
+            "label": "Regulatory compliance"
+          }
+        ],
+        "ICON": "PumpIcon"
+      },
+      {
+        "NAME": "Underground and Aboveground Piping",
+        "SHORT_DESCRIPTION": "Certified hydraulic networks for fire systems",
+        "DESCRIPTION": "Installation of underground and aboveground piping networks designed to efficiently transport water in fire protection systems, meeting standards for quality, strength, and durability.",
+        "HIGHLIGHTS": [
+          "Certified materials",
+          "Installation compliant with NFPA standards",
+          "High pressure and corrosion resistance",
+          "Integration with existing systems"
+        ],
+        "STATS": [
+          {
+            "value": "50+ years",
+            "label": "Estimated lifespan"
+          },
+          {
+            "value": "100%",
+            "label": "Structural integrity"
+          },
+          {
+            "value": "0 leaks",
+            "label": "High reliability"
+          }
+        ],
+        "ICON": "PipeIcon"
+      },
+      {
+        "NAME": "Water Storage Tanks",
+        "SHORT_DESCRIPTION": "Strategic storage for fire protection systems",
+        "DESCRIPTION": "Design and installation of water storage tanks for fire protection systems, ensuring hydraulic autonomy and continuous availability during emergency situations.",
+        "HIGHLIGHTS": [
+          "Capacity designed based on risk",
+          "NFPA 22 compliance",
+          "High-durability materials",
+          "Integration with pumping systems"
+        ],
+        "STATS": [
+          {
+            "value": "100%",
+            "label": "Guaranteed supply"
+          },
+          {
+            "value": "24/7",
+            "label": "Water availability"
+          },
+          {
+            "value": "High capacity",
+            "label": "Extended coverage"
+          }
+        ],
+        "ICON": "TankIcon"
+      },
+      {
+        "NAME": "Fire Alarm and Detection Systems",
+        "SHORT_DESCRIPTION": "Early detection and alert systems",
+        "DESCRIPTION": "Implementation of intelligent detection and alarm systems that identify smoke, heat, or flame in early stages, triggering evacuation protocols and immediate response.",
+        "HIGHLIGHTS": [
+          "Advanced sensors",
+          "Integration with suppression systems",
+          "Centralized monitoring",
+          "NFPA 72 compliance"
+        ],
+        "STATS": [
+          {
+            "value": "<60s",
+            "label": "Detection time"
+          },
+          {
+            "value": "90%",
+            "label": "Risk reduction"
+          },
+          {
+            "value": "100%",
+            "label": "Regulatory compliance"
           }
         ],
         "ICON": "AlarmIcon"
       },
       {
-        "NAME": "Fire Suppression Systems",
-        "SHORT_DESCRIPTION": "Engineering, installation, and maintenance",
-        "DESCRIPTION": "Development and installation of fire suppression systems designed to effectively control and extinguish fires. We work with sprinkler systems, clean agents, and specialized solutions tailored to the specific risk profile and operational needs of each facility.",
+        "NAME": "Special Hazard Systems",
+        "SHORT_DESCRIPTION": "Protection for critical environments",
+        "DESCRIPTION": "Specialized solutions for high-risk environments such as data centers, chemical industries, or energy facilities, where conventional systems are not sufficient.",
         "HIGHLIGHTS": [
-          "Automatic sprinkler systems",
-          "Clean agent solutions for critical areas",
-          "Custom design based on risk assessment",
-          "Full integration with detection systems"
+          "Custom design",
+          "Critical asset protection",
+          "Advanced technologies",
+          "Specialized risk analysis"
         ],
         "STATS": [
           {
-            "value": "95%",
-            "label": "Effectiveness in early fire control"
+            "value": "100%",
+            "label": "Critical asset protection"
           },
           {
-            "value": "24/7",
-            "label": "Continuous automated protection"
+            "value": "High precision",
+            "label": "Controlled activation"
           },
           {
-            "value": "70%",
-            "label": "Reduction in material damage"
+            "value": "0 damage",
+            "label": "To sensitive equipment"
           }
         ],
-        "ICON": "FireIcon"
+        "ICON": "RiskIcon"
       },
       {
-        "NAME": "Electrical Installations",
-        "SHORT_DESCRIPTION": "Medium and low voltage for industrial, commercial, and residential settings",
-        "DESCRIPTION": "Execution of safe and efficient electrical installations in medium and low voltage, fully compliant with technical and regulatory standards. We optimize power distribution to ensure operational continuity, safety, and energy efficiency across all types of projects.",
+        "NAME": "Gas-Based Fire Suppression",
+        "SHORT_DESCRIPTION": "Clean suppression without equipment damage",
+        "DESCRIPTION": "Suppression systems using clean agents (FM-200, Novec 1230, CO2), ideal for areas where water is not viable, such as data centers or electrical rooms.",
         "HIGHLIGHTS": [
-          "Medium and low voltage system design and installation",
-          "Compliance with electrical safety standards",
-          "Energy efficiency optimization",
-          "Solutions for industrial, commercial, and residential sectors"
+          "Certified clean agents",
+          "No residue or damage",
+          "Fast activation",
+          "Protection for electronic equipment"
         ],
         "STATS": [
           {
-            "value": "30%",
-            "label": "Energy consumption optimization"
+            "value": "<10s",
+            "label": "Discharge time"
           },
           {
             "value": "100%",
-            "label": "Safety standards compliance"
+            "label": "Residue-free protection"
           },
           {
-            "value": "0 failures",
-            "label": "High operational reliability"
+            "value": "0 damage",
+            "label": "To electronic equipment"
           }
         ],
-        "ICON": "LightningIcon"
-      },
-      {
-        "NAME": "Engineering",
-        "SHORT_DESCRIPTION": "Fire detection and prevention systems",
-        "DESCRIPTION": "Specialized engineering development for fire protection systems, from concept to execution. We perform risk analysis, hydraulic calculations, and system design to deliver solutions that ensure safety, regulatory compliance, and operational efficiency.",
-        "HIGHLIGHTS": [
-          "Risk analysis and assessment",
-          "Hydraulic calculations and technical design",
-          "Engineering based on NFPA standards",
-          "Cost and resource optimization"
-        ],
-        "STATS": [
-          {
-            "value": "100%",
-            "label": "Custom-engineered projects"
-          },
-          {
-            "value": "25%",
-            "label": "Cost reduction through optimization"
-          },
-          {
-            "value": "100%",
-            "label": "Technical compliance"
-          }
-        ],
-        "ICON": "EngineeringIcon"
-      },
-      {
-        "NAME": "Supplies",
-        "SHORT_DESCRIPTION": "Supply of FPS and FAS materials",
-        "DESCRIPTION": "Reliable supply of specialized materials and equipment for fire protection systems (FPS) and fire alarm systems (FAS). We ensure certified products, immediate availability, and expert technical guidance for proper selection and implementation.",
-        "HIGHLIGHTS": [
-          "Certified, high-quality materials",
-          "Fast and reliable availability",
-          "Expert technical advisory",
-          "Extensive catalog for FPS and FAS"
-        ],
-        "STATS": [
-          {
-            "value": "100%",
-            "label": "Certified products"
-          },
-          {
-            "value": "48h",
-            "label": "Average delivery time"
-          },
-          {
-            "value": "500+",
-            "label": "Available products in catalog"
-          }
-        ],
-        "ICON": "BoxesIcon"
+        "ICON": "GasIcon"
       }
     ]
   },
@@ -166,6 +271,15 @@
     "TITLE": "Our Highlighted",
     "TITLE_SPAN": "Projects",
     "PROJECTS_LIST": [
+      {
+        "NAME": "Agave Expansion",
+        "DESCRIPTION": "The Agave Expansion project includes the installation of a 14-inch underground hydraulic loop made of PVC C900, with a total length of 320 meters, designed to efficiently supply fire protection systems.",
+        "UBICATION": "Puerto Interior, Silao, Guanajuato",
+        "APP": "Fire Protection Infrastructure",
+        "IMAGES": [
+          "/images/projects/image-27.webp"
+        ]
+      },
       {
         "NAME": "New Offices ISSEG",
         "DESCRIPTION": "New ISSEG offices for Grupo Eco del Bajio.",
@@ -243,6 +357,10 @@
         ]
       }
     ]
+  },
+  "GALLERY": {
+    "TITLE": "Gallery",
+    "DESCRIPTION": "Explore our gallery of images of our featured projects to see the quality and scope of our fire protection solutions."
   },
   "CLIENTS": {
     "TITLE": "Our Clients",
@@ -418,6 +536,52 @@
         ],
         "DATE": "2026-04-01",
         "LINK": "importance-certifications-fire-protection-solicmex"
+      },
+      {
+        "ID": "5",
+        "TITLE": "What is NFPA and why is it important in fire protection systems?",
+        "DESCRIPTION": "<h2>What is NFPA and why is it important in fire protection systems?</h2><p>In the field of fire protection, safety depends on much more than equipment and technology. To ensure reliable, efficient systems capable of responding properly during an emergency, there are international standards and regulations that govern the design, installation, maintenance, and inspection of fire protection systems.</p><p>One of the most important and globally recognized organizations in this field is the <strong>NFPA (National Fire Protection Association)</strong>, whose standards are used in thousands of industrial, commercial, and institutional projects around the world.</p><h2>What is NFPA?</h2><p>The NFPA, or <strong>National Fire Protection Association</strong>, is an international organization founded in 1896 in the United States, dedicated to developing standards and regulations related to fire prevention, fire protection, electrical safety, and risk management.</p><p>Today, NFPA standards are considered a global technical reference and are used in more than 100 countries to design safe and efficient fire protection systems.</p><p>The primary objective of NFPA is to reduce the risk of fires and other hazards through technical guidelines developed by engineers, manufacturers, authorities, and safety specialists.</p><h2>Why is NFPA important in fire protection systems?</h2><p>NFPA standards ensure that fire protection systems function properly when they are truly needed.</p><p>Without adequate technical standards, systems may experience critical failures during emergencies, putting human lives, infrastructure, and business operations at risk.</p><p>The importance of NFPA lies in establishing clear criteria to:</p><ul><li>Design safe and efficient systems</li><li>Standardize installation processes</li><li>Ensure proper maintenance procedures</li><li>Reduce operational and financial risks</li><li>Protect human lives and property</li><li>Comply with legal and insurance requirements</li></ul><p>Thanks to these standards, companies can rely on systems aligned with internationally recognized safety practices.</p><h2>What do NFPA standards regulate?</h2><p>NFPA standards cover virtually every component related to fire protection systems.</p><p>The main regulated areas include:</p><ul><li>Automatic sprinkler systems</li><li>Fire pumps</li><li>Fire alarm and detection systems</li><li>Portable fire extinguishers</li><li>Fire protection piping networks</li><li>Clean agent suppression systems</li><li>Inspection and maintenance procedures</li><li>Electrical safety</li><li>Emergency signage and evacuation systems</li></ul><p>Each standard is specifically designed to address different aspects of comprehensive fire protection.</p><h2>Main NFPA standards used in fire protection systems</h2><h3>NFPA 13 – Automatic sprinkler systems</h3><p>NFPA 13 regulates the design and installation of automatic sprinkler systems.</p><p>This standard establishes criteria related to:</p><ul><li>Sprinkler coverage</li><li>Hazard classifications</li><li>Required flow rates and pressures</li><li>Spacing between devices</li><li>Piping materials and specifications</li></ul><p>Proper implementation helps control or extinguish fires during their early stages.</p><h3>NFPA 20 – Fire pumps</h3><p>NFPA 20 regulates the installation of fire pumps, which are essential for supplying water at the proper pressure during emergencies.</p><p>The standard includes guidelines for:</p><ul><li>Electric and diesel fire pumps</li><li>Jockey pumps</li><li>Power supply systems</li><li>Pump rooms</li><li>Performance testing</li></ul><p>Proper installation according to NFPA 20 ensures operational reliability during critical situations.</p><h3>NFPA 25 – Inspection, testing, and maintenance</h3><p>NFPA 25 establishes procedures for the inspection, testing, and maintenance of fire protection systems.</p><p>Its purpose is to ensure that systems remain fully operational at all times.</p><p>The standard includes:</p><ul><li>Fire pump testing</li><li>Valve inspections</li><li>Piping evaluations</li><li>Flow testing</li><li>Corrosion and leak detection</li></ul><p>Maintenance programs based on NFPA 25 are essential to prevent failures during real emergencies.</p><h3>NFPA 72 – Fire alarm and detection systems</h3><p>NFPA 72 regulates fire alarm and detection systems.</p><p>This standard defines criteria related to:</p><ul><li>Smoke and heat detectors</li><li>Control panels</li><li>Audible and visual notification devices</li><li>Manual pull stations</li><li>Remote monitoring systems</li></ul><p>Early detection is critical to reducing damage and ensuring safe evacuation.</p><h3>NFPA 10 – Portable fire extinguishers</h3><p>NFPA 10 regulates the selection, installation, and inspection of portable fire extinguishers.</p><p>It includes criteria for:</p><ul><li>Fire classifications</li><li>Types of extinguishing agents</li><li>Strategic placement</li><li>Maintenance and recharge procedures</li><li>Maximum travel distances</li></ul><p>Portable extinguishers represent the first line of response against incipient fires.</p><h2>NFPA and fire protection engineering</h2><p>Today, fire protection engineering depends heavily on compliance with NFPA standards.</p><p>These standards allow the development of safe projects through:</p><ul><li>Risk analysis</li><li>Hydraulic calculations</li><li>Fire network design</li><li>Proper equipment selection</li><li>Technical documentation and drawings</li><li>Evacuation planning strategies</li></ul><p>As a result, systems can be properly adapted to different facilities and hazard levels.</p><h2>Benefits of implementing NFPA-compliant systems</h2><p>Implementing systems designed according to NFPA standards provides multiple benefits:</p><ul><li>Improved life safety</li><li>Reduced property damage</li><li>Greater operational reliability</li><li>Regulatory compliance</li><li>Compatibility with insurance requirements</li><li>Reduced operational and financial risks</li></ul><p>In industrial, commercial, and corporate sectors, working under NFPA standards is now considered essential.</p><h2>NFPA standards in Mexico</h2><p>Although NFPA is a U.S.-based organization, its standards are widely used in Mexico across industries, hospitals, hotels, shopping centers, corporate buildings, and manufacturing plants.</p><p>Additionally, many Mexican official standards reference NFPA technical criteria to ensure safe installations aligned with international safety standards.</p><h2>The importance of working with certified specialists</h2><p>Designing, installing, and maintaining fire protection systems requires technical expertise, experience, and regulatory compliance.</p><p>A specialized company should have:</p><ul><li>Certified and trained personnel</li><li>Knowledge of NFPA standards</li><li>Experience in fire protection engineering</li><li>Inspection and maintenance capabilities</li><li>Proper equipment and technology</li></ul><p>Working with specialists ensures reliable systems prepared to respond effectively during emergencies.</p><h2>Conclusion</h2><p>NFPA represents one of the most important pillars of fire safety worldwide.</p><p>Its standards enable the development of reliable systems capable of protecting human lives, infrastructure, and critical operations through internationally recognized technical requirements.</p><p>Beyond regulatory compliance, implementing NFPA-compliant systems is an investment in safety, operational continuity, and risk reduction for any modern company or institution.</p>",
+        "IMAGES": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2WFfstDpOKA6SdWCEB-1YcJwuOMxXkY7Sw&s"
+        ],
+        "TAGS": [
+          "nfpa",
+          "fire protection",
+          "fire protection systems",
+          "industrial safety",
+          "fire prevention",
+          "fire engineering",
+          "nfpa 13",
+          "nfpa 20",
+          "nfpa 25",
+          "nfpa 72",
+          "operational safety",
+          "solicmex"
+        ],
+        "DATE": "2026-05-11",
+        "LINK": "what-is-nfpa-fire-protection-systems"
+      },
+      {
+        "ID": "6",
+        "TITLE": "What Is a Fire Protection System? Importance, Operation, and Essential Components",
+        "DESCRIPTION": "<h2>What Is a Fire Protection System?</h2><p>Fire protection is one of the most important aspects of safety in industrial, commercial, residential, and institutional facilities. A fire can endanger human lives, cause major financial losses, and severely impact business continuity. For this reason, fire protection systems have become an essential part of modern engineering and industrial safety.</p><p>A fire protection system is a combination of equipment, devices, and technologies designed to detect, alert, control, and extinguish fires either automatically or manually. Its primary objective is to minimize damage, protect people, and preserve buildings, machinery, and critical assets.</p><br/><h2>How Does a Fire Protection System Work?</h2><p>The operation of a fire protection system depends on the type of protection implemented, but it generally follows a sequence of detection, alarm, and suppression. When a detector identifies smoke, heat, or fire, the system activates audible and visual alarms and, depending on the configuration, may automatically activate sprinklers, pumping systems, or suppression agents.</p><p>Automatic systems are designed to control fires in their early stages, preventing their spread and allowing safe evacuation while emergency responders arrive.</p><br/><h2>Main Components of a Fire Protection System</h2><p>Fire protection systems are composed of several specialized elements that work together to ensure effective protection.</p><br/><h3>1. Fire Detection and Alarm Systems</h3><p>These systems quickly identify signs of fire through smoke, heat, or flame detectors. Once an emergency is detected, audible and visual alarms are activated to alert building occupants.</p><p>Main components include:</p><ul><li>Smoke detectors</li><li>Heat detectors</li><li>Control panels</li><li>Sirens and strobes</li><li>Manual pull stations</li><li>Monitoring modules</li></ul><br/><h3>2. Automatic Sprinkler Systems</h3><p>Automatic sprinkler systems are one of the most effective methods for controlling fires. They operate through pressurized piping connected to thermally sensitive sprinklers that activate automatically when high temperatures are detected.</p><p>There are several types of sprinkler systems:</p><ul><li>Wet pipe systems</li><li>Dry pipe systems</li><li>Pre-action systems</li><li>Deluge systems</li></ul><br/><h3>3. Fire Pump Systems</h3><p>The fire pump room is responsible for providing the pressure and flow required to supply hydraulic fire protection systems. It includes main pumps, jockey pumps, controllers, valves, and backup systems.</p><br/><h3>4. Hydrant and Hose Systems</h3><p>Hydrant systems allow manual firefighting through hoses and special connections used by internal brigades or fire departments.</p><br/><h3>5. Special Fire Suppression Systems</h3><p>Some environments require alternatives to water-based suppression systems. In these cases, specialized suppression systems are used, such as:</p><ul><li>Clean agent systems</li><li>CO₂ systems</li><li>Foam systems</li><li>Commercial kitchen fire suppression systems</li></ul><br/><h2>The Importance of Fire Protection Engineering</h2><p>Designing a fire protection system requires specialized knowledge in hydraulics, international standards, industrial safety, and risk analysis. Each project must be tailored to the specific characteristics of the facility and comply with technical standards such as NFPA 13, NFPA 20, NFPA 25, and NFPA 72.</p><p>Proper engineering ensures that systems operate correctly during emergencies and comply with legal and operational requirements.</p><br/><h2>Fire Protection System Maintenance</h2><p>A fire protection system requires periodic inspections, testing, and maintenance to ensure proper operation. Maintenance activities include valve inspections, pump testing, alarm inspections, detector cleaning, and hydraulic testing.</p><p>Preventive maintenance is essential to guarantee system reliability during real emergency situations.</p><br/><h2>Benefits of Having a Fire Protection System</h2><ul><li>Protection of human lives</li><li>Reduction of property damage</li><li>Business continuity</li><li>Regulatory compliance</li><li>Reduced financial risks</li><li>Improved safety for employees and visitors</li></ul><br/><h2>Solicmex Commitment to Safety</h2><p>At Solicmex, we specialize in the engineering, installation, maintenance, and repair of fire protection systems. Our mission is to provide comprehensive, efficient, and reliable solutions that ensure the safety of every project.</p><p>We work under international standards and with highly trained personnel to develop systems tailored to each client’s specific needs, ensuring quality, regulatory compliance, and maximum protection.</p>",
+        "IMAGES": [
+          "/images/articles/sistemas-incendios-1.webp",
+          "/images/articles/sistemas-incendios-2.webp"
+        ],
+        "TAGS": [
+          "fire protection system",
+          "fire safety",
+          "sprinklers",
+          "industrial safety",
+          "nfpa",
+          "fire detection",
+          "hydrants",
+          "engineering",
+          "solicmex"
+        ],
+        "DATE": "2026-05-17",
+        "LINK": "what-is-a-fire-protection-system"
       }
     ]
   },

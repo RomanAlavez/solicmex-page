@@ -26,7 +26,7 @@ const i18n = getI18N({ currentLocale });
   <main class="w-full flex flex-col">
     <Hero text={i18n.HERO} ad={i18n.AD} />
     <ArticlesPreview
-      articles={i18n.ARTICLES.ARTICLES_LIST}
+      articles={i18n.ARTICLES.ARTICLES_LIST.reverse()}
       max={3}
       articlesHref="articles"
       text={i18n.ARTICLES_PREVIEW}

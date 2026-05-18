@@ -4,6 +4,7 @@ import Navbar from "@/components/important/Navbar.astro";
 import Footer from "@/components/important/Footer.astro";
 
 const { title, description, currentLanguage, nav, foot } = Astro.props;
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -14,10 +15,23 @@ const { title, description, currentLanguage, nav, foot } = Astro.props;
     <link rel="icon" type="image/webp" href="/logo-fondo.webp" />
     <meta name="description" content={description} />
     <title>{title}</title>
-  </head>
-  <body
-    class="w-dvw min-h-dvh">
-    <header class="w-full flex flex-row p-1 items-center justify-center h-24 fixed top-0 z-[100] backdrop-blur-md ">
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+    ></script>
+    </head>
+
+  <script define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", GA_ID);
+  </script>
+  <body class="w-dvw min-h-dvh">
+    <header
+      class="w-full flex flex-row p-1 items-center justify-center h-24 fixed top-0 z-[100] backdrop-blur-md"
+    >
       <Navbar text={nav} />
     </header>
 
