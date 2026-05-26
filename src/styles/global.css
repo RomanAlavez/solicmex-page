@@ -1,10 +1,10 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
 
 body,
 html {
@@ -18,34 +18,6 @@ html {
 
 body {
   font-family: "Satoshi-Variable", sans-serif;
-  --sb-track-color: #1b2524;
-  --sb-thumb-color: #f57400;
-  --sb-size: 5px;
-  background: linear-gradient(
-    to top right,
-    #020617 0%,
-    #164e63 50%,
-    #06b6d4 100%
-  );
-}
-
-#dialog-content {
-  --sb-track-color: #1b2524;
-  --sb-thumb-color: #f57400;
-  --sb-size: 5px;
-}
-#dialog-content::-webkit-scrollbar {
-  width: var(--sb-size);
-}
-
-#dialog-content::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 20px;
-}
-
-#dialog-content::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 20px;
 }
 
 @font-face {
@@ -53,81 +25,6 @@ body {
   src: url("/../fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
-body::-webkit-scrollbar,*::-webkit-scrollbar {
-  width: var(--sb-size);
-}
-
-body::-webkit-scrollbar-track,*::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 20px;
-}
-
-body::-webkit-scrollbar-thumb,*::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 20px;
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-}
-
 @view-transition {
   navigation: auto;
-}
-::view-transition-group(project-name-*, project-image-*) {
-  animation-duration: 0.5s;
-}
-::view-transition-old(project-name-*, project-image-*) {
-  animation: slide-out 0.5s ease-in-out;
-}
-::view-transition-new(project-name-*, project-image-*) {
-  animation: slide-in 0.5s ease-in-out;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-slide {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
