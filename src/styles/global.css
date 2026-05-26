@@ -5,7 +5,15 @@
   box-sizing: border-box;
 }
 
+root {
+  --color-main: #06b6d4;
+  --color-dark-main: #164e63;
+}
 
+@theme {
+  --color-main: #06b6d4;
+  --color-dark-main: #164e63;
+}
 body,
 html {
   margin: 0;
