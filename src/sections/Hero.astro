@@ -1,7 +1,49 @@
 ---
-
+import OverlayShape from '@/components/OverlayShape.astro';
 ---
 
-<section id="hero">
-  <video src="/solicmex-video-hero.webm" autoplay muted loop></video>
+<section id="hero" class="relative w-full h-11/12 overflow-hidden bg-white">
+  <OverlayShape />
+  <div
+    id="hero-content"
+    class="w-full h-full flex flex-row items-center gap-6 p-10"
+  >
+    <div id="hero-logo" class="flex flex-col items-center gap-4">
+      <div class="relative group">
+        <div
+          class="absolute -inset-4 rounded-full border border-cyan-400/20 animate-spin-slow"
+          style="animation: spin-slow 12s linear infinite;"
+        >
+        </div>
+        <div
+          class="absolute -inset-2 rounded-full border border-cyan-300/30"
+          style="animation: pulse-ring 3s ease-in-out infinite;"
+        >
+        </div>
+        <div
+          class="relative size-28 sm:size-36 md:size-44 lg:size-52 rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-[0_0_48px_rgba(6,182,212,0.35)] bg-primary/20 backdrop-blur-sm flex items-center justify-center"
+        >
+          <img
+            src="/logo-solicmex.webp"
+            alt="SolicMex Logo"
+            class="w-full h-full object-contain p-1 sm:p-2"
+            draggable="false"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-text" class="flex flex-col text-left gap-4">
+      <h1
+        class="text-4xl md:text-7xl lg:text-9xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-primary to-dark-primary"
+      >
+        solicmex
+      </h1>
+      <p
+        class="text-lg md:text-xl lg:text-2xl max-w-2xl bg-clip-text bg-gradient-to-r from-primary to-dark-primary"
+      >
+        Soluciones Integrales para Ingeniería y Construcción
+      </p>
+    </div>
+  </div>
 </section>
