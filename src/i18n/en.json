@@ -25,6 +25,24 @@
     "BUTTON": "Request Quote",
     "HREF": "/contact"
   },
+  "PREV_SERVICES": [
+    {
+      "NAME": "Engineering and design of fire protection systems",
+      "ICON": "DraftingCompass"
+    },
+    {
+      "NAME": "Preventive and corrective maintenance",
+      "ICON": "Wrench"
+    },
+    {
+      "NAME": "Inspection, testing and certification",
+      "ICON": "ClipboardCheck"
+    },
+    {
+      "NAME": "Supplies and spare parts for fire protection systems",
+      "ICON": "Package"
+    }
+  ],
   "SERVICES": {
     "TITLE": "Our Solutions",
     "SERVICES_LIST": [

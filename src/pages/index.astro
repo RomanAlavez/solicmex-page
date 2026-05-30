@@ -15,6 +15,12 @@ const i18n = getI18N({ currentLocale });
   foot={i18n.FOOTER}
 >
   <main class="w-full h-full flex flex-col text-primary">
-    <Hero />
+    <Hero
+      prevServices={i18n.PREV_SERVICES}
+      title={i18n.HERO.TITLE}
+      subtitle={i18n.HERO.SUBTITLE}
+      description={i18n.HERO.DESCRIPTION}
+      button={i18n.HERO.BUTTON}
+    />
   </main>
 </Layout>

@@ -7,3 +7,7 @@ export interface ArticleBlog {
     DATE: string;
     LINK?: string;
 }
+export type PrevService = {
+    NAME: string;
+    ICON: string;
+};
