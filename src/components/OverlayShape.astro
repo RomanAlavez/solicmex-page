@@ -1,4 +1,39 @@
-<span
+---
+import {
+  AlarmSmoke,
+  Wrench,
+  ClipboardCheck,
+  Package,
+  DraftingCompass,
+} from "lucide-react";
+import type { PrevService } from "@/types/types";
+
+const { prevServices } = Astro.props as {
+  prevServices: PrevService[];
+};
+
+const ICONS = {
+  DraftingCompass: DraftingCompass,
+  Wrench: Wrench,
+  ClipboardCheck: ClipboardCheck,
+  Package: Package,
+};
+---
+
+<div
   id="overlay-shape"
-  class="absolute bg-gradient-to-tr from-dark-primary to-primary bottom-0 w-full h-1/3"
-></span>
+  class="absolute flex items-center justify-between p-3 bg-gradient-to-tr from-dark-primary to-primary bottom-0 w-full h-1/5 shadow-[0_0_48px_rgba(6,182,212,0.35)] text-white"
+>
+  {
+    prevServices.map((service) => {
+      const Icon = ICONS[service.ICON as keyof typeof ICONS];
+
+      return (
+        <div class="flex items-center p-1 gap-2 max-w-sm overflow-hidden text-left">
+          {Icon && <Icon className="size-9 p-2 bg-dark-primary/50 shadow-2xl shadow-black/70 backdrop-blur-2xl rounded-md border border-white/10 " />}
+          <span class="text-sm font-medium">{service.NAME}</span>
+        </div>
+      );
+    })
+  }
+</div>

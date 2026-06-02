@@ -25,6 +25,24 @@
         "BUTTON": "Solicitar Cotización",
         "HREF": "/contact"
     },
+    "PREV_SERVICES":[
+        {
+            "NAME":"Ingeniería y diseño de sistemas contra incendio",
+            "ICON":"DraftingCompass"
+        },
+        {
+            "NAME":"Mantenimiento preventivo y correctivo",
+            "ICON":"Wrench"
+        },
+        {
+            "NAME":"Inspección, pruebas y certificación",
+            "ICON":"ClipboardCheck"
+        },
+        {
+            "NAME":"Suministros y refacciones para sistemas contra incendio",
+            "ICON":"Package"
+        }
+    ],
     "SERVICES": {
         "TITLE": "NUESTRAS SOLUCIONES",
         "SERVICES_LIST": [

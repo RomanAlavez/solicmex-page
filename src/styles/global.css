@@ -15,6 +15,7 @@ root {
   --color-primary: #06b6d4;
   --color-dark-primary: #164e63;
   --color-contrast: #f54900;
+  --text-shadow-xl: 10px 0px 40px rgb(0, 0, 0 / 0.25); 
 }
 body,
 html {
@@ -64,5 +65,31 @@ body::-webkit-scrollbar-thumb,
 }
 
 #overlay-shape {
-  clip-path: shape(from 0 100%,vline to 25px,curve to 21.43% 15.5px with 14.29% 15px,curve to 35.71% 9px with 28.57% 16px,curve to 50% 20px with 42.86% 2px,curve to 64.29% 44px with 57.14% 38px,curve to 78.57% 27.5px with 71.43% 50px,curve to 100% 25px with 85.71% 5px,vline to 100%, hline to 0);
+  clip-path: shape(
+    from 0 100%,
+    vline to 25px,
+    curve to 21.43% 15.5px with 14.29% 15px,
+    curve to 35.71% 9px with 28.57% 16px,
+    curve to 50% 20px with 42.86% 2px,
+    curve to 64.29% 44px with 57.14% 38px,
+    curve to 78.57% 27.5px with 71.43% 50px,
+    curve to 100% 25px with 85.71% 5px,
+    vline to 100%,
+    hline to 0
+  );
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
