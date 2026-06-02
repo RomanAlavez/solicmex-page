@@ -15,7 +15,7 @@ root {
   --color-primary: #06b6d4;
   --color-dark-primary: #164e63;
   --color-contrast: #f54900;
-  --text-shadow-xl: 10px 0px 40px rgb(0, 0, 0 / 0.25); 
+  --text-shadow-xl: 10px 0px 40px rgb(0, 0, 0 / 0.25);
 }
 body,
 html {
@@ -93,4 +93,71 @@ body::-webkit-scrollbar-thumb,
   100% {
     opacity: 0;
   }
+}
+
+@keyframes pretty-modal-closing-border-radius {
+  to {
+    border-radius: 400px;
+  }
+}
+@keyframes pretty-modal-closing-blur {
+  0% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(32px);
+  }
+}
+@keyframes pretty-modal-closing-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+dialog.quote-modal {
+  border: none;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+}
+dialog.quote-modal::backdrop {
+  display: none;
+}
+
+.quote-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 49;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.quote-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pretty-modal-opening {
+  animation: pretty-modal-opening 500ms cubic-bezier(0.56, 0.27, 0, 1);
+}
+@keyframes pretty-modal-opening {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.pretty-modal-closing {
+  animation:
+    pretty-modal-closing-border-radius 500ms cubic-bezier(0.56, 0.27, 0, 1),
+    pretty-modal-closing-blur 500ms cubic-bezier(0.37, 0.35, 0, 1),
+    pretty-modal-closing-fade 700ms cubic-bezier(0.56, 0.27, 0, 1);
 }

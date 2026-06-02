@@ -1,0 +1,35 @@
+---
+import ProjectGallery from "@/components/gallery/project-gallery";
+import { type Project } from "@/types/types";
+
+interface GalleryProps {
+  title: string;
+  description: string;
+  projects: Project[];
+}
+
+const { title, description, projects } = Astro.props as GalleryProps;
+---
+
+<section
+  id="gallery"
+  class="relative w-full h-full flex flex-col items-center gap-8 p-10"
+>
+  <header
+    class="w-full h-auto flex flex-col items-center gap-4 text-center justify-center"
+  >
+    <h2
+      class="text-4xl md:text-6xl lg:text-8xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-primary to-dark-primary"
+    >
+      {title}
+    </h2>
+
+    <p
+      class="text-lg md:text-xl lg:text-2xl max-w-2xl text-slate-700 text-center"
+    >
+      {description}
+    </p>
+  </header>
+
+  <ProjectGallery client:load projects={projects} />
+</section>
