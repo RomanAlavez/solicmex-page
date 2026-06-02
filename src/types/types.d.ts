@@ -11,3 +11,11 @@ export type PrevService = {
     NAME: string;
     ICON: string;
 };
+
+export type Project = {
+    ID: string;
+    NAME: string;
+    DESCRIPTION: string;
+    IMAGES: string[];
+    APP: string;
+}
