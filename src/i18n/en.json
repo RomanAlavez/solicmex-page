@@ -290,6 +290,7 @@
     "TITLE_SPAN": "Projects",
     "PROJECTS_LIST": [
       {
+        "ID": "ampliacion-agave",
         "NAME": "Agave Expansion",
         "DESCRIPTION": "The Agave Expansion project includes the installation of a 14-inch underground hydraulic loop made of PVC C900, with a total length of 320 meters, designed to efficiently supply fire protection systems.",
         "UBICATION": "Puerto Interior, Silao, Guanajuato",
@@ -299,6 +300,7 @@
         ]
       },
       {
+        "ID": "nuevas-oficinas-isseg",
         "NAME": "New Offices ISSEG",
         "DESCRIPTION": "New ISSEG offices for Grupo Eco del Bajio.",
         "UBICATION": "Silao de la Victoria, Guanajuato",
@@ -308,6 +310,7 @@
         ]
       },
       {
+        "ID": "beiersdorf-manufacturing-mexico",
         "NAME": "Beiersdorf Manufacturing México",
         "DESCRIPTION": "Supply, installation, and commissioning of a 5000 gpm pumping system for the PCI system.",
         "UBICATION": "Silao, Guanajuato",
@@ -319,6 +322,7 @@
         ]
       },
       {
+        "ID": "teleperformance-one-tower",
         "NAME": "Teleperformance One Tower",
         "DESCRIPTION": "A fire detection system and a fire suppression system using hydrants were installed across 10 levels of the tower.",
         "UBICATION": "Mexico City",
@@ -328,6 +332,7 @@
         ]
       },
       {
+        "ID": "ethan-allen",
         "NAME": "Ethan Allen",
         "DESCRIPTION": "A sprinkler system was installed, with a 2,500 GPM pump on floors 1 and 2, as well as a SafeFire cable thermal detection system connected to a Notifier panel, complying with NFPA standards and under supervision and approval of the international insurance company.",
         "UBICATION": "Silao, Guanajuato",
@@ -337,6 +342,7 @@
         ]
       },
       {
+        "ID": "compuestos-avanzados",
         "NAME": "Advanced Composites",
         "DESCRIPTION": "A residential diesel pump with UL/FM certification was replaced, complying with NFPA 20 requirements, along with the head assembly and connection to the existing system.",
         "UBICATION": "Aguascalientes, Ags",
@@ -346,6 +352,7 @@
         ]
       },
       {
+        "ID": "bulkmatic-de-mexico",
         "NAME": "Bulkmatic de México",
         "DESCRIPTION": "This system was developed from scratch based on NFPA standards. The installation includes a 1500 GPM pumping unit that feeds a sprinkler system in the transfer area and monitoring hydrants. An alarm system was also installed in the transfer area, sprinklers in the pump room, and spot detection in the office area.",
         "UBICATION": "San Luis Potosí, S.L.P",
