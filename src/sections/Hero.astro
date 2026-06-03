@@ -1,7 +1,7 @@
 ---
+import QuoteYourProject from "@/components/quote-your-project";
 import OverlayShape from "@/components/OverlayShape.astro";
 import HeroCarousel from "@/components/hero-carousel";
-import { ChevronRight } from "lucide-react";
 import type { PrevService } from "@/types/types";
 
 interface HeroProps {
@@ -67,12 +67,7 @@ const { prevServices, title, subtitle, description, button } =
       >
         {description}
       </span>
-      <button
-        class="w-fit inline-flex items-center gap-2 relative z-10 py-3 px-10 bg-gradient-to-tr from-primary to-primary/30 hover:to-primary/50 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
-      >
-        {button}
-        <ChevronRight />
-      </button>
+      <QuoteYourProject buttonText={button} client:load />
     </div>
   </div>
 

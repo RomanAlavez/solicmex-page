@@ -290,6 +290,7 @@
         "TITLE_SPAN": "Destacados",
         "PROJECTS_LIST": [
             {
+                "ID": "ampliacion-agave",
                 "NAME": "Ampliación Agave",
                 "DESCRIPTION": "Este proyecto de Ampliación Agave ubicado en el Puerto interior en Silao, Guanajuato, incluye la instalación de un loop hidráulicio subterráneo de 14 pulgadas en PVC C900, con una longitud total de 320 metros, diseñado para la alimentación eficiente de sistemas contra incendios  ",
                 "UBICATION": "Puerto Interior, Silao, Guanajuato",
@@ -299,6 +300,7 @@
                 ]
             },
             {
+                "ID": "nuevas-oficinas-isseg",
                 "NAME": "Nuevas oficinas ISSEG",
                 "DESCRIPTION": "Nuevas oficinas ISSEG para Grupo Eco del Bajio.",
                 "UBICATION": "Silao de la Victoria, Guanajuato",
@@ -308,6 +310,7 @@
                 ]
             },
             {
+                "ID": "beiersdorf-manufacturing-mexico",
                 "NAME": "Beiersdorf Manufacturing México",
                 "DESCRIPTION": "Suministro, instalación y puesta en marcha de sistema de bombeo 5000 gpm para sistema de PCI en Silao, Guanajuato.",
                 "UBICATION": "Silao, Guanajuato",
@@ -319,6 +322,7 @@
                 ]
             },
             {
+                "ID": "teleperformance-one-tower",
                 "NAME": "Teleperformance One Tower",
                 "DESCRIPTION": "Se instaló un sistema de detección de incendios y un sistema de supresión de incendios mediante hidrantes en 10 niveles de la torre Teleperformance One Tower, ubicada en la Ciudad de México, cumpliendo con las normativas NFPA y con la supervisión de la compañía de seguros internacional.",
                 "UBICATION": "Ciudad de México",
@@ -328,6 +332,7 @@
                 ]
             },
             {
+                "ID": "ethan-allen",
                 "NAME": "Ethan Allen",
                 "DESCRIPTION": "Se instaló un sistema de rociadores, con una bomba de 2,500 gpm en los pisos 1 y 2, así como un sistema de detección térmica por cable SafeFire, conectado a un panel Notifier, cumpliendo con las normas NFPA, con supervisión y aprobación de la compañía de seguros internacional.",
                 "UBICATION": "Silao, Guanajuato",
@@ -337,6 +342,7 @@
                 ]
             },
             {
+                "ID": "compuestos-avanzados",
                 "NAME": "Compuestos avanzados",
                 "DESCRIPTION": "Se sustituyó una bomba diésel residencial con certificación UL/FM, cumpliendo con los requisitos de la NFPA 20, junto con el conjunto del cabezal y la conexión al sistema existente. En Aguascalientes, Ags.",
                 "UBICATION": "Aguascalientes, Ags",
@@ -346,6 +352,7 @@
                 ]
             },
             {
+                "ID": "bulkmatic-de-mexico",
                 "NAME": "Bulkmatic de México",
                 "DESCRIPTION": "Este sistema fue desarrollado desde cero con base en los estándares de la NFPA, y su instalación consiste en una unidad de bombeo de 1500 GPM, que alimenta un sistema de rociadores en el área de transferencia y hidrantes de monitoreo. También se instaló un sistema de alarma en el área de transferencia, rociadores en la sala de bombas y detección puntual en el área de oficinas.",
                 "UBICATION": "San Luis Potosí, S.L.P",
