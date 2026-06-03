@@ -26,6 +26,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Evita que elementos anclados queden ocultos tras la barra fija */
+html { scroll-padding-top: 4.5rem; }
+
+/* Asegura separación cuando se navega a anclas y evita que el contenido objetivo quede oculto */
+:target,
+section[id],
+header[id] {
+  scroll-margin-top: 4.5rem;
+}
+
 body {
   font-family: "Satoshi-Variable", sans-serif;
   --sb-track-color: #1b2524;
