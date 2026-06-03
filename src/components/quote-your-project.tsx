@@ -25,7 +25,7 @@ const MODAL_STYLES = `
         inset: 0;
         background: rgba(0,0,0,0.35);
         backdrop-filter: blur(2px);
-        z-index: 49;
+        z-index: 59;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.35s ease;
@@ -143,7 +143,7 @@ export default function QuoteYourProject({ buttonText }: QuoteYourProjectProps) 
             {/* ── Dialog ── */}
             <dialog
                 ref={dialogRef}
-                className="quote-modal fixed inset-0 z-50 m-auto w-full max-w-lg
+                className="quote-modal fixed inset-0 z-60 m-auto w-full max-w-lg
                            rounded-3xl bg-white p-8 shadow-2xl"
             >
                 <div className="flex items-center justify-between mb-6">
