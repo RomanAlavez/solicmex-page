@@ -33,6 +33,7 @@ export default function HeroCarousel() {
                     mask-y-from-70% mask-y-to-90%
                     mask-x-from-70% mask-x-to-90%
                     animate-[fade_5s_ease-in-out_infinite]
+                    translate-x-3/12
                 "
             />
 
@@ -45,6 +46,7 @@ export default function HeroCarousel() {
                 className="
                     absolute -z-30 w-full h-full object-cover blur-sm
                     animate-[fade_5s_ease-in-out_infinite]
+                    translate-x-3/12
                 "
             />
 
