@@ -1,6 +1,5 @@
 ---
 interface Props {
-    // No props for now, but we can add some in the future if needed
     HOME: String;
     SERVICES: String;
     PROJECTS: String;
@@ -27,14 +26,13 @@ const {
 } = Astro.props as Props;
 
 const currentPath = Astro.url.pathname;
-const isActive = (path: string) =>
-    currentPath === path || currentPath === path + "/";
-
-// Detecta idioma actual y construye la URL alternativa
 const isEnglish = currentPath.startsWith("/en");
-const alternatePath = isEnglish
-    ? currentPath.replace(/^\/en/, "") || "/"
-    : `/en${currentPath}`;
+const p = isEnglish ? "/en" : ""; // prefijo de idioma
+
+const isActive = (path: string) => {
+    const full = `${p}${path}`;
+    return currentPath === full || currentPath === full + "/";
+};
 ---
 
 <nav
@@ -49,7 +47,7 @@ const alternatePath = isEnglish
     shadow-[0_2px_12px_rgba(6,182,212,0.08)]
     backdrop-blur-xl"
 >
-    <a href="/" class="flex-shrink-0">
+    <a href={isEnglish ? "/en" : "/"} class="flex-shrink-0">
         <img
             src="/logo-solicmex.webp"
             alt="Logo"
@@ -62,29 +60,27 @@ const alternatePath = isEnglish
 
     <div class="hidden lg:flex items-center justify-center gap-2 xl:gap-4">
         <a
-            href="/"
-            data-active={isActive("/") ? "true" : undefined}
+            href={isEnglish ? "/en" : "/"}
+            data-active={currentPath === "/" || currentPath === "/en" || currentPath === "/en/" ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/")
+                currentPath === "/" || currentPath === "/en" || currentPath === "/en/"
                     ? "text-[var(--color-contrast)]"
                     : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
             ]}>{HOME}</a
         >
         <a
-            href="/services"
+            href={`${p}/services`}
             data-active={isActive("/services") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
                 isActive("/services")
                     ? "text-[var(--color-contrast)]"
                     : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}
-        >
-            {SERVICES}</a
+            ]}>{SERVICES}</a
         >
         <a
-            href="/projects"
+            href={`${p}/projects`}
             data-active={isActive("/projects") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -94,7 +90,7 @@ const alternatePath = isEnglish
             ]}>{PROJECTS}</a
         >
         <a
-            href="/gallery"
+            href={`${p}/gallery`}
             data-active={isActive("/gallery") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -104,7 +100,7 @@ const alternatePath = isEnglish
             ]}>{GALLERY}</a
         >
         <a
-            href="/clients"
+            href={`${p}/clients`}
             data-active={isActive("/clients") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -114,7 +110,7 @@ const alternatePath = isEnglish
             ]}>{CLIENTS}</a
         >
         <a
-            href="/about-us"
+            href={`${p}/about-us`}
             data-active={isActive("/about-us") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -124,7 +120,7 @@ const alternatePath = isEnglish
             ]}>{ABOUT_US}</a
         >
         <a
-            href="/why-us"
+            href={`${p}/why-us`}
             data-active={isActive("/why-us") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -134,7 +130,7 @@ const alternatePath = isEnglish
             ]}>{WHY_US}</a
         >
         <a
-            href="/"
+            href={`${p}/our-philosophy`}
             data-active={isActive("/our-philosophy") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -144,7 +140,7 @@ const alternatePath = isEnglish
             ]}>{OUR_PHILOSOPHY}</a
         >
         <a
-            href="/contact"
+            href={`${p}/contact`}
             data-active={isActive("/contact") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -154,7 +150,7 @@ const alternatePath = isEnglish
             ]}>{CONTACT}</a
         >
         <a
-            href="/articles"
+            href={`${p}/articles`}
             data-active={isActive("/articles") ? "true" : undefined}
             class:list={[
                 "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
@@ -166,94 +162,8 @@ const alternatePath = isEnglish
     </div>
 
     <div class="flex items-center justify-end gap-3">
-        <div class="relative" id="lang-dropdown-wrap">
-            <button
-                id="lang-toggle"
-                type="button"
-                aria-label="Cambiar idioma"
-                class="lang-btn flex items-center gap-1.5 text-[var(--color-dark-primary)] transition-all duration-300 hover:text-[var(--color-contrast)]"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-6 h-6"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                    <path d="M3.6 9h16.8"></path>
-                    <path d="M3.6 15h16.8"></path>
-                    <path d="M11.5 3a17 17 0 0 0 0 18"></path>
-                    <path d="M12.5 3a17 17 0 0 1 0 18"></path>
-                </svg>
-                <span class="text-xs font-semibold">
-                    {isEnglish ? "EN" : "ES"}
-                </span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    class="w-3 h-3 opacity-60"
-                >
-                    <path d="M6 9l6 6 6-6"></path>
-                </svg>
-            </button>
-
-            <div
-                id="lang-menu"
-                role="menu"
-                aria-labelledby="lang-toggle"
-                class="absolute right-0 top-full mt-2 hidden
-    min-w-[140px]
-    rounded-xl
-    overflow-hidden
-    bg-cyan-950/60
-    backdrop-blur-xl
-    border border-cyan-400/20
-    shadow-lg
-    z-50"
-            >
-                <a
-                    href={isEnglish
-                        ? currentPath.replace(/^\/en/, "") || "/"
-                        : currentPath}
-                    role="menuitem"
-                    class:list={[
-                        "flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-white/5",
-                        !isEnglish
-                            ? "text-[var(--color-contrast)]"
-                            : "text-white/70",
-                    ]}
-                >
-                    <span class="text-lg">🇲🇽</span>
-                    <span>Español</span>
-                    {!isEnglish && <span class="ml-auto text-xs">✓</span>}
-                </a>
-
-                <div class="h-px bg-white/10 mx-2.5"></div>
-
-                <a
-                    href={isEnglish ? currentPath : `/en${currentPath}`}
-                    role="menuitem"
-                    class:list={[
-                        "flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-white/5",
-                        isEnglish
-                            ? "text-[var(--color-contrast)]"
-                            : "text-white/70",
-                    ]}
-                >
-                    <span class="text-lg">🇺🇸</span>
-                    <span>English</span>
-                    {isEnglish && <span class="ml-auto text-xs">✓</span>}
-                </a>
-            </div>
-        </div>
+        <!-- SLOT para el LanguageSwitcher -->
+        <slot name="lang-switcher" />
 
         <button
             id="menu-toggle"
@@ -265,12 +175,9 @@ const alternatePath = isEnglish
         transition-all duration-300
         hover:text-[var(--color-contrast)]"
         >
-            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
-            ></span>
-            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
-            ></span>
-            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
-            ></span>
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
         </button>
     </div>
 </nav>
@@ -288,17 +195,16 @@ const alternatePath = isEnglish
 >
     <div class="flex flex-col px-6 py-4 gap-1">
         <a
-            href="/"
+            href={isEnglish ? "/en" : "/"}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/")
+                currentPath === "/" || currentPath === "/en" || currentPath === "/en/"
                     ? "text-[var(--color-contrast)]"
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{HOME}</a
         >
-
         <a
-            href="/services"
+            href={`${p}/services`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/services")
@@ -306,9 +212,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{SERVICES}</a
         >
-
         <a
-            href="/projects"
+            href={`${p}/projects`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/projects")
@@ -316,9 +221,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{PROJECTS}</a
         >
-
         <a
-            href="/gallery"
+            href={`${p}/gallery`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/gallery")
@@ -326,9 +230,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{GALLERY}</a
         >
-
         <a
-            href="/clients"
+            href={`${p}/clients`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/clients")
@@ -336,9 +239,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{CLIENTS}</a
         >
-
         <a
-            href="/about-us"
+            href={`${p}/about-us`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/about-us")
@@ -346,9 +248,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{ABOUT_US}</a
         >
-
         <a
-            href="/why-us"
+            href={`${p}/why-us`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/why-us")
@@ -356,9 +257,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{WHY_US}</a
         >
-
         <a
-            href="/our-philosophy"
+            href={`${p}/our-philosophy`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/our-philosophy")
@@ -366,9 +266,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{OUR_PHILOSOPHY}</a
         >
-
         <a
-            href="/contact"
+            href={`${p}/contact`}
             class:list={[
                 "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
                 isActive("/contact")
@@ -376,9 +275,8 @@ const alternatePath = isEnglish
                     : "text-white hover:text-[var(--color-contrast)]",
             ]}>{CONTACT}</a
         >
-
         <a
-            href="/articles"
+            href={`${p}/articles`}
             class:list={[
                 "text-lg font-medium py-3 transition-all duration-300",
                 isActive("/articles")
@@ -434,7 +332,6 @@ const alternatePath = isEnglish
     const navbar = document.getElementById("navbar");
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const langBtn = navbar?.querySelector(".lang-btn");
 
     const floatingClasses = [
         "bg-cyan-950/30",
@@ -458,6 +355,7 @@ const alternatePath = isEnglish
             navbar?.toggleAttribute("data-scrolled", shouldFloat);
 
             const links = navbar?.querySelectorAll(".nav-link-text");
+            const langBtn = navbar?.querySelector(".lang-btn");
 
             if (shouldFloat) {
                 navbar?.classList.remove(...fixedClasses);
@@ -467,11 +365,11 @@ const alternatePath = isEnglish
                     l.classList.remove("text-[var(--color-dark-primary)]");
                     l.classList.add("text-white");
                 });
-                langBtn?.classList.remove("text-[var(--color-dark-primary)]");
-                langBtn?.classList.add("text-white");
-                menuToggle?.classList.remove(
-                    "text-[var(--color-dark-primary)]",
-                );
+                if (langBtn) {
+                    langBtn.classList.remove("text-[var(--color-dark-primary)]");
+                    langBtn.classList.add("text-white");
+                }
+                menuToggle?.classList.remove("text-[var(--color-dark-primary)]");
                 menuToggle?.classList.add("text-white");
             } else {
                 navbar?.classList.remove(...floatingClasses);
@@ -481,8 +379,10 @@ const alternatePath = isEnglish
                     l.classList.remove("text-white");
                     l.classList.add("text-[var(--color-dark-primary)]");
                 });
-                langBtn?.classList.remove("text-white");
-                langBtn?.classList.add("text-[var(--color-dark-primary)]");
+                if (langBtn) {
+                    langBtn.classList.remove("text-white");
+                    langBtn.classList.add("text-[var(--color-dark-primary)]");
+                }
                 menuToggle?.classList.remove("text-white");
                 menuToggle?.classList.add("text-[var(--color-dark-primary)]");
             }
@@ -502,17 +402,5 @@ const alternatePath = isEnglish
             mobileMenu.classList.remove("flex");
             menuToggle?.setAttribute("aria-expanded", "false");
         });
-    });
-
-    const langToggle = document.getElementById("lang-toggle");
-    const langMenu = document.getElementById("lang-menu");
-
-    langToggle?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        langMenu?.classList.toggle("hidden");
-    });
-
-    document.addEventListener("click", () => {
-        langMenu?.classList.add("hidden");
     });
 </script>
