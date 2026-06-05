@@ -1,0 +1,450 @@
+---
+interface Props {
+    // No props for now, but we can add some in the future if needed
+    HOME: String;
+    SERVICES: String;
+    PROJECTS: String;
+    GALLERY: String;
+    CLIENTS: String;
+    ABOUT_US: String;
+    WHY_US: String;
+    OUR_PHILOSOPHY: String;
+    CONTACT: String;
+    ARTICLES: String;
+}
+
+const {
+    HOME,
+    SERVICES,
+    PROJECTS,
+    GALLERY,
+    CLIENTS,
+    ABOUT_US,
+    WHY_US,
+    OUR_PHILOSOPHY,
+    CONTACT,
+    ARTICLES,
+} = Astro.props as Props;
+
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) =>
+    currentPath === path || currentPath === path + "/";
+
+// Detecta idioma actual y construye la URL alternativa
+const isEnglish = currentPath.startsWith("/en");
+const alternatePath = isEnglish
+    ? currentPath.replace(/^\/en/, "") || "/"
+    : `/en${currentPath}`;
+---
+
+<nav
+    id="navbar"
+    class="fixed top-0 inset-x-0 z-50
+    grid grid-cols-[auto_1fr_auto]
+    items-center
+    px-6 py-3
+    w-full
+    bg-white
+    border-b border-[rgba(6,182,212,0.2)]
+    shadow-[0_2px_12px_rgba(6,182,212,0.08)]
+    backdrop-blur-xl"
+>
+    <a href="/" class="flex-shrink-0">
+        <img
+            src="/logo-solicmex.webp"
+            alt="Logo"
+            class="h-14
+                transition-all duration-300
+                hover:scale-110
+                hover:drop-shadow-[0_0_12px_var(--color-primary)]"
+        />
+    </a>
+
+    <div class="hidden lg:flex items-center justify-center gap-2 xl:gap-4">
+        <a
+            href="/"
+            data-active={isActive("/") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{HOME}</a
+        >
+        <a
+            href="/services"
+            data-active={isActive("/services") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/services")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}
+        >
+            {SERVICES}</a
+        >
+        <a
+            href="/projects"
+            data-active={isActive("/projects") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/projects")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{PROJECTS}</a
+        >
+        <a
+            href="/gallery"
+            data-active={isActive("/gallery") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/gallery")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{GALLERY}</a
+        >
+        <a
+            href="/clients"
+            data-active={isActive("/clients") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/clients")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{CLIENTS}</a
+        >
+        <a
+            href="/about-us"
+            data-active={isActive("/about-us") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/about-us")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{ABOUT_US}</a
+        >
+        <a
+            href="/why-us"
+            data-active={isActive("/why-us") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/why-us")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{WHY_US}</a
+        >
+        <a
+            href="/"
+            data-active={isActive("/our-philosophy") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/our-philosophy")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{OUR_PHILOSOPHY}</a
+        >
+        <a
+            href="/contact"
+            data-active={isActive("/contact") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/contact")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{CONTACT}</a
+        >
+        <a
+            href="/articles"
+            data-active={isActive("/articles") ? "true" : undefined}
+            class:list={[
+                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
+                isActive("/articles")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
+            ]}>{ARTICLES}</a
+        >
+    </div>
+
+    <div class="flex items-center justify-end gap-3">
+        <button
+            id="lang-toggle"
+            type="button"
+            aria-label="Cambiar idioma"
+            title="Cambiar idioma"
+            data-href={alternatePath}
+            class="lang-btn text-[var(--color-dark-primary)] whitespace-nowrap transition-all duration-300 hover:text-[var(--color-contrast)]"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-7 h-7"
+            >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                <path d="M3.6 9h16.8"></path>
+                <path d="M3.6 15h16.8"></path>
+                <path d="M11.5 3a17 17 0 0 0 0 18"></path>
+                <path d="M12.5 3a17 17 0 0 1 0 18"></path>
+            </svg>
+            <span class="text-xs font-semibold">{isEnglish ? "ES" : "EN"}</span>
+        </button>
+
+        <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            class="lg:hidden flex flex-col gap-1.5 p-1
+                text-[var(--color-dark-primary)]
+                transition-all duration-300
+                hover:text-[var(--color-contrast)]"
+        >
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
+            ></span>
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
+            ></span>
+            <span class="block w-6 h-0.5 bg-current transition-all duration-300"
+            ></span>
+        </button>
+    </div>
+</nav>
+
+<div
+    id="mobile-menu"
+    class="fixed z-40
+        hidden flex-col
+        bg-slate-950/40
+        backdrop-blur-xl
+        border border-cyan-400/10
+        border-t-0
+        shadow-lg
+        lg:hidden"
+>
+    <div class="flex flex-col px-6 py-4 gap-1">
+        <a
+            href="/"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{HOME}</a
+        >
+
+        <a
+            href="/services"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/services")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{SERVICES}</a
+        >
+
+        <a
+            href="/projects"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/projects")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{PROJECTS}</a
+        >
+
+        <a
+            href="/gallery"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/gallery")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{GALLERY}</a
+        >
+
+        <a
+            href="/clients"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/clients")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{CLIENTS}</a
+        >
+
+        <a
+            href="/about-us"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/about-us")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{ABOUT_US}</a
+        >
+
+        <a
+            href="/why-us"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/why-us")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{WHY_US}</a
+        >
+
+        <a
+            href="/our-philosophy"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/our-philosophy")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{OUR_PHILOSOPHY}</a
+        >
+
+        <a
+            href="/contact"
+            class:list={[
+                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
+                isActive("/contact")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{CONTACT}</a
+        >
+
+        <a
+            href="/articles"
+            class:list={[
+                "text-lg font-medium py-3 transition-all duration-300",
+                isActive("/articles")
+                    ? "text-[var(--color-contrast)]"
+                    : "text-white hover:text-[var(--color-contrast)]",
+            ]}>{ARTICLES}</a
+        >
+    </div>
+</div>
+
+<style>
+    :global(#navbar) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        transition:
+            top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: top, width;
+    }
+    :global(#navbar[data-scrolled]) {
+        top: 1rem !important;
+        width: min(1400px, 88%) !important;
+        border-radius: 1rem !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+        backdrop-filter: blur(12px) !important;
+    }
+
+    :global(#mobile-menu) {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        top: 57px;
+        border-radius: 0 0 0 0;
+        transition:
+            top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    :global(#navbar[data-scrolled] + #mobile-menu) {
+        top: calc(1rem + 57px);
+        width: min(1400px, 88%) !important;
+        border-radius: 0 0 1rem 1rem !important;
+    }
+</style>
+
+<script is:inline>
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const langBtn = navbar?.querySelector(".lang-btn");
+
+    const floatingClasses = [
+        "bg-cyan-950/30",
+        "backdrop-blur-xl",
+        "border",
+        "border-cyan-400/20",
+        "shadow-lg",
+    ];
+
+    const fixedClasses = [
+        "bg-white",
+        "border-b",
+        "border-[rgba(6,182,212,0.2)]",
+        "shadow-[0_2px_12px_rgba(6,182,212,0.08)]",
+    ];
+
+    window.addEventListener(
+        "scroll",
+        () => {
+            const shouldFloat = window.scrollY > 20;
+            navbar?.toggleAttribute("data-scrolled", shouldFloat);
+
+            const links = navbar?.querySelectorAll(".nav-link-text");
+
+            if (shouldFloat) {
+                navbar?.classList.remove(...fixedClasses);
+                navbar?.classList.add(...floatingClasses);
+                links?.forEach((l) => {
+                    if (l.dataset.active === "true") return;
+                    l.classList.remove("text-[var(--color-dark-primary)]");
+                    l.classList.add("text-white");
+                });
+                langBtn?.classList.remove("text-[var(--color-dark-primary)]");
+                langBtn?.classList.add("text-white");
+                menuToggle?.classList.remove(
+                    "text-[var(--color-dark-primary)]",
+                );
+                menuToggle?.classList.add("text-white");
+            } else {
+                navbar?.classList.remove(...floatingClasses);
+                navbar?.classList.add(...fixedClasses);
+                links?.forEach((l) => {
+                    if (l.dataset.active === "true") return;
+                    l.classList.remove("text-white");
+                    l.classList.add("text-[var(--color-dark-primary)]");
+                });
+                langBtn?.classList.remove("text-white");
+                langBtn?.classList.add("text-[var(--color-dark-primary)]");
+                menuToggle?.classList.remove("text-white");
+                menuToggle?.classList.add("text-[var(--color-dark-primary)]");
+            }
+        },
+        { passive: true },
+    );
+
+    menuToggle?.addEventListener("click", () => {
+        const isOpen = mobileMenu?.classList.toggle("hidden") === false;
+        mobileMenu?.classList.toggle("flex", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("flex");
+            menuToggle?.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.getElementById("lang-toggle")?.addEventListener("click", () => {
+        const href = document.getElementById("lang-toggle")?.dataset.href;
+        if (href) window.location.href = href;
+    });
+</script>
