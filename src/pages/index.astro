@@ -15,7 +15,7 @@ const i18n = getI18N({ currentLocale });
   nav={i18n.NAV}
   foot={i18n.FOOTER}
 >
-  <main class="w-full h-full flex flex-col text-primary">
+  <div class="w-full h-full flex flex-col text-primary">
     <Hero
       prevServices={i18n.PREV_SERVICES}
       title={i18n.HERO.TITLE}
@@ -23,5 +23,5 @@ const i18n = getI18N({ currentLocale });
       description={i18n.HERO.DESCRIPTION}
       button={i18n.HERO.BUTTON}
     />
-  </main>
+  </div>
 </Layout>

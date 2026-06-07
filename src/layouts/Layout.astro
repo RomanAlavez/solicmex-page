@@ -2,7 +2,6 @@
 import NavBar from "@/components/NavBar.astro";
 import "@/styles/global.css";
 
-
 const { title, description, currentLanguage, nav, foot } = Astro.props;
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
@@ -17,7 +16,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <title>{title}</title>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
     ></script>
-    </head>
+  </head>
 
   <script define:vars={{ GA_ID }}>
     window.dataLayer = window.dataLayer || [];
@@ -29,94 +28,21 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     gtag("config", GA_ID);
   </script>
   <body class="w-dvw min-h-dvh">
-    <NavBar 
-    HOME={nav.HOME}
-    SERVICES={nav.SERVICES}
-    PROJECTS={nav.PROJECTS}
-    GALLERY={nav.GALLERY}
-    CLIENTS={nav.CLIENTS}
-    ABOUT_US={nav.ABOUT_US}
-    WHY_US={nav.WHY_US}
-    OUR_PHILOSOPHY={nav.OUR_PHILOSOPHY}
-    CONTACT={nav.CONTACT}
-    ARTICLES={nav.ARTICLES}
-     />
-        <div class="pt-[4.5rem]">
-            <slot />
-        </div>
-
-    <section class="min-h-screen">
-            <h1 class="text-5xl font-bold mb-6">
-                SOLICMEX
-            </h1>
-
-            <p class="text-xl mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas, doloremque.
-            </p>
-
-            <p class="text-xl mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quasi ipsum perspiciatis officiis cupiditate laborum iste.
-            </p>
-
-            <hr class="my-10" />
-
-            <div class="space-y-8">
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, minima.
-                </p>
-
-            </div>
-        </section>
-
-        <section class="min-h-screen flex items-center justify-center">
-            <h2 class="text-6xl font-bold">
-                Segunda sección
-            </h2>
-        </section>
-
-        <section class="min-h-screen flex items-center justify-center">
-            <h2 class="text-6xl font-bold">
-                Tercera sección
-            </h2>
-        </section>
+    <NavBar
+      HOME={nav.HOME}
+      SERVICES={nav.SERVICES}
+      PROJECTS={nav.PROJECTS}
+      GALLERY={nav.GALLERY}
+      CLIENTS={nav.CLIENTS}
+      ABOUT_US={nav.ABOUT_US}
+      WHY_US={nav.WHY_US}
+      OUR_PHILOSOPHY={nav.OUR_PHILOSOPHY}
+      CONTACT={nav.CONTACT}
+      ARTICLES={nav.ARTICLES}
+    />
+    <main class="w-full h-dvh pt-[4.5rem]">
+      <slot />
+    </main>
+    <footer></footer>
   </body>
 </html>
