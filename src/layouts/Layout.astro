@@ -27,7 +27,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
 
     gtag("config", GA_ID);
   </script>
-  <body class="w-dvw min-h-dvh">
+  <body class="w-dvw min-h-dvh ">
     <NavBar
       HOME={nav.HOME}
       SERVICES={nav.SERVICES}
@@ -40,9 +40,11 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       CONTACT={nav.CONTACT}
       ARTICLES={nav.ARTICLES}
     />
-    <main class="w-full h-dvh pt-[4.5rem]">
+    <main class="w-full h-dvh pt-[4.5rem] px-4 rounded-2xl">
       <slot />
     </main>
+    
+
     <footer></footer>
   </body>
 </html>
