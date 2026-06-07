@@ -27,7 +27,9 @@ html {
 }
 
 /* Evita que elementos anclados queden ocultos tras la barra fija */
-html { scroll-padding-top: 4.5rem; }
+html {
+  scroll-padding-top: 4.5rem;
+}
 
 /* Asegura separación cuando se navega a anclas y evita que el contenido objetivo quede oculto */
 :target,
@@ -43,6 +45,9 @@ body {
   --sb-size: 5px;
 }
 
+section {
+  @apply rounded-2xl;
+}
 @font-face {
   font-family: "Satoshi-Variable";
   src: url("/../fonts/Satoshi-Variable.ttf") format("truetype");
