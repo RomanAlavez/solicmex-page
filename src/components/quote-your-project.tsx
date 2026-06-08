@@ -129,7 +129,7 @@ export default function QuoteYourProject({ buttonText }: QuoteYourProjectProps) 
                 ref={buttonRef}
                 onClick={openModal}
                 className="w-fit inline-flex items-center gap-2 relative z-10 py-3 px-10
-                           bg-gradient-to-tr from-primary to-primary/30
+                           bg-gradient-to-r from-black/30 to-transparent border border-white/10
                            hover:to-primary/50 text-white font-medium rounded-xl
                            cursor-pointer hover:shadow-lg transition-all duration-300"
             >
