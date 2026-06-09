@@ -19,6 +19,41 @@
     "DESCRIPTION": "A specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems.",
     "BUTTON": "Get a Quote"
   },
+  "QUOTE": {
+    "TITLE": "Get a Quote for Your Project",
+    "SUBTITLE": "Request a Quote",
+    "INSTRUCTIONS": "Fill out the form and we'll get in touch with you.",
+    "DESCRIPTION": "Tell us about your project and one of our advisors will contact you to provide a customized solution.",
+    "BUTTON": "Request a Quote",
+    "POINTS": [
+      "No-obligation quote",
+      "Personalized assistance",
+      "Tailor-made industrial solutions",
+      "Fast response"
+    ],
+    "FORM": {
+      "NAME": {
+        "LABEL": "Full Name",
+        "PLACEHOLDER": "John Smith"
+      },
+      "COMPANY": {
+        "LABEL": "Company",
+        "PLACEHOLDER": "Company Name"
+      },
+      "EMAIL": {
+        "LABEL": "Email Address",
+        "PLACEHOLDER": "email@company.com"
+      },
+      "PHONE": {
+        "LABEL": "Phone Number",
+        "PLACEHOLDER": "+1 (555) 123-4567"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Tell us about your project, specific requirements, or any relevant details."
+      }
+    }
+  },
   "AD": {
     "TITLE": "New Physical Store Coming Soon",
     "DESCRIPTION": "Visit us soon at our new location to discover our fire protection solutions in person!",

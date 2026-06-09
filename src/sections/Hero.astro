@@ -3,7 +3,7 @@ import QuoteYourProject from "@/components/quote-your-project";
 import OverlayShape from "@/components/OverlayShape.astro";
 import HeroCarousel from "@/components/hero-carousel";
 import NoiseTexture from "@/components/Noise.astro";
-import type { PrevService } from "@/types/types";
+import type { PrevService, Quote } from "@/types/types";
 
 interface HeroProps {
   prevServices: PrevService[];
@@ -11,8 +11,9 @@ interface HeroProps {
   subtitle: string;
   description: string;
   button: string;
+  quote: Quote;
 }
-const { prevServices, title, subtitle, description, button } =
+const { prevServices, title, subtitle, description, button, quote } =
   Astro.props as HeroProps;
 ---
 
@@ -68,10 +69,12 @@ const { prevServices, title, subtitle, description, button } =
       >
         {description}
       </span>
-      <QuoteYourProject buttonText={button} client:load />
+      <QuoteYourProject buttonText={button} quote={quote} client:load />
     </div>
   </div>
-  <NoiseTexture class="w-full  opacity-5 mix-blend-screen h-full absolute top-0 left-0" />
+  <NoiseTexture
+    class="w-full opacity-5 mix-blend-screen h-full absolute top-0 left-0"
+  />
 
   <div class="absolute -z-10 w-full h-full mask-l-from-10% mask-l-to-50%">
     <div

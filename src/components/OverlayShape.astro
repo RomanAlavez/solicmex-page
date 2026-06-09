@@ -1,4 +1,5 @@
 ---
+
 import {
   AlarmSmoke,
   Wrench,
@@ -29,9 +30,9 @@ const ICONS = {
       const Icon = ICONS[service.ICON as keyof typeof ICONS];
 
       return (
-        <div class="flex items-center p-1 gap-2 max-w-sm overflow-hidden text-left">
-          {Icon && <Icon className="size-9 p-2 bg-dark-primary/50 shadow-2xl shadow-black/70 backdrop-blur-2xl rounded-md border border-white/10 " />}
-          <span class="text-sm font-medium">{service.NAME}</span>
+        <div class="flex items-center py-1 px-2 gap-2 max-w-sm overflow-hidden hover:bg-dark-primary/30 transition-colors rounded-md">
+          {Icon && <Icon className="size-10 p-2 bg-dark-primary/50 shadow-2xl shadow-black/70 backdrop-blur-2xl rounded-md border border-white/10 " />}
+          <span class="text-base font-medium">{service.NAME}</span>
         </div>
       );
     })

@@ -19,28 +19,63 @@
         "DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
         "BUTTON": "Cotiza tu proyecto"
     },
+    "QUOTE": {
+        "TITLE": "Cotiza tu proyecto",
+        "SUBTITLE": "Solicita tu cotización",
+        "INSTRUCTIONS":"Completa el formulario y nos pondremos en contacto contigo.",
+        "DESCRIPTION": "Cuéntanos sobre tu proyecto y uno de nuestros asesores se pondrá en contacto contigo para brindarte una solución personalizada.",
+        "BUTTON": "Solicitar Cotización",
+        "POINTS": [
+            "Cotización sin compromiso",
+            "Atención personalizada",
+            "Soluciones industriales a medida",
+            "Respuesta rápida"
+        ],
+        "FORM":{
+            "NAME":{
+                "LABEL":"Nombre Completo",
+                "PLACEHOLDER":"Juan Pérez"
+            },
+            "COMPANY":{
+                "LABEL":"Empresa",
+                "PLACEHOLDER":"Nombre de la Empresa"
+            },
+            "EMAIL":{
+                "LABEL":"Correo Electrónico",
+                "PLACEHOLDER":"correo@empresa.com"
+            },
+            "PHONE":{
+                "LABEL":"Teléfono",
+                "PLACEHOLDER":"+52 55 1234 5678"
+            },
+            "MESSAGE":{
+                "LABEL":"Mensaje",
+                "PLACEHOLDER":"Cuéntanos sobre tu proyecto, necesidades específicas o cualquier detalle relevante."
+            }
+        }
+    },
     "AD": {
         "TITLE": "Nueva Tienda Física Próximamente",
         "DESCRIPTION": "¡Visítanos pronto en nuestra nueva ubicación para descubrir nuestras soluciones de protección contra incendios en persona!",
         "BUTTON": "Solicitar Cotización",
         "HREF": "/contact"
     },
-    "PREV_SERVICES":[
+    "PREV_SERVICES": [
         {
-            "NAME":"Ingeniería y diseño de sistemas contra incendio",
-            "ICON":"DraftingCompass"
+            "NAME": "Ingeniería y diseño de sistemas contra incendio",
+            "ICON": "DraftingCompass"
         },
         {
-            "NAME":"Mantenimiento preventivo y correctivo",
-            "ICON":"Wrench"
+            "NAME": "Mantenimiento preventivo y correctivo",
+            "ICON": "Wrench"
         },
         {
-            "NAME":"Inspección, pruebas y certificación",
-            "ICON":"ClipboardCheck"
+            "NAME": "Inspección, pruebas y certificación",
+            "ICON": "ClipboardCheck"
         },
         {
-            "NAME":"Suministros y refacciones para sistemas contra incendio",
-            "ICON":"Package"
+            "NAME": "Suministros y refacciones para sistemas contra incendio",
+            "ICON": "Package"
         }
     ],
     "SERVICES": {

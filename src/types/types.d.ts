@@ -19,3 +19,34 @@ export type Project = {
     IMAGES: string[];
     APP: string;
 }
+
+export type Quote = {
+    TITLE: string;
+    SUBTITLE: string;
+    DESCRIPTION: string;
+    INSTRUCTIONS: string;
+    BUTTON: string;
+    POINTS: string[];
+    FORM: {
+        NAME: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        EMAIL: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        COMPANY: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        PHONE: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        MESSAGE: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+    };
+}

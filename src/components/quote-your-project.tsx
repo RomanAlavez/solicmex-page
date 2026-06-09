@@ -1,193 +1,188 @@
-"use client";
-
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { Flip } from "gsap/Flip";
-import { CustomEase } from "gsap/CustomEase";
-import { useGSAP } from "@gsap/react";
-import { ChevronRight, X } from "lucide-react";
-
-gsap.registerPlugin(Flip, CustomEase, useGSAP);
-
-const FLIP_EASE = "M0,0 C0.305,0.206 0.116,0.567 0.3,0.8 0.394,0.921 0.491,1 1,1";
-
-const MODAL_STYLES = `
-    dialog.quote-modal {
-        border: none;
-        padding: 0;
-        background: transparent;
-        overflow: visible;
-    }
-    dialog.quote-modal::backdrop { display: none; }
-
-    .quote-backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.35);
-        backdrop-filter: blur(2px);
-        z-index: 59;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.35s ease;
-    }
-    .quote-backdrop.open {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .pretty-modal-opening {
-        animation: pretty-modal-opening 500ms cubic-bezier(.56,.27,0,1);
-    }
-    @keyframes pretty-modal-opening {
-        from { opacity: 0; filter: blur(8px); }
-        to   { opacity: 1; filter: blur(0px); }
-    }
-
-    .pretty-modal-closing {
-        animation:
-            pretty-modal-closing-border-radius 500ms cubic-bezier(.56,.27,0,1),
-            pretty-modal-closing-blur          500ms cubic-bezier(.37,.35,0,1),
-            pretty-modal-closing-fade          700ms cubic-bezier(.56,.27,0,1);
-    }
-
-`;
+import { ChevronRight, Mails, Building2, User, Phone, Mail, MessageSquare } from "lucide-react";
+import {
+  SharedDialogContent,
+  SharedDialogItem,
+  SharedDialogOnly,
+  SharedDialogRoot,
+  SharedDialogTrigger,
+} from "@ursa/ursa-design";
+import type { Quote } from "@/types/types";
 
 interface QuoteYourProjectProps {
-    buttonText: string;
+  buttonText: string;
+  quote: Quote;
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
-export default function QuoteYourProject({ buttonText }: QuoteYourProjectProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const buttonRef    = useRef<HTMLButtonElement>(null);
-    const dialogRef    = useRef<HTMLDialogElement>(null);
-    const backdropRef  = useRef<HTMLDivElement>(null);
+export default function QuoteYourProject({
+  buttonText,
+  quote,
+}: QuoteYourProjectProps) {
+  return (
+    <SharedDialogRoot>
+      <SharedDialogTrigger
+        id="quote-project"
+        className="w-fit inline-flex items-center gap-2 relative z-10 py-3 px-10 bg-gradient-to-r from-black/30 to-transparent border border-white/10 hover:to-primary/50 hover:px-11 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
+      >
+        <SharedDialogItem id="button-text" dialogId="quote-project">
+          {buttonText}
+        </SharedDialogItem>
 
-    // useGSAP scopes animations to containerRef and handles cleanup automatically
-    const { contextSafe } = useGSAP(
-        () => {
-            // Inject styles once, scoped inside the GSAP context
-            if (!document.getElementById("pretty-modal-styles")) {
-                const el = document.createElement("style");
-                el.id = "pretty-modal-styles";
-                el.textContent = MODAL_STYLES;
-                document.head.appendChild(el);
-            }
-        },
-        { scope: containerRef }
-    );
+        <SharedDialogItem id="button-icon" dialogId="quote-project">
+          <ChevronRight />
+        </SharedDialogItem>
+      </SharedDialogTrigger>
 
-    // ── open ─────────────────────────────────────────────────────────────────
-    // contextSafe wraps the handler so GSAP can track & clean up its tweens
-    const openModal = contextSafe(() => {
-        const dialog   = dialogRef.current;
-        const trigger  = buttonRef.current;
-        const backdrop = backdropRef.current;
-        if (!dialog || !trigger) return;
+      <SharedDialogContent
+        position="center"
+        overlay="darkblurred"
+        id="quote-project"
+        closeButton
+        className="w-[95vw] max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white text-black shadow-2xl shadow-black/50 p-0"
+      >
+        <div className="grid lg:grid-cols-2">
+          <div className="bg-gradient-to-br from-primary to-primary/80 text-white p-8 lg:p-12 flex flex-col justify-center">
+            <div className="flex items-center gap-4 mb-6">
+              <SharedDialogItem id="button-icon" dialogId="quote-project">
+                <Mails className="size-12 lg:size-16" />
+              </SharedDialogItem>
 
-        const state = Flip.getState(trigger);
-
-        dialog.showModal();
-        backdrop?.classList.add("open");
-
-        Flip.from(state, {
-            targets: dialog,
-            scale: true,
-            duration: 0.7,
-            ease: CustomEase.create("open-custom", FLIP_EASE),
-            toggleClass: "pretty-modal-opening",
-        });
-    });
-
-    // ── close ────────────────────────────────────────────────────────────────
-    const closeModal = contextSafe(() => {
-        const dialog   = dialogRef.current;
-        const trigger  = buttonRef.current;
-        const backdrop = backdropRef.current;
-        if (!dialog || !trigger) return;
-
-        const state = Flip.getState(trigger);
-        backdrop?.classList.remove("open");
-
-        Flip.to(state, {
-            targets: dialog,
-            scale: true,
-            duration: 0.7,
-            ease: CustomEase.create("close-custom", FLIP_EASE),
-            toggleClass: "pretty-modal-closing",
-            onComplete: () => {
-                dialog.removeAttribute("style");
-                dialog.close();
-            },
-        });
-    });
-
-    return (
-        <div ref={containerRef}>
-            {/* ── Trigger button ── */}
-            <button
-                ref={buttonRef}
-                onClick={openModal}
-                className="w-fit inline-flex items-center gap-2 relative z-10 py-3 px-10
-                           bg-gradient-to-r from-black/30 to-transparent border border-white/10
-                           hover:to-primary/50 text-white font-medium rounded-xl
-                           cursor-pointer hover:shadow-lg transition-all duration-300"
-            >
+              <SharedDialogItem
+                id="button-text"
+                dialogId="quote-project"
+                className="text-2xl lg:text-4xl font-bold uppercase"
+              >
                 {buttonText}
-                <ChevronRight />
-            </button>
+              </SharedDialogItem>
+            </div>
 
-            {/* ── Backdrop ── */}
-            <div ref={backdropRef} className="quote-backdrop" onClick={closeModal} />
-
-            {/* ── Dialog ── */}
-            <dialog
-                ref={dialogRef}
-                className="quote-modal fixed inset-0 z-60 m-auto w-full max-w-lg
-                           rounded-3xl bg-white p-8 shadow-2xl"
-            >
-                <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold">Cotiza tu proyecto</h2>
-                    <button
-                        onClick={closeModal}
-                        className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                        <X size={20} />
-                    </button>
-                </div>
-
-                <p className="text-gray-600 mb-6">
-                    Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo.
+            <SharedDialogOnly>
+              <div className="space-y-4">
+                <p className="text-white/90 text-base lg:text-lg">
+                  {
+                    quote.DESCRIPTION
+                  }
                 </p>
 
-                <div className="space-y-4">
+                <ul className="space-y-3 text-white/90">
+                  {
+                    quote.POINTS.map((point, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <span className="text-white">✓</span> {point}
+                      </li>
+                    ))
+                  }
+
+                </ul>
+              </div>
+            </SharedDialogOnly>
+          </div>
+
+          <SharedDialogOnly>
+            <div className="p-6 lg:p-10">
+              <h3 className="text-2xl font-bold mb-2">
+                {quote.SUBTITLE}
+              </h3>
+
+              <p className="text-gray-500 mb-8">
+                {quote.INSTRUCTIONS}
+              </p>
+
+              <form id="quote-form" className="space-y-5" action="https://formsubmit.co/operaciones@solicmex.com"
+                method="POST">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    {quote.FORM.NAME.LABEL}
+                  </label>
+
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
+
                     <input
-                        type="text"
-                        placeholder="Nombre"
-                        className="w-full border rounded-xl px-4 py-3 outline-none
-                                   focus:ring-2 focus:ring-primary/40"
+                      type="text"
+                      placeholder={quote.FORM.NAME.PLACEHOLDER}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <input
-                        type="email"
-                        placeholder="Correo electrónico"
-                        className="w-full border rounded-xl px-4 py-3 outline-none
-                                   focus:ring-2 focus:ring-primary/40"
-                    />
-                    <textarea
-                        placeholder="Describe tu proyecto"
-                        rows={4}
-                        className="w-full border rounded-xl px-4 py-3 resize-none outline-none
-                                   focus:ring-2 focus:ring-primary/40"
-                    />
-                    <button
-                        type="button"
-                        className="w-full py-3 rounded-xl bg-primary text-white font-medium
-                                   hover:bg-primary/90 transition-colors"
-                    >
-                        Enviar solicitud
-                    </button>
+                  </div>
                 </div>
-            </dialog>
+
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    {quote.FORM.COMPANY.LABEL}
+                  </label>
+
+                  <div className="relative">
+                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
+
+                    <input
+                      type="text"
+                      placeholder={quote.FORM.COMPANY.PLACEHOLDER}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">
+                      {quote.FORM.EMAIL.LABEL}
+                    </label>
+
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
+
+                      <input
+                        type="email"
+                        placeholder={quote.FORM.EMAIL.PLACEHOLDER}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">
+                      {quote.FORM.PHONE.LABEL}
+                    </label>
+
+                    <div className="relative">
+                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
+
+                      <input
+                        type="tel"
+                        placeholder={quote.FORM.PHONE.PLACEHOLDER}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    {quote.FORM.MESSAGE.LABEL}
+                  </label>
+
+                  <div className="relative">
+                    <MessageSquare className="absolute left-4 top-4 size-4 text-gray-400" />
+
+                    <textarea
+                      rows={5}
+                      placeholder={quote.FORM.MESSAGE.PLACEHOLDER}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-200 resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  form="quote-form"
+                  className="w-full bg-primary text-white py-4 rounded-xl font-semibold hover:opacity-90 transition"
+                >
+                  {quote.BUTTON}
+                </button>
+              </form>
+            </div>
+          </SharedDialogOnly>
         </div>
-    );
+      </SharedDialogContent>
+    </SharedDialogRoot>
+  );
 }
