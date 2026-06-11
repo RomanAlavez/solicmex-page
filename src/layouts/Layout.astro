@@ -1,7 +1,7 @@
 ---
-import NavBar from "@/components/NavBar.astro";
 import "@/styles/global.css";
-
+import NavBar from "@/components/NavBar.astro";
+import Footer from "@/sections/Footer.astro";
 const { title, description, currentLanguage, nav, foot } = Astro.props;
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
@@ -27,7 +27,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
 
     gtag("config", GA_ID);
   </script>
-  <body class="w-dvw min-h-dvh ">
+  <body class="w-dvw min-h-dvh">
     <NavBar
       HOME={nav.HOME}
       SERVICES={nav.SERVICES}
@@ -43,8 +43,25 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
     <main class="w-full h-dvh pt-[4.5rem] px-4 rounded-2xl">
       <slot />
     </main>
-    
 
-    <footer></footer>
+    <footer class="w-full px-4 rounded-2xl py-2 mb-2">
+      <Footer 
+        DESCRIPTION={foot.DESCRIPTION}
+        LINKS={foot.LINKS}
+        LINK_ABOUT_US={foot.LINK_ABOUT_US}
+        LINK_WHY_US={foot.LINK_WHY_US}
+        LINK_SERVICES={foot.LINK_SERVICES}
+        LINK_CONTACT={foot.LINK_CONTACT}
+        CONTACT={foot.CONTACT}
+        CERTIFICATIONS={foot.CERTIFICATIONS}
+        CERTIFICATION_1={foot.CERTIFICATION_1}
+        CERTIFICATION_2={foot.CERTIFICATION_2}
+        CERTIFICATION_3={foot.CERTIFICATION_3}
+        CERTIFICATION_4={foot.CERTIFICATION_4}
+        COPYRIGHT={foot.COPYRIGHT}
+        PRIVACY_POLICY={foot.PRIVACY_POLICY}
+        TERMS_OF_SERVICE={foot.TERMS_OF_SERVICE}
+      />
+    </footer>
   </body>
 </html>
