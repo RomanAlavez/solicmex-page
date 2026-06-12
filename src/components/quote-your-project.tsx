@@ -56,7 +56,6 @@ export default function QuoteYourProject({
               </SharedDialogItem>
             </div>
 
-            {/* ✅ Un solo SharedDialogOnly envuelve TODO el contenido exclusivo del diálogo */}
             <SharedDialogOnly>
               {/* Panel izquierdo: descripción y puntos */}
               <div className="space-y-3 sm:space-y-4">
