@@ -56,7 +56,7 @@ export type Services = {
     SERVICES_LIST: Service[];
 }
 
-type Service = {
+export type Service = {
     NAME: string;
     SHORT_DESCRIPTION:string;
     DESCRIPTION: string;
@@ -64,7 +64,7 @@ type Service = {
     STATS:{
         value: string;
         label: string;
-    }
+    }[]
     ICON: string;
 }
 
