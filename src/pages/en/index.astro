@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/sections/Hero.astro";
+import Services from "@/sections/Services.astro";
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
@@ -23,5 +24,7 @@ const i18n = getI18N({ currentLocale });
       button={i18n.HERO.BUTTON}
       quote={i18n.QUOTE}
     />
+    <Services SERVICES={i18n.SERVICES} />
+
   </main>
 </Layout>

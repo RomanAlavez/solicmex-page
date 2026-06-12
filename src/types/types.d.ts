@@ -50,3 +50,21 @@ export type Quote = {
         };
     };
 }
+
+export type Services = {
+    TITLE: string;
+    SERVICES_LIST: Service[];
+}
+
+type Service = {
+    NAME: string;
+    SHORT_DESCRIPTION:string;
+    DESCRIPTION: string;
+    HIGHLIGHTS: string[];
+    STATS:{
+        value: string;
+        label: string;
+    }
+    ICON: string;
+}
+
