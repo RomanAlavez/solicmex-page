@@ -22,16 +22,20 @@ const ICONS = {
 
 <div
   id="overlay-shape"
-  class="absolute flex items-center justify-between p-3 bg-gradient-to-tr from-dark-primary to-primary bottom-0 w-full h-1/5 shadow-[0_0_48px_rgba(6,182,212,0.35)] text-white"
+  class="absolute z-10 flex items-center justify-between p-2 sm:p-3 bg-gradient-to-tr from-dark-primary to-primary bottom-0 w-full h-[12%] sm:h-[15%] md:h-1/5 shadow-[0_0_48px_rgba(6,182,212,0.35)] text-white"
 >
   {
     prevServices.map((service) => {
       const Icon = ICONS[service.ICON as keyof typeof ICONS];
 
       return (
-        <div class="flex items-center p-1 gap-2 max-w-sm overflow-hidden text-left">
-          {Icon && <Icon className="size-9 p-2 bg-dark-primary/50 shadow-2xl shadow-black/70 backdrop-blur-2xl rounded-md border border-white/10 " />}
-          <span class="text-sm font-medium">{service.NAME}</span>
+        <div class="group flex items-center py-1 px-1 sm:px-2 gap-1 sm:gap-2 min-w-0  transition-colors rounded-md">
+          {Icon && (
+            <Icon className="size-6 sm:size-8 md:size-10 shrink-0 p-1 sm:p-1.5 md:p-2 bg-dark-primary/50 shadow-2xl shadow-black/70 backdrop-blur-2xl rounded-md border border-white/10" />
+          )}
+          <span class="text-[10px] sm:text-xs md:text-sm lg:text-base font-medium truncate leading-tight  group-hover:bg-dark-primary/30 group-hover:p-2 rounded-md transition-all">
+            {service.NAME}
+          </span>
         </div>
       );
     })

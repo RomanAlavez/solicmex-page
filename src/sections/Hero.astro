@@ -2,7 +2,8 @@
 import QuoteYourProject from "@/components/quote-your-project";
 import OverlayShape from "@/components/OverlayShape.astro";
 import HeroCarousel from "@/components/hero-carousel";
-import type { PrevService } from "@/types/types";
+import NoiseTexture from "@/components/Noise.astro";
+import type { PrevService, Quote } from "@/types/types";
 
 interface HeroProps {
   prevServices: PrevService[];
@@ -10,14 +11,15 @@ interface HeroProps {
   subtitle: string;
   description: string;
   button: string;
+  quote: Quote;
 }
-const { prevServices, title, subtitle, description, button } =
+const { prevServices, title, subtitle, description, button, quote } =
   Astro.props as HeroProps;
 ---
 
 <section
   id="hero"
-  class="relative w-full h-[97%] overflow-hidden bg-gradient-to-tr from-white to-transparent"
+  class="relative w-full h-[90dvh] overflow-hidden bg-gradient-to-tr from-black/90 via-dark-primary to-transparent"
 >
   <OverlayShape prevServices={prevServices} />
 
@@ -52,30 +54,34 @@ const { prevServices, title, subtitle, description, button } =
 
     <div id="hero-text" class="flex flex-col text-left gap-4">
       <h1
-        class="text-4xl md:text-7xl lg:text-9xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-primary/30 from-10% via-primary via-80% to-dark-primary"
+        class="text-4xl md:text-7xl lg:text-9xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white from-10% via-primary via-80% to-white"
       >
         {title}
       </h1>
 
       <p
-        class="text-lg md:text-xl lg:text-2xl max-w-2xl bg-clip-text bg-gradient-to-r from-primary to-dark-primary"
+        class="text-lg md:text-xl lg:text-2xl max-w-2xl text-transparent bg-clip-text bg-gradient-to-r from-white to-primary"
       >
         {subtitle}
       </p>
       <span
-        class="text-md md:text-lg lg:text-xl max-w-2xl font-normal text-gray-800/60"
+        class="text-md md:text-lg lg:text-xl max-w-2xl font-normal text-white/80"
       >
         {description}
       </span>
-      <QuoteYourProject buttonText={button} client:load />
+      <QuoteYourProject buttonText={button} quote={quote} client:load />
     </div>
   </div>
+  <NoiseTexture
+    class="w-full opacity-5 mix-blend-screen h-full absolute top-0 left-0"
+  />
 
   <div class="absolute -z-10 w-full h-full mask-l-from-10% mask-l-to-50%">
     <div
       class="absolute inset-0 bg-gradient-to-t from-dark-primary to-transparent"
     >
     </div>
+
     <HeroCarousel client:load />
   </div>
 </section>

@@ -19,3 +19,52 @@ export type Project = {
     IMAGES: string[];
     APP: string;
 }
+
+export type Quote = {
+    TITLE: string;
+    SUBTITLE: string;
+    DESCRIPTION: string;
+    INSTRUCTIONS: string;
+    BUTTON: string;
+    POINTS: string[];
+    FORM: {
+        NAME: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        EMAIL: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        COMPANY: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        PHONE: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+        MESSAGE: {
+            LABEL: string;
+            PLACEHOLDER: string;
+        };
+    };
+}
+
+export type Services = {
+    TITLE: string;
+    SERVICES_LIST: Service[];
+}
+
+export type Service = {
+    NAME: string;
+    SHORT_DESCRIPTION:string;
+    DESCRIPTION: string;
+    HIGHLIGHTS: string[];
+    STATS:{
+        value: string;
+        label: string;
+    }[]
+    ICON: string;
+}
+
