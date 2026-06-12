@@ -1,0 +1,63 @@
+---
+interface Props {
+  backLabel?: string;
+  backHref?: string;
+}
+
+const { backLabel = "Volver al inicio", backHref = "/" } = Astro.props;
+---
+
+<main
+  class="relative w-full min-h-screen flex flex-col items-center justify-center text-white px-4 overflow-hidden"
+>
+  <!-- Glow ambiental -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
+    style="background: radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 70%);"
+  >
+  </div>
+
+  <!-- Número 404 -->
+  <span
+    class="text-[clamp(7rem,22vw,16rem)] text-transparent bg-clip-text bg-gradient-to-r from-primary to-dark-primary font-extrabold leading-none select-none pointer-events-none"
+  >
+    404
+  </span>
+
+  <!-- Línea decorativa -->
+  <div
+    class="w-24 h-px my-6"
+    style="background: linear-gradient(to right, transparent, rgba(6,182,212,0.5), transparent);"
+  >
+  </div>
+
+  <!-- Mensaje -->
+  <div class="flex flex-col items-center gap-2 text-center max-w-xs">
+    <h1 class="text-base sm:text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-dark-primary">
+      Página no encontrada
+    </h1>
+    <p class="text-xs sm:text-sm text-transparent bg-clip-text bg-gradient-to-r from-primary to-dark-primary leading-relaxed">
+      La dirección que buscas no existe o fue movida.
+    </p>
+  </div>
+
+  <!-- Volver -->
+  <a
+    href={backHref}
+    class="group mt-8 flex items-center gap-2 text-xs font-medium text-black hover:text-contrast hover:font-bold transition-colors duration-200"
+  >
+    <svg
+      class="w-3 h-3 group-hover:-translate-x-0.5 transition-transform duration-200"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"></path>
+    </svg>
+    {backLabel}
+  </a>
+</main>
