@@ -1,0 +1,73 @@
+---
+interface Props {
+    variant: "desktop" | "mobile";
+    HOME: String;
+    SERVICES: String;
+    PROJECTS: String;
+    GALLERY: String;
+    CLIENTS: String;
+    ABOUT_US: String;
+    WHY_US: String;
+    OUR_PHILOSOPHY: String;
+    CONTACT: String;
+    ARTICLES: String;
+}
+
+const {
+    variant,
+    HOME, SERVICES, PROJECTS, GALLERY, CLIENTS,
+    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith("/en");
+const p = isEnglish ? "/en" : "";
+
+const isActive = (path: string) => {
+    const full = `${p}${path}`;
+    return currentPath === full || currentPath === full + "/";
+};
+
+const isHome = currentPath === "/" || currentPath === "/en" || currentPath === "/en/";
+
+const desktop = variant === "desktop";
+
+// Clases base según variante
+const base = desktop
+    ? "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300"
+    : "text-lg font-medium py-3 transition-all duration-300";
+
+const borderBottom = desktop ? "" : "border-b border-white/10";
+
+const activeClass = "text-contrast";
+const inactiveClass = desktop
+    ? "text-dark-primary hover:text-contrast"
+    : "text-white hover:text-contrast";
+
+const links = [
+    { href: isEnglish ? "/en" : "/", label: HOME,          active: isHome },
+    { href: `${p}/services`,         label: SERVICES,      active: isActive("/services") },
+    { href: `${p}/projects`,         label: PROJECTS,      active: isActive("/projects") },
+    { href: `${p}/gallery`,          label: GALLERY,       active: isActive("/gallery") },
+    { href: `${p}/clients`,          label: CLIENTS,       active: isActive("/clients") },
+    { href: `${p}/about-us`,         label: ABOUT_US,      active: isActive("/about-us") },
+    { href: `${p}/why-us`,           label: WHY_US,        active: isActive("/why-us") },
+    { href: `${p}/our-philosophy`,   label: OUR_PHILOSOPHY,active: isActive("/our-philosophy") },
+    { href: `${p}/contact`,          label: CONTACT,       active: isActive("/contact") },
+    { href: `${p}/articles`,         label: ARTICLES,      active: isActive("/articles") },
+];
+---
+
+{links.map((link, i) => (
+    
+       <a href={link.href}
+        data-active={desktop && link.active ? "true" : undefined}
+        class:list={[
+            base,
+            link.active ? activeClass : inactiveClass,
+            !desktop && i < links.length - 1 ? borderBottom : "",
+        ]}
+    >
+        {link.label}
+    </a>
+))}

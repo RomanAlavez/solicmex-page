@@ -13,26 +13,16 @@ interface Props {
 }
 
 const {
-    HOME,
-    SERVICES,
-    PROJECTS,
-    GALLERY,
-    CLIENTS,
-    ABOUT_US,
-    WHY_US,
-    OUR_PHILOSOPHY,
-    CONTACT,
-    ARTICLES,
-} = Astro.props as Props;
+    HOME, SERVICES, PROJECTS, GALLERY, CLIENTS,
+    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES,
+} = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith("/en");
-const p = isEnglish ? "/en" : ""; // prefijo de idioma
 
-const isActive = (path: string) => {
-    const full = `${p}${path}`;
-    return currentPath === full || currentPath === full + "/";
-};
+import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
+import MobileNav from "@/components/MobileNav.astro";
+import NavLinks from "@/components/NavLinks.astro";
 ---
 
 <nav
@@ -59,111 +49,23 @@ const isActive = (path: string) => {
     </a>
 
     <div class="hidden lg:flex items-center justify-center gap-2 xl:gap-4">
-        <a
-            href={isEnglish ? "/en" : "/"}
-            data-active={currentPath === "/" || currentPath === "/en" || currentPath === "/en/" ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                currentPath === "/" || currentPath === "/en" || currentPath === "/en/"
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{HOME}</a
-        >
-        <a
-            href={`${p}/services`}
-            data-active={isActive("/services") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/services")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{SERVICES}</a
-        >
-        <a
-            href={`${p}/projects`}
-            data-active={isActive("/projects") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/projects")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{PROJECTS}</a
-        >
-        <a
-            href={`${p}/gallery`}
-            data-active={isActive("/gallery") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/gallery")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{GALLERY}</a
-        >
-        <a
-            href={`${p}/clients`}
-            data-active={isActive("/clients") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/clients")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{CLIENTS}</a
-        >
-        <a
-            href={`${p}/about-us`}
-            data-active={isActive("/about-us") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/about-us")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{ABOUT_US}</a
-        >
-        <a
-            href={`${p}/why-us`}
-            data-active={isActive("/why-us") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/why-us")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{WHY_US}</a
-        >
-        <a
-            href={`${p}/our-philosophy`}
-            data-active={isActive("/our-philosophy") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/our-philosophy")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{OUR_PHILOSOPHY}</a
-        >
-        <a
-            href={`${p}/contact`}
-            data-active={isActive("/contact") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/contact")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{CONTACT}</a
-        >
-        <a
-            href={`${p}/articles`}
-            data-active={isActive("/articles") ? "true" : undefined}
-            class:list={[
-                "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300",
-                isActive("/articles")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-[var(--color-dark-primary)] hover:text-[var(--color-contrast)]",
-            ]}>{ARTICLES}</a
-        >
+        <NavLinks
+            variant="desktop"
+            HOME={HOME}
+            SERVICES={SERVICES}
+            PROJECTS={PROJECTS}
+            GALLERY={GALLERY}
+            CLIENTS={CLIENTS}
+            ABOUT_US={ABOUT_US}
+            WHY_US={WHY_US}
+            OUR_PHILOSOPHY={OUR_PHILOSOPHY}
+            CONTACT={CONTACT}
+            ARTICLES={ARTICLES}
+        />
     </div>
 
     <div class="flex items-center justify-end gap-3">
-        <!-- SLOT para el LanguageSwitcher -->
-        <slot name="lang-switcher" />
+        <LanguageSwitcher />
 
         <button
             id="menu-toggle"
@@ -171,9 +73,9 @@ const isActive = (path: string) => {
             aria-label="Abrir menú"
             aria-expanded="false"
             class="lg:hidden flex flex-col gap-1.5 p-1
-        text-[var(--color-dark-primary)]
-        transition-all duration-300
-        hover:text-[var(--color-contrast)]"
+                text-dark-primary
+                transition-all duration-300
+                hover:text-contrast"
         >
             <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
             <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
@@ -182,110 +84,18 @@ const isActive = (path: string) => {
     </div>
 </nav>
 
-<div
-    id="mobile-menu"
-    class="fixed z-40
-        hidden flex-col
-        bg-slate-950/40
-        backdrop-blur-xl
-        border border-cyan-400/10
-        border-t-0
-        shadow-lg
-        lg:hidden"
->
-    <div class="flex flex-col px-6 py-4 gap-1">
-        <a
-            href={isEnglish ? "/en" : "/"}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                currentPath === "/" || currentPath === "/en" || currentPath === "/en/"
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{HOME}</a
-        >
-        <a
-            href={`${p}/services`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/services")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{SERVICES}</a
-        >
-        <a
-            href={`${p}/projects`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/projects")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{PROJECTS}</a
-        >
-        <a
-            href={`${p}/gallery`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/gallery")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{GALLERY}</a
-        >
-        <a
-            href={`${p}/clients`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/clients")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{CLIENTS}</a
-        >
-        <a
-            href={`${p}/about-us`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/about-us")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{ABOUT_US}</a
-        >
-        <a
-            href={`${p}/why-us`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/why-us")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{WHY_US}</a
-        >
-        <a
-            href={`${p}/our-philosophy`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/our-philosophy")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{OUR_PHILOSOPHY}</a
-        >
-        <a
-            href={`${p}/contact`}
-            class:list={[
-                "text-lg font-medium py-3 border-b border-white/10 transition-all duration-300",
-                isActive("/contact")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{CONTACT}</a
-        >
-        <a
-            href={`${p}/articles`}
-            class:list={[
-                "text-lg font-medium py-3 transition-all duration-300",
-                isActive("/articles")
-                    ? "text-[var(--color-contrast)]"
-                    : "text-white hover:text-[var(--color-contrast)]",
-            ]}>{ARTICLES}</a
-        >
-    </div>
-</div>
+<MobileNav
+    HOME={HOME}
+    SERVICES={SERVICES}
+    PROJECTS={PROJECTS}
+    GALLERY={GALLERY}
+    CLIENTS={CLIENTS}
+    ABOUT_US={ABOUT_US}
+    WHY_US={WHY_US}
+    OUR_PHILOSOPHY={OUR_PHILOSOPHY}
+    CONTACT={CONTACT}
+    ARTICLES={ARTICLES}
+/>
 
 <style>
     :global(#navbar) {
@@ -309,19 +119,7 @@ const isActive = (path: string) => {
         backdrop-filter: blur(12px) !important;
     }
 
-    :global(#mobile-menu) {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        top: 57px;
-        border-radius: 0 0 0 0;
-        transition:
-            top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-            border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    :global(#navbar[data-scrolled] + #mobile-menu) {
+    :global(#navbar[data-scrolled] ~ #mobile-menu) {
         top: calc(1rem + 57px);
         width: min(1400px, 88%) !important;
         border-radius: 0 0 1rem 1rem !important;
@@ -348,47 +146,43 @@ const isActive = (path: string) => {
         "shadow-[0_2px_12px_rgba(6,182,212,0.08)]",
     ];
 
-    window.addEventListener(
-        "scroll",
-        () => {
-            const shouldFloat = window.scrollY > 20;
-            navbar?.toggleAttribute("data-scrolled", shouldFloat);
+    window.addEventListener("scroll", () => {
+        const shouldFloat = window.scrollY > 20;
+        navbar?.toggleAttribute("data-scrolled", shouldFloat);
 
-            const links = navbar?.querySelectorAll(".nav-link-text");
-            const langBtn = navbar?.querySelector(".lang-btn");
+        const links = navbar?.querySelectorAll(".nav-link-text");
+        const langBtn = navbar?.querySelector(".lang-btn");
 
-            if (shouldFloat) {
-                navbar?.classList.remove(...fixedClasses);
-                navbar?.classList.add(...floatingClasses);
-                links?.forEach((l) => {
-                    if (l.dataset.active === "true") return;
-                    l.classList.remove("text-[var(--color-dark-primary)]");
-                    l.classList.add("text-white");
-                });
-                if (langBtn) {
-                    langBtn.classList.remove("text-[var(--color-dark-primary)]");
-                    langBtn.classList.add("text-white");
-                }
-                menuToggle?.classList.remove("text-[var(--color-dark-primary)]");
-                menuToggle?.classList.add("text-white");
-            } else {
-                navbar?.classList.remove(...floatingClasses);
-                navbar?.classList.add(...fixedClasses);
-                links?.forEach((l) => {
-                    if (l.dataset.active === "true") return;
-                    l.classList.remove("text-white");
-                    l.classList.add("text-[var(--color-dark-primary)]");
-                });
-                if (langBtn) {
-                    langBtn.classList.remove("text-white");
-                    langBtn.classList.add("text-[var(--color-dark-primary)]");
-                }
-                menuToggle?.classList.remove("text-white");
-                menuToggle?.classList.add("text-[var(--color-dark-primary)]");
+        if (shouldFloat) {
+            navbar?.classList.remove(...fixedClasses);
+            navbar?.classList.add(...floatingClasses);
+            links?.forEach((l) => {
+                if (l.dataset.active === "true") return;
+                l.classList.remove("text-dark-primary");
+                l.classList.add("text-white");
+            });
+            if (langBtn) {
+                langBtn.classList.remove("text-dark-primary");
+                langBtn.classList.add("text-white");
             }
-        },
-        { passive: true },
-    );
+            menuToggle?.classList.remove("text-dark-primary");
+            menuToggle?.classList.add("text-white");
+        } else {
+            navbar?.classList.remove(...floatingClasses);
+            navbar?.classList.add(...fixedClasses);
+            links?.forEach((l) => {
+                if (l.dataset.active === "true") return;
+                l.classList.remove("text-white");
+                l.classList.add("text-dark-primary");
+            });
+            if (langBtn) {
+                langBtn.classList.remove("text-white");
+                langBtn.classList.add("text-dark-primary");
+            }
+            menuToggle?.classList.remove("text-white");
+            menuToggle?.classList.add("text-dark-primary");
+        }
+    }, { passive: true });
 
     menuToggle?.addEventListener("click", () => {
         const isOpen = mobileMenu?.classList.toggle("hidden") === false;

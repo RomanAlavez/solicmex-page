@@ -1,6 +1,5 @@
 ---
 import NavBar from "@/components/NavBar.astro";
-import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
 import "@/styles/global.css";
 
 
@@ -43,7 +42,6 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
         CONTACT={nav.CONTACT}
         ARTICLES={nav.ARTICLES}
     >
-        <LanguageSwitcher slot="lang-switcher" />
     </NavBar>
         <div class="pt-[4.5rem]">
             <slot />
