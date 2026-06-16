@@ -1,0 +1,63 @@
+---
+interface Props {
+    HOME: String;
+    SERVICES: String;
+    PROJECTS: String;
+    GALLERY: String;
+    CLIENTS: String;
+    ABOUT_US: String;
+    WHY_US: String;
+    OUR_PHILOSOPHY: String;
+    CONTACT: String;
+    ARTICLES: String;
+}
+
+const {
+    HOME, SERVICES, PROJECTS, GALLERY, CLIENTS,
+    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES,
+} = Astro.props;
+
+import NavLinks from "@/components/NavLinks.astro";
+---
+
+<div
+    id="mobile-menu"
+    class="fixed z-40
+        hidden flex-col
+        bg-slate-950/40
+        backdrop-blur-xl
+        border border-cyan-400/10
+        border-t-0
+        shadow-lg
+        lg:hidden"
+>
+    <div class="flex flex-col px-6 py-4 gap-1">
+        <NavLinks
+            variant="mobile"
+            HOME={HOME}
+            SERVICES={SERVICES}
+            PROJECTS={PROJECTS}
+            GALLERY={GALLERY}
+            CLIENTS={CLIENTS}
+            ABOUT_US={ABOUT_US}
+            WHY_US={WHY_US}
+            OUR_PHILOSOPHY={OUR_PHILOSOPHY}
+            CONTACT={CONTACT}
+            ARTICLES={ARTICLES}
+        />
+    </div>
+</div>
+
+<style>
+    :global(#mobile-menu) {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        top: 57px;
+        border-radius: 0 0 0 0;
+        transition:
+            top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+</style>
