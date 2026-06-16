@@ -16,7 +16,7 @@ const i18n = getI18N({ currentLocale });
   nav={i18n.NAV}
   foot={i18n.FOOTER}
 >
-  <div class="w-full flex flex-col text-primary">
+  <div class="w-full flex flex-col text-primary gap-3">
     <Hero
       prevServices={i18n.PREV_SERVICES}
       title={i18n.HERO.TITLE}
@@ -25,6 +25,7 @@ const i18n = getI18N({ currentLocale });
       quote={i18n.QUOTE}
       button={i18n.HERO.BUTTON}
     />
+    <AboutUs ABOUT_US={i18n.ABOUT_US} />
     <Services SERVICES={i18n.SERVICES} />
 
   </div>
