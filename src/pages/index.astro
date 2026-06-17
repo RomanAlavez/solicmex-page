@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/sections/Hero.astro";
 import Services from "@/sections/Services.astro";
+import AboutUs from "@/sections/AboutUs.astro";
 import { getI18N } from "@/i18n";
 import ArticlesHome from "@/components/articles/ArticlesHome.astro";
 import type { ArticleBlog } from "@/types/types.d.ts";
@@ -27,15 +28,15 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
       quote={i18n.QUOTE}
       button={i18n.HERO.BUTTON}
     />
-    <AboutUs ABOUT_US={i18n.ABOUT_US} />
-    <Services SERVICES={i18n.SERVICES} />
-
     <ArticlesHome
       articles={articles}
       text={i18n.ARTICLES_PREVIEW}
       max={3}
       articlesHref="articles"
     />
+    <AboutUs ABOUT_US={i18n.ABOUT_US} />
+    <Services SERVICES={i18n.SERVICES} />
+
   
   </div>
 </Layout>
