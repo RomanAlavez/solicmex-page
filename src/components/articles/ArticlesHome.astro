@@ -1,0 +1,151 @@
+---
+import type { ArticleBlog } from "@/types/types.d.ts";
+import sanitizeHtml from "sanitize-html";
+
+interface Props {
+  articles: ArticleBlog[];
+  text: {
+    SECTION_LABEL: string;
+    SECTION_TITLE: string;
+    READ_MORE: string;
+    SEE_ALL: string;
+  };
+  max?: number;
+  articlesHref?: string;
+}
+
+const { articles, text, max = 3, articlesHref = "articles" } = Astro.props;
+const preview = (articles ?? []).slice(0, max);
+const isEnglish = Astro.url.pathname.startsWith("/en");
+const base = isEnglish ? "/en/" : "/";
+---
+
+<section class="relative w-full py-12 px-4 sm:px-8 bg-gradient-to-br from-primary via-cyan-900 to-dark-primary">
+  <div class="max-w-6xl mx-auto flex flex-col gap-12">
+
+    <!-- Encabezado -->
+    <header class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="flex flex-col gap-1">
+
+        <!-- Label con línea igual que "NUESTRAS SOLUCIONES" -->
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-0.5 bg-contrast"></div>
+          <span class="text-xs tracking-widest uppercase text-cyan-300 font-semibold">
+            {text.SECTION_LABEL}
+          </span>
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-white">
+          {text.SECTION_TITLE}
+        </h2>
+      </div>
+
+      
+        <a href={`${base}${articlesHref}`}
+  class="hidden sm:flex items-center gap-2 text-sm font-medium text-white hover:text-white border border-cyan-400/30 hover:border-cyan-300 rounded-xl px-4 py-2 transition-all duration-200"
+>
+        {text.SEE_ALL}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </header>
+
+    <!-- Grid de cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {preview.map((article) => (
+<article class="group flex flex-col rounded-2xl overflow-hidden border border-cyan-400/20 hover:border-cyan-400/60 transition-all duration-300 bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-cyan-400/20 hover:shadow-xl">          <!-- Imagen -->
+          <div class="relative w-full aspect-[16/9] overflow-hidden">
+            {article.IMAGES?.[0] ? (
+              <img
+                src={article.IMAGES[0]}
+                alt={article.TITLE}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : (
+              <div class="w-full h-full bg-primary/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+            )}
+            <!-- Badge cyan encima de la imagen -->
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+              {article.TAGS.slice(0, 1).map((tag) => (
+                <span class="text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full bg-primary text-white font-semibold">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Cuerpo -->
+          <div class="flex flex-col gap-3 p-5 flex-1">
+
+            <!-- Fecha -->
+            <span class="text-[10px] text-white/40 tabular-nums">{article.DATE}</span>
+
+            <!-- Título -->
+            <h3 class="text-base font-bold leading-snug text-white group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2">
+              {article.TITLE}
+            </h3>
+
+            <!-- Descripción -->
+            <div
+              set:html={sanitizeHtml(article.DESCRIPTION, { allowedTags: [] })}
+              class="text-xs text-white/60 leading-relaxed line-clamp-3 flex-1" 
+            />
+
+            <!-- Link -->
+            
+              <a href={`${base}${articlesHref}/${article.LINK ?? article.ID}`}
+              class="mt-auto pt-3 border-t border-white/10 text-xs font-semibold text-cyan-300 hover:text-white flex items-center gap-1.5 transition-colors duration-200">
+
+              {text.READ_MORE}
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Ver todos — mobile -->
+    <div class="flex sm:hidden justify-center">
+      
+        <a href={`${base}${articlesHref}`}
+        class="flex items-center gap-2 text-sm font-medium text-white border border-primary/30 rounded-xl px-5 py-2.5 transition-all duration-200 w-full justify-center hover:bg-primary/5"
+      >
+        {text.SEE_ALL}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  article:hover {
+    transform: translateY(-4px);
+  }
+</style>
