@@ -2,16 +2,18 @@
 import ServiceCardPreview from "@/components/service-card-preview";
 import type { Services } from "@/types/types";
 
-
 const { SERVICES } = Astro.props as { SERVICES: Services };
-
-
 ---
 
 <section
   id="#services"
-  class="relative w-full bg-slate-50 py-16 sm:py-20 lg:py-24"
+  class="relative w-full  py-16 sm:py-20 lg:py-24"
 >
+  <div
+    class="absolute inset-0 -z-10 h-full w-full bg-slate-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+  >
+  </div>
+
   <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mb-10 max-w-2xl sm:mb-14">
       <span
@@ -28,8 +30,13 @@ const { SERVICES } = Astro.props as { SERVICES: Services };
     <div class="services-fan">
       {
         SERVICES.SERVICES_LIST.map((service, index) => {
-
-          return <ServiceCardPreview client:load service={service} isActive={index === 0} />;
+          return (
+            <ServiceCardPreview
+              client:load
+              service={service}
+              isActive={index === 0}
+            />
+          );
         })
       }
     </div>
