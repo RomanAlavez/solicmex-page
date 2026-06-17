@@ -5,9 +5,12 @@ import Services from "@/sections/Services.astro";
 import AboutUs from "@/sections/AboutUs.astro";
 
 import { getI18N } from "@/i18n";
+import ArticlesHome from "@/components/articles/ArticlesHome.astro";
+import type { ArticleBlog } from "@/types/types.d.ts";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
 ---
 
 <Layout
@@ -17,18 +20,24 @@ const i18n = getI18N({ currentLocale });
   nav={i18n.NAV}
   foot={i18n.FOOTER}
 >
-  <main class="w-full h-full flex flex-col text-primary">
+  <div class="w-full flex flex-col text-primary">
     <Hero
       prevServices={i18n.PREV_SERVICES}
       title={i18n.HERO.TITLE}
       subtitle={i18n.HERO.SUBTITLE}
       description={i18n.HERO.DESCRIPTION}
-      button={i18n.HERO.BUTTON}
       quote={i18n.QUOTE}
+      button={i18n.HERO.BUTTON}
     />
     <AboutUs ABOUT_US={i18n.ABOUT_US} />
 
     <Services SERVICES={i18n.SERVICES} />
 
-  </main>
+    <ArticlesHome
+      articles={articles}
+      text={i18n.ARTICLES_PREVIEW}
+      max={3}
+      articlesHref="articles"
+    />
+  </div>
 </Layout>

@@ -1,0 +1,353 @@
+---
+import sanitizeHtml from "sanitize-html";
+import type { ArticleBlog } from "@/types/types.d.ts";
+
+interface Props {
+  article: ArticleBlog;
+  backHref?: string;
+  backLabel?: string;
+}
+
+const { article, backHref = "/", backLabel = "Volver" } = Astro.props;
+const safeDescription = sanitizeHtml(article.DESCRIPTION, {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'h3', 'h4', 'img']),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    'img': ['src', 'alt', 'loading'],
+    '*': ['class']
+  }
+});
+---
+
+<article class="relative w-full text-white bg-dark-primary">
+
+  <!-- HERO -->
+  <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+    {article.IMAGES?.[0] ? (
+      <img
+        src={article.IMAGES[0]}
+        alt={article.TITLE}
+        class="absolute inset-0 w-full h-full object-cover scale-105"
+        loading="eager"
+      />
+    ) : (
+      <div class="absolute inset-0 bg-gradient-to-br from-dark-primary to-primary/30" />
+    )}
+
+    <!-- Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-t from-dark-primary via-dark-primary/75 to-dark-primary/10" />
+    <div class="absolute inset-0 bg-gradient-to-r from-dark-primary via-dark-primary/40 to-transparent" />
+
+    <!-- Línea de acento superior -->
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-contrast via-primary to-transparent" />
+
+    <div class="hero-content relative z-10 w-full px-6 sm:px-12 lg:px-20 pb-14 pt-32 flex flex-col gap-5 max-w-6xl">
+
+      <!-- Volver -->
+      
+       <a href={backHref}
+        class="group self-start flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-white hover:text-contrast transition-all duration-200 border border-white hover:border-contrast/50 rounded-full px-4 py-1.5 backdrop-blur-sm"
+      >
+        <svg class="w-3 h-3 group-hover:-translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+        </svg>
+        {backLabel}
+      </a>
+
+      <!-- Tags -->
+      {article.TAGS?.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+          {article.TAGS.slice(0, 4).map((tag) => (
+            <span class="text-[9px] tracking-widest uppercase font-semibold px-3 py-1 rounded-full bg-primary/30 border border-white/30 text-white/40 ">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <!-- Título -->
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-tight tracking-tight"
+        style="background:linear-gradient(135deg,#ffffff 20%,#67e8f9 60%,#0891b2 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;"
+      >
+        {article.TITLE}
+      </h1>
+
+      <!-- Fecha + meta -->
+      <div class="flex items-center gap-3 mt-1">
+        <div class="w-1.5 h-1.5 rounded-full bg-contrast shadow-[0_0_8px_rgba(245,73,0,0.9)]" />
+        <time class="text-xs tabular-nums text-white/80 font-mono">{article.DATE}</time>
+        <span class="text-white/20">·</span>
+        <span class="text-[10px] font-mono text-white/25 uppercase tracking-widest">{article.ID}</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Separador hero → cuerpo -->
+  <div class="w-full h-px bg-gradient-to-r from-contrast/70 via-primary/40 to-transparent" />
+
+  <!-- CUERPO -->
+  <div class="article-layout w-full px-6 sm:px-12 lg:px-20 pt-10 pb-20 flex flex-col gap-10 max-w-7xl mx-auto">
+
+    <!-- Contenido editorial -->
+    <div class="prose-wrapper relative overflow-hidden rounded-3xl border border-contrast/40 bg-white/[0.03] px-5 py-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:px-8 sm:py-10 pl-0 sm:pl-8 border-l-0 sm:border-l-2">
+      <div class="article-body" set:html={safeDescription} />
+    </div>
+
+    <!-- Separador final -->
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+    <!-- Footer del artículo -->
+    <footer class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-wrap gap-2">
+        {article.TAGS?.map((tag) => (
+          <span class="text-[9px] tracking-widest uppercase px-3 py-1 rounded-full bg-dark-primary border border-white/10 text-white/30 hover:text-white/80 hover:border-white/80 transition-colors duration-200 cursor-default">
+            {tag}
+          </span>
+        ))}
+      </div>
+      
+     <a   href={backHref}
+        class="group flex items-center gap-2 text-xs text-white hover:text-contrast border border-white hover:border-contrast/50 rounded-full px-4 py-2 transition-all duration-200"
+      >
+        <svg class="w-3 h-3 group-hover:-translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+        </svg>
+        {backLabel}
+      </a>
+    </footer>
+  </div>
+</article>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroIn {
+    from { opacity: 0; transform: scale(1.03); }
+    to { opacity: 1; transform: scale(1.05); }
+  }
+
+  .hero-content { animation: fadeUp 0.6s ease both; }
+  .article-layout { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+
+  /* Tipografía editorial */
+  .article-body {
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(1rem, 1.05vw + 0.62rem, 1.12rem);
+    line-height: 2;
+    letter-spacing: 0.002em;
+    max-width: 62rem;
+    margin: 0 auto;
+    padding-inline: clamp(0.25rem, 1.2vw, 1rem);
+  }
+
+  .article-body > :first-child {
+    margin-top: 0;
+  }
+
+  .article-body > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* Drop cap */
+  .article-body > p:first-of-type::first-letter {
+    float: left;
+    font-size: 4em;
+    line-height: 0.78;
+    font-weight: 900;
+    color: #f54900;
+    margin: 0.06em 0.14em 0 0;
+    text-shadow: 0 0 20px rgba(245, 73, 0, 0.4);
+  }
+
+  .article-body p {
+    margin: 0 0 1.6rem;
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Headings */
+  .article-body h1, .article-body h2, .article-body h3, .article-body h4 {
+    font-weight: 800;
+    margin: 3rem 0 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .article-body h1 {
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #f54900, #06b6d4, transparent) 1;
+  }
+  .article-body h2 {
+    font-size: 1.55rem;
+    color: #67e8f9;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgba(103, 232, 249, 0.28);
+  }
+  .article-body h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding-left: 1rem;
+    border-left: 4px solid #f54900;
+  }
+  .article-body h4 {
+    font-size: 0.9rem;
+    color: rgba(245, 73, 0, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  /* Inline */
+  .article-body strong {
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(103, 232, 249, 0.08);
+  }
+  .article-body em { font-style: italic; color: #67e8f9; }
+  .article-body mark {
+    background: rgba(245, 73, 0, 0.2);
+    color: #f54900;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+  }
+
+  /* Links */
+  .article-body a {
+    color: #06b6d4;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(6, 182, 212, 0.35);
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  .article-body a:hover {
+    color: #67e8f9;
+    text-decoration-color: rgba(103, 232, 249, 0.6);
+  }
+
+  /* Listas */
+  .article-body ul {
+    list-style: none;
+    padding: 1rem 1rem 1rem 1.75rem;
+    margin: 0 0 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(245, 73, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+  }
+  .article-body ul > li {
+    position: relative;
+    padding-left: 0.35rem;
+  }
+  .article-body ul > li::before {
+    content: "▸";
+    position: absolute;
+    left: -1.5rem;
+    color: #f54900;
+    font-size: 0.85em;
+    top: 0.15em;
+    font-weight: 900;
+  }
+  .article-body ol {
+    list-style: none;
+    counter-reset: ol-counter;
+    padding: 1rem 1rem 1rem 2rem;
+    margin: 0 0 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(245, 73, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+  }
+  .article-body ol > li {
+    position: relative;
+    counter-increment: ol-counter;
+    padding-left: 0.35rem;
+  }
+  .article-body ol > li::before {
+    content: counter(ol-counter) ".";
+    position: absolute;
+    left: -2rem;
+    color: #06b6d4;
+    font-weight: 900;
+    font-size: 0.9em;
+    font-family: monospace;
+  }
+
+  /* Blockquote */
+  .article-body blockquote {
+    margin: 2.2rem 0;
+    padding: 1.3rem 1.6rem;
+    border-left: 4px solid #f54900;
+    background: linear-gradient(135deg, rgba(245,73,0,0.08), rgba(6,182,212,0.04));
+    border-radius: 0 16px 16px 0;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05em;
+  }
+
+  /* Code */
+  .article-body code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.82em;
+    color: #67e8f9;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 0.12em 0.45em;
+    border-radius: 5px;
+  }
+
+  /* HR */
+  .article-body hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #f54900, rgba(6,182,212,0.4), transparent);
+    margin: 2.5rem 0;
+  }
+
+  /* Imágenes */
+  .article-body img {
+    width: 100%;
+    border-radius: 16px;
+    margin: 2rem 0;
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  /* Tablas */
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 1.8rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(6,182,212,0.12);
+  }
+  .article-body th {
+    background: rgba(6,182,212,0.1);
+    color: #06b6d4;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.6rem 1rem;
+    text-align: left;
+  }
+  .article-body td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(6,182,212,0.07);
+    color: rgba(255,255,255,0.75);
+  }
+  .article-body tr:last-child td { border-bottom: none; }
+  .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+</style>

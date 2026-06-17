@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ArticleBlog from "@/components/articles/ArticleBlog.astro";
+import type { ArticleBlog as ArticleBlogType } from "@/types/types.d.ts";
+import es from "@/i18n/es.json";
+
+export function getStaticPaths() {
+  return es.ARTICLES.ARTICLES_LIST.map((article: ArticleBlogType) => ({
+    params: { slug: article.LINK ?? article.ID },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Layout
+  currentLanguage="es"
+  title={article.TITLE}
+  description={article.DESCRIPTION}
+  nav={es.NAV}
+  foot={es.FOOTER}
+>
+  <ArticleBlog
+    article={article}
+    backHref="/articles"
+    backLabel={es.ARTICLES.BACK_LABEL}
+  />
+</Layout>
