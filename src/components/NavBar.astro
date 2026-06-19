@@ -150,38 +150,7 @@ import NavLinks from "@/components/NavLinks.astro";
         const shouldFloat = window.scrollY > 20;
         navbar?.toggleAttribute("data-scrolled", shouldFloat);
 
-        const links = navbar?.querySelectorAll(".nav-link-text");
-        const langBtn = navbar?.querySelector(".lang-btn");
-
-        if (shouldFloat) {
-            navbar?.classList.remove(...fixedClasses);
-            navbar?.classList.add(...floatingClasses);
-            links?.forEach((l) => {
-                if (l.dataset.active === "true") return;
-                l.classList.remove("text-dark-primary");
-                l.classList.add("text-white");
-            });
-            if (langBtn) {
-                langBtn.classList.remove("text-dark-primary");
-                langBtn.classList.add("text-white");
-            }
-            menuToggle?.classList.remove("text-dark-primary");
-            menuToggle?.classList.add("text-white");
-        } else {
-            navbar?.classList.remove(...floatingClasses);
-            navbar?.classList.add(...fixedClasses);
-            links?.forEach((l) => {
-                if (l.dataset.active === "true") return;
-                l.classList.remove("text-white");
-                l.classList.add("text-dark-primary");
-            });
-            if (langBtn) {
-                langBtn.classList.remove("text-white");
-                langBtn.classList.add("text-dark-primary");
-            }
-            menuToggle?.classList.remove("text-white");
-            menuToggle?.classList.add("text-dark-primary");
-        }
+        
     }, { passive: true });
 
     menuToggle?.addEventListener("click", () => {
