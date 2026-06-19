@@ -535,6 +535,7 @@
         "READ_MORE": "Leer más",
         "NO_ARTICLES": "Sin artículos disponibles",
         "BACK_LABEL": "Volver",
+         "FEATURED_LABEL": "Destacado",
         "ARTICLES_LIST": [
             {
                 "ID": "2",

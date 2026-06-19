@@ -535,6 +535,7 @@
     "READ_MORE": "Read More",
     "NO_ARTICLES": "No articles available. Please check back later.",
     "BACK_LABEL": "Back",
+    "FEATURED_LABEL" : "Featured",
     "ARTICLES_LIST": [
       {
         "ID": "2",
