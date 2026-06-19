@@ -7,6 +7,7 @@ interface Props {
   text: {
     SECTION_LABEL: string;
     SECTION_TITLE: string;
+    DESCRIPTION_ARTICLE: string;
     READ_MORE: string;
     NO_ARTICLES: string;
     FEATURED_LABEL: string;
@@ -33,21 +34,36 @@ const sanitizedArticles = sanitizeArticles();
 
 <section
   id="articles"
-  class="relative w-full py-24  sm:px-8 lg:px-12 overflow-hidden  rounded-2xl bg-gradient-to-t from-transparent via-primary/10 to-transparent"
+  class="relative w-full py-14 sm:py-16  sm:px-2 lg:px-12 overflow-hidden  rounded-2xl bg-gradient-to-t from-transparent via-primary/10 to-transparent"
 >
 
-  <!-- Encabezado de sección -->
-  <div class="articles-header max-w-[1600px] mx-auto mb-12 sm:mb-16 flex flex-col gap-3">
-    <div class="flex items-center gap-2">
-      <div class="w-6 h-0.5 bg-contrast"></div>
-      <span class="text-xs sm:text-sm tracking-widest uppercase text-primary font-semibold">
-        {text.SECTION_LABEL}
-      </span>
-    </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-primary">
-      {text.SECTION_TITLE}
-    </h2>
+<!-- Encabezado de sección -->
+<div class="articles-header max-w-5xl mx-auto mb-8 sm:mb-10 flex flex-col items-center text-center gap-5">
+
+  <!-- Etiqueta -->
+  <div class="flex items-center justify-center gap-3">
+    <div class="w-10 h-0.5 bg-contrast"></div>
+    <span class="text-sm tracking-[0.3em] uppercase text-primary font-bold">
+      {text.SECTION_LABEL}
+    </span>
+    <div class="w-10 h-0.5 bg-contrast"></div>
   </div>
+
+  <!-- Título -->
+  <h2
+    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight
+           bg-gradient-to-r from-dark-primary to-primary
+           bg-clip-text text-transparent"
+  >
+    {text.SECTION_TITLE}
+  </h2>
+
+  <!-- Descripción -->
+  <p class="max-w-3xl text-lg sm:text-xl leading-8 text-gray-600">
+    {text.DESCRIPTION_ARTICLE}
+  </p>
+
+</div>
 
   {
     !articles || articles.length === 0 ? (

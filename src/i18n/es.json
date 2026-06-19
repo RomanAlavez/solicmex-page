@@ -532,6 +532,7 @@
     "ARTICLES": {
         "SECTION_LABEL": "Noticias & Artículos",
         "SECTION_TITLE": "Lo último de Solicmex",
+        "DESCRIPTION_ARTICLE" : "Mantente informado con nuestros artículos sobre innovación, normativas y buenas prácticas en sistemas contra incendios y seguridad industrial.",
         "READ_MORE": "Leer más",
         "NO_ARTICLES": "Sin artículos disponibles",
         "BACK_LABEL": "Volver",

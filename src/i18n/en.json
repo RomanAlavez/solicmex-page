@@ -532,6 +532,7 @@
   "ARTICLES": {
     "SECTION_LABEL": "News & Articles",
     "SECTION_TITLE": "Latest Updates",
+    "DESCRIPTION_ARTICLE" : "Stay informed with our articles about innovation, regulations, and best practices in fire protection systems and industrial safety.",
     "READ_MORE": "Read More",
     "NO_ARTICLES": "No articles available. Please check back later.",
     "BACK_LABEL": "Back",
