@@ -82,9 +82,8 @@ import NavLinks from "@/components/NavLinks.astro";
             <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
         </button>
     </div>
-</nav>
-
-<MobileNav
+    
+    <MobileNav
     HOME={HOME}
     SERVICES={SERVICES}
     PROJECTS={PROJECTS}
@@ -96,6 +95,9 @@ import NavLinks from "@/components/NavLinks.astro";
     CONTACT={CONTACT}
     ARTICLES={ARTICLES}
 />
+</nav>
+
+
 
 <style>
     :global(#navbar) {
@@ -131,20 +133,7 @@ import NavLinks from "@/components/NavLinks.astro";
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    const floatingClasses = [
-        "bg-cyan-950/30",
-        "backdrop-blur-xl",
-        "border",
-        "border-cyan-400/20",
-        "shadow-lg",
-    ];
-
-    const fixedClasses = [
-        "bg-white",
-        "border-b",
-        "border-[rgba(6,182,212,0.2)]",
-        "shadow-[0_2px_12px_rgba(6,182,212,0.08)]",
-    ];
+   
 
     window.addEventListener("scroll", () => {
         const shouldFloat = window.scrollY > 20;

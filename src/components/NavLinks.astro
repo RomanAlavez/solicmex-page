@@ -37,12 +37,10 @@ const base = desktop
     ? "nav-link-text lg:text-sm xl:text-base font-medium whitespace-nowrap transition-all duration-300"
     : "text-lg font-medium py-3 transition-all duration-300";
 
-const borderBottom = desktop ? "" : "border-b border-white/10";
+const borderBottom = desktop ? "" : "border-b border-dark-primary/10";
 
+const inactiveClass = "text-dark-primary hover:text-contrast";
 const activeClass = "text-contrast";
-const inactiveClass = desktop
-    ? "text-dark-primary hover:text-contrast"
-    : "text-white hover:text-contrast";
 
 const links = [
     { href: isEnglish ? "/en" : "/", label: HOME,          active: isHome },
