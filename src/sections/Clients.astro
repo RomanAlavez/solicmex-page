@@ -1,0 +1,258 @@
+---
+import { Image } from "astro:assets";
+import AdvancedComposites from "../assets/images/clients/advanced-composites.webp";
+import Backsack from "../assets/images/clients/backsack.webp";
+import Beibersdorf from "../assets/images/clients/beiersdorf.webp";
+import Compas from "../assets/images/clients/compas.webp";
+import Didi from "../assets/images/clients/didi.webp";
+import EthanAllen from "../assets/images/clients/ethan-allen.webp";
+import Exedy from "../assets/images/clients/exedy.webp";
+import Flex from "../assets/images/clients/flex.webp";
+import GeneralsMotors from "../assets/images/clients/generals-motors.webp";
+import Michelin from "../assets/images/clients/michelin.webp";
+import Pirelli from "../assets/images/clients/pirelli.webp";
+import MabuchiMotor from "../assets/images/clients/mabuchi-motor.webp";
+import MMPM from "../assets/images/clients/mmpm.webp";
+import Modelo from "../assets/images/clients/modelo.webp";
+import Molitec from "../assets/images/clients/molitec.webp";
+import Peasa from "../assets/images/clients/peasa.webp";
+
+type Props = {
+  CLIENTS: {
+    TITLE: string;
+    DESCRIPTION: string;
+  };
+};
+const { CLIENTS: CLIENTS_TEXT } = Astro.props as Props;
+
+const CLIENTS = [
+  { image: AdvancedComposites, alt: "Advanced Composites" },
+  { image: Backsack, alt: "Backsack" },
+  { image: Beibersdorf, alt: "Beiersdorf" },
+  { image: Compas, alt: "Compas" },
+  { image: Didi, alt: "Didi" },
+  { image: EthanAllen, alt: "Ethan Allen" },
+  { image: Exedy, alt: "Exedy" },
+  { image: Flex, alt: "Flex" },
+  { image: GeneralsMotors, alt: "General Motors" },
+  { image: Michelin, alt: "Michelin" },
+  { image: Pirelli, alt: "Pirelli" },
+  { image: MabuchiMotor, alt: "Mabuchi Motor" },
+  { image: MMPM, alt: "MMPM" },
+  { image: Modelo, alt: "Modelo" },
+  { image: Molitec, alt: "Molitec" },
+  { image: Peasa, alt: "Peasa" },
+];
+
+// Duplicar para el loop infinito del marquee
+const DOUBLE = [...CLIENTS, ...CLIENTS];
+---
+
+<section
+  id="clients"
+  class="relative overflow-hidden rounded-[2rem] bg-white py-20"
+>
+  <!-- Fondo ambiental -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full opacity-10"
+      style="background: radial-gradient(ellipse, rgba(6,182,212,0.35) 0%, transparent 70%);"
+    >
+    </div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px"
+      style="background: linear-gradient(to right, transparent, rgba(6,182,212,0.3), transparent);"
+    >
+    </div>
+  </div>
+
+  <!-- Encabezado -->
+  <div
+    id="clients-header"
+    class="max-w-3xl mx-auto text-center flex flex-col gap-3 mb-16 opacity-0"
+  >
+    <div class="flex items-center justify-center gap-2.5">
+      <div
+        class="w-1.5 h-1.5 rounded-full bg-contrast shadow-[0_0_8px_rgba(6,182,212,0.9)]"
+      >
+      </div>
+      <span
+        class="text-xs tracking-[0.25em] uppercase text-contrast font-medium"
+      >
+        {CLIENTS_TEXT.TITLE ?? "Clientes"}
+      </span>
+    </div>
+    <h2
+      class="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-black"
+    >
+      {CLIENTS_TEXT.TITLE}
+    </h2>
+    <p
+      class="text-sm sm:text-base text-cyan-600 max-w-xl mx-auto leading-relaxed"
+    >
+      {CLIENTS_TEXT.DESCRIPTION}
+    </p>
+  </div>
+
+  <!-- Marquee — fila 1 (izquierda) -->
+  <div class="clients-fade relative mb-4">
+    <div class="marquee-track">
+      {
+        DOUBLE.map((client) => (
+          <div class="logo-pill">
+            <Image
+              src={client.image}
+              alt={`Logo de ${client.alt}`}
+              title={client.alt}
+              class="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+              width={64}
+              height={64}
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Marquee — fila 2 (derecha, velocidad distinta) -->
+  <div class="clients-fade relative">
+    <div class="marquee-track marquee-reverse">
+      {
+        DOUBLE.map((client) => (
+          <div class="logo-pill">
+            <Image
+              src={client.image}
+              alt={`Logo de ${client.alt}`}
+              title={client.alt}
+              class="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+              width={64}
+              height={64}
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Contador de clientes -->
+  <div class="mt-12 flex justify-center">
+    <div
+      class="flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-contrast/80 hover:bg-contrast transition-colors duration-300"
+    >
+      <div
+        class="w-1 h-1 rounded-full bg-white shadow-[0_0_6px_rgba(6,182,212,0.9)]"
+      >
+      </div>
+      <span class="text-xs text-white/80 tabular-nums">
+        <span class="text-white/90 font-semibold">{CLIENTS.length}+</span>
+        {" "}{"empresas que confían en nosotros"}
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fade lateral para el marquee */
+  .clients-fade {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    overflow: hidden;
+  }
+
+  /* Track: fila horizontal infinita */
+  .marquee-track {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: max-content;
+    animation: marquee-left 40s linear infinite;
+  }
+
+  .marquee-reverse {
+    animation: marquee-right 55s linear infinite;
+  }
+
+  @keyframes marquee-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Pausar al hover */
+  .clients-fade:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Píldora de cada logo */
+  .logo-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .logo-pill:hover {
+    transform: scale(1.06) translateY(-2px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+
+  }
+</style>
+
+<script>
+  import("motion").then(({ animate, inView }) => {
+    inView(
+      "#clients-header",
+      (el) => {
+        animate(
+          el,
+          { opacity: [0, 1], y: [-20, 0], filter: ["blur(8px)", "blur(0px)"] },
+          { duration: 0.7, easing: "ease-out" },
+        );
+      },
+      { amount: 0.3 },
+    );
+  });
+
+  // Pausar marquee si el usuario prefiere movimiento reducido
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll<HTMLElement>(".marquee-track").forEach((el) => {
+      el.style.animationPlayState = "paused";
+    });
+  }
+</script>
