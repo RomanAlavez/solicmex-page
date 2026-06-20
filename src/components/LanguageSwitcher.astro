@@ -11,7 +11,7 @@ const enPath = isEnglish ? currentPath : `/en${currentPath}`;
         id="lang-toggle"
         type="button"
         aria-label="Cambiar idioma"
-        class="lang-btn flex items-center gap-1.5 text-[var(--color-dark-primary)] transition-all duration-300 hover:text-[var(--color-contrast)]"
+        class="lang-btn cursor-pointer flex items-center gap-1.5 text-[var(--color-dark-primary)] transition-all duration-300 hover:text-[var(--color-contrast)]"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const enPath = isEnglish ? currentPath : `/en${currentPath}`;
             min-w-[150px]
             rounded-xl
             overflow-hidden
-            bg-slate-950/40
+            bg-white
             backdrop-blur-xl
             border border-cyan-400/10
             shadow-lg
@@ -64,7 +64,7 @@ const enPath = isEnglish ? currentPath : `/en${currentPath}`;
                 "flex items-center gap-2.5 px-4 py-2.5 text-sm font-medium transition-colors",
                 !isEnglish
                     ? "text-[var(--color-contrast)]"
-                    : "text-white",
+                    : "text-dark-primary",
             ]}
         >
             <span class="text-base">🇲🇽</span>
@@ -81,7 +81,7 @@ const enPath = isEnglish ? currentPath : `/en${currentPath}`;
                 "flex items-center gap-2.5 px-4 py-2.5 text-sm font-medium transition-colors",
                 isEnglish
                     ? "text-[var(--color-contrast)]"
-                    : "text-white ",
+                    : "text-dark-primary ",
             ]}
         >
             <span class="text-base">🇺🇸</span>

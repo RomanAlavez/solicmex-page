@@ -73,7 +73,7 @@ const sanitizedArticles = sanitizeArticles();
 
         {sanitizedFeatured && (
           <article
-            class="articles-item group relative flex flex-col lg:flex-row rounded-2xl overflow-hidden ring-1 ring-white/10 border border-white/10 hover:border-primary/40 transition-all duration-300 bg-dark-primary/90 backdrop-blur-xl shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/25"
+            class="articles-item group relative flex flex-col lg:flex-row rounded-2xl overflow-hidden  transition-all duration-300 bg-cyan-600 backdrop-blur-xl shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/25"
           >
             <!-- Brillo superior sutil tipo glass -->
             <div class="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none"></div>
@@ -143,7 +143,7 @@ const sanitizedArticles = sanitizeArticles();
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sanitizedArticles.map((article:ArticleBlog, i: number) => (
               <article
-                class="articles-item group relative flex flex-col rounded-2xl overflow-hidden ring-1 ring-white/10 border border-white/10 hover:border-primary/40 transition-all duration-300 bg-dark-primary/90 backdrop-blur-xl shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/25"
+                class="articles-item group relative flex flex-col rounded-2xl overflow-hidden  transition-all duration-300 bg-cyan-600 backdrop-blur-xl shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/25"
                 style={`animation-delay: ${i * 80}ms;`}
               >
                 <!-- Brillo superior sutil tipo glass -->
