@@ -3,12 +3,33 @@ import Layout from "@/layouts/Layout.astro";
 import ArticleBlog from "@/components/articles/ArticleBlog.astro";
 import type { ArticleBlog as ArticleBlogType } from "@/types/types.d.ts";
 import en from "@/i18n/en.json";
+import es from "@/i18n/es.json";
 
 export function getStaticPaths() {
-  return en.ARTICLES.ARTICLES_LIST.map((article: ArticleBlogType) => ({
-    params: { slug: article.LINK ?? article.ID },
-    props: { article },
-  }));
+  const spanishArticlesById = new Map(
+    es.ARTICLES.ARTICLES_LIST.map((article: ArticleBlogType) => [article.ID, article])
+  );
+
+  return en.ARTICLES.ARTICLES_LIST.flatMap((article: ArticleBlogType) => {
+    const canonicalSlug = article.LINK ?? article.ID;
+    const paths = [
+      {
+        params: { slug: canonicalSlug },
+        props: { article },
+      },
+    ];
+
+    const spanishSlug = spanishArticlesById.get(article.ID)?.LINK ?? article.ID;
+
+    if (spanishSlug !== canonicalSlug) {
+      paths.push({
+        params: { slug: spanishSlug },
+        props: { article },
+      });
+    }
+
+    return paths;
+  });
 }
 
 const { article } = Astro.props;

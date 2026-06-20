@@ -532,9 +532,11 @@
   "ARTICLES": {
     "SECTION_LABEL": "News & Articles",
     "SECTION_TITLE": "Latest Updates",
+    "DESCRIPTION_ARTICLE" : "Explore our articles to discover information, tips, and news about fire protection systems, with content designed to help you improve the safety and protection of your facilities.",
     "READ_MORE": "Read More",
     "NO_ARTICLES": "No articles available. Please check back later.",
     "BACK_LABEL": "Back",
+    "FEATURED_LABEL" : "Featured",
     "ARTICLES_LIST": [
       {
         "ID": "2",

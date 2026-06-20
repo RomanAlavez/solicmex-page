@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import enData from "@/i18n/en.json";
+import Articles from "@/sections/Articles.astro";
+
+const i18n = enData;
+const { currentLocale } = Astro;
+
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={`${i18n.SEO_TITLE}`}
+  description={ i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+<main class="w-full px-6 sm:px-10 lg:px-16">
+    <Articles
+      articles={enData.ARTICLES.ARTICLES_LIST}
+      text={i18n.ARTICLES}
+    />
+  </main>
+</Layout>
+
+<style>
+  figure {
+    perspective: 1000px;
+  }
+  figure img {
+    transform-origin: center;
+    will-change: transform;
+  }
+</style>
