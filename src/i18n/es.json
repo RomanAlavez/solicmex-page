@@ -323,6 +323,7 @@
     "PROJECTS": {
         "TITLE": "Nuestros Proyectos",
         "TITLE_SPAN": "Destacados",
+        "SUBTITLE":" Casos de Éxito",
         "PROJECTS_LIST": [
             {
                 "ID": "ampliacion-agave",
@@ -453,7 +454,7 @@
         "CARD_1_CERTIFICATION_2": "Hochiki",
         "CARD_1_CERTIFICATION_3": "Segman Detection Technologies",
         "CARD_1_CERTIFICATION_4": "Certificación DC3",
-        "CARD_2_TITLE": "Norvativas nacionales e internacionales",
+        "CARD_2_TITLE": "Normativas nacionales e internacionales",
         "CARD_2_DESCRIPTION": "Todos nuestros servicios cumplen con los más altos estándares regulatorios:",
         "CARD_2_REGULATION_1": "NFPA 20",
         "CARD_2_REGULATION_2": "NFPA 25",

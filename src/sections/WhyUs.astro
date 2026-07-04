@@ -1,0 +1,136 @@
+---
+import WhyUsCard from "@/components/WhyUsCard.astro";
+import CertificationPill from "@/components/CertificationPill.astro";
+import {Lightbulb, ListChecks, Globe, Clock } from 'lucide-react'
+type WhyUsProps = {
+  WHY_US: {
+    TITLE: string;
+    SUBTITLE: string;
+    CARD_1_TITLE: string;
+    CARD_1_DESCRIPTION: string;
+    CARD_1_CERTIFICATION_1: string;
+    CARD_1_CERTIFICATION_2: string;
+    CARD_1_CERTIFICATION_3: string;
+    CARD_1_CERTIFICATION_4: string;
+    CARD_2_TITLE: string;
+    CARD_2_DESCRIPTION: string;
+    CARD_2_REGULATION_1: string;
+    CARD_2_REGULATION_2: string;
+    CARD_2_REGULATION_3: string;
+    CARD_2_REGULATION_4: string;
+    CARD_3_TITLE: string;
+    CARD_3_DESCRIPTION: string;
+    CARD_3_DESCRIPTION_STRONG: string;
+    CARD_3_DESCRIPTION_AFTER_STRONG: string;
+    CARD_3_DESCRIPTION_2: string;
+    CARD_3_DESCRIPTION_2_STRONG: string;
+    CARD_3_DESCRIPTION_2_AFTER_STRONG: string;
+    CARD_3_DESCRIPTION_2_STRONG_2: string;
+    CARD_4_TITLE: string;
+    CARD_4_DESCRIPTION: string;
+    CARD_4_DESCRIPTION_STRONG: string;
+    CARD_4_DESCRIPTION_AFTER_STRONG: string;
+    CARD_4_DESCRIPTION_2: string;
+    CARD_4_DESCRIPTION_2_STRONG: string;
+    CARD_4_DESCRIPTION_2_AFTER_STRONG: string;
+    CARD_4_DESCRIPTION_2_STRONG_2: string;
+    CARD_4_DESCRIPTION_2_AFTER_STRONG_2: string;
+  };
+};
+
+const { WHY_US} = Astro.props as WhyUsProps;
+---
+
+<section
+  id="why-us"
+  class="min-h-screen w-full flex flex-col justify-center px-8 py-20 max-w-6xl mx-auto"
+>
+  <div class="text-center mb-16">
+    <span
+      class="bg-linear-to-l from-amber-700 to-amber-400 bg-clip-text text-transparent font-semibold tracking-wider uppercase text-sm"
+      >{WHY_US.SUBTITLE}</span
+    >
+    <h3 class="text-4xl md:text-5xl font-bold text-cyan-500 mt-4">
+      {WHY_US.TITLE}
+    </h3>
+    <div
+      class="h-1 w-20 bg-linear-to-r from-white to-amber-400 rounded-full mx-auto mt-6"
+    >
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <WhyUsCard title={WHY_US.CARD_1_TITLE}>
+      <ListChecks className="size-full text-cyan-800 group-hover:text-orange-800" slot="icon" />
+
+      <p class="text-zinc-700/90 leading-relaxed">
+        {WHY_US.CARD_1_DESCRIPTION}
+      </p>
+      <ul class="mt-4 space-y-2">
+        <li class="flex items-center">
+          <span class="text-zinc-700 mr-2">•</span>
+          <span class="text-zinc-700/90">{WHY_US.CARD_1_CERTIFICATION_1}</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-zinc-700 mr-2">•</span>
+          <span class="text-zinc-700/90">{WHY_US.CARD_1_CERTIFICATION_2}</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-zinc-700 mr-2">•</span>
+          <span class="text-zinc-700/90">{WHY_US.CARD_1_CERTIFICATION_3}</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-zinc-700 mr-2">•</span>
+          <span class="text-zinc-700/90">{WHY_US.CARD_1_CERTIFICATION_4}</span>
+        </li>
+      </ul>
+    </WhyUsCard>
+
+    <WhyUsCard title={WHY_US.CARD_2_TITLE}>
+      <Globe className="size-full text-cyan-800 group-hover:text-orange-800" slot="icon" />
+
+      <p class="text-zinc-700/90 leading-relaxed">
+        {WHY_US.CARD_2_DESCRIPTION}
+      </p>
+      <div class="mt-4 grid grid-cols-2 gap-3">
+        <CertificationPill name={WHY_US.CARD_2_REGULATION_1} />
+        <CertificationPill name={WHY_US.CARD_2_REGULATION_2} />
+        <CertificationPill name={WHY_US.CARD_2_REGULATION_3} />
+        <CertificationPill name={WHY_US.CARD_2_REGULATION_4} />
+      </div>
+    </WhyUsCard>
+
+    <WhyUsCard title={WHY_US.CARD_3_TITLE}>
+      <Clock className="size-full text-cyan-800 group-hover:text-orange-800" slot="icon" />
+      <p class="text-zinc-700/90 leading-relaxed">
+        {WHY_US.CARD_3_DESCRIPTION}<strong class="text-zinc-700"
+          >{WHY_US.CARD_3_DESCRIPTION_STRONG}</strong
+        >{WHY_US.CARD_3_DESCRIPTION_AFTER_STRONG}
+      </p>
+      <p class="text-zinc-700/90 mt-4 leading-relaxed">
+        {WHY_US.CARD_3_DESCRIPTION_2}<strong class="text-zinc-700"
+          >{WHY_US.CARD_3_DESCRIPTION_2_STRONG}</strong
+        >{WHY_US.CARD_3_DESCRIPTION_2_AFTER_STRONG}<strong class="text-zinc-700"
+          >{WHY_US.CARD_3_DESCRIPTION_2_STRONG_2}</strong
+        >
+      </p>
+    </WhyUsCard>
+
+    <WhyUsCard title={WHY_US.CARD_4_TITLE}>
+      <Lightbulb className="size-full text-cyan-800 group-hover:text-orange-800" slot="icon" />
+
+      <p class="text-zinc-700/90 leading-relaxed">
+        {WHY_US.CARD_4_DESCRIPTION}<strong class="text-zinc-700"
+          >{WHY_US.CARD_4_DESCRIPTION_STRONG}</strong
+        >{WHY_US.CARD_4_DESCRIPTION_AFTER_STRONG}
+      </p>
+      <p class="text-zinc-700/90 mt-4 leading-relaxed">
+        {WHY_US.CARD_4_DESCRIPTION_2}<strong class="text-zinc-700"
+          >{WHY_US.CARD_4_DESCRIPTION_2_STRONG}</strong
+        >{WHY_US.CARD_4_DESCRIPTION_2_AFTER_STRONG}<strong class="text-zinc-700"
+          >{WHY_US.CARD_4_DESCRIPTION_2_STRONG_2}</strong
+        >{WHY_US.CARD_4_DESCRIPTION_2_AFTER_STRONG_2}
+      </p>
+    </WhyUsCard>
+  </div>
+</section>

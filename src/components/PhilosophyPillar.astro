@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  accent?: "cyan" | "sky";
+  index?: number;
+}
+
+const { title, description, accent = "cyan", index = 0 } = Astro.props;
+
+const accentClasses = {
+  cyan: {
+    border: "border-cyan-700",
+    badge: "bg-cyan-600/10 border border-cyan-600/30 text-cyan-600",
+    glow: "shadow-cyan-800/10",
+    icon: "text-cyan-600",
+    line: "bg-cyan-600",
+    gradient: "from-cyan-400/20 to-transparent",
+  },
+  sky: {
+    border: "border-sky-700",
+    badge: "bg-sky-600/10 border border-sky-600/30 text-sky-600",
+    glow: "shadow-sky-800/10",
+    icon: "text-sky-600",
+    line: "bg-sky-600",
+    gradient: "from-sky-400/20 to-transparent",
+  },
+};
+
+const styles = accentClasses[accent];
+const stepLabel = index === 0 ? "01" : "02";
+---
+
+<div
+  class={`relative group flex flex-col gap-4 p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-${accent}-400/40 transition-all duration-500 shadow-xl  hover:shadow-2xl overflow-hidden`}
+>
+  <div
+    class={`absolute -top-10 -right-10 w-40 h-40 rounded-full bg-linear-to-br ${styles.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 pointer-events-none`}
+  >
+  </div>
+
+  <span
+    class="absolute top-6 right-6 text-6xl font-black text-white/5 select-none leading-none"
+  >
+    {stepLabel}
+  </span>
+
+  <span
+    class={`inline-flex self-start text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full ${styles.badge}`}
+  >
+    {title}
+  </span>
+
+  <div class={`h-px w-12 ${styles.line} rounded-full opacity-60`}></div>
+
+  <p class="text-zinc-700 leading-relaxed text-base z-10 ">
+    {description}
+  </p>
+</div>

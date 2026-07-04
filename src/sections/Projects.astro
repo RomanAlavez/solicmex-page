@@ -1,0 +1,133 @@
+---
+import { type Project } from "@/types/types";
+type Props = {
+  PROJECTS: {
+    TITLE: string;
+    TITLE_SPAN: string;
+    SUBTITLE: string;
+    PROJECTS_LIST: Project[];
+  };
+};
+
+const { PROJECTS } = Astro.props as Props;
+const { TITLE, TITLE_SPAN, SUBTITLE, PROJECTS_LIST } = PROJECTS;
+
+const gridPattern =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%230891b2' stroke-opacity='0.12'/%3E%3C/svg%3E";
+---
+
+<section id="projects" class="relative overflow-hidden bg-white py-20 sm:py-28">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style={`background-image: url("${gridPattern}"); background-size: 48px 48px;`}
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-14 max-w-2xl uppercase">
+      <span
+        class="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600"
+      >
+        <span class="h-px w-6 bg-cyan-600"></span>
+        {SUBTITLE}
+      </span>
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        {TITLE}
+        <span class="text-orange-600">{TITLE_SPAN}</span>
+      </h2>
+    </div>
+
+    <!-- Projects grid -->
+    <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        PROJECTS_LIST.map((project) => (
+          <li class="list-none">
+            <a
+              href={`/${project.ID}`}
+              class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white duration-300 hover:shadow-lg hover:shadow-black/20 transition-all"
+            >
+              {/* Image */}
+              <div class="relative aspect-4/3 w-full overflow-hidden bg-slate-100">
+                <img
+                  src={project.IMAGES[0]}
+                  alt={project.NAME}
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Category badge */}
+                <span class="absolute left-4 top-4 max-w-[80%] truncate rounded-md bg-cyan-600 px-2.5 py-1  text-[11px] font-semibiold tracking-wide text-white">
+                  {project.APP}
+                </span>
+
+                {/* Reference-mark, blueprint style */}
+                <span
+                  class="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full border border-cyan-600 bg-white text-cyan-600"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-3.5 w-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 3v18M3 12h18" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </div>
+
+              {/* Content */}
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <div class="flex items-center gap-1.5 font-mono text-xs text-slate-500">
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-3.5 w-3.5 shrink-0 text-cyan-600"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 21s7-6.5 7-11.5A7 7 0 1 0 5 9.5C5 14.5 12 21 12 21Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="9.5" r="2.3" />
+                  </svg>
+                  <span>{project.UBICATION}</span>
+                </div>
+
+                <h3 class="text-lg font-semibold leading-snug text-slate-900">
+                  {project.NAME}
+                </h3>
+
+                <p class="line-clamp-3 text-sm leading-relaxed text-slate-600">
+                  {project.DESCRIPTION}
+                </p>
+
+                <div class="mt-auto flex items-center gap-2 pt-2 text-sm font-medium text-cyan-600 transition-colors duration-300 group-hover:text-orange-600">
+                  <span>Ver proyecto</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

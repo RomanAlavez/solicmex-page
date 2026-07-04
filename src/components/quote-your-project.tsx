@@ -22,7 +22,7 @@ export default function QuoteYourProject({
     <SharedDialogRoot >
       <SharedDialogTrigger
         id="quote-project"
-        className="z-100 w-fit inline-flex items-center gap-2 py-2.5 sm:py-3 px-6 sm:px-10  bg-gradient-to-r from-black/30 to-transparent border border-white/10 hover:to-primary/50 hover:px-7 sm:hover:px-11 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
+        className=" w-fit inline-flex items-center gap-2 py-2.5 sm:py-3 px-6 sm:px-10  bg-linear-to-r from-black/30 to-transparent border border-white/10 hover:to-primary/50 hover:px-7 sm:hover:px-11 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
       >
         <SharedDialogItem id="button-text" dialogId="quote-project" className="">
           {buttonText}
@@ -41,7 +41,7 @@ export default function QuoteYourProject({
         className=" relative w-[95vw] max-w-5xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-white text-black shadow-2xl shadow-black/50 p-0"
       >
         <div className="grid lg:grid-cols-2">
-          <div className="bg-gradient-to-br from-primary to-primary/80 text-white p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+          <div className="bg-linear-to-br from-primary to-primary/80 text-white p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 pr-8 lg:pr-0">
               <SharedDialogItem id="button-icon" dialogId="quote-project">
                 <Mails className="size-9 sm:size-12 lg:size-16 shrink-0" />
@@ -175,8 +175,6 @@ export default function QuoteYourProject({
         <SharedDialogCloseButton>
           <X className="size-5 absolute top-3 right-3 sm:top-4 sm:right-4 p-1 bg-gray-200 rounded-full cursor-pointer" />
         </SharedDialogCloseButton>
-
-
       </SharedDialogContent>
     </SharedDialogRoot>
   );

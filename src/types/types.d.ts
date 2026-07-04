@@ -17,6 +17,7 @@ export type Project = {
     NAME: string;
     DESCRIPTION: string;
     IMAGES: string[];
+    UBICATION: string;
     APP: string;
 }
 

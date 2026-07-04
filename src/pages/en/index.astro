@@ -3,8 +3,10 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/sections/Hero.astro";
 import Services from "@/sections/Services.astro";
 import AboutUs from "@/sections/AboutUs.astro";
+import Projects from "@/sections/Projects.astro";
 import Clients from "@/sections/Clients.astro";
-
+import WhyUs from "@/sections/WhyUs.astro";
+import OurPhilosophy from "@/sections/OurPhilosophy.astro";
 import { getI18N } from "@/i18n";
 import ArticlesHome from "@/components/articles/ArticlesHome.astro";
 import type { ArticleBlog } from "@/types/types.d.ts";
@@ -38,7 +40,9 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
     />
     <AboutUs ABOUT_US={i18n.ABOUT_US} />
     <Services SERVICES={i18n.SERVICES} />
-    <Clients  CLIENTS={i18n.CLIENTS}/>
-
+    <Projects PROJECTS={i18n.PROJECTS} />
+    <Clients CLIENTS={i18n.CLIENTS} />
+    <WhyUs WHY_US={i18n.WHY_US} />
+    <OurPhilosophy OUR_PHILOSOPHY={i18n.OUR_PHILOSOPHY} />
   </div>
 </Layout>
