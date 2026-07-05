@@ -1,0 +1,55 @@
+---
+import type { Project } from "@/types/types";
+import slugify from "@/utils/utils";
+type Props = {
+  project: Project;
+  isEnglish: boolean;
+  ctaHref?: string;
+  ctaLabel?: string;
+};
+
+const {
+  project,
+  isEnglish,
+  ctaHref = "/#contact",
+  ctaLabel = "Solicitar un proyecto similar",
+} = Astro.props as Props;
+---
+
+<aside class="rounded-2xl border border-slate-200 bg-white p-6">
+  <h2
+    class="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600"
+  >
+    {isEnglish ? "Technical Sheet" : "Ficha técnica"}
+  </h2>
+
+  <dl class="space-y-4 text-sm">
+    <div
+      class="flex items-start justify-between gap-4 border-b border-slate-100 pb-4"
+    >
+      <dt class="text-slate-500">{isEnglish ? "Ubication" : "Ubicación"}</dt>
+      <dd
+        class="text-right font-medium text-slate-900"
+
+      >
+        {project.UBICATION}
+      </dd>
+    </div>
+    <div class="flex items-start justify-between gap-4">
+      <dt class="text-slate-500">{isEnglish ? "Application" : "Aplicación"}</dt>
+      <dd
+        class="text-right font-medium text-slate-900"
+
+      >
+        {project.APP}
+      </dd>
+    </div>
+  </dl>
+
+  <!-- <a
+    href={ctaHref}
+    class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-orange-600 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-700"
+  >
+    {ctaLabel}
+  </a> -->
+</aside>

@@ -1,0 +1,49 @@
+---
+import slugify from "@/utils/utils";
+import type { Project } from "@/types/types";
+import { ArrowLeft, MapPin } from "lucide-react";
+type Props = {
+  project: Project;
+  backHref: string;
+  backLabel: string;
+};
+
+const { project, backHref, backLabel } = Astro.props as Props;
+---
+
+<div class="mb-10">
+  <a
+    href={backHref}
+    class="mb-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600 transition-colors hover:text-orange-600"
+  >
+    <ArrowLeft />
+    {backLabel}
+  </a>
+
+  <span
+    class="mb-3 inline-block rounded-md bg-cyan-600 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-white"
+    style={{
+      viewTransitionName: `project-app-${slugify(project.NAME)}`,
+    }}
+  >
+    {project.APP}
+  </span>
+
+  <h1
+    class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+    style={{
+      viewTransitionName: `project-name-${slugify(project.NAME)}`,
+    }}
+  >
+    {project.NAME}
+  </h1>
+
+  <div class="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
+    <MapPin className="size-4 shrink-0 text-cyan-600" />
+    <span
+      style={{
+        viewTransitionName: `project-ubication-${slugify(project.NAME)}`,
+      }}>{project.UBICATION}</span
+    >
+  </div>
+</div>

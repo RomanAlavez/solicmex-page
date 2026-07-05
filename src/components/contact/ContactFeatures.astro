@@ -1,0 +1,64 @@
+---
+import { Lightbulb, ListChecks, Globe, Clock } from "lucide-react";
+
+type Props = {
+  title: string;
+  isEnglish?: boolean;
+};
+
+const { title, isEnglish } = Astro.props as Props;
+
+const features = [
+  {
+    icon: Lightbulb,
+    label: isEnglish ? "Custom Technical Advisory" : "Asesoría técnica personalizada",
+    description: isEnglish ? "We design the solution that fits your project, not the other way around." : "Diseñamos la solución que se ajusta a tu proyecto, no al revés.",
+  },
+  {
+    icon: ListChecks,
+    label: isEnglish ? "Clear and Documented Process" : "Proceso claro y documentado",
+    description: isEnglish ? "Precise tracking from diagnosis to implementation." : "Seguimiento puntual desde el diagnóstico hasta la puesta en marcha.",
+  },
+  {
+    icon: Globe,
+    label: isEnglish ? "National Coverage" : "Cobertura nacional",
+    description: isEnglish ? "We execute engineering projects throughout Mexico." : "Ejecutamos proyectos de ingeniería en todo México.",
+  },
+  {
+    icon: Clock,
+    label: isEnglish ? "Agile Response Times" : "Tiempos de respuesta ágiles",
+    description: isEnglish ? "We contact you promptly to address your project." : "Te contactamos a la brevedad para atender tu proyecto.",
+  },
+];
+---
+
+<div>
+  <span
+    class="mb-4 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600"
+  >
+    <span class="h-px w-6 bg-cyan-600"></span>
+   {isEnglish ? "Contact us" : "Contáctanos"}
+  </span>
+
+  <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+    {title}
+  </h2>
+
+  <ul class="mt-10 space-y-6">
+    {
+      features.map(({ icon: Icon, label, description }) => (
+        <li class="flex gap-4">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-600 text-cyan-600">
+            <Icon size={20} strokeWidth={2} />
+          </span>
+          <div>
+            <h3 class="font-semibold text-slate-900">{label}</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600">
+              {description}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

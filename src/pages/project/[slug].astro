@@ -1,0 +1,59 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import esData from "@/i18n/es.json";
+import slugify from "@/utils/utils.js";
+import type { Project } from "@/types/types";
+
+import ProjectHeader from "@/components/project/ProjectHeader.astro";
+import ProjectGallery from "@/components/project/project-gallery";
+import ProjectSummary from "@/components/project/ProjectSummary.astro";
+import ProjectInfoCard from "@/components/project/ProjectInfoCard.astro";
+
+const i18n = esData;
+const { currentLocale } = Astro;
+
+export async function getStaticPaths() {
+  const projects = esData.PROJECTS.PROJECTS_LIST;
+  return projects.map((project) => ({
+    params: { slug: slugify(project.NAME) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: Project };
+
+const isEnglish = currentLocale === "en";
+const backHref = currentLocale === "en" ? "/en/#projects" : "/#projects";
+const backLabel =
+  currentLocale === "en" ? "Back to projects" : "Volver a proyectos";
+---
+
+<Layout
+  currentLanguage={currentLocale}
+  title={`${project.NAME} | ${i18n.SEO_TITLE}`}
+  description={project.DESCRIPTION || i18n.SEO_DESCRIPTION}
+  nav={i18n.NAV}
+  foot={i18n.FOOTER}
+>
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <ProjectHeader project={project} backHref={backHref} backLabel={backLabel} />
+
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <ProjectGallery client:load images={project.IMAGES} alt={project.NAME} />
+
+          <div class="mt-10 border-t border-slate-100 pt-10">
+            <ProjectSummary project={project} isEnglish={isEnglish} />
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="lg:sticky lg:top-24">
+            <ProjectInfoCard project={project} isEnglish={isEnglish} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

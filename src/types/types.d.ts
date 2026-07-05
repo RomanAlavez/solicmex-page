@@ -20,7 +20,18 @@ export type Project = {
     UBICATION: string;
     APP: string;
 }
+export interface SocialLinks {
+    FACEBOOK?: string;
+    INSTAGRAM?: string;
+    LINKEDIN?: string;
+}
 
+export interface ContactInfo {
+    EMAIL: string;
+    PHONE: string;
+    ADDRESS: string;
+    SOCIAL?: SocialLinks;
+}
 export type Quote = {
     TITLE: string;
     SUBTITLE: string;
@@ -59,10 +70,10 @@ export type Services = {
 
 export type Service = {
     NAME: string;
-    SHORT_DESCRIPTION:string;
+    SHORT_DESCRIPTION: string;
     DESCRIPTION: string;
     HIGHLIGHTS: string[];
-    STATS:{
+    STATS: {
         value: string;
         label: string;
     }[]

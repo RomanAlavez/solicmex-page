@@ -1,0 +1,68 @@
+---
+import ContactFeatures from "@/components/contact/ContactFeatures.astro";
+import ContactForm from "@/components/contact/ContactForm.astro";
+import ContactDetails from "@/components/contact/ContactDetails.astro";
+type ContactProps = {
+  CONTACT: {
+    TITLE: string;
+    FORM_TITLE: string;
+    FORM_NAME: string;
+    FORM_EMAIL: string;
+    FORM_SUBJECT: string;
+    FORM_MESSAGE: string;
+    FORM_BUTTON: string;
+  };
+  currentLocale: string;
+};
+
+const { CONTACT, currentLocale } = Astro.props as ContactProps;
+const isEnglish = currentLocale === "en";
+
+const CONTACT_ITEMS = [
+  {
+    label: isEnglish ? "Email" : "Correo",
+    value: "operaciones@solicmex.com",
+    href: `mailto:operaciones@solicmex.com`,
+  },
+  {
+    label: isEnglish ? "Phone" : "Teléfono",
+    value: "(552) 772 3862",
+    href: `tel:(552) 772 3862`,
+  },
+  {
+    label: isEnglish ? "Location" : "Ubicación",
+    value:
+      "Calle Guanajuato 12, Col.Santiago. CP:54667, Coyotepec, Estado de México",
+    href: "https://maps.app.goo.gl/aJXVixENdxUexKMZ7",
+  },
+];
+
+const EMAIL= CONTACT_ITEMS[0];    
+const PHONE = CONTACT_ITEMS[1];
+const ADDRESS = CONTACT_ITEMS[2];
+---
+
+<section
+  id="contact"
+  class="min-h-screen w-full flex flex-col justify-center px-8 py-20 max-w-6xl mx-auto"
+>
+  <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+    <div>
+      <ContactFeatures title={CONTACT.TITLE} isEnglish={isEnglish} />
+ 
+      <ContactDetails
+
+        isEnglish={isEnglish}
+      />
+    </div>
+ 
+    <ContactForm
+      formTitle={CONTACT.FORM_TITLE}
+      nameLabel={CONTACT.FORM_NAME}
+      emailLabel={CONTACT.FORM_EMAIL}
+      subjectLabel={CONTACT.FORM_SUBJECT}
+      messageLabel={CONTACT.FORM_MESSAGE}
+      buttonLabel={CONTACT.FORM_BUTTON}
+    />
+  </div>
+</section>

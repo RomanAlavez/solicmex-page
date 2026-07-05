@@ -7,6 +7,7 @@ import Projects from "@/sections/Projects.astro";
 import Clients from "@/sections/Clients.astro";
 import WhyUs from "@/sections/WhyUs.astro";
 import OurPhilosophy from "@/sections/OurPhilosophy.astro";
+import Contact from "@/sections/Contact.astro";
 import { getI18N } from "@/i18n";
 import ArticlesHome from "@/components/articles/ArticlesHome.astro";
 import type { ArticleBlog } from "@/types/types.d.ts";
@@ -40,9 +41,10 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
     />
     <AboutUs ABOUT_US={i18n.ABOUT_US} />
     <Services SERVICES={i18n.SERVICES} />
-    <Projects PROJECTS={i18n.PROJECTS} />
+    <Projects PROJECTS={i18n.PROJECTS} currentLocale={"en"} />
     <Clients CLIENTS={i18n.CLIENTS} />
     <WhyUs WHY_US={i18n.WHY_US} />
     <OurPhilosophy OUR_PHILOSOPHY={i18n.OUR_PHILOSOPHY} />
+    <Contact CONTACT={i18n.CONTACT} currentLocale={"en"} />
   </div>
 </Layout>

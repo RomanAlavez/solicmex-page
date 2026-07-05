@@ -1,0 +1,20 @@
+---
+import type { Project } from "@/types/types";
+import slugify from "@/utils/utils";
+type Props = { project: Project; isEnglish: boolean };
+const { project, isEnglish } = Astro.props as Props;
+---
+
+<div>
+  <h2 class="mb-3 text-lg font-semibold text-slate-900">
+    {isEnglish ? "Project Description" : "Descripción del proyecto"}
+  </h2>
+  <p
+    class="text-base leading-relaxed text-slate-600"
+    style={{
+      viewTransitionName: `project-description-${slugify(project.NAME)}`,
+    }}
+  >
+    {project.DESCRIPTION}
+  </p>
+</div>

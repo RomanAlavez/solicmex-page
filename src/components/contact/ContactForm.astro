@@ -1,0 +1,109 @@
+---
+type Props = {
+  formTitle: string;
+  nameLabel: string;
+  emailLabel: string;
+  subjectLabel: string;
+  messageLabel: string;
+  buttonLabel: string;
+};
+
+const {
+  formTitle,
+  nameLabel,
+  emailLabel,
+  subjectLabel,
+  messageLabel,
+  buttonLabel,
+} = Astro.props as Props;
+
+const inputClasses =
+  "w-full rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-colors focus:border-cyan-600 focus:outline-none focus:ring-1 focus:ring-cyan-600";
+---
+
+<div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+  <h3 class="mb-6 text-xl font-semibold text-slate-900">{formTitle}</h3>
+
+  {/* TODO: conecta el atributo action a tu endpoint / API route */}
+  <form
+    class="space-y-5"
+    action="https://formsubmit.co/operaciones@solicmex.com"
+    method="POST"
+  >
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div>
+        <label
+          for="name"
+          class="mb-1.5 block text-sm font-medium text-slate-700"
+        >
+          {nameLabel}
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class={inputClasses}
+          placeholder={nameLabel}
+        />
+      </div>
+
+      <div>
+        <label
+          for="email"
+          class="mb-1.5 block text-sm font-medium text-slate-700"
+        >
+          {emailLabel}
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class={inputClasses}
+          placeholder={emailLabel}
+        />
+      </div>
+    </div>
+
+    <div>
+      <label
+        for="subject"
+        class="mb-1.5 block text-sm font-medium text-slate-700"
+      >
+        {subjectLabel}
+      </label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        required
+        class={inputClasses}
+        placeholder={subjectLabel}
+      />
+    </div>
+
+    <div>
+      <label
+        for="message"
+        class="mb-1.5 block text-sm font-medium text-slate-700"
+      >
+        {messageLabel}
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        class={`${inputClasses} resize-none`}
+        placeholder={messageLabel}></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-600 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-700"
+    >
+      {buttonLabel}
+    </button>
+  </form>
+</div>

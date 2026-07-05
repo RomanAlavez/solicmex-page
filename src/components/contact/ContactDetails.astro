@@ -1,0 +1,108 @@
+---
+import { Mail, Phone, MapPin } from "lucide-react";
+
+import Facebook from "@/components/icons/FacebookIcon.astro";
+import Instagram from "@/components/icons/InstagramIcon.astro";
+import Linkedin from "@/components/icons/LinkedinIcon.astro";
+type IconType = typeof Mail;
+
+type SocialLink = {
+  icon: IconType;
+  label: string;
+  href: string;
+};
+
+type Props = {
+
+  isEnglish?: boolean;
+};
+
+const {
+
+  isEnglish,
+} = Astro.props as Props;
+
+const CONTACT_ITEMS = [
+  {
+    icon: Mail,
+    label: isEnglish ? "Email" : "Correo",
+    value: "operaciones@solicmex.com",
+    href: `mailto:operaciones@solicmex.com`,
+  },
+  {
+    icon: Phone,
+    label: isEnglish ? "Phone" : "Teléfono",
+    value: "(552) 772 3862",
+    href: `tel:(552) 772 3862`,
+  },
+  {
+    icon: MapPin,
+    label: isEnglish ? "Location" : "Ubicación",
+    value:
+      "Calle Guanajuato 12, Col.Santiago. CP:54667, Coyotepec, Estado de México",
+    href: "https://maps.app.goo.gl/aJXVixENdxUexKMZ7",
+  },
+];
+
+const facebookUrl = "https://www.facebook.com/profile.php?id=61576780354676";
+const instagramUrl = "https://www.instagram.com/solicmex/";
+const linkedinUrl = "https://www.linkedin.com/company/solicmex/";
+
+const socialLinks = [
+  facebookUrl ? { icon: Facebook, label: "Facebook", href: facebookUrl } : null,
+  instagramUrl
+    ? { icon: Instagram, label: "Instagram", href: instagramUrl }
+    : null,
+  linkedinUrl ? { icon: Linkedin, label: "LinkedIn", href: linkedinUrl } : null,
+].filter((link): link is SocialLink => link !== null);
+---
+
+<div class="mt-10 border-t border-slate-200 pt-8">
+  <ul class="space-y-4">
+    {
+      CONTACT_ITEMS.map(({ icon: Icon, label, value, href }) => (
+        <li>
+          <a
+            href={href}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+            class="group flex items-center gap-4"
+          >
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-600 text-cyan-600 transition-colors group-hover:bg-cyan-600 group-hover:text-white">
+              <Icon size={20} strokeWidth={2} />
+            </span>
+            <div>
+              <p class="font-mono text-xs uppercase tracking-wide text-slate-500">
+                {label}
+              </p>
+              <p class="font-medium text-slate-900">{value}</p>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    socialLinks.length > 0 && (
+      <div class="mt-8 flex items-center gap-3">
+        <span class="font-mono text-xs uppercase tracking-wide text-slate-500">
+          {isEnglish ? "Follow us" : "Síguenos"}
+        </span>
+        <div class="flex gap-2">
+          {socialLinks.map(({ icon: Icon, label, href }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:border-orange-600 hover:text-orange-600"
+            >
+              <Icon size={16} strokeWidth={2} />
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</div>
