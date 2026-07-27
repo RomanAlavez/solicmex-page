@@ -22,7 +22,7 @@
     "QUOTE": {
         "TITLE": "Cotiza tu proyecto",
         "SUBTITLE": "Solicita tu cotización",
-        "INSTRUCTIONS":"Completa el formulario y nos pondremos en contacto contigo.",
+        "INSTRUCTIONS": "Completa el formulario y nos pondremos en contacto contigo.",
         "DESCRIPTION": "Cuéntanos sobre tu proyecto y uno de nuestros asesores se pondrá en contacto contigo para brindarte una solución personalizada.",
         "BUTTON": "Solicitar Cotización",
         "POINTS": [
@@ -31,26 +31,26 @@
             "Soluciones industriales a medida",
             "Respuesta rápida"
         ],
-        "FORM":{
-            "NAME":{
-                "LABEL":"Nombre Completo",
-                "PLACEHOLDER":"Juan Pérez"
+        "FORM": {
+            "NAME": {
+                "LABEL": "Nombre Completo",
+                "PLACEHOLDER": "Juan Pérez"
             },
-            "COMPANY":{
-                "LABEL":"Empresa",
-                "PLACEHOLDER":"Nombre de la Empresa"
+            "COMPANY": {
+                "LABEL": "Empresa",
+                "PLACEHOLDER": "Nombre de la Empresa"
             },
-            "EMAIL":{
-                "LABEL":"Correo Electrónico",
-                "PLACEHOLDER":"correo@empresa.com"
+            "EMAIL": {
+                "LABEL": "Correo Electrónico",
+                "PLACEHOLDER": "correo@empresa.com"
             },
-            "PHONE":{
-                "LABEL":"Teléfono",
-                "PLACEHOLDER":"+52 55 1234 5678"
+            "PHONE": {
+                "LABEL": "Teléfono",
+                "PLACEHOLDER": "+52 55 1234 5678"
             },
-            "MESSAGE":{
-                "LABEL":"Mensaje",
-                "PLACEHOLDER":"Cuéntanos sobre tu proyecto, necesidades específicas o cualquier detalle relevante."
+            "MESSAGE": {
+                "LABEL": "Mensaje",
+                "PLACEHOLDER": "Cuéntanos sobre tu proyecto, necesidades específicas o cualquier detalle relevante."
             }
         }
     },
@@ -80,6 +80,7 @@
     ],
     "SERVICES": {
         "TITLE": "NUESTRAS SOLUCIONES",
+        "NOTATION": "Todos nuestros servicios cumplen con las normativas NFPA y FM Global, garantizando la máxima seguridad y confiabilidad en cada proyecto. Nuestro compromiso es ofrecer soluciones integrales que protejan vidas y bienes, respaldadas por estándares internacionales de excelencia. Estas son algunas de nuestras soluciones destacadas, para más información o diferente tipo de proyecto (construccion / planta / proveedores), contacta con nosotros",
         "SERVICES_LIST": [
             {
                 "NAME": "Sistemas de rociadores automáticos",
@@ -105,7 +106,8 @@
                         "label": "Cumplimiento normativo"
                     }
                 ],
-                "ICON": "SprinklerIcon"
+                "ICON": "SprinklerIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Sistema de Agua Nebulizada",
@@ -131,7 +133,8 @@
                         "label": "Seguridad para equipos críticos"
                     }
                 ],
-                "ICON": "WaterMistIcon"
+                "ICON": "WaterMistIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Redes de Hidrantes y Monitores",
@@ -157,7 +160,8 @@
                         "label": "Disponibilidad operativa"
                     }
                 ],
-                "ICON": "HydrantIcon"
+                "ICON": "HydrantIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Equipos de Bombeo",
@@ -183,7 +187,8 @@
                         "label": "Cumplimiento normativo"
                     }
                 ],
-                "ICON": "PumpIcon"
+                "ICON": "PumpIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Tuberías Subterráneas y Aéreas",
@@ -209,7 +214,8 @@
                         "label": "Alta confiabilidad"
                     }
                 ],
-                "ICON": "PipeIcon"
+                "ICON": "PipeIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Tanques de Agua",
@@ -235,7 +241,8 @@
                         "label": "Cobertura prolongada"
                     }
                 ],
-                "ICON": "TankIcon"
+                "ICON": "TankIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Sistemas de Alarma y Detección de Incendio",
@@ -261,7 +268,8 @@
                         "label": "Cumplimiento normativo"
                     }
                 ],
-                "ICON": "AlarmIcon"
+                "ICON": "AlarmIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Sistemas de Riesgos Especiales",
@@ -287,7 +295,8 @@
                         "label": "En equipos sensibles"
                     }
                 ],
-                "ICON": "RiskIcon"
+                "ICON": "RiskIcon",
+                "IMAGE": ""
             },
             {
                 "NAME": "Extinción a Base de Gases",
@@ -313,7 +322,8 @@
                         "label": "En equipos electrónicos"
                     }
                 ],
-                "ICON": "GasIcon"
+                "ICON": "GasIcon",
+                "IMAGE": ""
             }
         ]
     },
@@ -323,7 +333,7 @@
     "PROJECTS": {
         "TITLE": "Nuestros Proyectos",
         "TITLE_SPAN": "Destacados",
-        "SUBTITLE":" Casos de Éxito",
+        "SUBTITLE": " Casos de Éxito",
         "PROJECTS_LIST": [
             {
                 "ID": "ampliacion-agave",
@@ -338,11 +348,15 @@
             {
                 "ID": "nuevas-oficinas-isseg",
                 "NAME": "Nuevas oficinas ISSEG",
-                "DESCRIPTION": "Nuevas oficinas ISSEG para Grupo Eco del Bajio.",
+                "DESCRIPTION": "Como parte del proyecto Nuevas Oficinas ISSEG, ubicado en Parque Bicentenario, Silao de la Victoria, Guanajuato, Solicmex ha participado en diversas etapas de la instalación del Sistema de Protección Contra Incendios, realizando el suministro e instalación de un loop hidráulico subterráneo de 14 pulgadas en PVC C900 con una longitud aproximada de 320 metros, la instalación de la red de rociadores e hidrantes mediante tubería cédula 40 con sistema roscado, el montaje de soportería tipo pera para garantizar una sujeción segura y conforme a normativa, así como la ejecución de pruebas hidrostáticas a 200 PSI para verificar la resistencia, hermeticidad y correcto funcionamiento del sistema. Además, hemos contribuido con el suministro de materiales especializados y el acompañamiento técnico durante el desarrollo de la obra, reafirmando nuestro compromiso con la calidad, la seguridad y el cumplimiento de los más altos estándares en protección contra incendios. ",
                 "UBICATION": "Silao de la Victoria, Guanajuato",
-                "APP": "Suministros",
+                "APP": "Infraestructura contra incendios",
                 "IMAGES": [
-                    "/images/projects/image-26.jpg"
+                    "/images/projects/image-26.jpg",
+                    "/images/projects/image-27.webp",
+                    "/images/projects/image-28.webp",
+                    "/images/projects/image-29.webp",
+                    "/images/projects/image-30.webp"
                 ]
             },
             {
@@ -533,11 +547,11 @@
     "ARTICLES": {
         "SECTION_LABEL": "Noticias & Artículos",
         "SECTION_TITLE": "Lo último de Solicmex",
-        "DESCRIPTION_ARTICLE" : "Explora nuestros artículos para descubrir información, consejos y novedades sobre sistemas contra incendios, con contenido diseñado para ayudarte a mejorar la seguridad y protección de tus instalaciones.",
+        "DESCRIPTION_ARTICLE": "Explora nuestros artículos para descubrir información, consejos y novedades sobre sistemas contra incendios, con contenido diseñado para ayudarte a mejorar la seguridad y protección de tus instalaciones.",
         "READ_MORE": "Leer más",
         "NO_ARTICLES": "Sin artículos disponibles",
         "BACK_LABEL": "Volver",
-         "FEATURED_LABEL": "Destacado",
+        "FEATURED_LABEL": "Destacado",
         "ARTICLES_LIST": [
             {
                 "ID": "2",

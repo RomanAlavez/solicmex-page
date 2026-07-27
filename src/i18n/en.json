@@ -80,6 +80,7 @@
   ],
   "SERVICES": {
     "TITLE": "Our Solutions",
+    "NOTATION:": "All our services comply with NFPA and FM Global standards, guaranteeing maximum safety and reliability in every project. Our commitment is to offer comprehensive solutions that protect lives and property, backed by international standards of excellence. These are some of our featured solutions. For more information or a different type of project (construction/plant/suppliers), please contact us",
     "SERVICES_LIST": [
       {
         "NAME": "Automatic Sprinkler Systems",
@@ -105,7 +106,8 @@
             "label": "Regulatory compliance"
           }
         ],
-        "ICON": "SprinklerIcon"
+        "ICON": "SprinklerIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Water Mist Systems",
@@ -131,7 +133,8 @@
             "label": "Safety for critical equipment"
           }
         ],
-        "ICON": "WaterMistIcon"
+        "ICON": "WaterMistIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Hydrant and Monitor Networks",
@@ -157,7 +160,8 @@
             "label": "Operational availability"
           }
         ],
-        "ICON": "HydrantIcon"
+        "ICON": "HydrantIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Fire Pump Systems",
@@ -183,7 +187,8 @@
             "label": "Regulatory compliance"
           }
         ],
-        "ICON": "PumpIcon"
+        "ICON": "PumpIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Underground and Aboveground Piping",
@@ -209,7 +214,8 @@
             "label": "High reliability"
           }
         ],
-        "ICON": "PipeIcon"
+        "ICON": "PipeIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Water Storage Tanks",
@@ -235,7 +241,8 @@
             "label": "Extended coverage"
           }
         ],
-        "ICON": "TankIcon"
+        "ICON": "TankIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Fire Alarm and Detection Systems",
@@ -261,7 +268,8 @@
             "label": "Regulatory compliance"
           }
         ],
-        "ICON": "AlarmIcon"
+        "ICON": "AlarmIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Special Hazard Systems",
@@ -287,7 +295,8 @@
             "label": "To sensitive equipment"
           }
         ],
-        "ICON": "RiskIcon"
+        "ICON": "RiskIcon",
+        "IMAGE": ""
       },
       {
         "NAME": "Gas-Based Fire Suppression",
@@ -313,7 +322,8 @@
             "label": "To electronic equipment"
           }
         ],
-        "ICON": "GasIcon"
+        "ICON": "GasIcon",
+        "IMAGE": ""
       }
     ]
   },
@@ -338,11 +348,15 @@
       {
         "ID": "nuevas-oficinas-isseg",
         "NAME": "New Offices ISSEG",
-        "DESCRIPTION": "New ISSEG offices for Grupo Eco del Bajio.",
+        "DESCRIPTION": "As part of the ISSEG New Offices project, located in Bicentennial Park, Silao de la Victoria, Guanajuato, Solicmex has participated in various stages of the fire protection system installation. This includes supplying and installing a 14-inch PVC C900 underground hydraulic loop, approximately 320 meters in length; installing the sprinkler and hydrant network using Schedule 40 pipe with a threaded system; assembling pear-shaped brackets to ensure secure and compliant mounting; and conducting hydrostatic tests at 200 PSI to verify the system's resistance, watertightness, and proper functioning. Furthermore, we have contributed by supplying specialized materials and providing technical support throughout the project, reaffirming our commitment to quality, safety, and compliance with the highest fire protection standards.",
         "UBICATION": "Silao de la Victoria, Guanajuato",
-        "APP": "Supplies",
+        "APP": "Fire Protection Infrastructure",
         "IMAGES": [
-          "/images/projects/image-26.jpg"
+          "/images/projects/image-26.jpg",
+          "/images/projects/image-27.webp",
+          "/images/projects/image-28.webp",
+          "/images/projects/image-29.webp",
+          "/images/projects/image-30.webp"
         ]
       },
       {

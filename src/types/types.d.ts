@@ -65,6 +65,7 @@ export type Quote = {
 
 export type Services = {
     TITLE: string;
+    NOTATION: string;
     SERVICES_LIST: Service[];
 }
 
@@ -78,5 +79,6 @@ export type Service = {
         label: string;
     }[]
     ICON: string;
+    IMAGE?: string;
 }
 

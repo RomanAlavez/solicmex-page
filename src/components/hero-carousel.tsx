@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react'
 export default function HeroCarousel() {
     const CAROUSE_IMAGES = [
         "/images/projects/image-21.jpg",
+        "/oficinas-ISSEG-1.webp",
         "/images/projects/image-22.jpg",
+        "/oficinas-ISSEG-2.webp",
         "/images/projects/image-23.jpg",
+        "/oficinas-ISSEG-3.webp",
         "/images/projects/image-24.jpg",
+        "/proveedores.webp",
         "/images/projects/image-25.jpg",
     ]
 
