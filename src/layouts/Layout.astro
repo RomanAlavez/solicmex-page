@@ -2,7 +2,16 @@
 import "@/styles/global.css";
 import NavBar from "@/components/NavBar.astro";
 import Footer from "@/sections/Footer.astro";
-const { title, description, currentLanguage, nav, foot } = Astro.props;
+import { type Legal } from "@/types/types";
+const { title, description, currentLanguage, nav, foot, legal } =
+  Astro.props as {
+    title: string;
+    description: string;
+    currentLanguage: string;
+    nav: Record<string, string>;
+    foot: Record<string, string>;
+    legal: Legal;
+  };
 const GA_ID = import.meta.env.PUBLIC_GA_ID;
 ---
 
@@ -40,13 +49,16 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
       OUR_PHILOSOPHY={nav.OUR_PHILOSOPHY}
       CONTACT={nav.CONTACT}
       ARTICLES={nav.ARTICLES}
+      STORE={nav.STORE}
+      LINK_STORE={nav.LINK_STORE}
     />
-    <main class="w-full min-h-dvh pt-[4.5rem] px-4 rounded-2xl">
+    <main class="w-full min-h-dvh pt-18 px-4 rounded-2xl">
       <slot />
     </main>
 
     <footer class="w-full px-4 rounded-2xl py-2 mb-2">
-      <Footer 
+
+      <Footer
         DESCRIPTION={foot.DESCRIPTION}
         LINKS={foot.LINKS}
         LINK_ABOUT_US={foot.LINK_ABOUT_US}
@@ -60,8 +72,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_ID;
         CERTIFICATION_3={foot.CERTIFICATION_3}
         CERTIFICATION_4={foot.CERTIFICATION_4}
         COPYRIGHT={foot.COPYRIGHT}
-        PRIVACY_POLICY={foot.PRIVACY_POLICY}
-        TERMS_OF_SERVICE={foot.TERMS_OF_SERVICE}
+        LEGAL={legal}
       />
     </footer>
   </body>

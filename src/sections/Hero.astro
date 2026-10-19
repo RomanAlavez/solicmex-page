@@ -3,6 +3,8 @@ import QuoteYourProject from "@/components/quote-your-project";
 import OverlayShape from "@/components/OverlayShape.astro";
 import HeroCarousel from "@/components/hero-carousel";
 import NoiseTexture from "@/components/Noise.astro";
+import { ExpandingCartButton } from "@/components/motion/expanding-cart-button";
+
 import type { PrevService, Quote } from "@/types/types";
 
 interface HeroProps {
@@ -12,9 +14,19 @@ interface HeroProps {
   description: string;
   button: string;
   quote: Quote;
+  ecommerce: string;
+  store: string;
 }
-const { prevServices, title, subtitle, description, button, quote } =
-  Astro.props as HeroProps;
+const {
+  prevServices,
+  title,
+  subtitle,
+  description,
+  button,
+  quote,
+  ecommerce,
+  store,
+} = Astro.props as HeroProps;
 ---
 
 <section
@@ -25,7 +37,7 @@ const { prevServices, title, subtitle, description, button, quote } =
 
   <div
     id="hero-content"
-    class="absolute inset-0 w-full h-full flex flex-row items-center gap-10 p-10"
+    class="absolute inset-0 w-full h-full flex flex-col sm:flex-row md:flex-row lg:flex-row items-start md:items-center lg:items-center justify-center sm:justify-start md:justify-start lg:justify-start gap-10 p-10"
   >
     <div id="hero-logo" class="flex flex-col items-center gap-4">
       <div class="relative group">
@@ -69,21 +81,18 @@ const { prevServices, title, subtitle, description, button, quote } =
       >
         {description}
       </span>
-      <a
-        href="#contact"
-        class="w-fit inline-flex items-center gap-2 py-2.5 sm:py-3 px-6 sm:px-10 bg-linear-to-r from-black/30 to-transparent border border-white/10 hover:to-primary/50 hover:px-7 sm:hover:px-11 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
 
-      >
-        {button}
-      </a>
-      <!-- <QuoteYourProject buttonText={button} quote={quote} client:load /> -->
+      <div class="w-full flex flex-wrap items-center justify-between gap-5">
+        <QuoteYourProject buttonText={button} quote={quote} client:load />
+        <ExpandingCartButton link={store} client:load>{ecommerce}</ExpandingCartButton>
+      </div>
     </div>
   </div>
   <NoiseTexture
     class="w-full opacity-5 mix-blend-screen h-full absolute top-0 left-0"
   />
 
-  <div class="absolute -z-10 w-full h-full mask-l-from-10% mask-l-to-50%">
+  <div class="absolute -z-10 w-full h-full mask-l-from-50% mask-l-to-70%">
     <div
       class="absolute inset-0 bg-linear-to-t from-dark-primary to-transparent"
     >

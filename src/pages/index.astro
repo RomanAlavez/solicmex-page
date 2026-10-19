@@ -12,9 +12,12 @@ import Contact from "@/sections/Contact.astro";
 import { getI18N } from "@/i18n";
 import ArticlesHome from "@/components/articles/ArticlesHome.astro";
 import type { ArticleBlog } from "@/types/types.d.ts";
+import LittleGallery from "@/sections/LittleGallery.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
+
+
 ---
 
 <Layout
@@ -23,6 +26,7 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
   description={i18n.SEO_DESCRIPTION}
   nav={i18n.NAV}
   foot={i18n.FOOTER}
+  legal={i18n.LEGAL}
 >
   <div class="w-full flex flex-col text-primary gap-3">
     <Hero
@@ -32,6 +36,8 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
       description={i18n.HERO.DESCRIPTION}
       quote={i18n.QUOTE}
       button={i18n.HERO.BUTTON}
+      ecommerce={i18n.HERO.ECOMMERCE}
+      store={i18n.STORE}
     />
     <ArticlesHome
       articles={articles.reverse()}
@@ -40,6 +46,10 @@ const articles: ArticleBlog[] = i18n.ARTICLES.ARTICLES_LIST;
       articlesHref="articles"
     />
     <AboutUs ABOUT_US={i18n.ABOUT_US} />
+    <LittleGallery
+      TITLE={i18n.GALLERY_SECTION.TITLE}
+      SUBTITLE={i18n.GALLERY_SECTION.SUBTITLE}
+    />
     <Services SERVICES={i18n.SERVICES} />
     <Projects PROJECTS={i18n.PROJECTS} currentLocale={"es"} />
     <Clients CLIENTS={i18n.CLIENTS} />

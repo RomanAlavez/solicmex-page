@@ -1,6 +1,7 @@
 {
     "SEO_TITLE": "Solicmex - Soluciones Integrales para Ingeniería y Construcción",
     "SEO_DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
+    "STORE": "https://solicmexsuministros.myshopify.com/",
     "NAV": {
         "HOME": "Inicio",
         "SERVICES": "Servicios",
@@ -11,13 +12,16 @@
         "WHY_US": "¿Por qué nosotros?",
         "OUR_PHILOSOPHY": "Nuestra Filosofía",
         "CONTACT": "Contacto",
-        "ARTICLES": "Artículos"
+        "ARTICLES": "Artículos",
+        "STORE": "Visita nuestra tienda",
+        "LINK_STORE": "https://solicmexsuministros.myshopify.com/"
     },
     "HERO": {
         "TITLE": "Solicmex",
         "SUBTITLE": "Soluciones Integrales para Ingeniería y Construcción",
         "DESCRIPTION": "Una empresa especializada y certificada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
-        "BUTTON": "Cotiza tu proyecto"
+        "BUTTON": "Cotiza tu proyecto",
+        "ECOMMERCE": "Tienda En Línea"
     },
     "QUOTE": {
         "TITLE": "Cotiza tu proyecto",
@@ -329,6 +333,10 @@
     },
     "BRANDS": {
         "TITLE": "Marcas en las que nos especializamos"
+    },
+    "GALLERY_SECTION": {
+        "TITLE": "Galería",
+        "SUBTITLE": "Nuestra forma de ver el mundo"
     },
     "PROJECTS": {
         "TITLE": "Nuestros Proyectos",
@@ -661,6 +669,28 @@
                 ],
                 "DATE": "2026-05-17",
                 "LINK": "que-es-un-sistema-contra-incendios"
+            },
+            {
+                "ID": "7",
+                "TITLE": "Grupo Solicmex formaliza colaboración con Aztema Rubber & Tire Manufacturing",
+                "DESCRIPTION": "<h2>Grupo Solicmex y Aztema Rubber & Tire Manufacturing fortalecen su colaboración</h2><p>Nos complace anunciar la formalización de una colaboración entre <strong>Grupo Solicmex</strong> y <strong>Aztema Rubber & Tire Manufacturing</strong> para la ejecución de trabajos de mantenimiento en su planta ubicada en <strong>Irapuato, Guanajuato</strong>.</p><p>Esta colaboración representa una oportunidad para que Grupo Solicmex ponga su experiencia técnica y compromiso al servicio de las instalaciones de Aztema, contribuyendo al correcto funcionamiento y mantenimiento de su infraestructura bajo criterios de <strong>seguridad, calidad y eficiencia</strong>.</p><h2>Compromiso con el mantenimiento de instalaciones industriales</h2><p>El mantenimiento adecuado de la infraestructura industrial es un componente fundamental para preservar la continuidad operativa, mantener condiciones seguras de trabajo y garantizar el correcto funcionamiento de las instalaciones.</p><p>En Grupo Solicmex, nuestro compromiso es brindar soluciones y servicios de mantenimiento respaldados por nuestra experiencia técnica, atendiendo las necesidades específicas de cada instalación y proyecto.</p><h2>Una alianza basada en confianza y compromiso</h2><p>Agradecemos a <strong>Aztema Rubber & Tire Manufacturing</strong> por la confianza depositada en nuestro equipo y por permitirnos colaborar en el mantenimiento de sus instalaciones.</p><p>Para Grupo Solicmex, cada proyecto representa la oportunidad de fortalecer relaciones profesionales y generar valor mediante soluciones orientadas a la <strong>seguridad, eficiencia y continuidad operativa</strong>.</p><p>Continuamos fortaleciendo alianzas estratégicas y desarrollando soluciones que generan valor para nuestros clientes.</p><p><strong>¡Somos Grupo Solicmex!</strong></p>",
+                "IMAGES": [
+                    "/images/articles/solicmex-aztema.webp"
+                ],
+                "TAGS": [
+                    "grupo solicmex",
+                    "aztema rubber",
+                    "mantenimiento industrial",
+                    "mantenimiento de instalaciones",
+                    "industria",
+                    "seguridad industrial",
+                    "infraestructura industrial",
+                    "ingenieria",
+                    "guanajuato",
+                    "solicmex"
+                ],
+                "DATE": "2026-09-02",
+                "LINK": "colaboracion-aztema-rubber-tire-manufacturing"
             }
         ]
     },
@@ -689,5 +719,209 @@
         "COPYRIGHT": "© 2026 Solicmex. Todos los derechos reservados.",
         "PRIVACY_POLICY": "Política de privacidad",
         "TERMS_OF_SERVICE": "Términos de servicio"
+    },
+    "LEGAL": {
+        "PRIVACY": {
+            "TITLE": "Política de Privacidad",
+            "LAST_UPDATED": "Última actualización: 2 de septiembre de 2026",
+            "INTRO": "En Solicmex nos comprometemos a proteger la privacidad de los usuarios que visitan nuestro sitio web. La presente Política de Privacidad describe qué información puede recopilarse mediante nuestro sitio web, cómo puede utilizarse y las medidas que adoptamos para protegerla.",
+            "ACCEPTANCE": "Al utilizar este sitio web, el usuario reconoce haber leído y comprendido la presente Política de Privacidad.",
+            "SECTIONS": {
+                "RESPONSIBLE": {
+                    "TITLE": "1. Responsable",
+                    "CONTENT": "El responsable del tratamiento de la información recopilada a través de este sitio web es Solicmex, empresa especializada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
+                    "contact": "Para cualquier asunto relacionado con privacidad o tratamiento de información, el usuario podrá comunicarse con nosotros mediante los medios de contacto publicados en este sitio web."
+                },
+                "informationCollected": {
+                    "TITLE": "2. Información que podemos recopilar",
+                    "INTRO": "Dependiendo de la forma en que el usuario interactúe con nuestro sitio web, podemos recopilar información proporcionada directamente por el usuario, por ejemplo:",
+                    "DIRECT_INFORMATION": [
+                        "Nombre.",
+                        "Correo electrónico.",
+                        "Número telefónico.",
+                        "Empresa u organización.",
+                        "Información proporcionada voluntariamente mediante formularios de contacto.",
+                        "Información contenida en los mensajes o solicitudes que el usuario nos envíe."
+                    ],
+                    "TECHNICAL_INTRO": "Asimismo, determinadas herramientas utilizadas en nuestro sitio pueden recopilar información técnica y estadística relacionada con la navegación, como:",
+                    "TECHNICAL_INFORMATION": [
+                        "Dirección IP o información derivada de ella.",
+                        "Tipo y versión del navegador.",
+                        "Tipo de dispositivo.",
+                        "Sistema operativo.",
+                        "Ubicación geográfica aproximada.",
+                        "Páginas visitadas.",
+                        "Tiempo de permanencia.",
+                        "Interacciones realizadas dentro del sitio.",
+                        "Información relacionada con sesiones y eventos de navegación.",
+                        "Identificadores asociados a cookies y tecnologías similares."
+                    ],
+                    "CLOSING": "La información recopilada mediante herramientas de analítica se utiliza principalmente con fines estadísticos y para comprender cómo interactúan los visitantes con nuestro sitio web."
+                },
+                "GOOGLE_ANALYTICS": {
+                    "TITLE": "3. Google Analytics",
+                    "CONTENT": "Nuestro sitio web utiliza Google Analytics, un servicio de análisis web proporcionado por Google, para comprender cómo los visitantes utilizan nuestro sitio y mejorar su funcionamiento y contenido.",
+                    "DATA": "Google Analytics puede utilizar cookies y tecnologías similares para distinguir usuarios y sesiones, así como recopilar información relacionada con el dispositivo, navegador, ubicación geográfica aproximada y comportamiento de navegación.",
+                    "PERSONAL_DATA": "Google establece que sus clientes no deben enviar información de identificación personal a Google Analytics.",
+                    "PURPOSES": [
+                        "Generar estadísticas sobre el uso del sitio.",
+                        "Analizar el rendimiento del sitio web.",
+                        "Identificar tendencias de navegación.",
+                        "Mejorar el contenido y la experiencia del usuario."
+                    ]
+                },
+                "PURPOSES": {
+                    "TITLE": "4. Finalidad del tratamiento",
+                    "INTRO": "La información que podamos obtener podrá utilizarse para:",
+                    "ITEMS": [
+                        "Atender solicitudes de información y contacto.",
+                        "Responder consultas relacionadas con nuestros servicios.",
+                        "Dar seguimiento a solicitudes comerciales.",
+                        "Mantener y mejorar el funcionamiento del sitio web.",
+                        "Analizar el uso y rendimiento del sitio.",
+                        "Detectar errores, problemas técnicos o comportamientos anómalos.",
+                        "Mejorar nuestros contenidos, servicios y comunicación digital.",
+                        "Cumplir obligaciones legales cuando corresponda."
+                    ],
+                    "CLOSING": "Solicmex no utilizará la información recopilada para finalidades incompatibles con aquellas para las que fue obtenida."
+                },
+                "cookies": {
+                    "TITLE": "5. Cookies y tecnologías similares",
+                    "CONTENT": "Nuestro sitio puede utilizar cookies y tecnologías similares necesarias para determinadas funciones técnicas y de análisis.",
+                    "ANALYTICS": "Las cookies utilizadas por Google Analytics permiten distinguir usuarios y sesiones y generar estadísticas sobre la utilización del sitio.",
+                    "BROWSER": "El usuario puede configurar su navegador para bloquear, eliminar o limitar el uso de cookies. Sin embargo, hacerlo puede afectar determinadas funcionalidades del sitio.",
+                    "CONSENT": "Cuando la legislación aplicable requiera consentimiento para determinadas cookies o tecnologías de medición, estas serán gestionadas de acuerdo con los mecanismos de consentimiento correspondientes."
+                },
+                "SHARING": {
+                    "TITLE": "6. Compartición de información",
+                    "INTRO": "Solicmex no vende ni comercializa los datos personales proporcionados directamente por los usuarios.",
+                    "CONTENT": "La información podrá ser compartida únicamente cuando resulte necesario para:",
+                    "ITEMS": [
+                        "La prestación de servicios tecnológicos relacionados con el funcionamiento del sitio.",
+                        "Herramientas de analítica y medición utilizadas por Solicmex.",
+                        "Cumplimiento de obligaciones legales o requerimientos de autoridades competentes.",
+                        "Protección de los derechos, seguridad e integridad de Solicmex, sus usuarios o terceros."
+                    ],
+                    "CLOSING": "Los proveedores externos que participen en el funcionamiento del sitio podrán tratar determinada información conforme a sus propias políticas de privacidad y a las condiciones aplicables al servicio correspondiente."
+                },
+                "SEGURITY": {
+                    "TITLE": "7. Seguridad",
+                    "CONTENT": "Solicmex implementa medidas técnicas y administrativas razonables destinadas a proteger la información contra acceso, alteración, divulgación o destrucción no autorizada.",
+                    "limitation": "No obstante, ningún sistema de transmisión o almacenamiento electrónico puede garantizar seguridad absoluta."
+                },
+                "RETENTION": {
+                    "TITLE": "8. Conservación de la información",
+                    "CONTENT": "La información será conservada durante el tiempo necesario para cumplir con las finalidades descritas en esta Política, atender solicitudes, mantener registros comerciales o cumplir con obligaciones legales aplicables.",
+                    "thirdParty": "Los periodos de conservación de información recopilada mediante herramientas de terceros, como Google Analytics, pueden estar sujetos además a las configuraciones y políticas correspondientes de dichos proveedores."
+                },
+                "USER_RIGHTS": {
+                    "TITLE": "9. Derechos del usuario",
+                    "CONTENT": "El usuario podrá solicitar información respecto del tratamiento de sus datos personales y, cuando resulte aplicable conforme a la legislación vigente, podrá ejercer los derechos que correspondan, incluyendo acceso, rectificación, cancelación, oposición o aquellos derechos equivalentes establecidos por la legislación aplicable.",
+                    "CONTACT": "Para realizar una solicitud relacionada con privacidad, el usuario podrá comunicarse mediante los medios de contacto oficiales publicados en este sitio web."
+                },
+                "EXTERNAL_LINKS": {
+                    "TITLE": "10. Enlaces a sitios externos",
+                    "CONTENT": "Nuestro sitio web puede contener enlaces hacia sitios web, plataformas o servicios de terceros.",
+                    "limitation": "Solicmex no es responsable de las prácticas de privacidad, contenidos, términos o políticas de sitios externos. Se recomienda consultar las políticas correspondientes antes de proporcionar información personal."
+                },
+                "MODIFICATIONS": {
+                    "TITLE": "11. Modificaciones",
+                    "CONTENT": "Solicmex podrá actualizar esta Política de Privacidad cuando resulte necesario debido a cambios en el sitio web, servicios, herramientas utilizadas o requisitos legales.",
+                    "EFFECTIVE": "La versión vigente será aquella publicada en esta página e identificada mediante su fecha de actualización."
+                },
+                "CONTACT": {
+                    "TITLE": "12. Contacto",
+                    "CONTENT": "Si tienes preguntas, comentarios o solicitudes relacionadas con esta Política de Privacidad o con el tratamiento de información, puedes comunicarte con Solicmex mediante los medios de contacto oficiales disponibles en nuestro sitio web."
+                }
+            }
+        },
+        "TERMS": {
+            "TITLE": "Términos y Condiciones de Uso",
+            "LAST_UPDATED": "Última actualización: 20 de octubre de 2026",
+            "INTRO": "Los presentes Términos y Condiciones regulan el acceso y uso del sitio web de Solicmex.",
+            "ACCEPTANCE": "Al acceder, navegar o utilizar este sitio web, el usuario acepta estos términos. Si no está de acuerdo con alguno de ellos, deberá abstenerse de utilizar el sitio.",
+            "SECTIONS": {
+                "ABOUT": {
+                    "TITLE": "1. Sobre Solicmex",
+                    "CONTENT": "Solicmex es una empresa especializada en ingeniería, instalación, mantenimiento y reparación de sistemas de protección contra incendios.",
+                    "PURPOSE": "La información publicada en este sitio tiene como finalidad proporcionar información general sobre la empresa, sus servicios, proyectos, actividades y medios de contacto."
+                },
+                "PERMITTED_USE": {
+                    "TITLE": "2. Uso permitido del sitio",
+                    "INTRO": "El usuario se compromete a utilizar el sitio de manera lícita y responsable.",
+                    "PROHIBITED": [
+                        "Realizar actividades contrarias a las leyes aplicables.",
+                        "Intentar acceder sin autorización a sistemas, servidores o áreas restringidas.",
+                        "Interferir con el funcionamiento del sitio.",
+                        "Introducir código malicioso, virus o cualquier otro elemento que pueda afectar la infraestructura tecnológica.",
+                        "Utilizar la información del sitio para actividades fraudulentas o ilícitas.",
+                        "Reproducir o distribuir contenido protegido sin autorización."
+                    ]
+                },
+                "SERVICES": {
+                    "TITLE": "3. Información de los servicios",
+                    "CONTENT": "La información sobre servicios, capacidades, proyectos, instalaciones, productos, normativas o soluciones publicada en este sitio tiene carácter informativo.",
+                    "DISCLAIMER": "La descripción de un servicio en el sitio no constituye por sí misma una cotización, contrato, garantía de disponibilidad ni obligación de contratación por parte de Solicmex.",
+                    "CONDITIONS": "Las condiciones específicas de cualquier servicio serán determinadas mediante la correspondiente propuesta, cotización, contrato, orden de servicio o documento comercial aplicable."
+                },
+                "INTELLECTUAL_PROPERTY": {
+                    "TITLE": "4. Propiedad intelectual",
+                    "CONTENT": "Los textos, fotografías, imágenes, logotipos, gráficos, diseños, elementos audiovisuales, código y demás contenidos publicados en este sitio pertenecen a Solicmex o son utilizados con autorización de sus respectivos titulares.",
+                    "RESTRICTION": "Queda prohibida la reproducción, modificación, distribución, publicación o explotación comercial de dichos contenidos sin autorización previa, salvo cuando la legislación aplicable permita expresamente dicho uso."
+                },
+                "TECHNICAL_CONTENT": {
+                    "TITLE": "5. Contenido técnico",
+                    "CONTENT": "El contenido técnico, informativo o educativo publicado por Solicmex no sustituye una evaluación, ingeniería, inspección, cálculo, especificación técnica o asesoría profesional aplicable a un proyecto determinado.",
+                    "PROJECT_SPECIFIC": "Las características y requerimientos de cada sistema de protección contra incendios dependen de las condiciones particulares del inmueble, riesgo, normativa aplicable, diseño y especificaciones del proyecto."
+                },
+                "EXTERNAL_LINKS": {
+                    "TITLE": "6. Enlaces externos",
+                    "CONTENT": "El sitio puede contener enlaces hacia páginas o servicios de terceros.",
+                    "LIMITATION": "Solicmex no controla ni garantiza la disponibilidad, exactitud, seguridad o contenido de dichos sitios y no asume responsabilidad por las prácticas o políticas de terceros."
+                },
+                "AVAILABILITY": {
+                    "TITLE": "7. Disponibilidad del sitio",
+                    "CONTENT": "Solicmex procurará mantener disponible y funcionando correctamente el sitio web. Sin embargo, no garantiza que el sitio permanezca disponible de manera ininterrumpida o libre de errores.",
+                    "suspension": "El acceso podrá suspenderse temporalmente por mantenimiento, actualizaciones, fallas técnicas, causas de fuerza mayor o circunstancias fuera del control razonable de Solicmex."
+                },
+                "LIABILITY": {
+                    "TITLE": "8. Limitación de responsabilidad",
+                    "CONTENT": "Solicmex no será responsable por daños derivados exclusivamente del uso o imposibilidad de uso del sitio web cuando estos sean ocasionados por circunstancias fuera de su control razonable.",
+                    "contracts": "La información publicada en el sitio se proporciona de buena fe y con fines informativos, sin perjuicio de las obligaciones que puedan derivarse de contratos específicos celebrados con clientes."
+                },
+                "PRIVACY": {
+                    "TITLE": "9. Privacidad",
+                    "CONTENT": "El tratamiento de información personal y datos derivados del uso del sitio se encuentra regulado por nuestra Política de Privacidad.",
+                    "ANALYTICS": "El sitio también puede utilizar herramientas de análisis, incluyendo Google Analytics, de acuerdo con lo descrito en nuestra Política de Privacidad y Aviso de Cookies."
+                },
+                "MODIFICATIONS": {
+                    "TITLE": "10. Modificaciones",
+                    "CONTENT": "Solicmex podrá modificar, actualizar o sustituir estos Términos y Condiciones cuando sea necesario.",
+                    "EFFECTIVE": "La versión vigente será la publicada en este sitio web e identificada mediante su fecha de actualización."
+                },
+                "applicableLaw": {
+                    "TITLE": "11. Legislación aplicable",
+                    "CONTENT": "Estos Términos y Condiciones se interpretarán conforme a las leyes aplicables en los Estados Unidos Mexicanos.",
+                    "JURISDICTION": "Cualquier controversia relacionada con el uso del sitio será sometida a las autoridades competentes que correspondan conforme a la legislación aplicable, sin perjuicio de los derechos que correspondan a los usuarios conforme a dicha legislación."
+                },
+                "CONTACT": {
+                    "TITLE": "12. Contacto",
+                    "CONTENT": "Para cualquier consulta relacionada con estos Términos y Condiciones, el usuario podrá comunicarse con Solicmex mediante los medios de contacto oficiales publicados en el sitio web."
+                }
+            }
+        },
+        "COOKIES": {
+            "TITLE": "Aviso de Cookies y Google Analytics",
+            "DESCRIPTION": "Este sitio web utiliza cookies y tecnologías similares, incluyendo Google Analytics, para analizar el uso del sitio y mejorar su funcionamiento, contenido y experiencia de navegación.",
+            "DATA_COLLECTION": "Google Analytics puede recopilar información como datos del dispositivo y navegador, ubicación geográfica aproximada, estadísticas de sesión, interacciones y determinados identificadores asociados a cookies.",
+            "PURPOSE": "La información recopilada mediante estas herramientas se utiliza con fines estadísticos y de análisis del funcionamiento del sitio.",
+            "BROWSER_SETTINGS": "Puedes administrar o limitar el uso de cookies desde la configuración de tu navegador. Cuando corresponda legalmente, determinadas tecnologías de medición serán activadas únicamente de acuerdo con las preferencias de consentimiento del usuario.",
+            "PRIVACY_LINK": "Para conocer con mayor detalle cómo tratamos la información, consulta nuestra Política de Privacidad.",
+            "ACTIONS": {
+                "ACCEPT": "Aceptar",
+                "REJECT": "Rechazar",
+                "CONFIGURE": "Configurar cookies"
+            }
+        }
     }
 }

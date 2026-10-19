@@ -11,6 +11,8 @@ interface Props {
   OUR_PHILOSOPHY: String;
   CONTACT: String;
   ARTICLES: String;
+  STORE:String;
+  LINK_STORE: String;
 }
 
 const {
@@ -25,6 +27,8 @@ const {
   OUR_PHILOSOPHY,
   CONTACT,
   ARTICLES,
+  STORE,
+  LINK_STORE
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -68,6 +72,7 @@ const links = [
   },
   { href: `${p}/articles`, label: ARTICLES, active: isActive("/#articles") },
   { href: `${p}/#contact`, label: CONTACT, active: isActive("/#contact") },
+  { href: `${LINK_STORE}`, label: STORE, active: isActive(`${LINK_STORE}`) },
 ];
 ---
 

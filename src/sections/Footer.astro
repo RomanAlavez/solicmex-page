@@ -1,6 +1,9 @@
 ---
+import Privacy from "@/components/privacy";
+import Terms from "@/components/terms";
 import NoiseTexture from "@/components/Noise.astro";
-type FooterProps = {
+import type { Legal } from "@/types/types";
+interface FooterProps {
   DESCRIPTION: string;
   LINKS: string;
   LINK_ABOUT_US: string;
@@ -14,9 +17,8 @@ type FooterProps = {
   CERTIFICATION_3: string;
   CERTIFICATION_4: string;
   COPYRIGHT: string;
-  PRIVACY_POLICY: string;
-  TERMS_OF_SERVICE: string;
-};
+  LEGAL: Legal;
+}
 
 const {
   DESCRIPTION,
@@ -32,9 +34,10 @@ const {
   CERTIFICATION_3,
   CERTIFICATION_4,
   COPYRIGHT,
-  PRIVACY_POLICY,
-  TERMS_OF_SERVICE,
+  LEGAL,
 } = Astro.props as FooterProps;
+
+const { PRIVACY, TERMS } = LEGAL;
 ---
 
 <section
@@ -128,19 +131,9 @@ const {
     >
       <span>{COPYRIGHT}</span>
       <div class="flex items-center gap-4">
-        <a
-          href="/privacy"
-          class="hover:text-white transition-colors duration-200"
-        >
-          {PRIVACY_POLICY}
-        </a>
+        <Privacy privacy={PRIVACY} client:load />
         <span class="text-white/80">|</span>
-        <a
-          href="/terms"
-          class="hover:text-white transition-colors duration-200"
-        >
-          {TERMS_OF_SERVICE}
-        </a>
+        <Terms Terms={TERMS} client:load />
       </div>
     </div>
   </div>

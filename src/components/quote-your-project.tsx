@@ -8,7 +8,7 @@ import {
   SharedDialogCloseButton,
 } from "@ursa/ursa-design";
 import type { Quote } from "@/types/types";
-
+import { ExpandingArrowButton } from "@/components/motion/expanding-arrow-button";
 interface QuoteYourProjectProps {
   buttonText: string;
   quote: Quote;
@@ -22,15 +22,9 @@ export default function QuoteYourProject({
     <SharedDialogRoot >
       <SharedDialogTrigger
         id="quote-project"
-        className=" w-fit inline-flex items-center gap-2 py-2.5 sm:py-3 px-6 sm:px-10  bg-linear-to-r from-black/30 to-transparent border border-white/10 hover:to-primary/50 hover:px-7 sm:hover:px-11 text-white font-medium rounded-xl cursor-pointer hover:shadow-lg transition-all duration-300"
       >
-        <SharedDialogItem id="button-text" dialogId="quote-project" className="">
-          {buttonText}
-        </SharedDialogItem>
 
-        <SharedDialogItem id="button-icon" dialogId="quote-project">
-          <ChevronRight />
-        </SharedDialogItem>
+        <ExpandingArrowButton >{buttonText}</ExpandingArrowButton>
       </SharedDialogTrigger>
 
       <SharedDialogContent

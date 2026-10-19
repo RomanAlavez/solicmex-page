@@ -1,0 +1,21 @@
+---
+import type LittleGallery from "@/types/types";
+import MainCarousel from "@/components/main-carousel";
+const { TITLE, SUBTITLE } = Astro.props as LittleGallery;
+---
+
+<section
+  class="h-screen w-full flex flex-col justify-center items-center gap-4 px-8 py-20 max-w-6xl mx-auto"
+>
+  <h2
+    class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase text-transparent bg-clip-text bg-linear-to-r from-dark-primary from-10% via-primary via-80% to-primary"
+  >
+    {TITLE}
+  </h2>
+  <p
+    class="text-lg md:text-xl lg:text-2xl max-w-2xl text-transparent bg-clip-text bg-linear-to-r from-dark-primary to-primary text-center"
+  >
+    {SUBTITLE}
+  </p>
+  <MainCarousel client:load />
+</section>

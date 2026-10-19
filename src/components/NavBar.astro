@@ -10,11 +10,13 @@ interface Props {
     OUR_PHILOSOPHY: String;
     CONTACT: String;
     ARTICLES: String;
+    STORE:string;
+    LINK_STORE: String;
 }
 
 const {
     HOME, SERVICES, PROJECTS, GALLERY, CLIENTS,
-    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES,
+    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES, STORE, LINK_STORE
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -37,7 +39,7 @@ import NavLinks from "@/components/NavLinks.astro";
     shadow-[0_2px_12px_rgba(6,182,212,0.08)]
     backdrop-blur-xl"
 >
-    <a href={isEnglish ? "/en" : "/"} class="flex-shrink-0">
+    <a href={isEnglish ? "/en" : "/"} class="shrink-0">
         <img
             src="/logo-solicmex.webp"
             alt="Logo"
@@ -61,6 +63,8 @@ import NavLinks from "@/components/NavLinks.astro";
             OUR_PHILOSOPHY={OUR_PHILOSOPHY}
             CONTACT={CONTACT}
             ARTICLES={ARTICLES}
+            STORE={STORE}
+            LINK_STORE={LINK_STORE}
         />
     </div>
 
@@ -95,6 +99,8 @@ import NavLinks from "@/components/NavLinks.astro";
     OUR_PHILOSOPHY={OUR_PHILOSOPHY}
     CONTACT={CONTACT}
     ARTICLES={ARTICLES}
+    STORE={STORE}
+    LINK_STORE={LINK_STORE}
 />
 
 <style>
@@ -131,20 +137,6 @@ import NavLinks from "@/components/NavLinks.astro";
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    const floatingClasses = [
-        "bg-cyan-950/30",
-        "backdrop-blur-xl",
-        "border",
-        "border-cyan-400/20",
-        "shadow-lg",
-    ];
-
-    const fixedClasses = [
-        "bg-white",
-        "border-b",
-        "border-[rgba(6,182,212,0.2)]",
-        "shadow-[0_2px_12px_rgba(6,182,212,0.08)]",
-    ];
 
     window.addEventListener("scroll", () => {
         const shouldFloat = window.scrollY > 20;

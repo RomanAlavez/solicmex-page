@@ -10,11 +10,13 @@ interface Props {
     OUR_PHILOSOPHY: String;
     CONTACT: String;
     ARTICLES: String;
+    STORE: String;
+    LINK_STORE: String;
 }
 
 const {
     HOME, SERVICES, PROJECTS, GALLERY, CLIENTS,
-    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES,
+    ABOUT_US, WHY_US, OUR_PHILOSOPHY, CONTACT, ARTICLES, LINK_STORE, STORE
 } = Astro.props;
 
 import NavLinks from "@/components/NavLinks.astro";
@@ -44,6 +46,8 @@ import NavLinks from "@/components/NavLinks.astro";
             OUR_PHILOSOPHY={OUR_PHILOSOPHY}
             CONTACT={CONTACT}
             ARTICLES={ARTICLES}
+            STORE={STORE}
+            LINK_STORE={LINK_STORE}
         />
     </div>
 </div>

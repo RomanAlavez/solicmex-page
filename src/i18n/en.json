@@ -1,6 +1,7 @@
 {
   "SEO_TITLE": "Solicmex - Comprehensive Solutions for Engineering and Construction",
   "SEO_DESCRIPTION": "A company specialized and certified in the engineering, installation, maintenance, and repair of fire protection systems.",
+  "STORE": "https://solicmexsuministros.myshopify.com/",
   "NAV": {
     "HOME": "Home",
     "SERVICES": "Services",
@@ -11,13 +12,16 @@
     "WHY_US": "Why Us?",
     "OUR_PHILOSOPHY": "Our Philosophy",
     "CONTACT": "Contact",
-    "ARTICLES": "Articles"
+    "ARTICLES": "Articles",
+    "STORE": "Visit our store",
+    "LINK_STORE": "https://solicmexsuministros.myshopify.com/"
   },
   "HERO": {
     "TITLE": "Solicmex",
     "SUBTITLE": "Comprehensive Solutions for Engineering and Construction",
     "DESCRIPTION": "A specialized and certified company in engineering, installation, maintenance, and repair of fire protection systems.",
-    "BUTTON": "Get a Quote"
+    "BUTTON": "Get a Quote",
+    "ECOMMERCE": "Visit our store "
   },
   "QUOTE": {
     "TITLE": "Get a Quote for Your Project",
@@ -329,6 +333,10 @@
   },
   "BRANDS": {
     "TITLE": "Brands We Specialize In"
+  },
+  "GALLERY_SECTION": {
+    "TITLE": "Gallery",
+    "SUBTITLE": "Our way of seeing the world"
   },
   "PROJECTS": {
     "TITLE": "Our Highlighted",
@@ -659,6 +667,28 @@
         ],
         "DATE": "2026-05-17",
         "LINK": "what-is-a-fire-protection-system"
+      },
+      {
+        "ID": "7",
+        "TITLE": "Grupo Solicmex Formalizes Collaboration with Aztema Rubber & Tire Manufacturing",
+        "DESCRIPTION": "<h2>Grupo Solicmex and Aztema Rubber & Tire Manufacturing Strengthen Their Collaboration</h2><p>We are pleased to announce the formalization of a collaboration between <strong>Grupo Solicmex</strong> and <strong>Aztema Rubber & Tire Manufacturing</strong> for the execution of maintenance work at its facility located in <strong>Irapuato, Guanajuato</strong>.</p><p>This collaboration represents an opportunity for Grupo Solicmex to put its technical expertise and commitment at the service of Aztema's facilities, contributing to the proper operation and maintenance of its infrastructure based on criteria of <strong>safety, quality, and efficiency</strong>.</p><h2>Commitment to Industrial Facility Maintenance</h2><p>Proper maintenance of industrial infrastructure is a fundamental component for preserving operational continuity, maintaining safe working conditions, and ensuring the proper functioning of facilities.</p><p>At Grupo Solicmex, our commitment is to provide maintenance solutions and services backed by our technical expertise, addressing the specific needs of each facility and project.</p><h2>A Partnership Built on Trust and Commitment</h2><p>We would like to thank <strong>Aztema Rubber & Tire Manufacturing</strong> for the trust placed in our team and for allowing us to collaborate in the maintenance of its facilities.</p><p>For Grupo Solicmex, every project represents an opportunity to strengthen professional relationships and generate value through solutions focused on <strong>safety, efficiency, and operational continuity</strong>.</p><p>We continue to strengthen strategic partnerships and develop solutions that generate value for our clients.</p><p><strong>We are Grupo Solicmex!</strong></p>",
+        "IMAGES": [
+          "/images/articles/solicmex-aztema.webp"
+        ],
+        "TAGS": [
+          "grupo solicmex",
+          "aztema rubber",
+          "industrial maintenance",
+          "facility maintenance",
+          "industry",
+          "industrial safety",
+          "industrial infrastructure",
+          "engineering",
+          "guanajuato",
+          "solicmex"
+        ],
+        "DATE": "2026-09-02",
+        "LINK": "collaboration-aztema-rubber-tire-manufacturing"
       }
     ]
   },
@@ -687,5 +717,209 @@
     "COPYRIGHT": "© 2026 Solicmex. All rights reserved.",
     "PRIVACY_POLICY": "Privacy Policy",
     "TERMS_OF_SERVICE": "Terms of Service"
+  },
+  "LEGAL": {
+    "PRIVACY": {
+      "TITLE": "Privacy Policy",
+      "LAST_UPDATED": "Last updated: September 2, 2026",
+      "INTRO": "At Solicmex, we are committed to protecting the privacy of users who visit our website. This Privacy Policy describes what information may be collected through our website, how it may be used, and the measures we take to protect it.",
+      "ACCEPTANCE": "By using this website, the user acknowledges having read and understood this Privacy Policy.",
+      "SECTIONS": {
+        "RESPONSIBLE": {
+          "TITLE": "1. Data Controller",
+          "CONTENT": "The entity responsible for the processing of information collected through this website is Solicmex, a company specialized in engineering, installation, maintenance, and repair of fire protection systems.",
+          "CONTACT": "For any matter related to privacy or information processing, users may contact us through the contact channels available on this website."
+        },
+        "INFORMATION_COLLECTED": {
+          "TITLE": "2. Information We May Collect",
+          "INTRO": "Depending on how the user interacts with our website, we may collect information provided directly by the user, including:",
+          "DIRECT_INFORMATION": [
+            "Name.",
+            "Email address.",
+            "Telephone number.",
+            "Company or organization.",
+            "Information voluntarily provided through contact forms.",
+            "Information contained in messages or requests submitted by the user."
+          ],
+          "TECHNICAL_INTRO": "Certain tools used on our website may also collect technical and statistical information related to browsing activity, including:",
+          "TECHNICAL_INFORMATION": [
+            "IP address or information derived from it.",
+            "Browser type and version.",
+            "Device type.",
+            "Operating system.",
+            "Approximate geographic location.",
+            "Pages visited.",
+            "Time spent on the website.",
+            "Interactions performed on the website.",
+            "Information related to sessions and browsing events.",
+            "Identifiers associated with cookies and similar technologies."
+          ],
+          "CLOSING": "Information collected through analytics tools is primarily used for statistical purposes and to understand how visitors interact with our website."
+        },
+        "GOOGLE_ANALYTICS": {
+          "TITLE": "3. Google Analytics",
+          "CONTENT": "Our website uses Google Analytics, a web analytics service provided by Google, to understand how visitors use our website and to improve its functionality and content.",
+          "DATA": "Google Analytics may use cookies and similar technologies to distinguish users and sessions, as well as collect information related to the device, browser, approximate geographic location, and browsing behavior.",
+          "PERSONAL_DATA": "Google states that its customers must not send personally identifiable information to Google Analytics.",
+          "PURPOSES": [
+            "Generate statistics about website usage.",
+            "Analyze website performance.",
+            "Identify browsing trends.",
+            "Improve content and user experience."
+          ]
+        },
+        "PURPOSES": {
+          "TITLE": "4. Purpose of Processing",
+          "INTRO": "The information we obtain may be used to:",
+          "ITEMS": [
+            "Respond to information and contact requests.",
+            "Answer inquiries regarding our services.",
+            "Follow up on commercial inquiries and requests.",
+            "Maintain and improve the functionality of the website.",
+            "Analyze website usage and performance.",
+            "Detect errors, technical issues, or abnormal behavior.",
+            "Improve our content, services, and digital communications.",
+            "Comply with applicable legal obligations."
+          ],
+          "CLOSING": "Solicmex will not use the collected information for purposes incompatible with those for which it was obtained."
+        },
+        "COOKIES": {
+          "TITLE": "5. Cookies and Similar Technologies",
+          "CONTENT": "Our website may use cookies and similar technologies necessary for certain technical and analytical functions.",
+          "ANALYTICS": "Cookies used by Google Analytics allow users and sessions to be distinguished and enable the generation of statistics regarding website usage.",
+          "BROWSER": "Users may configure their browser to block, delete, or limit the use of cookies. However, doing so may affect certain website functionalities.",
+          "CONSENT": "Where applicable law requires consent for certain cookies or measurement technologies, these technologies will be managed in accordance with the applicable consent mechanisms."
+        },
+        "SHARING": {
+          "TITLE": "6. Information Sharing",
+          "INTRO": "Solicmex does not sell or commercially trade personal information directly provided by users.",
+          "CONTENT": "Information may only be shared when necessary for:",
+          "ITEMS": [
+            "The provision of technology services related to the operation of the website.",
+            "Analytics and measurement tools used by Solicmex.",
+            "Compliance with legal obligations or requests from competent authorities.",
+            "Protection of the rights, security, and integrity of Solicmex, its users, or third parties."
+          ],
+          "CLOSING": "Third-party providers involved in the operation of the website may process certain information in accordance with their own privacy policies and the terms applicable to their respective services."
+        },
+        "SECURITY": {
+          "TITLE": "7. Security",
+          "CONTENT": "Solicmex implements reasonable technical and administrative measures designed to protect information against unauthorized access, alteration, disclosure, or destruction.",
+          "LIMITATION": "However, no electronic transmission or storage system can guarantee absolute security."
+        },
+        "RETENTION": {
+          "TITLE": "8. Data Retention",
+          "CONTENT": "Information will be retained for as long as necessary to fulfill the purposes described in this Policy, respond to requests, maintain business records, or comply with applicable legal obligations.",
+          "THIRD_PARTY": "Retention periods for information collected through third-party tools, such as Google Analytics, may also be subject to the configurations and policies of those providers."
+        },
+        "USER_RIGHTS": {
+          "TITLE": "9. User Rights",
+          "CONTENT": "Users may request information regarding the processing of their personal data and, where applicable under current legislation, may exercise the rights available to them, including access, rectification, cancellation, objection, or equivalent rights established by applicable law.",
+          "CONTACT": "To submit a privacy-related request, users may contact us through the official contact channels available on this website."
+        },
+        "EXTERNAL_LINKS": {
+          "TITLE": "10. External Websites and Links",
+          "CONTENT": "Our website may contain links to third-party websites, platforms, or services.",
+          "LIMITATION": "Solicmex is not responsible for the privacy practices, content, terms, or policies of external websites. Users are encouraged to review the applicable policies before providing personal information."
+        },
+        "MODIFICATIONS": {
+          "TITLE": "11. Changes to This Policy",
+          "CONTENT": "Solicmex may update this Privacy Policy when necessary due to changes to the website, services, tools used, or applicable legal requirements.",
+          "EFFECTIVE": "The current version will be the one published on this page and identified by its update date."
+        },
+        "CONTACT": {
+          "TITLE": "12. Contact",
+          "CONTENT": "If you have questions, comments, or requests regarding this Privacy Policy or the processing of information, you may contact Solicmex through the official contact channels available on our website."
+        }
+      }
+    },
+    "TERMS": {
+      "TITLE": "Terms and Conditions of Use",
+      "LAST_UPDATED": "Last updated: October 20, 2026",
+      "INTRO": "These Terms and Conditions govern access to and use of the Solicmex website.",
+      "ACCEPTANCE": "By accessing, browsing, or using this website, the user agrees to these terms. If the user does not agree with any of them, they must refrain from using the website.",
+      "SECTIONS": {
+        "ABOUT": {
+          "TITLE": "1. About Solicmex",
+          "CONTENT": "Solicmex is a company specialized in engineering, installation, maintenance, and repair of fire protection systems.",
+          "PURPOSE": "The information published on this website is intended to provide general information about the company, its services, projects, activities, and contact channels."
+        },
+        "PERMITTED_USE": {
+          "TITLE": "2. Permitted Use of the Website",
+          "INTRO": "Users agree to use the website lawfully and responsibly.",
+          "PROHIBITED": [
+            "Engaging in activities that violate applicable laws.",
+            "Attempting to gain unauthorized access to systems, servers, or restricted areas.",
+            "Interfering with the operation of the website.",
+            "Introducing malicious code, viruses, or any other element that may affect the technological infrastructure.",
+            "Using information from the website for fraudulent or unlawful activities.",
+            "Reproducing or distributing protected content without authorization."
+          ]
+        },
+        "SERVICES": {
+          "TITLE": "3. Service Information",
+          "CONTENT": "Information regarding services, capabilities, projects, installations, products, standards, or solutions published on this website is provided for informational purposes.",
+          "DISCLAIMER": "The description of a service on this website does not, by itself, constitute a quotation, contract, availability guarantee, or obligation for Solicmex to provide or enter into such service.",
+          "CONDITIONS": "Specific conditions for any service will be established through the corresponding proposal, quotation, contract, service order, or applicable commercial document."
+        },
+        "INTELLECTUAL_PROPERTY": {
+          "TITLE": "4. Intellectual Property",
+          "CONTENT": "The texts, photographs, images, logos, graphics, designs, audiovisual elements, code, and other content published on this website belong to Solicmex or are used with authorization from their respective owners.",
+          "RESTRICTION": "Reproduction, modification, distribution, publication, or commercial exploitation of such content without prior authorization is prohibited, except where expressly permitted by applicable law."
+        },
+        "TECHNICAL_CONTENT": {
+          "TITLE": "5. Technical Content",
+          "CONTENT": "Technical, informational, or educational content published by Solicmex does not replace an evaluation, engineering assessment, inspection, calculation, technical specification, or professional advice applicable to a specific project.",
+          "PROJECT_SPECIFIC": "The characteristics and requirements of each fire protection system depend on the specific conditions of the property, risk, applicable standards, design, and project specifications."
+        },
+        "EXTERNAL_LINKS": {
+          "TITLE": "6. External Links",
+          "CONTENT": "The website may contain links to third-party websites or services.",
+          "LIMITATION": "Solicmex does not control or guarantee the availability, accuracy, security, or content of such websites and assumes no responsibility for third-party practices or policies."
+        },
+        "AVAILABILITY": {
+          "TITLE": "7. Website Availability",
+          "CONTENT": "Solicmex will make reasonable efforts to keep the website available and functioning properly. However, we do not guarantee that the website will remain continuously available or free from errors.",
+          "SUSPENSION": "Access may be temporarily suspended due to maintenance, updates, technical failures, force majeure, or circumstances beyond Solicmex's reasonable control."
+        },
+        "LIABILITY": {
+          "TITLE": "8. Limitation of Liability",
+          "CONTENT": "Solicmex shall not be liable for damages arising solely from the use or inability to use the website when such damages are caused by circumstances beyond its reasonable control.",
+          "CONTRACTS": "Information published on the website is provided in good faith and for informational purposes, without prejudice to obligations arising from specific contracts entered into with clients."
+        },
+        "PRIVACY": {
+          "TITLE": "9. Privacy",
+          "CONTENT": "The processing of personal information and data derived from the use of the website is governed by our Privacy Policy.",
+          "ANALYTICS": "The website may also use analytics tools, including Google Analytics, as described in our Privacy Policy and Cookie Notice."
+        },
+        "MODIFICATIONS": {
+          "TITLE": "10. Changes to These Terms",
+          "CONTENT": "Solicmex may modify, update, or replace these Terms and Conditions when necessary.",
+          "EFFECTIVE": "The current version will be the one published on this website and identified by its update date."
+        },
+        "APPLICABLE_LAW": {
+          "TITLE": "11. Applicable Law",
+          "CONTENT": "These Terms and Conditions shall be interpreted in accordance with the laws applicable in the United Mexican States.",
+          "JURISDICTION": "Any dispute related to the use of the website shall be submitted to the competent authorities in accordance with applicable law, without prejudice to any rights granted to users under such legislation."
+        },
+        "CONTACT": {
+          "TITLE": "12. Contact",
+          "CONTENT": "For any questions regarding these Terms and Conditions, users may contact Solicmex through the official contact channels published on the website."
+        }
+      }
+    },
+    "COOKIES": {
+      "TITLE": "Cookie and Google Analytics Notice",
+      "DESCRIPTION": "This website uses cookies and similar technologies, including Google Analytics, to analyze website usage and improve its functionality, content, and browsing experience.",
+      "DATA_COLLECTION": "Google Analytics may collect information such as device and browser data, approximate geographic location, session statistics, interactions, and certain identifiers associated with cookies.",
+      "PURPOSE": "Information collected through these technologies is used for statistical purposes and to analyze website performance.",
+      "BROWSER_SETTINGS": "You can manage or limit the use of cookies through your browser settings. Where legally applicable, certain measurement technologies will only be activated in accordance with the user's consent preferences.",
+      "PRIVACY_LINK": "For more information about how we process information, please review our Privacy Policy.",
+      "ACTIONS": {
+        "ACCEPT": "Accept",
+        "REJECT": "Reject",
+        "CONFIGURE": "Cookie Settings"
+      }
+    }
   }
 }
